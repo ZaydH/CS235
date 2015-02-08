@@ -24,9 +24,52 @@ body {
 	
 	overflow: hidden;
 	
-	background-color: #F3F3F3;
+	background-color: #F4F4F4;
+	
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
 }
 
+/*******************
+HEADER
+*******************/
+
+
+.header{
+
+	float: top;
+	
+	background-color: #303030;
+	
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	
+	height: 50px;
+	
+
+}
+
+.header .ui-btn-right {	
+	
+	text-align: right;
+	
+	margin: auto;
+	
+	background-color: #242424;	
+	
+	
+	color: white;
+	
+	border-radius: 15px;
+	padding: 15px;
+
+}
+
+
+
+/*******************
+MAIN PANEL
+*******************/
 
 
 .main-panel {
@@ -35,7 +78,10 @@ body {
 	margin: 0px auto;
 	width: inherit;
 	
-	background-color: #0;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	
+	background-color: #F4F4F4;
 }
 
 /*******************
@@ -52,12 +98,12 @@ CALENDAR
 	
 	border-radius: 5px;
 	border: 1px solid;
-	border-color: #D0D0D0;
+	border-color: #F4F4F4;
 }
 
 
 /*******************
-Accordion
+SIDE LIST
 *******************/
 
 
@@ -69,9 +115,9 @@ Accordion
 	
 	padding: 5px;
 	
-	border-radius: 5px;
+	border-radius: 10px;
 	border: 1px solid;
-	border-color: #D0D0D0;
+	border-color: #F4F4F4;
 	
 	
 	height: 437px;
@@ -86,6 +132,9 @@ Accordion
 	color: white;
 	text-align: center;
 	font-weight: bold;
+	
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
 }
 
 .main-panel .side-list h4 {
