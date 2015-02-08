@@ -117,25 +117,46 @@ SIDE LIST
 
 
 .main-panel .side-list th {
+	
+	font-size:14px;
+	line-height:0px;
+	font-family:"Bree Serif","Arial Narrow",Arial,Helvetica,sans-serif;
+	font-weight:200;
+	text-decoration:none;
+	text-shadow:0 1px 0 rgba(0,0,0,0.3);
+	
    	border-top-left-radius: 12px;
 	border-top-right-radius: 12px;
 } 
 
+.main-panel .side-list tr {
+	border: 1px solid;
+	border-color: #E0E0E0;
+	font-weight:100;
+} 
+
 .main-panel .side-list td.last {
+	
    	border-bottom-left-radius: 12px;
-	border-bottom-right-radius: 12px;
+   	-webkit-border-bottom-left-radius:12px;
+   	-moz-border-radius-bottomleft:12px;
+   	border-bottom-left-radius:12px
+   	
+   	border-bottom-right-radius: 12px;
+   	-webkit-border-bottom-right-radius:12px;
+   	-moz-border-radius-bottomright:12px;
+   	border-bottom-right-radius:12px
 } 
 
 
 .main-panel .side-list h3 {
-	font-size: 14px;
-	line-height: 0px;
-	color: white;
-	text-align: center;
-	font-weight: bold;
-	
-	border-top-left-radius: 10px;
-	border-top-right-radius: 10px;
+	text-align:center;
+	font-size:14px;
+	line-height:0px;
+	font-family:"Bree Serif","Arial Narrow",Arial,Helvetica,sans-serif;
+	font-weight:200;
+	text-decoration:none;
+	text-shadow:0 1px 0 rgba(0,0,0,0.3);
 }
 
 .main-panel .side-list h4 {
