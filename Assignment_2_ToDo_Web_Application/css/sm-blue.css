@@ -1,6 +1,7 @@
 /* Import "PT Sans Narrow" font from Google fonts */
-@import url(http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700);
+/*@import url(http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700);*/
 
+@import url(http://fonts.googleapis.com/css?family=Bree+Serif);
 
 /*
 ---------------------------------------------------------------
@@ -28,6 +29,9 @@
 		-moz-box-shadow:0 1px 1px rgba(0,0,0,0.3);
 		-webkit-box-shadow:0 1px 1px rgba(0,0,0,0.3);
 		box-shadow:0 1px 1px rgba(0,0,0,0.3);
+		
+		text-align: center;
+		float: center;
 	}
 	.sm-blue-vertical {
 		-moz-box-shadow:0 1px 4px rgba(0,0,0,0.3);
@@ -58,11 +62,11 @@
 ===================*/
 
 	.sm-blue a {
-		padding:13px 24px;
+		padding:8px 24px 13px 24px;
 		color:#fff;
-		font-size:18px;
-		line-height:23px;
-		font-family:"PT Sans Narrow","Arial Narrow",Arial,Helvetica,sans-serif;
+		font-size:14px;
+		line-height:25px;
+		font-family:"Bree Serif","Arial Narrow",Arial,Helvetica,sans-serif;
 		font-weight:bold;
 		text-decoration:none;
 		text-shadow:0 1px 0 rgba(0,0,0,0.3);
@@ -246,7 +250,7 @@
 
 	/* The following will make the sub menus collapsible for small screen devices (it's not recommended editing these) */
 	ul.sm-blue{width:auto !important;}
-	ul.sm-blue ul{display:none;position:static !important;top:auto !important;left:auto !important;margin-left:0 !important;margin-top:0 !important;width:auto !important;min-width:0 !important;max-width:none !important;}
+	ul.sm-blue ul{display:none;position:static !important;top:auto !important;left:auto !important;margin-left:0 !important;margin-top:0 !important;width:inherit !important;min-width:0 !important;max-width:none !important;}
 	ul.sm-blue>li{float:none;}
 	ul.sm-blue>li>a,ul.sm-blue ul.sm-nowrap>li>a{white-space:normal;}
 	ul.sm-blue iframe{display:none;}
