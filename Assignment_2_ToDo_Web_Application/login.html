@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+
+
+	<!--META-->
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Login Form</title>
+	
+	<!--STYLESHEETS-->
+	<link href="css/login_style2.css" rel="stylesheet" type="text/css" />
+	
+	<!--SCRIPTS-->
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js"></script>
+	<!--Slider-in icons-->
+	<script type="text/javascript">
+	$(document).ready(function() {
+		$("#sign_in").click(function(event) {
+			
+			//----- Extract the username and password fields.
+			var username = $('#username').val(); 
+			var password = $('#password').val();
+			
+			//----- Check if they match the hard coded value.
+			if(username == "Ron" && password == "Mak"){
+				//----- Go into the application.
+			}
+			else{
+				
+				var error_message = "Sign in to continue to your calendar.";
+				error_message += "<br><br><h3>Invalid username and password.</h3>";
+				$("#invalid_login").html(error_message);
+				event.preventDefault();
+			}
+		});
+	});
+	</script>
+
+</head>
+<body>
+
+<!--WRAPPER-->
+<div id="wrapper">
+
+	<!--SLIDE-IN ICONS-->
+    <div class="user-icon"></div>
+    <div class="pass-icon"></div>
+    <!--END SLIDE-IN ICONS-->
+
+	<!--LOGIN FORM-->
+	<form name="login-form" class="login-form" action="" method="post">
+	
+		<!--HEADER-->
+	    <div class="header">
+	    <!--TITLE--><span id='login_header'><h1>Calendar &<br>Task Manager</h1></span><!--END TITLE-->
+	    <!--DESCRIPTION--><span id="invalid_login">Sign in to continue to your calendar</span>
+	    </div>
+	    <!--END HEADER-->
+		
+		<!--CONTENT-->
+	    <div class="content">
+			<!--USERNAME--><input id="username" type="text" class="input username" value="Username" onfocus="this.value=''" /><!--END USERNAME-->
+		    <!--PASSWORD--><input id="password" type="password" class="input password" value="Password" onfocus="this.value=''" /><!--END PASSWORD-->
+	    </div>
+	    <!--END CONTENT-->
+	    
+	    <!--FOOTER-->
+	    <div class="footer">
+	    	<!--Buttons are created from right to left.-->
+		    <!--Register BUTTON--><button id="register" class="button">Register</button><!--END REGISTER BUTTON-->
+		    <!--Sign In BUTTON--><button id="sign_in" class="button">Sign In</button><!--End Sign In Button-->
+
+	    </div>
+	    <!--END FOOTER-->
+	
+	</form>
+	<!--END LOGIN FORM-->
+	
+</div>
+<!--END WRAPPER-->
+
+<!--GRADIENT--><div class="gradient"></div><!--END GRADIENT-->
+
+</body>
+</html>
