@@ -173,6 +173,16 @@
 	</script>
 	<!-- SmartMenus jQuery init -->
 	<script type="text/javascript">
+	
+        function OnChangeCheckbox (checkbox) {
+            if (checkbox.checked) {
+                alert ("The check box " + checkbox.id + " is checked.");
+            }
+            else {
+                alert ("The check box is not checked.");
+            }
+        }
+	
 		jQueryLoader(function() {
 			jQueryLoader('#main-menu').smartmenus({
 				subMenusSubOffsetX: 1,
@@ -241,16 +251,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
 	
 	<!--WRAPPER-->
 	<div id="inner-wrapper">
@@ -273,16 +273,16 @@
 			        <tr>
 			        	<td><p>Take the trash out before the trash collector comes on Monday.
 			        		<br><br>Priority: &#9733; &#9733; &#9733; &#9733; &#9733;
-			        		<div class="checkbox"><input type="checkbox">Completed</div></p>
+			        		<div class="checkbox"><input type="checkbox" onclick="OnChangeCheckbox (this)" id="Take out the trash">Completed</div></p>
 		        		</td>
 			        </tr>
 			        <tr>
 			            <td><h4>Mow the Lawn</h4></td>
 			        </tr>
 			        <tr>
-			            <td><p>Need to get the lawnmower and mowe both the front and back yard.  Steve will mow the side yard.
+			            <td><p>Need to get the lawnmower and mow both the front and back yard.  Steve will mow the side yard.
 			            	<br><br>Priority: &#9733; &#9733; &#9733; &#9734; &#9734;
-							<div class="checkbox"><input type="checkbox">Completed</div></p>
+							<div class="checkbox"><input type="checkbox" onclick="OnChangeCheckbox (this)" id="Mow the lawn">Completed</div></p>
 		            	</td>
 			        </tr>
 			        <tr>
@@ -291,7 +291,7 @@
 			        <tr>
 			            <td><p>Running out of cat food at home so go to Petco to get some wet (Fancy Feast) and dry (Purina One) cat food.
 			            	<br><br>Priority: &#9733; &#9733; &#9734; &#9734; &#9734;
-			            	<div class="checkbox"><input type="checkbox">Completed</div></p>
+			            	<div class="checkbox"><input type="checkbox" onclick="OnChangeCheckbox (this)" id="Go to the store">Completed</div></p>
 			            </td>
 			        </tr>
 			        <tr>
@@ -300,7 +300,7 @@
 			        <tr>
 			            <td><p>Cancel cable tv but make sure they do not cancel the internet too.
 			            	<br><br>Priority: &#9733; &#9733; &#9734; &#9734; &#9734;
-			            	<div class="checkbox"><input type="checkbox">Completed</div></p>
+			            	<div class="checkbox"><input type="checkbox" onclick="OnChangeCheckbox (this)" id="Call Comcast">Completed</div></p>
 			            </td>
 			        </tr>
 			    </table>
