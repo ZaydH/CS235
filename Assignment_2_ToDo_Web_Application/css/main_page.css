@@ -154,3 +154,11 @@ SIDE LIST
 	//text-shadow: 1px 1px 0 rgba(256,256,256,1.0);
 }
 
+.checkbox {
+	font-size: 11px;
+	line-height: 12px;
+	color: black;
+	text-align: left;
+	font-weight: bold;
+}
+
