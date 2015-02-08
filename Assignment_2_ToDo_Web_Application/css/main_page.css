@@ -7,7 +7,7 @@ FONTS
 
 body {
 	/*background: url(../images/bg.png) repeat;*/
-	background-color: #FAFAFA;
+	background-color: #FFFFFF;
 	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 	font-weight:300;
 	text-align: left;
@@ -16,13 +16,15 @@ body {
 
 #wrapper {
 	/* Center wrapper perfectly */
-	max-width: 1300px;
-	min-width: 600px;
+	max-width: 800px;
+	min-width: 800px;
+	min-height: 800px;
 	max-height: 800px;
 	margin: auto;
 	
 	overflow: hidden;
 	
+	background-color: #F3F3F3;
 }
 
 
@@ -32,6 +34,8 @@ body {
 
 	margin: 0px auto;
 	width: inherit;
+	
+	background-color: #0;
 }
 
 /*******************
@@ -42,8 +46,13 @@ CALENDAR
 .main-panel .calendar {
 	float: left;
 
-	width: 69%;
-
+	width: 66%;
+	
+	padding: 8px 8px;
+	
+	border-radius: 5px;
+	border: 1px solid;
+	border-color: #D0D0D0;
 }
 
 
@@ -56,26 +65,41 @@ Accordion
 	
 	float: right;
 	
-	overflow: scroll;
+	overflow-y: auto;
 	
-	height: inherit;
+	padding: 5px;
+	
+	border-radius: 5px;
+	border: 1px solid;
+	border-color: #D0D0D0;
+	
+	
+	height: 437px;
 	width: 30%;
-	
+
 }
 
 
 .main-panel .side-list h3 {
-	font-size: 12px;
-	line-height: 14px;
+	font-size: 14px;
+	line-height: 0px;
+	color: white;
+	text-align: center;
+	font-weight: bold;
+}
+
+.main-panel .side-list h4 {
+	font-size: 11px;
+	line-height: 12px;
 	color: black;
 	text-align: left;
-	//text-shadow: 1px 1px 0 rgba(256,256,256,1.0);
+	font-weight: bold;
 }
 
 
 .main-panel .side-list p {
-	font-size: 11px;
-	line-height: 13px;
+	font-size: 10px;
+	line-height: 11px;
 	color: black;
 	text-align: left;
 	//text-shadow: 1px 1px 0 rgba(256,256,256,1.0);
