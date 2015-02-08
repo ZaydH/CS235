@@ -8,24 +8,25 @@
 	<title>Team Thundercats - Main</title>
 	
 	<!--SCRIPTS-->
-	<!--<script src="//code.jquery.com/jquery-1.10.2.js"></script>
-	<script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>-->
 	<script src='lib/moment.min.js'></script>
-	<script src='lib/jquery.min.js'></script>
+	<script type="text/javascript"  src='lib/jquery.min.js'></script>
 	<script src='lib/fullcalendar.min.js'></script>
 		
 	<!--STYLESHEETS-->
-	<!--<link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">-->
 	<link rel='stylesheet' href='lib/cupertino/jquery-ui.min.css' />
 	<link href='css/fullcalendar.css' rel='stylesheet' />
 	<link href='css/fullcalendar.print.css' rel='stylesheet' media='print' />
 	<!--<link href="css/main_page.css" rel="stylesheet" type="text/css" />-->
 	
+	<script type="text/javascript">
+		var jQueryCalendar = $.noConflict(true);
+	</script>
+	
 	<script>
 	
-		$(document).ready(function() {
+		jQueryCalendar(document).ready(function() {
 	
-			$('#calendar').fullCalendar({
+			jQueryCalendar('#calendar').fullCalendar({
 				theme: true,
 				header: {
 					left: 'prev,next today',
