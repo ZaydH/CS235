@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+	<!--META-->
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Team Thundercats - Main</title>
+	
+	<!--SCRIPTS-->
+	<!--<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+	<script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>-->
+	<script src='lib/moment.min.js'></script>
+	<script src='lib/jquery.min.js'></script>
+	<script src='lib/fullcalendar.min.js'></script>
+		
+	<!--STYLESHEETS-->
+	<!--<link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">-->
+	<link rel='stylesheet' href='lib/cupertino/jquery-ui.min.css' />
+	<link href='css/fullcalendar.css' rel='stylesheet' />
+	<link href='css/fullcalendar.print.css' rel='stylesheet' media='print' />
+	<!--<link href="css/main_page.css" rel="stylesheet" type="text/css" />-->
+	
+	<script>
+	
+		$(document).ready(function() {
+	
+			$('#calendar').fullCalendar({
+				theme: true,
+				header: {
+					left: 'prev,next today',
+					center: 'title',
+					right: 'month,agendaWeek,agendaDay'
+				},
+				defaultDate: '2015-02-12',
+				editable: true,
+				eventLimit: true, // allow "more" link when too many events
+				events: [
+					{
+						title: 'All Day Event',
+						start: '2015-02-01'
+					},
+					{
+						title: 'Long Event',
+						start: '2015-02-07',
+						end: '2015-02-10'
+					},
+					{
+						id: 999,
+						title: 'Repeating Event',
+						start: '2015-02-09T16:00:00'
+					},
+					{
+						id: 999,
+						title: 'Repeating Event',
+						start: '2015-02-16T16:00:00'
+					},
+					{
+						title: 'Conference',
+						start: '2015-02-11',
+						end: '2015-02-13'
+					},
+					{
+						title: 'Meeting',
+						start: '2015-02-12T10:30:00',
+						end: '2015-02-12T12:30:00'
+					},
+					{
+						title: 'Lunch',
+						start: '2015-02-12T12:00:00'
+					},
+					{
+						title: 'Meeting',
+						start: '2015-02-12T14:30:00'
+					},
+					{
+						title: 'Happy Hour',
+						start: '2015-02-12T17:30:00'
+					},
+					{
+						title: 'Dinner with My Cat Buddy',
+						start: '2015-02-12T20:00:00'
+					},
+					{
+						title: 'Birthday Party for Myself',
+						start: '2015-02-13T07:00:00'
+					},
+					{
+						title: 'Go to the Morge',
+						start: '2015-02-28T14:00:00',
+						end: '2015-02-28T:15:00:00'
+					}
+				]
+			});
+			
+		});
+
+</script>
+<style>
+
+	body {
+		margin: 40px 10px;
+		padding: 0;
+		font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
+		font-size: 14px;
+	}
+
+	#calendar {
+		max-width: 900px;
+		margin: 0 auto;
+	}
+
+</style>
+</head>
+<body>
+
+<!--WRAPPER-->
+<!--<div class="main-page">
+
+
+	<div id="header" class="header">
+		
+	</div>
+	
+	<div id="main-panel" class="main-panel">-->
+		
+		<div id='calendar'></div>
+	
+		<div id="accordion" class="accordion">
+			<h3>Take out the trash</h3>
+			<div>
+				<p>Take the trash out before the trash collector comes on Monday.<br><br>Priority: &#9733; &#9733; &#9733; &#9733; &#9733;</p>
+			</div>
+			<h3>Mow the grass</h3>
+			<div>
+				<p>Need to get the lawnmower and mowe both the front and back yard.  Steve will mow the side yard.<br><br>Priority: &#9733; &#9733; &#9733; &#9734; &#9734;</p>
+			</div>
+		</div>
+	</div>
+
+	
+</div>
+<!--END WRAPPER-->
+
+</body>
+</html>

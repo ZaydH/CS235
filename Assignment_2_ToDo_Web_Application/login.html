@@ -5,7 +5,7 @@
 
 	<!--META-->
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title>Team Thundercats</title>
+	<title>Team Thundercats - Login</title>
 	
 	<!--STYLESHEETS-->
 	<link href="css/login_style2.css" rel="stylesheet" type="text/css" />
@@ -43,7 +43,7 @@
 			if(username == "Ron" && password == "Mak"){
 				//----- Go into the application.
 				event.preventDefault(); //--- prevent the page refreshing.
-				location.href = "http://www.google.com";				
+				location.href = "mainpage.html";				
 			}
 			//---- Prompt the user the message is invalid.
 			else{
@@ -86,16 +86,14 @@
 	    </div>
 	    <!--END CONTENT-->
 	    
-	    <!--FOOTER-->
+	    <!--Buttons are placed in the footer.-->
 	    <div class="footer">
-	    	<!--Buttons are left to right.-->
-		    <!--Sign In BUTTON--><button id="sign_in" class="button">Sign In</button><!--End Sign In Button-->
-		    <!--Register BUTTON--><button id="register" class="button">Register</button><!--END REGISTER BUTTON-->
+	    	<!--Buttons are populated left to right.-->
+		    <!--Sign In Button--><button id="sign_in" class="button">Sign In</button>
+		    <!--Register Button--><button id="register" class="button">Register</button>
 	    </div>
-	    <!--END FOOTER-->
 	
 	</form>
-	<!--END LOGIN FORM-->
 	
 </div>
 <!--END WRAPPER-->

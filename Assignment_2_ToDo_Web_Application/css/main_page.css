@@ -1,0 +1,173 @@
+/*******************
+FONTS
+*******************/
+
+@import url(http://fonts.googleapis.com/css?family=Bree+Serif);
+
+/*******************
+SELECTION STYLING
+*******************/
+
+::selection {
+	color: #fff;
+	background: #f676b2; /* Safari */
+}
+::-moz-selection {
+	color: #fff;
+	background: #f676b2; /* Firefox */
+}
+
+/*******************
+BODY STYLING
+*******************/
+
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+body {
+	/*background: url(../images/bg.png) repeat;*/
+	background-color: #FAFAFA;
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+	font-weight:300;
+	text-align: left;
+	text-decoration: none;
+}
+
+#wrapper {
+	/* Center wrapper perfectly */
+	width: 300px;
+	height: 400px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-left: -150px;
+	margin-top: -200px;
+}
+
+/*
+.gradient {
+	width: 600px;
+	height: 600px;
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	margin-left: -300px;
+	margin-top: -300px;
+	
+	background: url(../images/gradient.png) no-repeat;
+}
+*/
+
+/*******************
+MAIN PAGE
+*******************/
+
+.main-page {
+	max-width: 1200px;
+	min-width: 600px;
+	width: 100%;
+	margin: 0 auto;
+	position: relative;
+	z-index:5;
+	
+	background: #f3f3f3;
+	border: 1px solid #fff;
+	border-radius: 5px;
+	
+	box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+	-moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+	-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+}
+
+
+/*******************
+HEADER
+*******************/
+
+.main-page .header {
+	padding: 40px 30px 30px 30px;
+}
+
+.main-page .header h1 {
+	font-family: 'Bree Serif', serif;
+	font-weight: 300;
+	font-size: 28px;
+	line-height:36px;
+	color: #414848;
+	text-align: center;
+	text-shadow: 1px 1px 0 rgba(256,256,256,1.0);
+	margin-bottom: 10px;
+}
+
+.main-page .header span {
+	font-size: 16px;
+	line-height: 20px;
+	color: #678889;
+	text-shadow: 1px 1px 0 rgba(256,256,256,1.0);
+}
+
+.main-page .header h3 {
+	font-size: 16px;
+	line-height: 20px;
+	color: #DC143C;
+	text-align: center;
+	text-shadow: 1px 1px 0 rgba(256,256,256,1.0);
+}
+
+
+/*******************
+main-panel
+*******************/
+
+.main-page .main-panel {
+
+	postion: relative;
+	width: 99%;
+
+}
+
+
+/*******************
+CALENDAR
+*******************/
+
+
+.main-page .main-panel .calendar {
+
+	postion: relative;
+	width: 80%;
+
+}
+
+
+/*******************
+Accordion
+*******************/
+
+
+.main-page .main-panel .accordion {
+
+	postion: relative;
+	width: 20%;
+
+}
+
+.main-page .main-panel .accordion h3 {
+	font-size: 12px;
+	line-height: 12px;
+	color: black;
+	text-align: left;
+	//text-shadow: 1px 1px 0 rgba(256,256,256,1.0);
+}
+
+
+.main-page .main-panel .accordion p {
+	font-size: 10px;
+	line-height: 12px;
+	color: black;
+	text-align: left;
+	//text-shadow: 1px 1px 0 rgba(256,256,256,1.0);
+}
