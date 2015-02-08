@@ -110,6 +110,9 @@ SIDE LIST
 	height: 437px;
 	width: 30%;
 
+	font-family: 'Bree Serif', serif;
+	font-weight: 100;
+
 }
 
 
@@ -129,7 +132,7 @@ SIDE LIST
 	line-height: 12px;
 	color: black;
 	text-align: left;
-	font-weight: bold;
+	font-weight:200;
 }
 
 
@@ -138,6 +141,7 @@ SIDE LIST
 	line-height: 11px;
 	color: black;
 	text-align: left;
+	font-weight:200;
 	//text-shadow: 1px 1px 0 rgba(256,256,256,1.0);
 }
 
