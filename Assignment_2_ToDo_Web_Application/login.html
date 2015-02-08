@@ -5,7 +5,7 @@
 
 	<!--META-->
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title>Login Form</title>
+	<title>Team Thundercats</title>
 	
 	<!--STYLESHEETS-->
 	<link href="css/login_style2.css" rel="stylesheet" type="text/css" />
@@ -15,6 +15,24 @@
 	<!--Slider-in icons-->
 	<script type="text/javascript">
 	$(document).ready(function() {
+		//---- Blur is called when the the text box loses focus.
+		$(".username").blur(function() {
+			
+			var username = $('#username').val(); 
+			if(username == ""){
+				$('#username').val("Username");
+			}
+
+		});
+		//---- Blur is called when the the text box loses focus.
+		$(".password").blur(function() {
+			
+			var username = $('#password').val(); 
+			if(username == ""){
+				$('#password').val("Password");
+			}
+
+		});
 		$("#sign_in").click(function(event) {
 			
 			//----- Extract the username and password fields.
@@ -24,14 +42,22 @@
 			//----- Check if they match the hard coded value.
 			if(username == "Ron" && password == "Mak"){
 				//----- Go into the application.
+				event.preventDefault(); //--- prevent the page refreshing.
+				location.href = "http://www.google.com";				
 			}
+			//---- Prompt the user the message is invalid.
 			else{
-				
 				var error_message = "Sign in to continue to your calendar.";
 				error_message += "<br><br><h3>Invalid username and password.</h3>";
 				$("#invalid_login").html(error_message);
-				event.preventDefault();
+				event.preventDefault(); //--- prevent the page refreshing.
 			}
+		});
+		$("#register").click(function(event) {
+			
+			alert("Register functionality not yet supported.");
+			event.preventDefault(); //--- prevent the page refreshing.
+			
 		});
 	});
 	</script>
@@ -42,17 +68,13 @@
 <!--WRAPPER-->
 <div id="wrapper">
 
-	<!--SLIDE-IN ICONS-->
-    <div class="user-icon"></div>
-    <div class="pass-icon"></div>
-    <!--END SLIDE-IN ICONS-->
 
 	<!--LOGIN FORM-->
 	<form name="login-form" class="login-form" action="" method="post">
 	
 		<!--HEADER-->
 	    <div class="header">
-	    <!--TITLE--><span id='login_header'><h1>Calendar &<br>Task Manager</h1></span><!--END TITLE-->
+	    <!--TITLE--><span id='login_header'><h1>Calendar &amp;<br>Task Manager</h1></span><!--END TITLE-->
 	    <!--DESCRIPTION--><span id="invalid_login">Sign in to continue to your calendar</span>
 	    </div>
 	    <!--END HEADER-->
@@ -66,10 +88,9 @@
 	    
 	    <!--FOOTER-->
 	    <div class="footer">
-	    	<!--Buttons are created from right to left.-->
-		    <!--Register BUTTON--><button id="register" class="button">Register</button><!--END REGISTER BUTTON-->
+	    	<!--Buttons are left to right.-->
 		    <!--Sign In BUTTON--><button id="sign_in" class="button">Sign In</button><!--End Sign In Button-->
-
+		    <!--Register BUTTON--><button id="register" class="button">Register</button><!--END REGISTER BUTTON-->
 	    </div>
 	    <!--END FOOTER-->
 	
