@@ -116,6 +116,17 @@ SIDE LIST
 }
 
 
+.main-panel .side-list th {
+   	border-top-left-radius: 12px;
+	border-top-right-radius: 12px;
+} 
+
+.main-panel .side-list td.last {
+   	border-bottom-left-radius: 12px;
+	border-bottom-right-radius: 12px;
+} 
+
+
 .main-panel .side-list h3 {
 	font-size: 14px;
 	line-height: 0px;
@@ -128,28 +139,28 @@ SIDE LIST
 }
 
 .main-panel .side-list h4 {
+	font-size: 12px;
+	line-height: 13px;
+	color: black;
+	text-align: center;
+	font-weight:200;
+	
+	display: inline;
+}
+
+
+.main-panel .side-list p, .main-panel .side-list .checkbox {
 	font-size: 11px;
 	line-height: 12px;
 	color: black;
 	text-align: left;
-	font-weight:200;
-}
-
-
-.main-panel .side-list p {
-	font-size: 10px;
-	line-height: 11px;
-	color: black;
-	text-align: left;
-	font-weight:200;
+	font-weight:100;
 	//text-shadow: 1px 1px 0 rgba(256,256,256,1.0);
 }
 
-.checkbox {
-	font-size: 11px;
-	line-height: 12px;
-	color: black;
-	text-align: left;
-	font-weight: bold;
+input[type=checkbox], input[type=radio] {
+    vertical-align: middle;
+    position: relative;
+    bottom: 1px;
 }
 
