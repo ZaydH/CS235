@@ -79,7 +79,7 @@ CALENDAR
 .main-panel .calendar {
 	float: left;
 
-	width: 66%;
+	width: 70%;
 	
 	padding: 8px 8px;
 	
@@ -103,6 +103,7 @@ CALENDAR
 	
 }
 
+
 /*******************
 SIDE LIST
 *******************/
@@ -122,7 +123,7 @@ SIDE LIST
 	border-color: #E0E0E0;
 	
 	
-	height: 437px;
+	height: 470px;
 	width: 30%;
 
 	font-family: 'Bree Serif', serif;
