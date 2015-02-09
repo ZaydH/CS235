@@ -275,8 +275,9 @@
 		
 		dialog = jQueryModalDialog( "#dialog-form" ).dialog({
 			autoOpen: false,
-			height: 300,
-			width: 350,
+			height: 250,
+			width: 300,
+			resizable: false,
 			modal: true,
 			buttons: {
 				"Completed": markCompleted,
@@ -407,7 +408,7 @@
 			            <td class="last"><h4>Call Comcast</h4></td>
 			        </tr>
 			        <tr>
-			            <td><p>Cancel cable tv but make sure they do not cancel the internet too.
+			            <td><p>Cancel cable TV but make sure they do not cancel the internet too.
 			            	<br><br>Priority: &#9733; &#9733; &#9734; &#9734; &#9734;
 			            	<div class="checkbox"><input type="checkbox" onclick="OnChangeCheckbox (this)" id="Call Comcast">Completed</div></p>
 			            </td>
@@ -424,20 +425,29 @@
 
 <!---   Modal window for diplaying marking the completion time of a task. --->
 <div id="dialog-form" title="Task Manager" class="completed-manager">
-	<p class="validateTips"></p>
-	<form>
+	<form name="task-completed-form" >
 		<fieldset>
-			<label for="name">Enter the Task Completion Time</label>
-			
-			<input type="text" id="datepicker"></p>
-			
-			
-			<div class="clearfix">
-				<div class="pull-center clearfix" style="margin-bottom:10px;">
-					<input class="form-control pull-right" id="single-input" value="" placeholder="Now" style="width:80px;margin-right:20px;">
-				</div>
-			</div>
-			
+			Enter the Task Completion Time:
+			<br><br>
+			<table id="task-table" style="width:100%" align="center">
+				<tr>
+					<td>Date</td>
+					<td>Time</td>
+				</tr>
+				<tr>
+					<td>
+						<input type="text" id="datepicker"></p>
+					</td>
+					<td>
+						<div class="clearfix">
+							<div class="pull-center clearfix" style="margin-bottom:10px;">
+								<!--<input class="form-control pull-right" id="single-input" value="" placeholder="Now" style="width:80px;margin-right:20px;">-->
+								<input class="form-control pull-right" id="single-input" value="" placeholder="Now" >
+							</div>
+						</div>
+					</td>
+				</tr>
+			</table>
 			<!-- Allow form submission with keyboard without duplicating the dialog button -->
 			<input autofocus type="submit" tabindex="-1" style="position:absolute; top:-1000px">
 		</fieldset>
