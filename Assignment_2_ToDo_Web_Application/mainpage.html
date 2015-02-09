@@ -332,10 +332,86 @@
 		jQueryModalDialog( "#btn-task-complete" ).button().on( "click", function() {
 			dialog.dialog( "open" );
 		});
+		
 	});
 </script>
 	
 	
+
+
+
+
+
+
+
+<script type="text/javascript" src="lib/jquery.clockpicker.min.js"></script>
+<script type="text/javascript" src="lib/bootstrap.clockpicker.min.js"></script>
+<script type="text/javascript" src="lib/bootstrap-clockpicker.min.js"></script>
+<script type="text/javascript">
+	var jQueryClockPicker = $.noConflict(true);
+</script>    
+<script type="text/javascript">
+	jQueryClockPicker('.clockpicker').clockpicker()
+		.find('input').change(function(){
+			console.log(this.value);
+		});
+	var input = jQueryClockPicker('#single-input').clockpicker({
+		placement: 'bottom',
+		align: 'left',
+		autoclose: true,
+		'default': 'now'
+	});
+	
+	jQueryClockPicker('.clockpicker-with-callbacks').clockpicker({
+			donetext: 'Done',
+			init: function() { 
+				console.log("colorpicker initiated");
+			},
+			beforeShow: function() {
+				console.log("before show");
+			},
+			afterShow: function() {
+				console.log("after show");
+			},
+			beforeHide: function() {
+				console.log("before hide");
+			},
+			afterHide: function() {
+				console.log("after hide");
+			},
+			beforeHourSelect: function() {
+				console.log("before hour selected");
+			},
+			afterHourSelect: function() {
+				console.log("after hour selected");
+			},
+			beforeDone: function() {
+				console.log("before done");
+			},
+			afterDone: function() {
+				console.log("after done");
+			}
+		})
+		.find('input').change(function(){
+			console.log(this.value);
+		});
+	
+	// Manually toggle to the minutes view
+	jQueryClockPicker('#check-minutes').click(function(e){
+		// Have to stop propagation here
+		e.stopPropagation();
+		input.clockpicker('show')
+				.clockpicker('toggleView', 'minutes');
+	});
+	if (/mobile/i.test(navigator.userAgent)) {
+		jQueryClockPicker('input').prop('readOnly', true);
+	}
+</script>
+<script type="text/javascript" src="lib/highlight.min.js"></script>
+<script type="text/javascript">
+hljs.configure({tabReplace: '    '});
+hljs.initHighlightingOnLoad();
+</script>
 	
 	
 	
@@ -458,12 +534,18 @@
 				<input type="text" name="email" id="email" value="jane@smith.com" class="text ui-widget-content ui-corner-all">
 				<label for="password">Password</label>
 				<input type="password" name="password" id="password" value="xxxxxxx" class="text ui-widget-content ui-corner-all">
+				
+
+				
 				<!-- Allow form submission with keyboard without duplicating the dialog button -->
-				<input type="Completed" tabindex="-1" style="position:absolute; top:-1000px">
+				<input type="submit" tabindex="-1" style="position:absolute; top:-1000px">
 			</fieldset>
 		</form>
 	</div>
 	<button id="btn-task-complete">Task Complete</button>
+	
+					<input class="form-control" id="single-input" value="" placeholder="Now">
+				<button type="button" id="check-minutes">Check the minutes</button>
 	
 </div>
 <!--END WRAPPER-->
