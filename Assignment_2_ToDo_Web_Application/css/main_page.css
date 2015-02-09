@@ -203,3 +203,11 @@ input[type=checkbox], input[type=radio] {
     bottom: 1px;
 }
 
+
+#create-user {
+	position:absolute;
+	max-width: 0px;
+	max-height: 0px;
+	font-size: 0px;
+}
+
