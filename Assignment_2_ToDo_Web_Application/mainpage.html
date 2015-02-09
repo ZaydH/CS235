@@ -215,11 +215,6 @@
 	
 	
 	
-	
-	
-	
-	
-	
 
 <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
 <script src="//code.jquery.com/jquery-1.10.2.js"></script>
@@ -251,6 +246,15 @@
 			password = jQueryModalDialog( "#password" ),
 			allFields = jQueryModalDialog( [] ).add( name ).add( email ).add( password ),
 			tips = jQueryModalDialog( ".validateTips" );
+			
+			
+		
+		//----- Runs the date picker module.
+		jQueryModalDialog(function() {
+    		jQueryModalDialog( "#datepicker" ).datepicker();
+  		});
+  		
+  		
 		
 		function updateTips( t ) {
 			tips
@@ -412,34 +416,39 @@
 			   </p>
 			</div>
 		</div>
-	</div>
-	
-	<div id="dialog-form" title="Task Manager" class="completed-manager">
-		<p class="validateTips"></p>
-		<form>
-			<fieldset>
-				<label for="name">Enter the Task Completion Time</label>
-				
-				
-				<div class="clearfix">
-					<div class="pull-center clearfix" style="margin-bottom:10px;">
-						<input class="form-control pull-right" id="single-input" value="" placeholder="Now" style="width:80px;margin-right:20px;">
-					</div>
-				</div>
-				
-				<!-- Allow form submission with keyboard without duplicating the dialog button -->
-				<input type="submit" tabindex="-1" style="position:absolute; top:-1000px">
-			</fieldset>
-		</form>
-	</div>
-	<button id="btn-task-complete">Task Complete</button>
-	
-					
+	</div>					
 	
 </div>
 <!--END WRAPPER-->
 
 
+<!---   Modal window for diplaying marking the completion time of a task. --->
+<div id="dialog-form" title="Task Manager" class="completed-manager">
+	<p class="validateTips"></p>
+	<form>
+		<fieldset>
+			<label for="name">Enter the Task Completion Time</label>
+			
+			<input type="text" id="datepicker"></p>
+			
+			
+			<div class="clearfix">
+				<div class="pull-center clearfix" style="margin-bottom:10px;">
+					<input class="form-control pull-right" id="single-input" value="" placeholder="Now" style="width:80px;margin-right:20px;">
+				</div>
+			</div>
+			
+			<!-- Allow form submission with keyboard without duplicating the dialog button -->
+			<input autofocus type="submit" tabindex="-1" style="position:absolute; top:-1000px">
+		</fieldset>
+	</form>
+</div>
+<button id="btn-task-complete">Task Complete</button> <!--- This button is used by the checkbox function to open the modal completed dialog. --->
+
+
+
+
+<!-----  This is used to handle the picking of the completion time (not date) in the modal task completion form --->
 <script type="text/javascript" src="lib/jquery.clockpicker.min.js"></script>
 <script type="text/javascript" src="lib/bootstrap.clockpicker.min.js"></script>
 <script type="text/javascript" src="dist/bootstrap-clockpicker.min.js"></script>
@@ -502,8 +511,8 @@ if (/mobile/i.test(navigator.userAgent)) {
 </script>
 <script type="text/javascript" src="lib/highlight.clockpicker.min.js"></script>
 <script type="text/javascript">
-hljs.configure({tabReplace: '    '});
-hljs.initHighlightingOnLoad();
+	hljs.configure({tabReplace: '    '});
+	hljs.initHighlightingOnLoad();
 </script>
 
 
