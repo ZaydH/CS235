@@ -76,7 +76,7 @@ CALENDAR
 *******************/
 
 
-.main-panel .calendar {
+#inner-wrapper .main-panel .calendar {
 	float: left;
 
 	width: 70%;
@@ -96,11 +96,15 @@ CALENDAR
 }
 
 
-.main-panel .calendar .h1, .main-panel .calendar .h2, .main-panel .calendar .h3 {
+#inner-wrapper .main-panel .calendar h2 {
 
-	font-size:12px;
+	font-size:24px !important;
+	font-family:"Bree Serif","Arial Narrow",Arial,Helvetica,sans-serif !important;
 	line-height:2px;
 	
+	font-weight: 300 !important;
+	font-weight:normal !important;
+	text-decoration:none !important;
 }
 
 
@@ -123,7 +127,7 @@ SIDE LIST
 	border-color: #E0E0E0;
 	
 	
-	height: 470px;
+	height: 462px;
 	width: 30%;
 
 	font-family: 'Bree Serif', serif;
