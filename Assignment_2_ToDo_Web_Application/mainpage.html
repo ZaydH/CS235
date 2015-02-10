@@ -223,7 +223,7 @@
 		//--- This function is called on body load to uncheck all the check boxes.
 		function init(){
 			
-			for(i =1; i <= 4; i++){
+			for(i =1; i <= 5; i++){
 				document.getElementById("task-checkbox"+i).checked = false;
 			}
 	
@@ -458,39 +458,49 @@
 			            <th><h3>Tasks</h3></th>
 			        </tr>
 			        <tr>
-			            <td id ="task-header1"><h4>Take out the trash</h4></td>
+			            <td id="task-header1"><h4>Take out the trash</h4></td>
 			        </tr>
 			        <tr>
-			        	<td id ="task-description1"><p>Take the trash out before the trash collector comes on Monday.
+			        	<td id="task-description1"><p>Take the trash out before the trash collector comes on Monday.
 			        		<br><br>Priority: &#9733; &#9733; &#9733; &#9733; &#9733;
 			        		<div class="checkbox"><input type="checkbox" onclick="OnChangeCheckbox (this);" id="task-checkbox1">Completed</div></p>
 		        		</td>
 			        </tr>
 			        <tr>
-			            <td id ="task-header2"><h4>Mow the Lawn</h4></td>
+			            <td id="task-header2"><h4>Mow the Lawn</h4></td>
 			        </tr>
 			        <tr>
-			            <td id ="task-description2"><p>Need to get the lawnmower and mow both the front and back yard.  Steve will mow the side yard.
+			            <td id="task-description2"><p>Need to get the lawnmower and mow both the front and back yard.  Steve will mow the side yard.
 			            	<br><br>Priority: &#9733; &#9733; &#9733; &#9734; &#9734;
 							<div class="checkbox"><input type="checkbox" onclick="OnChangeCheckbox (this); " id="task-checkbox2">Completed</div></p>
 		            	</td>
 			        </tr>
 			        <tr>
-			            <td id ="task-header3"><h4>Go to the store to get wet and dry cat food</h4></td>
+			            <td id="task-header3"><h4>Go to the store to get wet and dry cat food</h4></td>
 			        </tr>
 			        <tr>
-			            <td id ="task-description3"><p>Running out of cat food at home so go to Petco to get some wet (Fancy Feast) and dry (Purina One) cat food.
+			            <td id="task-description3"><p>Running out of cat food at home so go to Petco to get some wet (Fancy Feast) and dry (Purina One) cat food.
 			            	<br><br>Priority: &#9733; &#9733; &#9734; &#9734; &#9734;
 			            	<div class="checkbox"><input type="checkbox" onclick="OnChangeCheckbox (this);" id="task-checkbox3">Completed</div></p>
 			            </td>
 			        </tr>
 			        <tr>
-			            <td id ="task-header4" class="last"><h4>Call Comcast</h4></td>
+			            <td id="task-header4" class= "task-done"><h4>Call Comcast</h4></td>
 			        </tr>
 			        <tr>
-			            <td id ="task-description4"><p>Cancel cable TV but make sure they do not cancel the internet too.
+			            <td id="task-description4" class="task-done"><p>Cancel cable TV but make sure they do not cancel the internet too.
 			            	<br><br>Priority: &#9733; &#9733; &#9734; &#9734; &#9734;
 			            	<div class="checkbox"><input type="checkbox" onclick="OnChangeCheckbox (this);" id="task-checkbox4">Completed</div></p>
+			            </td>
+			        </tr>
+
+			        <tr>
+			            <td id="task-header5" class="last"><h4>Call Comcast</h4></td>
+			        </tr>
+			        <tr>
+			            <td id="task-description5"><p>Cancel cable TV but make sure they do not cancel the internet too.
+			            	<br><br>Priority: &#9733; &#9733; &#9734; &#9734; &#9734;
+			            	<div class="checkbox"><input type="checkbox" onclick="OnChangeCheckbox (this);" id="task-checkbox5">Completed</div></p>
 			            </td>
 			        </tr>
 			    </table>
