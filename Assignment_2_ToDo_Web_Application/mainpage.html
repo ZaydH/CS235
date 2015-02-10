@@ -176,6 +176,10 @@
 	<script type="text/javascript">
 	
         function OnChangeCheckbox (checkbox) {
+
+			//---- Call the strike function to initialize the hiding.
+			strike(checkbox, parseInt(checkbox.id.substr(parseInt(checkbox.id.length - 1))));
+        	
             if (checkbox.checked) {
                 jQueryLoader("#btn-task-complete").trigger("click");
             }
@@ -190,21 +194,34 @@
 				subMenusSubOffsetY: -8
 			});
 		});
-	</script>
 
-    <script>
-    // Strikethrough the task when the checkbox is checked
-            // Remove strikethrough when it is unchecked
-            function strike(checkbox, x){
-                console.log(x, checkbox.checked);
-                if(checkbox.checked){
-                    $('#task'+x).addClass('task-done');
-                }
-                else{
-                    $('#task'+x).removeClass('task-done');
-                }
 
-            }
+	    // Strikethrough the task when the checkbox is checked
+	    // Remove strikethrough when it is unchecked
+	    function strike(checkbox, x){
+	        console.log(x, checkbox.checked);
+	        if(checkbox.checked){
+	            $('#task-header'+x).addClass('task-done');
+	            $('#task-description'+x).addClass('task-done');
+	        }
+	        else{
+	            $('#task-header'+x).removeClass('task-done');
+	            $('#task-description'+x).removeClass('task-done');
+	        }
+	
+	    }
+	            
+	            
+	              		
+		//--- This function is called on body load to uncheck all the check boxes.
+		function init(){
+			
+			for(i =1; i <= 4; i++){
+				document.getElementById("task-checkbox"+i).checked = false;
+			}
+	
+		}
+	  		
             
     </script>
     <!-- SmartMenus core CSS (required) -->
@@ -267,8 +284,6 @@
 		jQueryModalDialog(function() {
     		jQueryModalDialog( "#datepicker" ).datepicker();
   		});
-  		
-  		
 		
 		function updateTips( t ) {
 			tips
@@ -357,7 +372,7 @@
 	</style>
 </head>
 
-<body>
+<body onload = "init();">
 
 
 <div id="wrapper">
@@ -393,39 +408,39 @@
 			            <th><h3>Tasks</h3></th>
 			        </tr>
 			        <tr>
-			            <td><h4 id ="task1">Take out the trash</h4></td>
+			            <td id ="task-header1"><h4>Take out the trash</h4></td>
 			        </tr>
 			        <tr>
-			        	<td><p>Take the trash out before the trash collector comes on Monday.
+			        	<td id ="task-description1"><p>Take the trash out before the trash collector comes on Monday.
 			        		<br><br>Priority: &#9733; &#9733; &#9733; &#9733; &#9733;
-			        		<div class="checkbox"><input type="checkbox" onclick="OnChangeCheckbox (this); strike(this,1)" id="Take out the trash">Completed</div></p>
+			        		<div class="checkbox"><input type="checkbox" onclick="OnChangeCheckbox (this);" id="task-checkbox1">Completed</div></p>
 		        		</td>
 			        </tr>
 			        <tr>
-			            <td><h4 id ="task2">Mow the Lawn</h4></td>
+			            <td id ="task-header2"><h4>Mow the Lawn</h4></td>
 			        </tr>
 			        <tr>
-			            <td><p>Need to get the lawnmower and mow both the front and back yard.  Steve will mow the side yard.
+			            <td id ="task-description2"><p>Need to get the lawnmower and mow both the front and back yard.  Steve will mow the side yard.
 			            	<br><br>Priority: &#9733; &#9733; &#9733; &#9734; &#9734;
-							<div class="checkbox"><input type="checkbox" onclick="OnChangeCheckbox (this); ; strike(this,2)" id="Mow the lawn">Completed</div></p>
+							<div class="checkbox"><input type="checkbox" onclick="OnChangeCheckbox (this); " id="task-checkbox2">Completed</div></p>
 		            	</td>
 			        </tr>
 			        <tr>
-			            <td><h4 id ="task3">Go to the store to get wet and dry cat food</h4></td>
+			            <td id ="task-header3"><h4>Go to the store to get wet and dry cat food</h4></td>
 			        </tr>
 			        <tr>
-			            <td><p>Running out of cat food at home so go to Petco to get some wet (Fancy Feast) and dry (Purina One) cat food.
+			            <td id ="task-description3"><p>Running out of cat food at home so go to Petco to get some wet (Fancy Feast) and dry (Purina One) cat food.
 			            	<br><br>Priority: &#9733; &#9733; &#9734; &#9734; &#9734;
-			            	<div class="checkbox"><input type="checkbox" onclick="OnChangeCheckbox (this); ; strike(this,3)" id="Go to the store">Completed</div></p>
+			            	<div class="checkbox"><input type="checkbox" onclick="OnChangeCheckbox (this);" id="task-checkbox3">Completed</div></p>
 			            </td>
 			        </tr>
 			        <tr>
-			            <td class="last"><h4 id ="task4">Call Comcast</h4></td>
+			            <td id ="task-header4" class="last"><h4>Call Comcast</h4></td>
 			        </tr>
 			        <tr>
-			            <td><p>Cancel cable TV but make sure they do not cancel the internet too.
+			            <td id ="task-description4"><p>Cancel cable TV but make sure they do not cancel the internet too.
 			            	<br><br>Priority: &#9733; &#9733; &#9734; &#9734; &#9734;
-			            	<div class="checkbox"><input type="checkbox" onclick="OnChangeCheckbox (this); ; strike(this,4)" id="Call Comcast">Completed</div></p>
+			            	<div class="checkbox"><input type="checkbox" onclick="OnChangeCheckbox (this);" id="task-checkbox4">Completed</div></p>
 			            </td>
 			        </tr>
 			    </table>
