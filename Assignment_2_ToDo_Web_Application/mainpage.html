@@ -188,11 +188,16 @@
             }
         }
         
-        //---- Function that is run to create a calendar event on click of a menu.
+        //---- Function that is run to create a calendar event on click of the menu.
         function createCalendarEvent () {
 			jQueryLoader("#btn-create-event").trigger("click");
         }
         
+        
+        //---- Function that is run to create a task on click of the menu.
+        function createNewTask () {
+			jQueryLoader("#btn-create-task").trigger("click");
+        }
         
 	
 		jQueryLoader(function() {
@@ -375,7 +380,13 @@
 		jQueryModalDialog( "#btn-create-event" ).button().on( "click", function() {
 			dialogCreateEvent.dialog( "open" );
 		});
-		
+
+
+		//----- Opens a modal dialog to create an event.
+		jQueryModalDialog( "#btn-create-task" ).button().on( "click", function() {
+			dialogCreateEvent.dialog( "open" );
+		});
+				
 		
 		
 	});
@@ -431,15 +442,10 @@
 	<ul id="main-menu" class="sm sm-blue">
 	  <li><a href="#">Import Calendar</a></li>
 	  <li><a href="#" onclick = "createCalendarEvent ();">Create Calender Event</a>
-	  <li><a href="#">Create Task</a>
+	  <li><a href="#" onclick = "createNewTask ();">Create Task</a>
 	  <li><a href="login.html">Logout</a>
 	  </li>
 	</ul>
-
-
-
-
-
 
 	
 	<!--WRAPPER-->
