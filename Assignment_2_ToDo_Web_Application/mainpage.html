@@ -276,7 +276,7 @@
 </style>
 <script>
 	jQueryModalDialog(function() {
-		var dialog, form,
+		var dialogTaskCompleted, form,
 		
 			// From http://www.whatwg.org/specs/web-apps/current-work/multipage/states-of-the-type-attribute.html#e-mail-state-%28type=email%29
 			name = jQueryModalDialog( "#name" ),
@@ -304,12 +304,12 @@
 		function markCompleted() {
 			var valid = true;
 			
-			dialog.dialog( "close" );
+			dialogTaskCompleted.dialog( "close" );
 			
 			return valid;
 		}
 		
-		dialog = jQueryModalDialog( "#dialog-form" ).dialog({
+		dialogTaskCompleted = jQueryModalDialog( "#dialog-form" ).dialog({
 			autoOpen: false,
 			height: 250,
 			width: 300,
@@ -325,19 +325,19 @@
 		});
 			
 			
-		form = dialog.find( "form" ).on( "submit", function( event ) {
+		form = dialogTaskCompleted.find( "form" ).on( "submit", function( event ) {
 			event.preventDefault();
 			markCompleted();
 		});
 		
 		
 		jQueryModalDialog( "#btn-task-complete" ).button().on( "click", function() {
-			dialog.dialog( "open" );
+			dialogTaskCompleted.dialog( "open" );
 		});
 		
 		
 		jQueryModalDialog( "#btn-create-task" ).button().on( "click", function() {
-			dialog.dialog( "open" );
+			dialogTaskCompleted.dialog( "open" );
 		});
 		
 		
