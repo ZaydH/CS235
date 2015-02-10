@@ -276,7 +276,7 @@
 </style>
 <script>
 	jQueryModalDialog(function() {
-		var dialogTaskCompleted, form,
+		var dialogTaskCompleted, dialogCreateEvent, form,
 		
 			// From http://www.whatwg.org/specs/web-apps/current-work/multipage/states-of-the-type-attribute.html#e-mail-state-%28type=email%29
 			name = jQueryModalDialog( "#name" ),
@@ -309,6 +309,23 @@
 			return valid;
 		}
 		
+		
+		//----- Call upon the completion of an event creation.
+		function eventCreated() {
+			var valid = true;
+			
+			alert("Need to create event here.");
+			
+			dialogCreateEvent.dialog( "close" );
+			
+			return valid;
+		}
+		
+		//----- Event creation canceled so just close the form.
+		function createEventCanceled() {
+			dialogCreateEvent.dialog( "close" );
+		}
+		
 		dialogTaskCompleted = jQueryModalDialog( "#dialog-form" ).dialog({
 			autoOpen: false,
 			height: 250,
@@ -323,6 +340,25 @@
 				allFields.removeClass( "ui-state-error" );
 			}
 		});
+		
+		
+		
+		
+		dialogCreateEvent = jQueryModalDialog( "#dialog-createEvent" ).dialog({
+			autoOpen: false,
+			height: 250,
+			width: 300,
+			resizable: false,
+			modal: true,
+			buttons: {
+				"Create Event": eventCreated,
+				"Cancel": createEventCanceled
+			},
+			close: function() {
+				form[ 0 ].reset();
+				allFields.removeClass( "ui-state-error" );
+			}
+		});
 			
 			
 		form = dialogTaskCompleted.find( "form" ).on( "submit", function( event ) {
@@ -330,14 +366,14 @@
 			markCompleted();
 		});
 		
-		
+		//----- Opens a modal dialog to complete a task.
 		jQueryModalDialog( "#btn-task-complete" ).button().on( "click", function() {
 			dialogTaskCompleted.dialog( "open" );
 		});
 		
-		
+		//----- Opens a modal dialog to create an event.
 		jQueryModalDialog( "#btn-create-task" ).button().on( "click", function() {
-			dialogTaskCompleted.dialog( "open" );
+			dialogCreateEvent.dialog( "open" );
 		});
 		
 		
@@ -490,6 +526,38 @@
 							</div>
 						</div>
 					</td>
+				</tr>
+			</table>
+			<!-- Allow form submission with keyboard without duplicating the dialog button -->
+			<input autofocus type="submit" tabindex="-1" style="position:absolute; top:-1000px">
+		</fieldset>
+	</form>
+</div>
+
+<!---   Modal window for creating an event.. --->
+<div id="dialog-createEvent" title="Create a New Calendar Event" class="completed-manager">
+	<form name="task-completed-form" >
+		<fieldset>
+			<br>
+			<table id="createEvent-Table" style="width:100%" align="center">
+				<tr>
+					<td>Name:</td>
+					<td><input id="newevent-name" name="newevent-name" value="" type="text" autocomplete="on" placeholder=""></td>
+				</tr>
+				<tr>
+					<td>Date:</td>
+					<td><input type="text" id="datepicker"></td>
+				</tr>
+				<tr>
+					<td>Time:</td>
+					<td><input class="form-control pull-right" id="single-input" value="" placeholder="Now" ></td>
+				</tr>
+				<tr>
+					<td colspan="2">Description: (Optional)<br><input id="newevent-description" name="newevent-description" value="" type="text" autocomplete="on" placeholder=""></td>
+				</tr>
+				<tr>
+					<td>Priority:</td>
+					<td></td>
 				</tr>
 			</table>
 			<!-- Allow form submission with keyboard without duplicating the dialog button -->
