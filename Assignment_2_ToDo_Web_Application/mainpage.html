@@ -196,6 +196,8 @@
         
         //---- Function that is run to create a task on click of the menu.
         function createNewTask () {
+        	
+        	//---- Open the form.
 			jQueryLoader("#btn-create-task").trigger("click");
         }
         
@@ -281,7 +283,7 @@
 </style>
 <script>
 	jQueryModalDialog(function() {
-		var dialogTaskCompleted, dialogCreateEvent, form,
+		var dialogTaskCompleted, dialogCreateEvent, dialogCreateTask, form,
 		
 			// From http://www.whatwg.org/specs/web-apps/current-work/multipage/states-of-the-type-attribute.html#e-mail-state-%28type=email%29
 			name = jQueryModalDialog( "#name" ),
@@ -331,6 +333,31 @@
 			dialogCreateEvent.dialog( "close" );
 		}
 		
+		//----- Call upon the completion of an event creation.
+		function taskCreated() {
+			var valid = true;
+			
+			//-- Make task #4 visible as it was created. 
+            $('#task-header4').removeClass('task-done');
+            $('#task-description4').removeClass('task-done');
+            
+            //--- Updates the task with the specified name and information.
+            $('#task4-name').text("Look at me!");
+            $('#task4-description').text("Poop");
+
+            
+            //---- Close the dialog.
+			dialogCreateTask.dialog( "close" );
+			
+			return valid;
+		}
+		
+		//----- Task creation canceled so just close the form.
+		function createTaskCanceled() {
+			dialogCreateTask.dialog( "close" );
+		}
+		
+		//---- Object for the Task Completed Dialog Box
 		dialogTaskCompleted = jQueryModalDialog( "#dialog-form" ).dialog({
 			autoOpen: false,
 			height: 250,
@@ -346,9 +373,7 @@
 			}
 		});
 		
-		
-		
-		
+		//---- Object for the Create Event Modal Dialog Box
 		dialogCreateEvent = jQueryModalDialog( "#dialog-createEvent" ).dialog({
 			autoOpen: false,
 			height: 250,
@@ -364,7 +389,24 @@
 				allFields.removeClass( "ui-state-error" );
 			}
 		});
-			
+		
+		
+		//---- Object for the Create Task Modal Dialog Box
+		dialogCreateTask = jQueryModalDialog( "#dialog-createTask" ).dialog({
+			autoOpen: false,
+			height: 250,
+			width: 300,
+			resizable: false,
+			modal: true,
+			buttons: {
+				"Create Task": taskCreated,
+				"Cancel": createTaskCanceled
+			},
+			close: function() {
+				form[ 0 ].reset();
+				allFields.removeClass( "ui-state-error" );
+			}
+		});
 			
 		form = dialogTaskCompleted.find( "form" ).on( "submit", function( event ) {
 			event.preventDefault();
@@ -378,13 +420,25 @@
 		
 		//----- Opens a modal dialog to create an event.
 		jQueryModalDialog( "#btn-create-event" ).button().on( "click", function() {
+			
+			//---- Reset the form values.
+        	$("#newevent-name").val("");
+        	$("#newevent-description").val("");
+			
+			//---- Open the form.
 			dialogCreateEvent.dialog( "open" );
 		});
 
 
 		//----- Opens a modal dialog to create an event.
 		jQueryModalDialog( "#btn-create-task" ).button().on( "click", function() {
-			dialogCreateEvent.dialog( "open" );
+			
+			//---- Reset the form values.
+        	$("#newtask-name").val("");
+        	$("#newtask-description").val("");
+			
+			//---- Open the form.
+			dialogCreateTask.dialog( "open" );
 		});
 				
 		
@@ -491,10 +545,10 @@
 			            </td>
 			        </tr>
 			        <tr>
-			            <td id="task-header4" class= "task-done"><h4>Call Comcast</h4></td>
+			            <td id="task-header4" class= "task-done"><h4 id="task4-name">New task added</h4></td>
 			        </tr>
 			        <tr>
-			            <td id="task-description4" class="task-done"><p>Cancel cable TV but make sure they do not cancel the internet too.
+			            <td id="task-description4" class="task-done"><p id="task4-description">Cancel cable TV but make sure they do not cancel the internet too.
 			            	<br><br>Priority: &#9733; &#9733; &#9734; &#9734; &#9734;
 			            	<div class="checkbox"><input type="checkbox" onclick="OnChangeCheckbox (this);" id="task-checkbox4">Completed</div></p>
 			            </td>
@@ -570,6 +624,31 @@
 				</tr>
 				<tr>
 					<td colspan="2">Description: (Optional)<br><input id="newevent-description" name="newevent-description" value="" type="text" autocomplete="on" placeholder=""></td>
+				</tr>
+				<tr>
+					<td>Priority:</td>
+					<td></td>
+				</tr>
+			</table>
+			<!-- Allow form submission with keyboard without duplicating the dialog button -->
+			<input autofocus type="submit" tabindex="-1" style="position:absolute; top:-1000px">
+		</fieldset>
+	</form>
+</div>
+
+
+<!---   Modal window for creating a task. --->
+<div id="dialog-createTask" title="Create a New Calendar Event" class="completed-manager">
+	<form name="task-completed-form" >
+		<fieldset>
+			<br>
+			<table id="createTask-Table" style="width:100%" align="center">
+				<tr>
+					<td>Task Name:</td>
+					<td><input id="newtask-name" name="newevent-name" value="" type="text" autocomplete="on" placeholder=""></td>
+				</tr>
+				<tr>
+					<td colspan="2">Description: (Optional)<br><input id="newtask-description" name="newevent-description" value="" type="text" autocomplete="on" placeholder=""></td>
 				</tr>
 				<tr>
 					<td>Priority:</td>
