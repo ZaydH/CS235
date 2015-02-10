@@ -222,7 +222,7 @@ input[type=checkbox], input[type=radio] {
 }
 
 
-#btn-task-complete {
+#btn-task-complete, #btn-create-task {
 	position:absolute;
 	left:-1000px;
 	max-width: 0px;

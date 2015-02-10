@@ -187,6 +187,13 @@
                 //alert ("The check box \"" + checkbox.id + "\" was unchecked.");
             }
         }
+        
+        //---- Function that is run to create a calendar event on click of a menu.
+        function createCalendarEvent () {
+			jQueryLoader("#btn-create-task").trigger("click");
+        }
+        
+        
 	
 		jQueryLoader(function() {
 			jQueryLoader('#main-menu').smartmenus({
@@ -379,9 +386,9 @@
 
 	<!-- Sample menu definition -->
 	<ul id="main-menu" class="sm sm-blue">
-	  <li><a href="http://www.smartmenus.org/">Import Calendar</a></li>
-	  <li><a href="http://www.smartmenus.org/about/">Create Calender Event</a>
-	  <li><a href="http://www.smartmenus.org/about/">Create Task</a>
+	  <li><a href="#">Import Calendar</a></li>
+	  <li><a href="#" onclick = "createCalendarEvent ();">Create Calender Event</a>
+	  <li><a href="#">Create Task</a>
 	  <li><a href="login.html">Logout</a>
 	  </li>
 	</ul>
@@ -466,7 +473,7 @@
 				</tr>
 				<tr>
 					<td>
-						<input type="text" id="datepicker"></p>
+						<input type="text" id="datepicker">
 					</td>
 					<td>
 						<div class="clearfix">
@@ -484,6 +491,7 @@
 	</form>
 </div>
 <button id="btn-task-complete">Task Complete</button> <!--- This button is used by the checkbox function to open the modal completed dialog. --->
+<button id="btn-create-task">Create Task</button> <!--- This button is used by a menu to create a task. --->
 
 
 
