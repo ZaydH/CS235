@@ -192,6 +192,21 @@
 		});
 	</script>
 
+    <script>
+    // Strikethrough the task when the checkbox is checked
+            // Remove strikethrough when it is unchecked
+            function strike(checkbox, x){
+                console.log(x, checkbox.checked);
+                if(checkbox.checked){
+                    $('#task'+x).addClass('task-done');
+                }
+                else{
+                    $('#task'+x).removeClass('task-done');
+                }
+
+            }
+            
+    </script>
     <!-- SmartMenus core CSS (required) -->
 	<link href="css/sm-core-css.css" rel="stylesheet" type="text/css" />
 		
@@ -375,42 +390,42 @@
 				<p>
 			    <table id="report">
 			        <tr>
-			            <th><h3>Uncompleted Tasks</h3></th>
+			            <th><h3>Tasks</h3></th>
 			        </tr>
 			        <tr>
-			            <td><h4>Take out the trash</h4></td>
+			            <td><h4 id ="task1">Take out the trash</h4></td>
 			        </tr>
 			        <tr>
 			        	<td><p>Take the trash out before the trash collector comes on Monday.
 			        		<br><br>Priority: &#9733; &#9733; &#9733; &#9733; &#9733;
-			        		<div class="checkbox"><input type="checkbox" onclick="OnChangeCheckbox (this)" id="Take out the trash">Completed</div></p>
+			        		<div class="checkbox"><input type="checkbox" onclick="OnChangeCheckbox (this); strike(this,1)" id="Take out the trash">Completed</div></p>
 		        		</td>
 			        </tr>
 			        <tr>
-			            <td><h4>Mow the Lawn</h4></td>
+			            <td><h4 id ="task2">Mow the Lawn</h4></td>
 			        </tr>
 			        <tr>
 			            <td><p>Need to get the lawnmower and mow both the front and back yard.  Steve will mow the side yard.
 			            	<br><br>Priority: &#9733; &#9733; &#9733; &#9734; &#9734;
-							<div class="checkbox"><input type="checkbox" onclick="OnChangeCheckbox (this)" id="Mow the lawn">Completed</div></p>
+							<div class="checkbox"><input type="checkbox" onclick="OnChangeCheckbox (this); ; strike(this,2)" id="Mow the lawn">Completed</div></p>
 		            	</td>
 			        </tr>
 			        <tr>
-			            <td><h4>Go to the store to get wet and dry cat food</h4></td>
+			            <td><h4 id ="task3">Go to the store to get wet and dry cat food</h4></td>
 			        </tr>
 			        <tr>
 			            <td><p>Running out of cat food at home so go to Petco to get some wet (Fancy Feast) and dry (Purina One) cat food.
 			            	<br><br>Priority: &#9733; &#9733; &#9734; &#9734; &#9734;
-			            	<div class="checkbox"><input type="checkbox" onclick="OnChangeCheckbox (this)" id="Go to the store">Completed</div></p>
+			            	<div class="checkbox"><input type="checkbox" onclick="OnChangeCheckbox (this); ; strike(this,3)" id="Go to the store">Completed</div></p>
 			            </td>
 			        </tr>
 			        <tr>
-			            <td class="last"><h4>Call Comcast</h4></td>
+			            <td class="last"><h4 id ="task4">Call Comcast</h4></td>
 			        </tr>
 			        <tr>
 			            <td><p>Cancel cable TV but make sure they do not cancel the internet too.
 			            	<br><br>Priority: &#9733; &#9733; &#9734; &#9734; &#9734;
-			            	<div class="checkbox"><input type="checkbox" onclick="OnChangeCheckbox (this)" id="Call Comcast">Completed</div></p>
+			            	<div class="checkbox"><input type="checkbox" onclick="OnChangeCheckbox (this); ; strike(this,4)" id="Call Comcast">Completed</div></p>
 			            </td>
 			        </tr>
 			    </table>

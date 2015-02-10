@@ -209,6 +209,10 @@ input[type=checkbox], input[type=radio] {
     bottom: 4px;
 }
 
+.main-panel .side-list .task-done{
+	text-decoration: line-through;
+}
+
 
 #btn-task-complete {
 	position:absolute;
