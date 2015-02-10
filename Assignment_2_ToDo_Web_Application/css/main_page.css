@@ -298,7 +298,7 @@ input[type=checkbox], input[type=radio] {
 }
 
 
-#single-input {
+#singleinput-completed {
 
 	position: relative !important;
 	text-align: center !important;
@@ -308,7 +308,7 @@ input[type=checkbox], input[type=radio] {
 
 }
 
-#datepicker {
+#datepicker-completed {
 	position: relative !important;
 	text-align: center;
 	display: inline-block;
@@ -326,7 +326,7 @@ input[type=checkbox], input[type=radio] {
 }
 
 
-#datepicker:focus {
+#datepicker-completed:focus {
 	
 	border-color: #66AFE9;
 	outline: 0px none;

@@ -296,7 +296,8 @@
 		
 		//----- Runs the date picker module.
 		jQueryModalDialog(function() {
-    		jQueryModalDialog( "#datepicker" ).datepicker();
+			jQueryModalDialog( "#datepicker-completed" ).datepicker();
+    		jQueryModalDialog( "#datepicker-calendar" ).datepicker();
   		});
 		
 		function updateTips( t ) {
@@ -593,13 +594,13 @@
 				</tr>
 				<tr>
 					<td>
-						<input type="text" id="datepicker">
+						<input type="text" id="datepicker-completed">
 					</td>
 					<td>
 						<div class="clearfix">
 							<div class="pull-center clearfix" style="margin-bottom:10px;">
 								<!--<input class="form-control pull-right" id="single-input" value="" placeholder="Now" style="width:80px;margin-right:20px;">-->
-								<input class="form-control pull-right" id="single-input" value="" placeholder="Now" >
+								<input class="form-control pull-right" id="singleinput-completed" value="" placeholder="Now" >
 							</div>
 						</div>
 					</td>
@@ -623,11 +624,11 @@
 				</tr>
 				<tr>
 					<td>Date:</td>
-					<td><input type="text" id="datepicker"></td>
+					<td><input type="text" id="datepicker-calendar"></td>
 				</tr>
 				<tr>
 					<td>Time:</td>
-					<td><input class="form-control pull-right" id="single-input" value="" placeholder="Now" ></td>
+					<td><input class="form-control pull-right" id="singleinput-calendar" value="" placeholder="Now" ></td>
 				</tr>
 				<tr>
 					<td colspan="2">Description: (Optional)<br><input id="newevent-description" name="newevent-description" value="" type="text" autocomplete="on" placeholder=""></td>
@@ -683,7 +684,13 @@ $('.clockpicker').clockpicker()
 	.find('input').change(function(){
 		console.log(this.value);
 	});
-var input = $('#single-input').clockpicker({
+var input = $('#singleinput-completed').clockpicker({
+	placement: 'bottom',
+	align: 'left',
+	autoclose: true,
+	'default': 'now'
+});
+var input = $('#singleinput-calendar').clockpicker({
 	placement: 'bottom',
 	align: 'left',
 	autoclose: true,
