@@ -190,7 +190,7 @@
         
         //---- Function that is run to create a calendar event on click of a menu.
         function createCalendarEvent () {
-			jQueryLoader("#btn-create-task").trigger("click");
+			jQueryLoader("#btn-create-event").trigger("click");
         }
         
         
@@ -372,7 +372,7 @@
 		});
 		
 		//----- Opens a modal dialog to create an event.
-		jQueryModalDialog( "#btn-create-task" ).button().on( "click", function() {
+		jQueryModalDialog( "#btn-create-event" ).button().on( "click", function() {
 			dialogCreateEvent.dialog( "open" );
 		});
 		
@@ -566,6 +566,7 @@
 	</form>
 </div>
 <button id="btn-task-complete">Task Complete</button> <!--- This button is used by the checkbox function to open the modal completed dialog. --->
+<button id="btn-create-event">Create Event</button> <!--- This button is used by a menu to create a task. --->
 <button id="btn-create-task">Create Task</button> <!--- This button is used by a menu to create a task. --->
 
 
