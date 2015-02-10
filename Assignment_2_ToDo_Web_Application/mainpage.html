@@ -337,13 +337,20 @@
 		function taskCreated() {
 			var valid = true;
 			
+			//---- Error check that the inputs are specified.
+			if($("#newtask-name").val() == ""){
+				alert("Error: The task name cannot be blank.");
+				valid = false;
+			}
+			if(!valid) return valid;
+			
 			//-- Make task #4 visible as it was created. 
             $('#task-header4').removeClass('task-done');
             $('#task-description4').removeClass('task-done');
             
             //--- Updates the task with the specified name and information.
-            $('#task4-name').text("Look at me!");
-            $('#task4-description').text("Poop");
+            $('#task4-name').text($("#newtask-name").val());
+            $('#task4-description').text($("#newtask-description").val());
 
             
             //---- Close the dialog.
@@ -648,7 +655,7 @@
 					<td><input id="newtask-name" name="newevent-name" value="" type="text" autocomplete="on" placeholder=""></td>
 				</tr>
 				<tr>
-					<td colspan="2">Description: (Optional)<br><input id="newtask-description" name="newevent-description" value="" type="text" autocomplete="on" placeholder=""></td>
+					<td colspan="2">Description:<br><input id="newtask-description" name="newevent-description" value="" type="text" autocomplete="on" placeholder=""></td>
 				</tr>
 				<tr>
 					<td>Priority:</td>
