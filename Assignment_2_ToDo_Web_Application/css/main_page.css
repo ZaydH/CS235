@@ -294,7 +294,7 @@ input[type=checkbox], input[type=radio] {
 	vertical-align: center;
 	text-align:center;
 	padding: 5px !important;
-	margin: 0px auto;
+	margin: auto;
 }
 
 
@@ -304,6 +304,7 @@ input[type=checkbox], input[type=radio] {
 	text-align: center !important;
 	display: inline-block !important;
 	float: none !important;
+	margin-top: 9px !important;
 	width: 85%;
 
 }
