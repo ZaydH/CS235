@@ -147,6 +147,8 @@ SIDE LIST
 	
    	border-top-left-radius: 12px;
 	border-top-right-radius: 12px;
+	
+	width: 225px !important;
 } 
 
 .main-panel .side-list tr {
@@ -211,15 +213,22 @@ input[type=checkbox], input[type=radio] {
 
 .main-panel .side-list .task-done{
 	text-decoration: line-through;
+	font-size: 0px;
+	height: 0px !important;
+	padding: 0px !important;
+
+	visibility: hidden;
+	display:none;
 }
 
 
-#btn-task-complete {
+#btn-task-complete, #btn-create-task, #btn-create-event {
 	position:absolute;
 	left:-1000px;
 	max-width: 0px;
 	max-height: 0px;
 	font-size: 0px;
+	line-height: 0px;
 }
 
 
@@ -285,21 +294,22 @@ input[type=checkbox], input[type=radio] {
 	vertical-align: center;
 	text-align:center;
 	padding: 5px !important;
-	margin: 0px auto;
+	margin: auto;
 }
 
 
-#single-input {
+#singleinput-completed {
 
 	position: relative !important;
 	text-align: center !important;
 	display: inline-block !important;
 	float: none !important;
+	margin-top: 9px !important;
 	width: 85%;
 
 }
 
-#datepicker {
+#datepicker-completed {
 	position: relative !important;
 	text-align: center;
 	display: inline-block;
@@ -317,7 +327,7 @@ input[type=checkbox], input[type=radio] {
 }
 
 
-#datepicker:focus {
+#datepicker-completed:focus {
 	
 	border-color: #66AFE9;
 	outline: 0px none;
