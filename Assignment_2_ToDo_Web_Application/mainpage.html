@@ -11,12 +11,14 @@
 	<script src='lib/moment.min.js'></script>
 	<script type="text/javascript"  src='lib/jquery.min.js'></script>
 	<script src='lib/fullcalendar.min.js'></script>
+	<script src='lib/jquery.rating.pack.js'></script>
 		
 	<!--STYLESHEETS-->
 	<link rel='stylesheet' href='lib/cupertino/jquery-ui.min.css' />
 	<link href='css/fullcalendar.css' rel='stylesheet' />
 	<link href='css/fullcalendar.print.css' rel='stylesheet' media='print' />
 	<link href="css/main_page.css" rel="stylesheet" type="text/css" />
+	<link href="css/jquery.rating.css" rel="stylesheet" type="text/css" />
 	
 	<script type="text/javascript">
 		var jQueryCalendar = $.noConflict(true);
@@ -530,7 +532,20 @@
 			        </tr>
 			        <tr>
 			        	<td id="task-description1"><p>Take the trash out before the trash collector comes on Monday.
-			        		<br><br>Priority: &#9733; &#9733; &#9733; &#9733; &#9733;
+			        		<!-- ***********************************************
+			        		@David, 
+			        		Pls add this div(#priority) wherever you wish to include
+			        		star-rating.
+			        		**************************************************** -->
+			        		<div id="priority1" class="priority-stars">
+			        			<p>Priority:</p>
+			        			<input name="star1" type="radio" class="star"/>
+			        			<input name="star1" type="radio" class="star"/> 
+			        			<input name="star1" type="radio" class="star"/> 
+			        			<input name="star1" type="radio" class="star"/> 
+			        			<input name="star1" type="radio" class="star"/>
+			        		</div></br>
+
 			        		<div class="checkbox"><input type="checkbox" onclick="OnChangeCheckbox (this);" id="task-checkbox1">Completed</div></p>
 		        		</td>
 			        </tr>
@@ -539,7 +554,14 @@
 			        </tr>
 			        <tr>
 			            <td id="task-description2"><p>Need to get the lawnmower and mow both the front and back yard.  Steve will mow the side yard.
-			            	<br><br>Priority: &#9733; &#9733; &#9733; &#9734; &#9734;
+			            	<div id="priority2" class="priority-stars">
+			        			<p>Priority:</p>
+			        			<input name="star2" type="radio" class="star"/>
+			        			<input name="star2" type="radio" class="star"/> 
+			        			<input name="star2" type="radio" class="star"/> 
+			        			<input name="star2" type="radio" class="star"/> 
+			        			<input name="star2" type="radio" class="star"/>
+			        		</div></br>
 							<div class="checkbox"><input type="checkbox" onclick="OnChangeCheckbox (this); " id="task-checkbox2">Completed</div></p>
 		            	</td>
 			        </tr>
@@ -548,7 +570,14 @@
 			        </tr>
 			        <tr>
 			            <td id="task-description3"><p>Running out of cat food at home so go to Petco to get some wet (Fancy Feast) and dry (Purina One) cat food.
-			            	<br><br>Priority: &#9733; &#9733; &#9734; &#9734; &#9734;
+			            	<div id="priority3" class="priority-stars">
+			        			<p>Priority:</p>
+			        			<input name="star3" type="radio" class="star"/>
+			        			<input name="star3" type="radio" class="star"/> 
+			        			<input name="star3" type="radio" class="star"/> 
+			        			<input name="star3" type="radio" class="star"/> 
+			        			<input name="star3" type="radio" class="star"/>
+			        		</div></br>
 			            	<div class="checkbox"><input type="checkbox" onclick="OnChangeCheckbox (this);" id="task-checkbox3">Completed</div></p>
 			            </td>
 			        </tr>
@@ -557,7 +586,14 @@
 			        </tr>
 			        <tr>
 			            <td id="task-description4" class="task-done"><p id="task4-description">Cancel cable TV but make sure they do not cancel the internet too.
-			            	<br><br>Priority: &#9733; &#9733; &#9734; &#9734; &#9734;
+			            	<div id="priority4" class="priority-stars">
+			        			<p>Priority:</p>
+			        			<input name="star4" type="radio" class="star"/>
+			        			<input name="star4" type="radio" class="star"/> 
+			        			<input name="star4" type="radio" class="star"/> 
+			        			<input name="star4" type="radio" class="star"/> 
+			        			<input name="star4" type="radio" class="star"/>
+			        		</div></br>
 			            	<div class="checkbox"><input type="checkbox" onclick="OnChangeCheckbox (this);" id="task-checkbox4">Completed</div></p>
 			            </td>
 			        </tr>
@@ -567,7 +603,14 @@
 			        </tr>
 			        <tr>
 			            <td id="task-description5"><p>Cancel cable TV but make sure they do not cancel the internet too.
-			            	<br><br>Priority: &#9733; &#9733; &#9734; &#9734; &#9734;
+			            	<div id="priority5" class="priority-stars">
+			        			<p>Priority:</p>
+			        			<input name="star5" type="radio" class="star"/>
+			        			<input name="star5" type="radio" class="star"/> 
+			        			<input name="star5" type="radio" class="star"/> 
+			        			<input name="star5" type="radio" class="star"/> 
+			        			<input name="star5" type="radio" class="star"/>
+			        		</div></br>
 			            	<div class="checkbox"><input type="checkbox" onclick="OnChangeCheckbox (this);" id="task-checkbox5">Completed</div></p>
 			            </td>
 			        </tr>

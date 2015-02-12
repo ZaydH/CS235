@@ -221,6 +221,10 @@ input[type=checkbox], input[type=radio] {
 	display:none;
 }
 
+.main-panel .side-list .priority-star{
+	float: right;
+}
+
 
 #btn-task-complete, #btn-create-task, #btn-create-event {
 	position:absolute;
