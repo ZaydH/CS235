@@ -324,7 +324,14 @@
 		function eventCreated() {
 			var valid = true;
 			
-			alert("Need to create event here.");
+//			alert("Need to create event here.");
+            
+            var newEvent = new Object();
+
+            newEvent.title = "some text";
+            newEvent.start = '2015-02-11T16:00:00'
+            newEvent.allDay = false;
+            $('#calendar').fullCalendar( 'renderEvent', newEvent );
 			
 			dialogCreateEvent.dialog( "close" );
 			
@@ -678,7 +685,7 @@
                     <td><input id="newevent-description" name="newevent-description" value="" type="text" autocomplete="on" placeholder=""></td>
 				</tr>
 				<tr style="height:30px;">
-					<td>Priority1234:</td>
+					<td>Priority:</td>
 					<td>
                         <div id="priority1" class="priority-stars">
 			        			<input name="star1" type="radio" class="star"/>
