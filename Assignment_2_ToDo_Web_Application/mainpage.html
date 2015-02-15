@@ -318,7 +318,12 @@
 		function eventCreated() {
 			var valid = true;
 			
-//			alert("Need to create event here.");
+			//---- Error check that the inputs are specified.
+			if($("#newevent-name").val() == ""){
+				alert("Error: The event name cannot be blank.");
+				valid = false;
+			}
+			if(!valid) return valid;
             
             var newEvent = new Object();
 
@@ -786,7 +791,7 @@
 				</tr>
 				<tr style="height:30px;">
 					<td>Date:</td>
-					<td><input type="text" id="datepicker-calendar"></td>
+					<td><input type="text" id="datepicker-calendar" placeholder="Today"></td>
 				</tr>
 				<tr style="height:30px;">
 					<td>Time:</td>
