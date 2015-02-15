@@ -705,21 +705,28 @@
 
 
 <!---   Modal window for creating a task. --->
-<div id="dialog-createTask" title="Create a New Calendar Event" class="completed-manager">
+<div id="dialog-createTask" title="Create a New Task" class="completed-manager">
 	<form name="task-completed-form" >
 		<fieldset>
 			<br>
 			<table id="createTask-Table" style="width:100%" align="center">
-				<tr>
+				<tr style="height:30px;">
 					<td>Task Name:</td>
 					<td><input id="newtask-name" name="newevent-name" value="" type="text" autocomplete="on" placeholder=""></td>
 				</tr>
-				<tr>
+				<tr style="height:30px;">
 					<td colspan="2">Description:<br><input id="newtask-description" name="newevent-description" value="" type="text" autocomplete="on" placeholder=""></td>
 				</tr>
-				<tr>
+				<tr style="height:30px;">
 					<td>Priority:</td>
-					<td></td>
+					<td>
+                        <div id="priority1" class="priority-stars">
+			        			<input name="star1" type="radio" class="star"/>
+			        			<input name="star1" type="radio" class="star"/> 
+			        			<input name="star1" type="radio" class="star"/> 
+			        			<input name="star1" type="radio" class="star"/> 
+			        			<input name="star1" type="radio" class="star"/>
+			        	</div>
 				</tr>
 			</table>
 			<!-- Allow form submission with keyboard without duplicating the dialog button -->
