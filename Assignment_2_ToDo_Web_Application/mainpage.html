@@ -3,6 +3,9 @@
 <head>
 
 
+
+	<!------ This section loads the calendar GUI into the page. ---->
+
 	<!--META-->
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>Team Thundercats - Main</title>
@@ -99,23 +102,23 @@
 			
 		});
 
-</script>
-<style>
-
-	body {
-		margin: 40px 10px;
-		padding: 0;
-		font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
-		font-size: 14px;
-	}
-
-	#calendar {
-		max-width: 900px;
-		margin: 0 auto;
-	}
-
-</style>
-
+	</script>
+	<style>
+	
+		body {
+			margin: 40px 10px;
+			padding: 0;
+			font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
+			font-size: 14px;
+		}
+	
+		#calendar {
+			max-width: 900px;
+			margin: 0 auto;
+		}
+	
+	</style>
+<!------------------ End of Calendar Loader GUI.  ----------------------->
 
 
 
@@ -285,7 +288,10 @@
 </style>
 <script>
 	jQueryModalDialog(function() {
-		var dialogTaskCompleted, dialogCreateEvent, dialogCreateTask, form,
+		
+		
+		var dialogTaskCompleted, dialogCreateEvent, dialogCreateTask, 
+			form, openCompletedForm, dialogCompletedClose, checkNotSetCompletionTime,
 		
 			// From http://www.whatwg.org/specs/web-apps/current-work/multipage/states-of-the-type-attribute.html#e-mail-state-%28type=email%29
 			name = jQueryModalDialog( "#name" ),
@@ -314,6 +320,7 @@
 		function markCompleted() {
 			var valid = true;
 			
+			checkNotSetCompletionTime = false;
 			dialogTaskCompleted.dialog( "close" );
 			
 			return valid;
@@ -328,8 +335,8 @@
             
             var newEvent = new Object();
 
-            newEvent.title = "some text";
-            newEvent.start = '2015-02-11T16:00:00'
+            newEvent.title = $("#newevent-name").val();
+            newEvent.start = '2015-03-01T16:00:00';
             newEvent.allDay = false;
             jQueryCalendar('#calendar').fullCalendar( 'renderEvent', newEvent );
 			
@@ -382,19 +389,56 @@
 			resizable: false,
 			modal: true,
 			buttons: {
-				"Completed": markCompleted,
+				"Finish": markCompleted,
 			},
 			close: function() {
+				
+				//---- Check whether to offer cancelling the completion.
+				if(checkNotSetCompletionTime){
+					//---- Open the form.
+					dialogCompletedClose.dialog( "open" );
+				}
+
+				//---- If specified close the form.
+				form[ 0 ].reset();
+				allFields.removeClass( "ui-state-error" );
+			}
+		});
+
+		dialogCompletedClose = jQueryModalDialog( "#confirm-completedClose" ).dialog({
+			autoOpen: false,
+			height: 260,
+			width: 300,
+			resizable: false,
+			modal: true,
+			buttons: {
+				"Yes" : allowFormClose,
+				"No" : cancelFormClose
+			},
+			close: function() {
+				openCompletedForm = false;
 				form[ 0 ].reset();
 				allFields.removeClass( "ui-state-error" );
 			}
 		});
 		
+		//----- Task creation canceled so just close the form.
+		function allowFormClose() {
+			dialogCompletedClose.dialog( "close" );
+		}
+		
+		//----- Task creation canceled so just close the form.
+		function cancelFormClose() {
+			dialogTaskCompleted.dialog( "open" );
+			dialogCompletedClose.dialog( "close" );
+		}
+		
+		
 		//---- Object for the Create Event Modal Dialog Box
 		dialogCreateEvent = jQueryModalDialog( "#dialog-createEvent" ).dialog({
 			autoOpen: false,
-			height: 300,
-			width: 300,
+			height: 310,
+			width: 350,
 			resizable: false,
 			modal: true,
 			buttons: {
@@ -412,7 +456,7 @@
 		dialogCreateTask = jQueryModalDialog( "#dialog-createTask" ).dialog({
 			autoOpen: false,
 			height: 250,
-			width: 300,
+			width: 315,
 			resizable: false,
 			modal: true,
 			buttons: {
@@ -432,6 +476,7 @@
 		
 		//----- Opens a modal dialog to complete a task.
 		jQueryModalDialog( "#btn-task-complete" ).button().on( "click", function() {
+			checkNotSetCompletionTime = true; //--- By default check on form close.
 			dialogTaskCompleted.dialog( "open" );
 		});
 		
@@ -646,7 +691,7 @@
 				</tr>
 				<tr>
 					<td>
-						<input type="text" id="datepicker-completed">
+						<input type="text" id="datepicker-completed" placeholder="Today">
 					</td>
 					<td>
 						<div class="clearfix">
@@ -741,6 +786,12 @@
 <button id="btn-create-event">Create Event</button> <!--- This button is used by a menu to create a task. --->
 <button id="btn-create-task">Create Task</button> <!--- This button is used by a menu to create a task. --->
 
+
+<div id="confirm-completedClose" title="Create a New Task" class="completed-manager">
+	<p>
+		Are you sure you do not want to specify a task completion time?
+	</p>
+</div>
 
 
 
