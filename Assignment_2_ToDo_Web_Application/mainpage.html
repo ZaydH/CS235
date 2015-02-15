@@ -180,17 +180,13 @@
 	<!-- SmartMenus jQuery init -->
 	<script type="text/javascript">
 	
+		var lastCheckBox;
+	
         function OnChangeCheckbox (checkbox) {
 
-			//---- Call the strike function to initialize the hiding.
-			strike(checkbox, parseInt(checkbox.id.substr(parseInt(checkbox.id.length - 1))));
-        	
-            if (checkbox.checked) {
-                jQueryLoader("#btn-task-complete").trigger("click");
-            }
-            else {
-                //alert ("The check box \"" + checkbox.id + "\" was unchecked.");
-            }
+			lastCheckBox = checkbox;
+			jQueryLoader("#btn-task-complete").trigger("click");
+			
         }
         
         //---- Function that is run to create a calendar event on click of the menu.
@@ -198,7 +194,14 @@
 			jQueryLoader("#btn-create-event").trigger("click");
         }
         
-        
+        //---- Helper function for checking third party calendars.
+		function importCalendarCheck() {
+			
+			alert("Importing third party calendars is not yet supported.");
+			event.preventDefault(); //--- prevent the page refreshing.
+			
+		}
+
         //---- Function that is run to create a task on click of the menu.
         function createNewTask () {
         	
@@ -212,24 +215,7 @@
 				subMenusSubOffsetX: 1,
 				subMenusSubOffsetY: -8
 			});
-		});
-
-
-	    // Strikethrough the task when the checkbox is checked
-	    // Remove strikethrough when it is unchecked
-	    function strike(checkbox, x){
-	        console.log(x, checkbox.checked);
-	        if(checkbox.checked){
-	            $('#task-header'+x).addClass('task-done');
-	            $('#task-description'+x).addClass('task-done');
-	        }
-	        else{
-	            $('#task-header'+x).removeClass('task-done');
-	            $('#task-description'+x).removeClass('task-done');
-	        }
-	
-	    }
-	            
+		});   
 	            
 	              		
 		//--- This function is called on body load to uncheck all the check boxes.
@@ -240,7 +226,7 @@
 			}
 	
 		}
-	  		
+
             
     </script>
     <!-- SmartMenus core CSS (required) -->
@@ -291,7 +277,8 @@
 		
 		
 		var dialogTaskCompleted, dialogCreateEvent, dialogCreateTask, 
-			form, openCompletedForm, dialogCompletedClose, checkNotSetCompletionTime,
+			form, openCompletedForm, uncheckCompleted, dialogCompletedClose, 
+			checkNotSetCompletionTime, dialogVerifyCompletion,
 		
 			// From http://www.whatwg.org/specs/web-apps/current-work/multipage/states-of-the-type-attribute.html#e-mail-state-%28type=email%29
 			name = jQueryModalDialog( "#name" ),
@@ -405,6 +392,8 @@
 			}
 		});
 
+
+		//---- This form confirms whether the user wants to actually exit.
 		dialogCompletedClose = jQueryModalDialog( "#confirm-completedClose" ).dialog({
 			autoOpen: false,
 			height: 260,
@@ -421,17 +410,93 @@
 				allFields.removeClass( "ui-state-error" );
 			}
 		});
-		
+				
 		//----- Task creation canceled so just close the form.
 		function allowFormClose() {
 			dialogCompletedClose.dialog( "close" );
 		}
 		
-		//----- Task creation canceled so just close the form.
+		//----- Task creation not cancelled so return to the previous form.
 		function cancelFormClose() {
-			dialogTaskCompleted.dialog( "open" );
 			dialogCompletedClose.dialog( "close" );
+			dialogTaskCompleted.dialog( "open" );
 		}
+		
+		
+		//---- This function checks if you actually want to mark the task completed.
+		dialogVerifyCompletion = jQueryModalDialog( "#confirm-completion" ).dialog({
+			autoOpen: false,
+			height: 260,
+			width: 300,
+			resizable: false,
+			modal: true,
+			buttons: {
+				"Yes" : completeTask,
+				"No" : cancelTaskCompletion
+			},
+			close: function() {
+				
+				if(uncheckCompleted){
+					lastCheckBox.checked = false;
+				}
+				
+				form[ 0 ].reset();
+				allFields.removeClass( "ui-state-error" );
+			}
+		});
+		
+	        /*function completeTaskConfirmed(){
+        	
+    		//---- Call the strike function to initialize the hiding.
+			strike(lastCheckBox, parseInt(lastCheckBox.id.substr(parseInt(checkbox.id.length - 1))));
+        	
+            if (checkbox.checked) {
+                jQueryLoader("#btn-task-complete").trigger("click");
+            }
+            else {
+                //alert ("The check box \"" + checkbox.id + "\" was unchecked.");
+            }
+        	
+        }*/
+		
+		//----- Continue with task completion
+		function completeTask() {
+			
+			//--- Close this form.
+			uncheckCompleted = false;
+			dialogVerifyCompletion.dialog("close");
+			
+			//---- Open the task completed form.
+			checkNotSetCompletionTime = true;
+			dialogTaskCompleted.dialog("open");
+			
+			//---- Call the strike function to initialize the hiding.
+			strike(lastCheckBox, parseInt(lastCheckBox.id.substr(parseInt(lastCheckBox.id.length - 1))));
+
+		}
+		
+		//----- Prevent the task completion
+		function cancelTaskCompletion() {
+			uncheckCompleted = true;
+			dialogVerifyCompletion.dialog("close");
+		}
+
+
+	    // Strikethrough the task when the checkbox is checked
+	    // Remove strikethrough when it is unchecked
+	    function strike(checkbox, x){
+	        console.log(x, checkbox.checked);
+	        if(checkbox.checked){
+	            $('#task-header'+x).addClass('task-done');
+	            $('#task-description'+x).addClass('task-done');
+	        }
+	        else{
+	            $('#task-header'+x).removeClass('task-done');
+	            $('#task-description'+x).removeClass('task-done');
+	        }
+	
+	    }
+	         
 		
 		
 		//---- Object for the Create Event Modal Dialog Box
@@ -476,8 +541,8 @@
 		
 		//----- Opens a modal dialog to complete a task.
 		jQueryModalDialog( "#btn-task-complete" ).button().on( "click", function() {
-			checkNotSetCompletionTime = true; //--- By default check on form close.
-			dialogTaskCompleted.dialog( "open" );
+			uncheckCompleted = true;//--- By default cancel unchecks the completed.
+			dialogVerifyCompletion.dialog("open");
 		});
 		
 		//----- Opens a modal dialog to create an event.
@@ -558,7 +623,7 @@
 
 	<!-- Sample menu definition -->
 	<ul id="main-menu" class="sm sm-blue">
-	  <li><a href="#">Import Calendar</a></li>
+	  <li><a href="#" onclick = "importCalendarCheck ();">Import Calendar</a></li>
 	  <li><a href="#" onclick = "createCalendarEvent ();">Create Calender Event</a>
 	  <li><a href="#" onclick = "createNewTask ();">Create Task</a>
 	  <li><a href="login.html">Logout</a>
@@ -787,12 +852,17 @@
 <button id="btn-create-task">Create Task</button> <!--- This button is used by a menu to create a task. --->
 
 
-<div id="confirm-completedClose" title="Create a New Task" class="completed-manager">
+<div id="confirm-completedClose" title="Completion Time" class="completed-manager">
 	<p>
 		Are you sure you do not want to specify a task completion time?
 	</p>
 </div>
 
+<div id="confirm-completion" title="Confirm Completion" class="completed-manager">
+	<p>
+		Are you sure you want to mark this task as completed?
+	</p>
+</div>
 
 
 <!-----  This is used to handle the picking of the completion time (not date) in the modal task completion form --->
