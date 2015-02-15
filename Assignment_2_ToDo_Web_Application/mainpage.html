@@ -442,6 +442,7 @@
         	$("#newevent-name").val("");
         	$("#newevent-description").val("");
 			
+            dialogCreateTask.dialog( "close" );
 			//---- Open the form.
 			dialogCreateEvent.dialog( "open" );
 		});
@@ -454,6 +455,7 @@
         	$("#newtask-name").val("");
         	$("#newtask-description").val("");
 			
+            dialogCreateEvent.dialog("close");
 			//---- Open the form.
 			dialogCreateTask.dialog( "open" );
 		});
