@@ -339,3 +339,9 @@ input[type=checkbox], input[type=radio] {
 	
 
 }
+
+.asterisk_input:after {
+content:" *"; 
+color: #e32;
+position: absolute;
+}
