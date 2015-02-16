@@ -345,7 +345,12 @@
 		//----- Call upon the completion of an event creation.
 		function taskCreated() {
 			var valid = true;
-			
+			var rSelected = $('#priority7 input[name="star7"].star:checked').val();
+			console.log(rSelected);
+			console.log($('#priority4 input[name="star4"][id='+rSelected+']').is(":checked"));
+			//$('#priority4 input[name="star4"][id='+rSelected+']').attr("checked","checked");
+			//$('#priority4 input[name="star4"][id=4]').attr("checked","checked");
+			$('#priority7').clone().appendTo('#priority4');
 			//---- Error check that the inputs are specified.
 			if($("#newtask-name").val() == ""){
 				alert("Error: The task name cannot be blank.");
@@ -361,7 +366,7 @@
             $('#task4-name').text($("#newtask-name").val());
             $('#task4-description').text($("#newtask-description").val());
 
-            
+             
             //---- Close the dialog.
 			dialogCreateTask.dialog( "close" );
 			
@@ -712,11 +717,11 @@
 			            <td id="task-description4" class="task-done"><p id="task4-description">Cancel cable TV but make sure they do not cancel the internet too.
 			            	<div id="priority4" class="priority-stars">
 			        			<p>Priority:</p>
-			        			<input name="star4" type="radio" class="star" checked/>
-			        			<input name="star4" type="radio" class="star"/> 
-			        			<input name="star4" type="radio" class="star"/> 
-			        			<input name="star4" type="radio" class="star"/> 
-			        			<input name="star4" type="radio" class="star"/>
+			        			<!-- <input name="star4" id="1" type="radio" class="star"/>
+			        			<input name="star4" id="2" type="radio" class="star"/> 
+			        			<input name="star4" id="3" type="radio" class="star"/> 
+			        			<input name="star4" id="4" type="radio" class="star"/> 
+			        			<input name="star4" id="5" type="radio" class="star"/> -->
 			        		</div></br>
 			            	<div class="checkbox"><input type="checkbox" onclick="OnChangeCheckbox (this);" id="task-checkbox4">Completed</div></p>
 			            </td>
@@ -839,11 +844,11 @@
 					<td>Priority:</td>
 					<td>
                         <div id="priority7" class="priority-stars">
-			        			<input name="star7" type="radio" class="star" checked/>
-			        			<input name="star7" type="radio" class="star"/> 
-			        			<input name="star7" type="radio" class="star"/> 
-			        			<input name="star7" type="radio" class="star"/> 
-			        			<input name="star7" type="radio" class="star"/>
+			        			<input name="star7" type="radio" class="star" value="1" checked/>
+			        			<input name="star7" type="radio" class="star" value="2"/> 
+			        			<input name="star7" type="radio" class="star" value="3"/> 
+			        			<input name="star7" type="radio" class="star" value="4"/> 
+			        			<input name="star7" type="radio" class="star" value="5"/>
 			        	</div>
 				</tr>
 			</table>
