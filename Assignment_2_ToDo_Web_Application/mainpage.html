@@ -317,11 +317,15 @@
 		//----- Call upon the completion of an event creation.
 		function eventCreated() {
 			var valid = true;
-			
+			var eSelected = $('#priority6 input[name="star6"].star:checked').val();
 			//---- Error check that the inputs are specified.
 			if($("#newevent-name").val() == ""){
 				alert("Error: The event name cannot be blank.");
 				valid = false;
+			}
+			if(eSelected == undefined){
+				alert("Error: Priority cannot be null.");
+				valid = false;	
 			}
 			if(!valid) return valid;
             
