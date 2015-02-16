@@ -350,12 +350,14 @@
 			console.log($('#priority4 input[name="star4"][id='+rSelected+']').is(":checked"));
 			//$('#priority4 input[name="star4"][id='+rSelected+']').attr("checked","checked");
 			//$('#priority4 input[name="star4"][id=4]').attr("checked","checked");
-			$('#newPriority #priority7').remove();
-			$('#priority7').clone().appendTo('#newPriority');
 			//---- Error check that the inputs are specified.
 			if($("#newtask-name").val() == ""){
 				alert("Error: The task name cannot be blank.");
 				valid = false;
+			}
+			if(rSelected == undefined){
+				alert("Error: Priority cannot be null.");
+				valid = false;	
 			}
 			if(!valid) return valid;
 			
@@ -366,7 +368,9 @@
             //--- Updates the task with the specified name and information.
             $('#task4-name').text($("#newtask-name").val());
             $('#task4-description').text($("#newtask-description").val());
-
+            $('#newPriority #temp').remove();
+			$('#priority7').clone().attr('id','temp').appendTo('#newPriority');
+			
              
             //---- Close the dialog.
 			dialogCreateTask.dialog( "close" );
