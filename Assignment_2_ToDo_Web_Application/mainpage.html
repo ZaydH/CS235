@@ -350,7 +350,8 @@
 			console.log($('#priority4 input[name="star4"][id='+rSelected+']').is(":checked"));
 			//$('#priority4 input[name="star4"][id='+rSelected+']').attr("checked","checked");
 			//$('#priority4 input[name="star4"][id=4]').attr("checked","checked");
-			$('#priority7').clone().appendTo('#priority4');
+			$('#newPriority #priority7').remove();
+			$('#priority7').clone().appendTo('#newPriority');
 			//---- Error check that the inputs are specified.
 			if($("#newtask-name").val() == ""){
 				alert("Error: The task name cannot be blank.");
@@ -717,6 +718,7 @@
 			            <td id="task-description4" class="task-done"><p id="task4-description">Cancel cable TV but make sure they do not cancel the internet too.
 			            	<div id="priority4" class="priority-stars">
 			        			<p>Priority:</p>
+			        			<div  id="newPriority"></div>
 			        			<!-- <input name="star4" id="1" type="radio" class="star"/>
 			        			<input name="star4" id="2" type="radio" class="star"/> 
 			        			<input name="star4" id="3" type="radio" class="star"/> 
