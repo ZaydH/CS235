@@ -324,7 +324,7 @@
 				valid = false;
 			}
 			if(eSelected == undefined){
-				alert("Error: Priority cannot be null.");
+				alert("Error: No event priority was specified.");
 				valid = false;	
 			}
 			if(!valid) return valid;
@@ -360,7 +360,7 @@
 				valid = false;
 			}
 			if(rSelected == undefined){
-				alert("Error: Priority cannot be null.");
+				alert("Error: No task priority was specified.");
 				valid = false;	
 			}
 			if(!valid) return valid;
@@ -370,7 +370,7 @@
             $('#task-description4').removeClass('task-done');
             
             //-- Ensure the new task is unchecked
-            document.getElementById("task-checkbox4").checked = false
+            document.getElementById("task-checkbox4").checked = false;
             
             //--- Updates the task with the specified name and information.
             $('#task4-name').text($("#newtask-name").val());
