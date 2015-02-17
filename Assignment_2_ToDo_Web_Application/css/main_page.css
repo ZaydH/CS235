@@ -298,7 +298,7 @@ input[type=checkbox], input[type=radio] {
 	vertical-align: center;
 	text-align:center;
 	padding: 5px !important;
-	margin: auto;
+	margin: auto !important;
 }
 
 
