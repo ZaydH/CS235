@@ -293,6 +293,14 @@
 		jQueryModalDialog(function() {
 			jQueryModalDialog( "#datepicker-completed" ).datepicker();
     		jQueryModalDialog( "#datepicker-calendar" ).datepicker();
+            $("#newevent-description").focusin(function(){
+                $(this).css("height", "150px"); 
+                $("#dialog-createEvent").css("height", "300px");
+            });
+            $("#newtask-description").focusin(function(){
+                $(this).css("height", "150px"); 
+                $("#dialog-createTask").css("height", "250px");
+            });
   		});
 		
 		function updateTips( t ) {
@@ -817,7 +825,7 @@
 				</tr>
 				<tr style="height:30px;">
 					<td>Description: (Optional)</td>
-                    <td><input id="newevent-description" name="newevent-description" value="" type="text" autocomplete="on" placeholder=""></td>
+                    <td><textarea class="pull-right" id="newevent-description" name="newevent-description" value="" type="text" autocomplete="on" placeholder="" style="width:167px;height:23px;border:1px solid #ccc;"></textarea></td>
 				</tr>
 				<tr style="height:30px;">
 					<td>Priority:<span class="asterisk_input"> </span></td>
@@ -851,7 +859,7 @@
 				</tr>
 				<tr style="height:30px;">
 					<td>Description:</td>
-                    <td><input id="newtask-description" name="newevent-description" value="" type="text" autocomplete="on" placeholder=""></td>
+                    <td><textarea id="newtask-description" name="newevent-description" value="" type="text" autocomplete="on" placeholder="" style="width:167px;height:23px;border:1px solid #ccc;"></textarea></td>
 				</tr>
 				<tr style="height:30px;">
 					<td>Priority :<span class="asterisk_input"> </span></td>
