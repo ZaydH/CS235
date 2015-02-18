@@ -303,11 +303,11 @@
     		jQueryModalDialog( "#datepicker-calendar" ).datepicker();
             $("#newevent-description").focusin(function(){
                 $(this).css("height", "150px"); 
-                $("#dialog-createEvent").css("height", "300px");
+                $("#dialog-createEvent").css("height", "320px");
             });
             $("#newtask-description").focusin(function(){
                 $(this).css("height", "150px"); 
-                $("#dialog-createTask").css("height", "250px");
+                $("#dialog-createTask").css("height", "270px");
             });
   		});
 		
@@ -540,8 +540,8 @@
 		//---- Object for the Create Event Modal Dialog Box
 		dialogCreateEvent = jQueryModalDialog( "#dialog-createEvent" ).dialog({
 			autoOpen: false,
-			height: 310,
-			width: 350,
+			height: 320,
+			width: 380,
 			resizable: false,
 			modal: true,
 			buttons: {
@@ -792,7 +792,7 @@
 			<table id="task-table" style="width:100%" align="center">
 				<tr>
 					<td>Date:</td>
-					<td>Time (24Hr Format):</td>
+					<td>Time: (24Hr Format)</td>
 				</tr>
 				<tr>
 					<td>
@@ -829,7 +829,7 @@
 					<td><input type="text" id="datepicker-calendar" placeholder="Today"></td>
 				</tr>
 				<tr style="height:30px;">
-					<td>Time:</td>
+					<td>Time:<br>(24Hr Format)</td>
 					<td><input class="pull-right" id="singleinput-calendar" value="" placeholder="Now" style="height:23px;"></td>
 				</tr>
 				<tr style="height:30px;">

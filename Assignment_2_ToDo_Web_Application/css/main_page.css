@@ -297,9 +297,18 @@ input[type=checkbox], input[type=radio] {
 .completed-manager #task-table td, .completed-manager #task-table tr {
 	vertical-align: center;
 	text-align:center;
+	padding: 3px !important;
+	margin: auto !important;
+}
+
+
+.completed-manager #createEvent-Table td, .completed-manager #createEvent-Table tr {
+	vertical-align: center;
+	text-align:center;
 	padding: 5px !important;
 	margin: auto !important;
 }
+
 
 
 #singleinput-completed {
