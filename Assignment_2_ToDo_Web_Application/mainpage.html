@@ -201,6 +201,14 @@
 			event.preventDefault(); //--- prevent the page refreshing.
 			
 		}
+		
+		//---- Helper function for viewing completed tasks
+		function createCompletedTasks() {
+			
+			alert("Viewing the list of completed tasks is not yet supported.");
+			event.preventDefault(); //--- prevent the page refreshing.
+			
+		}
 
         //---- Function that is run to create a task on click of the menu.
         function createNewTask () {
@@ -654,8 +662,9 @@
 	<!-- Sample menu definition -->
 	<ul id="main-menu" class="sm sm-blue">
 	  <li><a href="#" onclick = "importCalendarCheck ();">Import Calendar</a></li>
-	  <li><a href="#" onclick = "createCalendarEvent ();">Create Calender Event</a>
-	  <li><a href="#" onclick = "createNewTask ();">Create Task</a>
+	  <li><a href="#" onclick = "createCalendarEvent ();">Create an Appointment</a>
+	  <li><a href="#" onclick = "createNewTask ();">Create a Task</a>
+	  <li><a href="#" onclick = "createCompletedTasks ();">Completed Task List</a>
 	  <li><a href="login.html">Logout</a>
 	  </li>
 	</ul>
@@ -674,7 +683,7 @@
 				<p>
 			    <table id="report">
 			        <tr>
-			            <th><h3>Tasks</h3></th>
+			            <th><h3>To-Do List</h3></th>
 			        </tr>
 			        <tr>
 			            <td id="task-header1"><h4>Take out the trash</h4></td>
@@ -859,7 +868,7 @@
 				</tr>
 				<tr style="height:30px;">
 					<td>Description:</td>
-                    <td><textarea id="newtask-description" name="newevent-description" value="" type="text" autocomplete="on" placeholder="" style="width:167px;height:23px;border:1px solid #ccc;"></textarea></td>
+                    <td><textarea id="newtask-description" name="newevent-description" value="" type="text" autocomplete="on" placeholder="" style="height:23px;border:1px solid #ccc;"></textarea></td>
 				</tr>
 				<tr style="height:30px;">
 					<td>Priority :<span class="asterisk_input"> </span></td>
