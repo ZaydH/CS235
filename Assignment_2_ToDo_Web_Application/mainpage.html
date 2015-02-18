@@ -410,7 +410,7 @@
 		dialogTaskCompleted = jQueryModalDialog( "#dialog-form" ).dialog({
 			autoOpen: false,
 			height: 260,
-			width: 300,
+			width: 320,
 			resizable: false,
 			modal: true,
 			buttons: {
@@ -435,7 +435,7 @@
 		dialogCompletedClose = jQueryModalDialog( "#confirm-completedClose" ).dialog({
 			autoOpen: false,
 			height: 260,
-			width: 300,
+			width: 320,
 			resizable: false,
 			modal: true,
 			buttons: {
@@ -465,7 +465,7 @@
 		dialogVerifyCompletion = jQueryModalDialog( "#confirm-completion" ).dialog({
 			autoOpen: false,
 			height: 260,
-			width: 300,
+			width: 320,
 			resizable: false,
 			modal: true,
 			buttons: {
@@ -784,15 +784,15 @@
 
 
 <!---   Modal window for diplaying marking the completion time of a task. -->
-<div id="dialog-form" title="Task Manager" class="completed-manager">
+<div id="dialog-form" title="Completed Task Manager" class="completed-manager">
 	<form name="task-completed-form" >
 		<fieldset>
 			Enter the Task Completion Time:
 			<br><br>
 			<table id="task-table" style="width:100%" align="center">
 				<tr>
-					<td>Date</td>
-					<td>Time</td>
+					<td>Date:</td>
+					<td>Time (24Hr Format):</td>
 				</tr>
 				<tr>
 					<td>
@@ -868,7 +868,7 @@
 				</tr>
 				<tr style="height:30px;">
 					<td>Description:</td>
-                    <td><textarea id="newtask-description" name="newevent-description" value="" type="text" autocomplete="on" placeholder="" style="height:23px;border:1px solid #ccc;"></textarea></td>
+                    <td><textarea id="newtask-description" name="newevent-description" value="" type="text" autocomplete="on" placeholder="" style="width:167px;height:23px;border:1px solid #ccc;"></textarea></td>
 				</tr>
 				<tr style="height:30px;">
 					<td>Priority :<span class="asterisk_input"> </span></td>
@@ -893,13 +893,13 @@
 <button id="btn-create-task">Create Task</button> <!-- This button is used by a menu to create a task. -->
 
 
-<div id="confirm-completedClose" title="Completion Time" class="completed-manager">
+<div id="confirm-completedClose" title="Missing Completion Time" class="completed-manager">
 	<p>
 		Are you sure you do not want to specify a task completion time?
 	</p>
 </div>
 
-<div id="confirm-completion" title="Confirm Completion" class="completed-manager">
+<div id="confirm-completion" title="Confirm Task Completion" class="completed-manager">
 	<p>
 		Are you sure you want to mark this task as completed?
 	</p>
