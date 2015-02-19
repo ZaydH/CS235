@@ -598,6 +598,8 @@
 			
              $("#newtask-description").css("height", "23px");
              $("#newevent-description").css("height", "23px");
+             //Reset the star rating
+             $('#priority6 .rating-cancel').click();
             dialogCreateTask.dialog( "close" );
 			//---- Open the form.
 			dialogCreateEvent.dialog( "open" );
