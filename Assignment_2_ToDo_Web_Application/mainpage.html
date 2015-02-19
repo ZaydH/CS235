@@ -325,6 +325,7 @@
 			
 			checkNotSetCompletionTime = false;
 			dialogTaskCompleted.dialog( "close" );
+            
 			
 			return valid;
 		}
@@ -353,6 +354,7 @@
             jQueryCalendar('#calendar').fullCalendar( 'renderEvent', newEvent );
 			
 			dialogCreateEvent.dialog( "close" );
+             $("#newevent-description").css("height", "23px");
 			
 			return valid;
 		}
@@ -360,6 +362,7 @@
 		//----- Event creation canceled so just close the form.
 		function createEventCanceled() {
 			dialogCreateEvent.dialog( "close" );
+             $("#newevent-description").css("height", "23px");
 		}
 		
 		//----- Call upon the completion of an event creation.
@@ -397,6 +400,8 @@
              
             //---- Close the dialog.
 			dialogCreateTask.dialog( "close" );
+            
+             $("#newtask-description").css("height", "23px");
 			
 			return valid;
 		}
@@ -404,6 +409,7 @@
 		//----- Task creation canceled so just close the form.
 		function createTaskCanceled() {
 			dialogCreateTask.dialog( "close" );
+             $("#newtask-description").css("height", "23px");
 		}
 		
 		//---- Object for the Task Completed Dialog Box
@@ -590,6 +596,8 @@
         	$("#newevent-name").val("");
         	$("#newevent-description").val("");
 			
+             $("#newtask-description").css("height", "23px");
+             $("#newevent-description").css("height", "23px");
             dialogCreateTask.dialog( "close" );
 			//---- Open the form.
 			dialogCreateEvent.dialog( "open" );
@@ -603,6 +611,9 @@
         	$("#newtask-name").val("");
         	$("#newtask-description").val("");
 			
+            $("#newevent-description").css("height", "23px");
+            $("#newtask-description").css("height", "23px");
+            
             dialogCreateEvent.dialog("close");
 			//---- Open the form.
 			dialogCreateTask.dialog( "open" );
