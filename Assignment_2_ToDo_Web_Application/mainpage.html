@@ -614,6 +614,13 @@
             $("#newevent-description").css("height", "23px");
             $("#newtask-description").css("height", "23px");
             
+            //Reset the star rating to 1
+            $('#priority7 .rating-cancel').click();
+           console.log($('#priority7 input[name="star7"][id=1]').is(":checked"));
+            $('input[name="star7"][id=1]').attr('checked',true);
+            console.log($('#priority7 input[name="star7"][id=1]').is(":checked"));
+
+            //$('input:radio[name="star7"][id=1].star').attr("checked",true);
             dialogCreateEvent.dialog("close");
 			//---- Open the form.
 			dialogCreateTask.dialog( "open" );
