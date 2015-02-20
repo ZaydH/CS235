@@ -97,7 +97,16 @@
 						start: '2015-02-28T14:00:00',
 						end: '2015-02-28T:15:00:00'
 					}
-				]
+				],
+
+				dayClick: function(date, jsEvent, view) {
+
+       				console.log('Clicked on: ' + date.format());
+
+			        // change the day's background color just for fun
+			        $(this).css('background-color', 'red');
+
+			    }
 			});
 			
 		});
