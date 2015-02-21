@@ -105,6 +105,11 @@
 
 			        // change the day's background color just for fun
 			        $(this).css('background-color', 'red');
+			        // set the default date value as date selected
+			        $('#datepicker-calendar').val(date.format());
+			        
+			        createCalendarEventFromDay();
+
 
 			    }
 			});
@@ -200,7 +205,15 @@
         
         //---- Function that is run to create a calendar event on click of the menu.
         function createCalendarEvent () {
+        	// set the default val of date as current
+        	var d = new Date();
+        	var strDate = d.getFullYear() + "-" + (d.getMonth()+1) + "-" + d.getDate();
+        	$('#datepicker-calendar').val(strDate);
 			jQueryLoader("#btn-create-event").trigger("click");
+        }
+
+        function createCalendarEventFromDay(){
+        	$("#btn-create-event").trigger("click");
         }
         
         //---- Helper function for checking third party calendars.
@@ -358,7 +371,7 @@
             var newEvent = new Object();
 
             newEvent.title = $("#newevent-name").val();
-            newEvent.start = '2015-03-01T16:00:00';
+            newEvent.start = ''+$('#datepicker-calendar').val()+'T'+$('#singleinput-calendar').val();//   '2015-03-01T16:00:00';
             newEvent.allDay = false;
             jQueryCalendar('#calendar').fullCalendar( 'renderEvent', newEvent );
 			
@@ -607,6 +620,10 @@
 			
              $("#newtask-description").css("height", "23px");
              $("#newevent-description").css("height", "23px");
+             // set default time as current time
+	        var d = new Date();
+			var time = d.getHours() + ":" + d.getMinutes();
+	        $('#singleinput-calendar').val(time);
              //Reset the star rating
              $('#priority6 .rating-cancel').click();
             dialogCreateTask.dialog( "close" );
