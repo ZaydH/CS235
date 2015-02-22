@@ -372,7 +372,6 @@
 
             newEvent.title = $("#newevent-name").val();
             var splitDate = $('#datepicker-calendar').val().split("/");
-            alert("Date split.");
             newEvent.start = ''+ splitDate[2] + "-" + ("0" + splitDate[0]).slice(-2) + "-" + ("0"+ splitDate[1]).slice(-2)+'T'+$('#singleinput-calendar').val();//   '2015-03-01T16:00:00';
             newEvent.allDay = false;
             jQueryCalendar('#calendar').fullCalendar( 'renderEvent', newEvent );
