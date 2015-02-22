@@ -332,7 +332,7 @@
             });
             $("#newtask-description").focusin(function(){
                 $(this).css("height", "160px"); 
-                $("#dialog-createTask").css("height", "295px");
+                $("#dialog-createTask").css("height", "300px");
             });
   		});
 		
@@ -590,7 +590,7 @@
 		//---- Object for the Create Task Modal Dialog Box
 		dialogCreateTask = jQueryModalDialog( "#dialog-createTask" ).dialog({
 			autoOpen: false,
-			height: 270,
+			height: 280,
 			width: 350,
 			resizable: false,
 			modal: true,
@@ -622,7 +622,9 @@
         	$("#newevent-name").val("");
         	$("#newevent-name").css("height", "26px");
         	$("#newevent-description").val("");
-			
+        	
+			$("#newevent-description").css("resize", "none");
+        	$("#newevent-description").css("width", "205px");
             $("#newtask-description").css("height", "26px");
             $("#newevent-description").css("height", "26px");
             
@@ -647,6 +649,8 @@
         	$("#newtask-description").val("");
 			
             $("#newevent-description").css("height", "26px");
+			$("#newtask-description").css("resize", "none");
+        	$("#newtask-description").css("width", "205px");
             $("#newtask-description").css("height", "26px");
             
             //Reset the star rating to 1
@@ -887,7 +891,7 @@
 				</tr>
 				<tr style="height:30px;">
 					<td>Description: (Optional)</td>
-                    <td><textarea class="pull-right" id="newevent-description" name="newevent-description" value="" type="text" autocomplete="on" placeholder="" style="width:172px;height:23px;border:1px solid #ccc;"></textarea></td>
+                    <td><textarea class="pull-right" id="newevent-description" name="newevent-description" value="" type="text" autocomplete="on" placeholder="" style="width:205px;height:23px;border:1px solid #ccc;"></textarea></td>
 				</tr>
 				<tr style="height:30px;">
 					<td>Priority:<span class="asterisk_input"> </span></td>
@@ -910,7 +914,7 @@
 
 
 <!---   Modal window for creating a task. -->
-<div id="dialog-createTask" title="Create a New Task" class="completed-manager">
+<div id="dialog-createTask" title="Create a New To-Do Task" class="completed-manager">
 	<form name="task-completed-form" >
 		<fieldset>
 			<br>
@@ -920,7 +924,7 @@
 					<td><input id="newtask-name" name="newevent-name" value="" type="text" autocomplete="on" placeholder=""></td>
 				</tr>
 				<tr style="height:30px;">
-					<td>Description:</td>
+					<td>Description: (Optional)</td>
                     <td><textarea id="newtask-description" name="newevent-description" value="" type="text" autocomplete="on" placeholder="" style="width:172px;height:23px;border:1px solid #ccc;"></textarea></td>
 				</tr>
 				<tr style="height:30px;">
