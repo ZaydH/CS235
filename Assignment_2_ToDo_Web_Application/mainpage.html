@@ -99,16 +99,16 @@
 					}
 				],
 
-				dayClick: function(date, jsEvent, view) {
+				dayClick: function(clickedDate, jsEvent, view) {
 
-       				console.log('Clicked on: ' + date.format());
+       				console.log('Clicked on: ' + clickedDate.format());
 
 			        // change the day's background color just for fun
 			        $(this).css('background-color', 'red');
 			        // set the default date value as date selected
-			        var curDate = new Date();
-			        
-			        var datePickerString = ("0" + (curDate.getMonth()+1)).slice(-2) + "/" + ("0" + curDate.getDate()).slice(-2) + "/" + curDate.getFullYear(); //---- Ensure the date is two digit.
+			        var splitClickedDate = String(clickedDate.format()).split("-");
+			        alert(splitClickedDate);
+			        var datePickerString = ("0" + splitClickedDate[1]).slice(-2) + "/" + ("0" + splitClickedDate[2]).slice(-2) + "/" + splitClickedDate[0]; //---- Ensure the date is two digit.
 			        $('#datepicker-calendar').val(datePickerString);
 			        
 			        createCalendarEventFromDay();
