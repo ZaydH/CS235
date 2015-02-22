@@ -207,7 +207,7 @@
         function createCalendarEvent () {
         	// set the default val of date as current
         	var d = new Date();
-        	var strDate = d.getFullYear() + "-" + (d.getMonth()+1) + "-" + d.getDate();
+        	var strDate = ("0" + (d.getMonth()+1)).slice(-2) + "/" + ("0" + d.getDate()).slice(-2) + "/" + d.getFullYear(); //---- Ensure the date is two digit.
         	$('#datepicker-calendar').val(strDate);
 			jQueryLoader("#btn-create-event").trigger("click");
         }
@@ -359,11 +359,11 @@
 			var eSelected = $('#priority6 input[name="star6"].star:checked').val();
 			//---- Error check that the inputs are specified.
 			if($("#newevent-name").val() == ""){
-				alert("Error: The event name cannot be blank.");
+				alert("Error: The appointment name cannot be blank.");
 				valid = false;
 			}
 			if(eSelected == undefined){
-				alert("Error: No event priority was specified.");
+				alert("Error: No appointment priority was specified.");
 				valid = false;	
 			}
 			if(!valid) return valid;
@@ -573,7 +573,7 @@
 			resizable: false,
 			modal: true,
 			buttons: {
-				"Create Event": eventCreated,
+				"Create Appointment": eventCreated,
 				"Cancel": createEventCanceled
 			},
 			close: function() {
@@ -622,7 +622,7 @@
              $("#newevent-description").css("height", "23px");
              // set default time as current time
 	        var d = new Date();
-			var time = d.getHours() + ":" + d.getMinutes();
+			var time = ("0" + d.getHours()).slice(-2) + ":" + ("0" + d.getMinutes()).slice(-2);
 	        $('#singleinput-calendar').val(time);
              //Reset the star rating
              $('#priority6 .rating-cancel').click();
@@ -861,7 +861,7 @@
 </div>
 
 <!--   Modal window for creating an event.. -->
-<div id="dialog-createEvent" title="Create a New Calendar Event" class="completed-manager">
+<div id="dialog-createEvent" title="Create a New Calendar Appointment" class="completed-manager">
 	<form name="task-completed-form" >
 		<fieldset>
 			<br>
@@ -935,7 +935,7 @@
 	</form>
 </div>
 <button id="btn-task-complete">Task Complete</button> <!-- This button is used by the checkbox function to open the modal completed dialog. -->
-<button id="btn-create-event">Create Event</button> <!-- This button is used by a menu to create a task. -->
+<button id="btn-create-event">Create Appointment</button> <!-- This button is used by a menu to create a task. -->
 <button id="btn-create-task">Create Task</button> <!-- This button is used by a menu to create a task. -->
 
 
