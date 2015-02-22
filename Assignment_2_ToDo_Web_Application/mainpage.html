@@ -106,7 +106,10 @@
 			        // change the day's background color just for fun
 			        $(this).css('background-color', 'red');
 			        // set the default date value as date selected
-			        $('#datepicker-calendar').val(date.format());
+			        var curDate = new Date();
+			        
+			        var datePickerString = ("0" + (curDate.getMonth()+1)).slice(-2) + "/" + ("0" + curDate.getDate()).slice(-2) + "/" + curDate.getFullYear(); //---- Ensure the date is two digit.
+			        $('#datepicker-calendar').val(datePickerString);
 			        
 			        createCalendarEventFromDay();
 
@@ -213,7 +216,7 @@
         }
 
         function createCalendarEventFromDay(){
-        	$("#btn-create-event").trigger("click");
+        	jQueryLoader("#btn-create-event").trigger("click");
         }
         
         //---- Helper function for checking third party calendars.
@@ -377,7 +380,7 @@
             jQueryCalendar('#calendar').fullCalendar( 'renderEvent', newEvent );
 			
 			dialogCreateEvent.dialog( "close" );
-             $("#newevent-description").css("height", "23px");
+             $("#newevent-description").css("height", "2px");
 			
 			return valid;
 		}
@@ -385,7 +388,7 @@
 		//----- Event creation canceled so just close the form.
 		function createEventCanceled() {
 			dialogCreateEvent.dialog( "close" );
-             $("#newevent-description").css("height", "23px");
+             $("#newevent-description").css("height", "26px");
 		}
 		
 		//----- Call upon the completion of an event creation.
@@ -424,7 +427,7 @@
             //---- Close the dialog.
 			dialogCreateTask.dialog( "close" );
             
-             $("#newtask-description").css("height", "23px");
+            $("#newtask-description").css("height", "26px");
 			
 			return valid;
 		}
@@ -432,7 +435,7 @@
 		//----- Task creation canceled so just close the form.
 		function createTaskCanceled() {
 			dialogCreateTask.dialog( "close" );
-             $("#newtask-description").css("height", "23px");
+             $("#newtask-description").css("height", "26px");
 		}
 		
 		//---- Object for the Task Completed Dialog Box
@@ -617,10 +620,12 @@
 			
 			//---- Reset the form values.
         	$("#newevent-name").val("");
+        	$("#newevent-name").css("height", "26px");
         	$("#newevent-description").val("");
 			
-             $("#newtask-description").css("height", "23px");
-             $("#newevent-description").css("height", "23px");
+            $("#newtask-description").css("height", "26px");
+            $("#newevent-description").css("height", "26px");
+            
              // set default time as current time
 	        var d = new Date();
 			var time = ("0" + d.getHours()).slice(-2) + ":" + ("0" + d.getMinutes()).slice(-2);
@@ -638,10 +643,11 @@
 			
 			//---- Reset the form values.
         	$("#newtask-name").val("");
+        	$("#newtask-name").css("height", "26px");
         	$("#newtask-description").val("");
 			
-            $("#newevent-description").css("height", "23px");
-            $("#newtask-description").css("height", "23px");
+            $("#newevent-description").css("height", "26px");
+            $("#newtask-description").css("height", "26px");
             
             //Reset the star rating to 1
             $('#priority7 .rating-cancel').click();
