@@ -624,7 +624,7 @@
         	$("#newevent-description").val("");
         	
 			$("#newevent-description").css("resize", "none");
-        	$("#newevent-description").css("width", "205px");
+        	$("#newevent-description").css("width", "100%");
             $("#newtask-description").css("height", "26px");
             $("#newevent-description").css("height", "26px");
             
@@ -650,7 +650,7 @@
 			
             $("#newevent-description").css("height", "26px");
 			$("#newtask-description").css("resize", "none");
-        	$("#newtask-description").css("width", "205px");
+        	$("#newtask-description").css("width", "100%");
             $("#newtask-description").css("height", "26px");
             
             //Reset the star rating to 1
@@ -883,7 +883,7 @@
 				</tr>
 				<tr style="height:30px;">
 					<td>Date:</td>
-					<td><input type="text" id="datepicker-calendar" placeholder="Today"></td>
+					<td><input type="text" id="datepicker-calendar" placeholder="Today" style="height:23px;"></td>
 				</tr>
 				<tr style="height:30px;">
 					<td>Time:<br>(24Hr Format)</td>
@@ -891,7 +891,7 @@
 				</tr>
 				<tr style="height:30px;">
 					<td>Description: (Optional)</td>
-                    <td><textarea class="pull-right" id="newevent-description" name="newevent-description" value="" type="text" autocomplete="on" placeholder="" style="width:205px;height:23px;border:1px solid #ccc;"></textarea></td>
+                    <td><textarea class="pull-right" id="newevent-description" name="newevent-description" value="" type="text" autocomplete="on" placeholder="" style="height:23px;border:1px solid #ccc;"></textarea></td>
 				</tr>
 				<tr style="height:30px;">
 					<td>Priority:<span class="asterisk_input"> </span></td>
