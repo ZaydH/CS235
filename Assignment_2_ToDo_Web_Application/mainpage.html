@@ -107,13 +107,33 @@
 			        $(this).css('background-color', 'red');
 			        // set the default date value as date selected
 			        var splitClickedDate = String(clickedDate.format()).split("-");
-			        alert(splitClickedDate);
 			        var datePickerString = ("0" + splitClickedDate[1]).slice(-2) + "/" + ("0" + splitClickedDate[2]).slice(-2) + "/" + splitClickedDate[0]; //---- Ensure the date is two digit.
 			        $('#datepicker-calendar').val(datePickerString);
 			        
 			        createCalendarEventFromDay();
 
 
+			   },
+			    
+			    
+			    eventClick: function(calEvent, jsEvent, view) {
+
+					var alertMessage = 'Event Name: ' + calEvent.title ;
+					
+					//----- Extract the date information.
+					var dateAndTime  =  calEvent.start.format().split("T");
+					
+					//---- Add the event date.
+					var dateArray = dateAndTime[0].split("-");
+					alertMessage += "\n\nEvent Date: " + ("0" + dateArray[1]).slice(-2) + "/" + ("0" + dateArray[2]).slice(-2) + "/"+ dateArray[0];
+					
+					//---- Add the event time.
+					var timeArray = dateAndTime[1].split(":");
+					alertMessage += "\n\nEvent Time: " + ("0" + timeArray[0]).slice(-2) + ":" + ("0" + timeArray[1]).slice(-2);
+					
+					//---- Display the event information.
+			        alert(alertMessage);
+			
 			    }
 			});
 			
