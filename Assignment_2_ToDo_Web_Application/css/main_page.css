@@ -297,10 +297,17 @@ input[type=checkbox], input[type=radio] {
 .completed-manager #task-table td, .completed-manager #task-table tr {
 	vertical-align: center;
 	text-align:center;
-	padding: 10px !important;
+	padding: 5px !important;
 	margin: auto !important;
 }
 
+
+#task-completed-form td, #task-completed-form tr {
+	vertical-align: center;
+	text-align:center;
+	padding: 8px !important;
+	margin: auto !important;
+}
 
 .completed-manager #createEvent-Table td, .completed-manager #createEvent-Table tr {
 	vertical-align: center;
