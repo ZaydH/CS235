@@ -139,7 +139,6 @@
 					//---- Display the event information.
 			        //alert(alertMessage);
 			        //dialogEventDetails.dialog( "open" );
-			        
 			        $("#btn-event-details").trigger("click");
 			
 			    }
@@ -520,6 +519,11 @@
 			modal: true,
 			buttons: {
 			},
+			open: function() {
+            $('.ui-widget-overlay').bind('click', function() {
+                dialogEventDetails.dialog('close');
+            })
+        	},
 			close: function() {
 				openCompletedForm = false;
 				form[ 0 ].reset();
