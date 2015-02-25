@@ -104,9 +104,10 @@
        				console.log('Clicked on: ' + clickedDate.format());
 
 			        // change the day's background color just for fun
-			        $(this).css('background-color', 'red');
+			        //$(this).css('background-color', 'red');
 			        // set the default date value as date selected
-			        var splitClickedDate = String(clickedDate.format()).split("-");
+			        var splitClickedDateOnT = String(clickedDate.format()).split("T"); //---- In some case, you need to split if the string has a "T" in it.
+			        var splitClickedDate = String(splitClickedDateOnT[0]).split("-");
 			        var datePickerString = ("0" + splitClickedDate[1]).slice(-2) + "/" + ("0" + splitClickedDate[2]).slice(-2) + "/" + splitClickedDate[0]; //---- Ensure the date is two digit.
 			        $('#datepicker-calendar').val(datePickerString);
 			        
