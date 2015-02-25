@@ -196,7 +196,8 @@
             
             jQueryServer("#report tr.odd").click(function(){
                 jQueryServer(this).next("tr").toggle();
-               jQueryServer(this).find(".arrow").toggleClass("up");
+                console.log($(this).find("span").attr('id'));
+                $(this).find("span").toggleClass("ui-icon-plus ui-icon-minus");
             });
             
             $('#main-menu').smartmenus({
@@ -800,7 +801,7 @@
 			            <th><h3>To-Do List</h3></th>
 			        </tr>
 			        <tr>
-			            <td id="task-header1"><h4>Take out the trash</h4></td>
+			            <td id="task-header1"><h4>Take out the trash</h4><span id="exp1" style="float:right" class="ui-icon ui-icon-plus"></span></td>
 			        </tr>
 			        <tr>
 			        	<td id="task-description1"><p>Take the trash out before the trash collector comes on Monday.
@@ -822,7 +823,7 @@
 		        		</td>
 			        </tr>
 			        <tr>
-			            <td id="task-header2"><h4>Mow the Lawn</h4></td>
+			            <td id="task-header2"><h4>Mow the Lawn</h4><span id="exp2" style="float:right" class="ui-icon ui-icon-plus"></span></td>
 			        </tr>
 			        <tr>
 			            <td id="task-description2"><p>Need to get the lawnmower and mow both the front and back yard.  Steve will mow the side yard.
@@ -838,7 +839,7 @@
 		            	</td>
 			        </tr>
 			        <tr>
-			            <td id="task-header3"><h4>Go to the store to get wet and dry cat food</h4></td>
+			            <td id="task-header3"><h4>Go to the store to get wet and dry cat food</h4><span id="exp3" style="float:right" class="ui-icon ui-icon-plus"></span></td>
 			        </tr>
 			        <tr>
 			            <td id="task-description3"><p>Running out of cat food at home so go to Petco to get some wet (Fancy Feast) and dry (Purina One) cat food.
@@ -854,7 +855,7 @@
 			            </td>
 			        </tr>
 			        <tr>
-			            <td id="task-header4" class= "task-done"><h4 id="task4-name">New task added</h4></td>
+			            <td id="task-header4" class= "task-done"><h4 id="task4-name">New task added</h4><span id="exp4" style="float:right" class="ui-icon ui-icon-plus"></span></td>
 			        </tr>
 			        <tr>
 			            <td id="task-description4" class="task-done"><p id="task4-description">Cancel cable TV but make sure they do not cancel the internet too.
@@ -872,7 +873,7 @@
 			        </tr>
 
 			        <tr>
-			            <td id="task-header5" class="last"><h4>Call Comcast</h4></td>
+			            <td id="task-header5" class="last"><h4>Call Comcast</h4><span id="exp5" style="float:right" class="ui-icon ui-icon-plus"></span></td>
 			        </tr>
 			        <tr>
 			            <td id="task-description5"><p>Cancel cable TV but make sure they do not cancel the internet too.

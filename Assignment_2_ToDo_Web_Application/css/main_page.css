@@ -184,15 +184,15 @@ SIDE LIST
 .main-panel .side-list h4 {
 	font-size: 12px;
 	line-height: 13px;
-	text-align: center;
+	text-align: left;
 	font-weight:200;
-	
+	float:left;
 	color:#3A3A3A;
 	text-decoration:none;
 	text-shadow: none;
 
 	
-	display: inline;
+	/*display: inline;*/
 }
 
 
