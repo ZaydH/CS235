@@ -226,7 +226,7 @@ input[type=checkbox], input[type=radio] {
 }
 
 
-#btn-task-complete, #btn-create-task, #btn-create-event {
+#btn-task-complete, #btn-create-task, #btn-create-event, #btn-event-details {
 	position:absolute;
 	left:-1000px;
 	max-width: 0px;
@@ -300,6 +300,17 @@ input[type=checkbox], input[type=radio] {
 	padding: 5px !important;
 	margin: auto !important;
 }
+
+
+
+#event-details td, #event-details tr {
+	vertical-align: center;
+	text-align:center;
+	padding: 8px !important;
+	margin: auto !important;
+}
+
+
 
 
 #task-completed-form td, #task-completed-form tr {

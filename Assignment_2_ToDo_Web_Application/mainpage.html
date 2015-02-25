@@ -118,7 +118,9 @@
 			    
 			    eventClick: function(calEvent, jsEvent, view) {
 
+					//---- Store the event details
 					var alertMessage = 'Event Name:\t' + calEvent.title ;
+					$('#eventDetails-name').text(calEvent.title);
 					
 					//----- Extract the date information.
 					var dateAndTime  =  calEvent.start.format().split("T");
@@ -126,13 +128,18 @@
 					//---- Add the event date.
 					var dateArray = dateAndTime[0].split("-");
 					alertMessage += "\n\nEvent Date:\t" + ("0" + dateArray[1]).slice(-2) + "/" + ("0" + dateArray[2]).slice(-2) + "/"+ dateArray[0];
+					$('#eventDetails-date').text(("0" + dateArray[1]).slice(-2) + "/" + ("0" + dateArray[2]).slice(-2) + "/"+ dateArray[0]);
 					
 					//---- Add the event time.
 					var timeArray = dateAndTime[1].split(":");
 					alertMessage += "\n\nEvent Time:\t" + ("0" + timeArray[0]).slice(-2) + ":" + ("0" + timeArray[1]).slice(-2);
+					$('#eventDetails-time').text(("0" + timeArray[0]).slice(-2) + ":" + ("0" + timeArray[1]).slice(-2));
 					
 					//---- Display the event information.
-			        alert(alertMessage);
+			        //alert(alertMessage);
+			        //dialogEventDetails.dialog( "open" );
+			        
+			        $("#btn-event-details").trigger("click");
 			
 			    }
 			});
@@ -329,7 +336,7 @@
 	jQueryModalDialog(function() {
 		
 		
-		var dialogTaskCompleted, dialogCreateEvent, dialogCreateTask, 
+		var dialogTaskCompleted, dialogCreateEvent, dialogCreateTask, dialogEventDetails, 
 			form, openCompletedForm, uncheckCompleted, dialogCompletedClose, 
 			checkNotSetCompletionTime, dialogVerifyCompletion,
 		
@@ -500,6 +507,24 @@
 				allFields.removeClass( "ui-state-error" );
 			}
 		});
+		
+		
+		
+		//---- This form confirms whether the user wants to actually exit.
+		dialogEventDetails = jQueryModalDialog( "#event-details" ).dialog({
+			autoOpen: false,
+			height: 225,
+			width: 320,
+			resizable: false,
+			modal: true,
+			buttons: {
+			},
+			close: function() {
+				openCompletedForm = false;
+				form[ 0 ].reset();
+				allFields.removeClass( "ui-state-error" );
+			}
+		});
 				
 		//----- Task creation canceled so just close the form.
 		function allowFormClose() {
@@ -657,6 +682,13 @@
             dialogCreateTask.dialog( "close" );
 			//---- Open the form.
 			dialogCreateEvent.dialog( "open" );
+		});
+		
+		
+		//----- Opens a modal dialog when an event is viewed
+		jQueryModalDialog( "#btn-event-details" ).button().on( "click", function() {
+			//---- Open the form.
+			dialogEventDetails.dialog( "open" );
 		});
 
 
@@ -967,9 +999,36 @@
 		</fieldset>
 	</form>
 </div>
+
+
+<!---   Modal window for creating a task. -->
+<div id="event-details" title="Appointment Details" class="completed-manager">
+	<form name="task-completed-form" >
+		<fieldset>
+			<br>
+			<table id="eventDetails-Table" style="width:100%" align="center">
+				<tr style="height:30px;">
+					<td>Event Name:</td>
+					<td id="eventDetails-name"></td>
+				</tr>
+				<tr style="height:30px;">
+					<td>Event Date:</td>
+					<td id="eventDetails-date"></td>
+				</tr>
+				<tr style="height:30px;">
+					<td>Event Time:<br>(24Hr Format)</td>
+                    <td id="eventDetails-time"></td>
+				</tr>
+			</table>
+			<!-- Allow form submission with keyboard without duplicating the dialog button -->
+			<input autofocus type="submit" tabindex="-1" style="position:absolute; top:-1000px">
+		</fieldset>
+	</form>
+</div>
 <button id="btn-task-complete">Task Complete</button> <!-- This button is used by the checkbox function to open the modal completed dialog. -->
 <button id="btn-create-event">Create Appointment</button> <!-- This button is used by a menu to create a task. -->
 <button id="btn-create-task">Create Task</button> <!-- This button is used by a menu to create a task. -->
+<button id="btn-event-details">Event Details</button> <!-- This button is used by a menu to create a task. -->
 
 
 <div id="confirm-completedClose" title="Missing Completion Time" class="completed-manager">
