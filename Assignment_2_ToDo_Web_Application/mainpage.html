@@ -266,6 +266,8 @@
         //---- Function that is run to create a task on click of the menu.
         function createNewTask () {
         	
+        	$('#datepicker-task').val(""); //--- Null out the task date.
+        	
         	//---- Open the form.
 			jQueryLoader("#btn-create-task").trigger("click");
         }
@@ -354,6 +356,7 @@
 		jQueryModalDialog(function() {
 			jQueryModalDialog( "#datepicker-completed" ).datepicker();
     		jQueryModalDialog( "#datepicker-calendar" ).datepicker();
+    		jQueryModalDialog( "#datepicker-task" ).datepicker();
             $("#newevent-description").focusin(function(){
                 $(this).css("height", "160px"); 
                 $("#dialog-createEvent").css("height", "350px");
@@ -447,7 +450,9 @@
             
             //--- Updates the task with the specified name and information.
             $('#task4-name').text($("#newtask-name").val());
-            $('#task4-description').text($("#newtask-description").val());
+            
+            //---- Build the task description text.
+           	$('#task4-description').text($("#newtask-description").val());
             $('#newPriority #temp').remove();
 			$('#priority7').clone().attr('id','temp').appendTo('#newPriority');
 			
@@ -776,10 +781,10 @@
 
 	<!-- Sample menu definition -->
 	<ul id="main-menu" class="sm sm-blue">
-	  <li><a href="#" onclick = "importCalendarCheck ();">Import Calendar</a></li>
 	  <li><a href="#" onclick = "createCalendarEvent ();">Create an Appointment</a>
-	  <li><a href="#" onclick = "createNewTask ();">Create a Task</a>
+	  <li><a href="#" onclick = "createNewTask ();">Create a To-Do Task</a>
 	  <li><a href="#" onclick = "createCompletedTasks ();">Completed Task List</a>
+	  <li><a href="#" onclick = "importCalendarCheck ();">Import Calendar</a></li>
 	  <li><a href="login.html">Logout</a>
 	  </li>
 	</ul>
@@ -984,7 +989,11 @@
 					<td><input id="newtask-name" name="newevent-name" value="" type="text" autocomplete="on" placeholder=""></td>
 				</tr>
 				<tr style="height:30px;">
-					<td>Description: (Optional)</td>
+					<td>Due Date:</td>
+					<td><input type="text" id="datepicker-task" placeholder="" style="width:100%;height:23px;"></td>
+				</tr>
+				<tr style="height:30px;">
+					<td>Description:</td>
                     <td><textarea id="newtask-description" name="newevent-description" value="" type="text" autocomplete="on" placeholder="" style="width:100%;height:23px;"></textarea></td>
 				</tr>
 				<tr style="height:30px;">
