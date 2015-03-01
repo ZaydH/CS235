@@ -370,7 +370,7 @@
             });
             $("#newtask-description").focusin(function(){
                 $(this).css("height", "160px"); 
-                $("#dialog-createTask").css("height", "275px");
+                $("#dialog-createTask").css("height", "305px");
             });
   		});
 		
@@ -460,6 +460,20 @@
             
             //---- Build the task description text.
            	$('#task4-description').text($("#newtask-description").val());
+            var due_date_text = "Due Date:  ";
+            if($('#datepicker-task').val() != "")
+            {
+            	var splitDate = $('#datepicker-task').val().split("/");
+            	var task_due_date = ("0" + splitDate[0]).slice(-2) + "/" + ("0" + splitDate[1]).slice(-2) +"/" + splitDate[2];
+            	due_date_text += task_due_date;
+            }
+            else{
+            	//---- If no date was specified, then by default there is no date
+            	due_date_text += "None";
+            }
+            $('#task-due-date4').text(due_date_text);
+           	
+           	
             $('#newPriority #temp').remove();
 			$('#priority7').clone().attr('id','temp').appendTo('#newPriority');
 			
@@ -653,7 +667,7 @@
 		//---- Object for the Create Task Modal Dialog Box
 		dialogCreateTask = jQueryModalDialog( "#dialog-createTask" ).dialog({
 			autoOpen: false,
-			height: 260,
+			height: 290,
 			width: 350,
 			resizable: false,
 			modal: true,
@@ -871,8 +885,8 @@
 			        </tr>
 			        <tr>
 			            <td id="task-description4" class="task-done"><p id="task4-description">Cancel cable TV but make sure they do not cancel the internet too.
-			            	<div id="due-date4" class="task-done">
-			            		<p id="due4-date">Due Date: None
+			            	<div id="task4-due-date">
+			            		<p id="task-due-date4" >Due Date: None</p>
 			            	</div>
 			            	<div id="priority4" class="priority-stars">
 			        			<p>Priority:</p>
@@ -996,15 +1010,15 @@
 			<table id="task-table" style="width:100%" align="center">
 				<tr style="height:30px;">
 					<td>Task Name :<span class="asterisk_input"> </span></td>
-					<td><input id="newtask-name" name="newevent-name" value="" type="text" autocomplete="on" placeholder=""></td>
+					<td><input id="newtask-name" name="newevent-name" value="" type="text" autocomplete="on" placeholder="" style="width:95%;"></td>
 				</tr>
 				<tr style="height:30px;">
 					<td>Due Date:</td>
-					<td><input type="text" id="datepicker-task" placeholder="" style="width:100%;height:23px;"></td>
+					<td><input type="text" id="datepicker-task" placeholder="" style="width:95%;height:26px;"></td>
 				</tr>
 				<tr style="height:30px;">
 					<td>Description:</td>
-                    <td><textarea id="newtask-description" name="newevent-description" value="" type="text" autocomplete="on" placeholder="" style="width:100%;height:23px;"></textarea></td>
+                    <td><textarea id="newtask-description" name="newevent-description" value="" type="text" autocomplete="on" placeholder="" style="width:95%;height:23px;"></textarea></td>
 				</tr>
 				<tr style="height:30px;">
 					<td>Priority :<span class="asterisk_input"> </span></td>
