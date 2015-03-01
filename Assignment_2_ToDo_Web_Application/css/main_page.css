@@ -14,11 +14,11 @@ body {
 
 #wrapper {
 	/* Center wrapper perfectly */
-	max-width: 800px;
-	min-width: 800px;
-	width: 800px;
-	min-height: 800px;
-	max-height: 800px;
+	max-width: 1000px;
+	min-width: 1000px;
+	width: 1000px;
+	min-height: 1000px;
+	max-height: 1000px;
 	
 	margin: auto;
 	position:relative;
@@ -127,8 +127,8 @@ SIDE LIST
 	border-color: #E0E0E0;
 	
 	
-	height: 462px;
-	width: 30%;
+	height: 566px;
+	width: 30% !important;
 
 	font-family: 'Bree Serif', serif;
 	font-weight: 100;
@@ -148,7 +148,7 @@ SIDE LIST
    	border-top-left-radius: 12px;
 	border-top-right-radius: 12px;
 	
-	width: 225px !important;
+	width: 295px !important;
 } 
 
 .main-panel .side-list tr {
@@ -403,7 +403,7 @@ position: absolute;
 	0 2px 4px 2px rgba(255, 255, 255, 0.83) inset;*/
 }
 input[type="search"]{
-	width:76%;
+	width:80%;
 	height:26px;
 	padding-left:8px;
 	border-radius:6px;
