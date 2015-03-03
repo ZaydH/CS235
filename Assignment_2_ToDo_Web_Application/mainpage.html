@@ -415,7 +415,22 @@
             var splitDate = $('#datepicker-calendar').val().split("/");
             newEvent.start = ''+ splitDate[2] + "-" + ("0" + splitDate[0]).slice(-2) + "-" + ("0"+ splitDate[1]).slice(-2)+'T'+$('#singleinput-calendar').val();//   '2015-03-01T16:00:00';
             newEvent.allDay = false;
+            
+            
+            var colorDropdown = document.getElementById("newevent-color");
+			var selectedColor = colorDropdown.options[colorDropdown.selectedIndex].value;
+			alert("Selected Color: " + selectedColor);
+            if(selectedColor == "Work"){
+            	newEvent.eventColor = '#940721';
+            }
+            else if(selectedColor == "Personal"){
+            	newEvent.eventColor = '#0F8534';
+            }
+            else{
+            	newEvent.eventColor = '#558CBF';
+            }
             jQueryCalendar('#calendar').fullCalendar( 'renderEvent', newEvent );
+			
 			
 			dialogCreateEvent.dialog( "close" );
              $("#newevent-description").css("height", "2px");
