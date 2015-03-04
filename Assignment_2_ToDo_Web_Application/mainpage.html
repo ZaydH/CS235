@@ -419,7 +419,7 @@
             
             var colorDropdown = document.getElementById("newevent-color");
 			var selectedColor = colorDropdown.options[colorDropdown.selectedIndex].value;
-			alert("Selected Color: " + selectedColor);
+			//alert("Selected Color: " + selectedColor);
             if(selectedColor == "Work"){
             	newEvent.color = '#940721';
             }
@@ -427,7 +427,7 @@
             	newEvent.color = '#0F8534';
             }
             else{
-            	newEvent.color = '#3193c0';
+            	newEvent.color = '#2B80A7';
             }
             jQueryCalendar('#calendar').fullCalendar( 'renderEvent', newEvent );
 			
@@ -1000,7 +1000,7 @@
                     <td><select id="newevent-color" name="newevent-color" style="width:100%;">
                         <option value="Work" style="background-color: #940721; color: #FFFFFF;">Work</option>
                         <option value="Personal" style="background-color: #0F8534; color: #FFFFFF;">Personal</option>
-                        <option value="Miscellaneous" style="background-color: #3193c0; color: #FFFFFF;">Miscellaneous</option>
+                        <option value="Miscellaneous" style="background-color: #2B80A7; color: #FFFFFF;">Miscellaneous</option>
                         </select>
                     </td>
 				</tr>
