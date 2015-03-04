@@ -571,11 +571,13 @@
 		//---- This form confirms whether the user wants to actually exit.
 		dialogEventDetails = jQueryModalDialog( "#event-details" ).dialog({
 			autoOpen: false,
-			height: 225,
-			width: 320,
+			height: 270,
+			width: 350,
 			resizable: false,
 			modal: true,
 			buttons: {
+				"Edit" : allowEditEvent,
+				"Delete" : deleteEvent
 			},
 			open: function() {
             $('.ui-widget-overlay').bind('click', function() {
@@ -599,7 +601,14 @@
 			dialogCompletedClose.dialog( "close" );
 			dialogTaskCompleted.dialog( "open" );
 		}
-		
+		//----- Edit event : Display event with editable fields
+		function allowEditEvent(){
+			//Not defined yet
+		}
+		//----- Delete currently selected Event
+		function deleteEvent(){
+			//Not defined yet
+		}
 		
 		//---- This function checks if you actually want to mark the task completed.
 		dialogVerifyCompletion = jQueryModalDialog( "#confirm-completion" ).dialog({
