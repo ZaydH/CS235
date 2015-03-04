@@ -247,7 +247,10 @@
         	var d = new Date();
         	var strDate = ("0" + (d.getMonth()+1)).slice(-2) + "/" + ("0" + d.getDate()).slice(-2) + "/" + d.getFullYear(); //---- Ensure the date is two digit.
         	$('#datepicker-calendar').val(strDate);
+        	
 			jQueryLoader("#btn-create-event").trigger("click");
+			
+			document.getElementById("newevent-color").selectedIndex = "0";
         }
 
         function createCalendarEventFromDay(){
