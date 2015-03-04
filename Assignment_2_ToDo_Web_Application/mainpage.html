@@ -123,6 +123,12 @@
 			        var datePickerString = ("0" + splitClickedDate[1]).slice(-2) + "/" + ("0" + splitClickedDate[2]).slice(-2) + "/" + splitClickedDate[0]; //---- Ensure the date is two digit.
 			        $('#datepicker-calendar').val(datePickerString);
 			        
+			        //---- If a time was used, specify the time in the click
+			        if(splitClickedDateOnT.length > 1){
+			        	var splitTime = splitClickedDateOnT[1].split(":");
+			        	clickedTime = ("0" + splitTime[0]).slice(-2) + ":" + ("0" + splitTime[1]).slice(-2);
+			        }
+			        
 			        createCalendarEventFromDay();
 
 
@@ -238,6 +244,7 @@
 	<script type="text/javascript">
 	
 		var lastCheckBox;
+		var clickedTime = "";
 	
         function OnChangeCheckbox (checkbox) {
 
@@ -729,10 +736,17 @@
             $("#newtask-description").css("height", "26px");
             $("#newevent-description").css("height", "26px");
             
-             // set default time as current time
-	        var d = new Date();
-			var time = ("0" + d.getHours()).slice(-2) + ":" + ("0" + d.getMinutes()).slice(-2);
-	        $('#singleinput-calendar').val(time);
+            // set default time as current time
+            
+            if(clickedTime == ""){
+	        	var d = new Date();
+				var time = ("0" + d.getHours()).slice(-2) + ":" + ("0" + d.getMinutes()).slice(-2);
+	        	$('#singleinput-calendar').val(time);
+	        }
+	        else{
+	        	$('#singleinput-calendar').val(clickedTime);
+	        	clickedTime = "";
+	        }
              //Reset the star rating
              $('#priority6 .rating-cancel').click();
             dialogCreateTask.dialog( "close" );
