@@ -421,13 +421,13 @@
 			var selectedColor = colorDropdown.options[colorDropdown.selectedIndex].value;
 			alert("Selected Color: " + selectedColor);
             if(selectedColor == "Work"){
-            	newEvent.eventColor = '#940721';
+            	newEvent.color = '#940721';
             }
             else if(selectedColor == "Personal"){
-            	newEvent.eventColor = '#0F8534';
+            	newEvent.color = '#0F8534';
             }
             else{
-            	newEvent.eventColor = '#558CBF';
+            	newEvent.color = '#3193c0';
             }
             jQueryCalendar('#calendar').fullCalendar( 'renderEvent', newEvent );
 			
@@ -998,9 +998,9 @@
                 <tr style="height:30px;">
 					<td>Calendar Color:<span class="asterisk_input"> </span></td>
                     <td><select id="newevent-color" name="newevent-color" style="width:100%;">
-                        <option value="Work" style="background-color: #940721">Work</option>
+                        <option value="Work" style="background-color: #940721; color: #FFFFFF;">Work</option>
                         <option value="Personal" style="background-color: #0F8534; color: #FFFFFF;">Personal</option>
-                        <option value="Miscellaneous" style="background-color: #558CBF; color: #FFFFFF;">Miscellaneous</option>
+                        <option value="Miscellaneous" style="background-color: #3193c0; color: #FFFFFF;">Miscellaneous</option>
                         </select>
                     </td>
 				</tr>
