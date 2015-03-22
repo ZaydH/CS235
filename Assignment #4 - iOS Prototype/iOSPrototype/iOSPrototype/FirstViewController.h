@@ -7,8 +7,24 @@
 //
 
 #import <UIKit/UIKit.h>
+#import  "QuartzCore/QuartzCore.h"
 
-@interface FirstViewController : UIViewController
+#import "JTCalendar.h"
+
+@interface FirstViewController : UIViewController<JTCalendarDataSource,UITableViewDataSource,UITableViewDelegate>
+{
+    NSString *selectedKey;
+}
+
+@property (weak, nonatomic) IBOutlet JTCalendarMenuView *calendarMenuView;
+@property (weak, nonatomic) IBOutlet JTCalendarContentView *calendarContentView;
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *calendarContentViewHeight;
+
+@property (strong, nonatomic) JTCalendar *calendar;
+
+@property (strong, nonatomic) IBOutlet UITableView *tableFields;
+
 
 
 @end
