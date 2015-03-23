@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UITableViewCell"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="expandingCell" rowHeight="281" id="8l5-yC-zzf" customClass="ExpandingCell">
+            <rect key="frame" x="0.0" y="0.0" width="380" height="44"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8l5-yC-zzf" id="TEE-oZ-yr9">
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Task Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rP4-s8-Z5N">
+                        <rect key="frame" x="8" y="15" width="274" height="23"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" editable="NO" text="Task info" translatesAutoresizingMaskIntoConstraints="NO" id="egi-VT-sXW">
+                        <rect key="frame" x="8" y="47" width="364" height="62"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    </textView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Due Date:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wkV-az-wZU">
+                        <rect key="frame" x="13" y="118" width="66" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Task Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ULa-Iv-qVs">
+                        <rect key="frame" x="87" y="119" width="285" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Rating:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OdD-7u-xom">
+                        <rect key="frame" x="13" y="147" width="46" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Task Rating" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8IZ-cq-ZiB">
+                        <rect key="frame" x="67" y="149" width="305" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fin-2j-eed">
+                        <rect key="frame" x="350" y="15" width="22" height="22"/>
+                        <state key="normal">
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Fin-2j-eed" firstAttribute="trailing" secondItem="TEE-oZ-yr9" secondAttribute="trailingMargin" id="4br-Cf-GZ5"/>
+                    <constraint firstItem="ULa-Iv-qVs" firstAttribute="leading" secondItem="wkV-az-wZU" secondAttribute="trailing" constant="8" id="FQN-ZO-0fB"/>
+                    <constraint firstItem="ULa-Iv-qVs" firstAttribute="trailing" secondItem="TEE-oZ-yr9" secondAttribute="trailingMargin" id="MoB-iU-7tu"/>
+                    <constraint firstItem="egi-VT-sXW" firstAttribute="leading" secondItem="TEE-oZ-yr9" secondAttribute="leadingMargin" id="OWg-Fb-WYD"/>
+                    <constraint firstItem="8IZ-cq-ZiB" firstAttribute="leading" secondItem="OdD-7u-xom" secondAttribute="trailing" constant="8" id="YhC-4Z-738"/>
+                    <constraint firstItem="OdD-7u-xom" firstAttribute="leading" secondItem="TEE-oZ-yr9" secondAttribute="leadingMargin" constant="5" id="ZVd-Tc-VEc"/>
+                    <constraint firstItem="egi-VT-sXW" firstAttribute="trailing" secondItem="TEE-oZ-yr9" secondAttribute="trailingMargin" id="a2u-I6-9Po"/>
+                    <constraint firstItem="wkV-az-wZU" firstAttribute="leading" secondItem="TEE-oZ-yr9" secondAttribute="leadingMargin" constant="5" id="aKL-xQ-cL5"/>
+                    <constraint firstItem="ULa-Iv-qVs" firstAttribute="leading" secondItem="wkV-az-wZU" secondAttribute="trailing" constant="8" id="e78-4G-CNf"/>
+                    <constraint firstItem="rP4-s8-Z5N" firstAttribute="leading" secondItem="TEE-oZ-yr9" secondAttribute="leadingMargin" id="jZD-0Z-QUt"/>
+                    <constraint firstItem="8IZ-cq-ZiB" firstAttribute="trailing" secondItem="TEE-oZ-yr9" secondAttribute="trailingMargin" id="zdh-Vc-RdT"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="dueDate" destination="ULa-Iv-qVs" id="d9F-SO-cD4"/>
+                <outlet property="dueDateTitle" destination="wkV-az-wZU" id="82W-ub-7Qw"/>
+                <outlet property="plusMinusButton" destination="Fin-2j-eed" id="R3b-6p-Hpz"/>
+                <outlet property="rating" destination="8IZ-cq-ZiB" id="DB4-oe-0EP"/>
+                <outlet property="ratingTitle" destination="OdD-7u-xom" id="Afa-ee-4Pm"/>
+                <outlet property="taskDetails" destination="egi-VT-sXW" id="fmn-kj-Bi9"/>
+                <outlet property="taskLabel" destination="rP4-s8-Z5N" id="K2h-aS-1a4"/>
+            </connections>
+            <point key="canvasLocation" x="320" y="345"/>
+        </tableViewCell>
+    </objects>
+</document>

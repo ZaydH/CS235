@@ -7,8 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ExpandingCell.h"
 
-@interface SecondViewController : UIViewController
+@interface SecondViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
+{
+    int selectedIndex;
+}
+
+@property (strong, nonatomic) IBOutlet UITableView *tableFields;
 
 
 @end

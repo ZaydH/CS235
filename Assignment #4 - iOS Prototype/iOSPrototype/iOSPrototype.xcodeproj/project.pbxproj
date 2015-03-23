@@ -26,6 +26,8 @@
 		4CEF3F321ABF5769000052D2 /* JTCalendarMonthWeekDaysView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEF3F241ABF5769000052D2 /* JTCalendarMonthWeekDaysView.m */; };
 		4CEF3F331ABF5769000052D2 /* JTCalendarWeekView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEF3F271ABF5769000052D2 /* JTCalendarWeekView.m */; };
 		4CEF3F341ABF5769000052D2 /* JTCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEF3F291ABF5769000052D2 /* JTCircleView.m */; };
+		4CEF3F391ABF8B89000052D2 /* ExpandingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CEF3F381ABF8B89000052D2 /* ExpandingCell.xib */; };
+		4CEF3F3C1ABF8D3C000052D2 /* ExpandingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEF3F3B1ABF8D3C000052D2 /* ExpandingCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +79,9 @@
 		4CEF3F271ABF5769000052D2 /* JTCalendarWeekView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTCalendarWeekView.m; sourceTree = "<group>"; };
 		4CEF3F281ABF5769000052D2 /* JTCircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTCircleView.h; sourceTree = "<group>"; };
 		4CEF3F291ABF5769000052D2 /* JTCircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTCircleView.m; sourceTree = "<group>"; };
+		4CEF3F381ABF8B89000052D2 /* ExpandingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExpandingCell.xib; sourceTree = "<group>"; };
+		4CEF3F3A1ABF8D3C000052D2 /* ExpandingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpandingCell.h; sourceTree = "<group>"; };
+		4CEF3F3B1ABF8D3C000052D2 /* ExpandingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpandingCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +123,7 @@
 		4CEF3EE81ABF53F7000052D2 /* iOSPrototype */ = {
 			isa = PBXGroup;
 			children = (
+				4CEF3F371ABF8B72000052D2 /* ExapandingCell */,
 				4CEF3F121ABF5769000052D2 /* JTCalendar */,
 				4CEF3EED1ABF53F7000052D2 /* AppDelegate.h */,
 				4CEF3EEE1ABF53F7000052D2 /* AppDelegate.m */,
@@ -187,6 +193,16 @@
 				4CEF3F291ABF5769000052D2 /* JTCircleView.m */,
 			);
 			path = JTCalendar;
+			sourceTree = "<group>";
+		};
+		4CEF3F371ABF8B72000052D2 /* ExapandingCell */ = {
+			isa = PBXGroup;
+			children = (
+				4CEF3F381ABF8B89000052D2 /* ExpandingCell.xib */,
+				4CEF3F3A1ABF8D3C000052D2 /* ExpandingCell.h */,
+				4CEF3F3B1ABF8D3C000052D2 /* ExpandingCell.m */,
+			);
+			name = ExapandingCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -269,6 +285,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CEF3F391ABF8B89000052D2 /* ExpandingCell.xib in Resources */,
 				4CEF3EF81ABF53F7000052D2 /* Main.storyboard in Resources */,
 				4CEF3EFD1ABF53F7000052D2 /* LaunchScreen.xib in Resources */,
 				4CEF3EFA1ABF53F7000052D2 /* Images.xcassets in Resources */,
@@ -299,6 +316,7 @@
 				4CEF3F331ABF5769000052D2 /* JTCalendarWeekView.m in Sources */,
 				4CEF3F2F1ABF5769000052D2 /* JTCalendarMenuMonthView.m in Sources */,
 				4CEF3EF21ABF53F7000052D2 /* FirstViewController.m in Sources */,
+				4CEF3F3C1ABF8D3C000052D2 /* ExpandingCell.m in Sources */,
 				4CEF3EEC1ABF53F7000052D2 /* main.m in Sources */,
 				4CEF3F2B1ABF5769000052D2 /* JTCalendarAppearance.m in Sources */,
 				4CEF3F2D1ABF5769000052D2 /* JTCalendarDataCache.m in Sources */,
