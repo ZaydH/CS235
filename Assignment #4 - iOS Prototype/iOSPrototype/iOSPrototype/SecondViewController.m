@@ -28,7 +28,7 @@
     taskArray = [NSMutableArray arrayWithObjects:[NSMutableArray arrayWithObjects: @"Take out the trash",@"Take the trash out before the trash collector comes on Monday", @"03/22/2015", @"", @"4", nil],
                  [NSMutableArray arrayWithObjects: @"Mow the Lawn",@"Need to get the lawnmower and mow both the front and back yard. Steve will mow the side yard", @"04/01/2015", @"", @"3", nil],
                  [NSMutableArray arrayWithObjects: @" Go to the store to get cat food",@"Running out of cat food at home so go to Petco to get some wet (Fancy Feast) and dry (Purina One) cat food", @"03/22/2015", @"", @"2", nil],
-                 [NSMutableArray arrayWithObjects: @"Call Comcast",@"", @"", @"", @"", nil], [NSMutableArray arrayWithObjects: @"",@"", @"", @"", @"", nil], nil];
+                 [NSMutableArray arrayWithObjects: @"Call Comcast",@"", @"", @"", @"", nil],[NSMutableArray arrayWithObjects: @"",@"", @"", @"", @"", nil],nil];
 
 }
 
@@ -177,8 +177,12 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         //add code here for when you hit delete
+        
+        selectedIndex=-1;
+        
         [taskArray removeObjectAtIndex:indexPath.row];
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        
     }
 }
 
