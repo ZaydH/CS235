@@ -18,4 +18,6 @@
 
 @property (strong, nonatomic) IBOutlet UITextField *priorityTextField;
 
+-(IBAction) clickCreateTask:(id) sender;
+
 @end

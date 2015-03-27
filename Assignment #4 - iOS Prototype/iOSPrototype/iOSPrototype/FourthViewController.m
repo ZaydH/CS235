@@ -49,6 +49,23 @@
     [self.view endEditing:YES];
 }
 
+
+-(IBAction) clickCreateTask:(id) sender
+{
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    
+    NSMutableArray *tmp=[NSMutableArray arrayWithArray:[userDefaults objectForKey:@"taskArray"]];
+    
+    NSMutableArray *tmp2=tmp[tmp.count-1];
+    tmp[tmp.count-1]=[NSMutableArray arrayWithObjects: @"Test 1",@"", @"", @"", @"", nil];
+    [tmp addObject:tmp2];
+    
+    // Save your (updated) bookmarks
+    [userDefaults setObject:tmp forKey:@"taskArray"];
+    [userDefaults synchronize];
+    
+}
+
 /*
 #pragma mark - Navigation
 

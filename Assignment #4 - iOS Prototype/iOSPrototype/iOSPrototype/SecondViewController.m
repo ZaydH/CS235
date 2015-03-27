@@ -29,7 +29,26 @@
                  [NSMutableArray arrayWithObjects: @"Mow the Lawn",@"Need to get the lawnmower and mow both the front and back yard. Steve will mow the side yard", @"04/01/2015", @"", @"3", nil],
                  [NSMutableArray arrayWithObjects: @" Go to the store to get cat food",@"Running out of cat food at home so go to Petco to get some wet (Fancy Feast) and dry (Purina One) cat food", @"03/22/2015", @"", @"2", nil],
                  [NSMutableArray arrayWithObjects: @"Call Comcast",@"", @"", @"", @"", nil],[NSMutableArray arrayWithObjects: @"",@"", @"", @"", @"", nil],nil];
+    
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    
+    // Save your (updated) bookmarks
+    [userDefaults setObject:taskArray forKey:@"taskArray"];
+    [userDefaults synchronize];
+    
+    [[NSUserDefaults standardUserDefaults] addObserver:self
+                                            forKeyPath:@"taskArray" options:NSKeyValueObservingOptionNew
+                                               context:NULL];
 
+}
+
+// KVO handler
+-(void)observeValueForKeyPath:(NSString *)aKeyPath ofObject:(id)anObject
+                       change:(NSDictionary *)aChange context:(void *)aContext
+{
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    taskArray=[userDefaults objectForKey:@"taskArray"];
+    [_tableFields reloadData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -76,6 +95,12 @@
         cell.selectionStyle=UITableViewCellSelectionStyleNone;
         cell.taskLabel.hidden=YES;
         cell.plusMinusButton.hidden=YES;
+    }
+    else
+    {
+        cell.selectionStyle=UITableViewCellSelectionStyleDefault;
+        cell.taskLabel.hidden=NO;
+        cell.plusMinusButton.hidden=NO;
     }
 
     if (selectedIndex == indexPath.row)

@@ -24,4 +24,6 @@
 
 @property (strong, nonatomic) IBOutlet UITextField *priorityTextField;
 
+-(IBAction) clickCreateAppointment:(id) sender;
+
 @end

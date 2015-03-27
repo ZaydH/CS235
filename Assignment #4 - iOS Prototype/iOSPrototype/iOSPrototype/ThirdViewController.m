@@ -65,6 +65,27 @@
     [self.view endEditing:YES];
 }
 
+-(IBAction) clickCreateAppointment:(id) sender
+{
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    
+    NSMutableDictionary *tmp=[NSMutableDictionary dictionaryWithDictionary:[userDefaults objectForKey:@"eventsByDate"]];
+    
+    if(!tmp[@"26-03-2015"]){
+        tmp[@"26-03-2015"] = [NSMutableArray new];
+    }
+    NSMutableArray *tmp2=[NSMutableArray arrayWithArray:tmp[@"26-03-2015"]];
+    [tmp2 addObject:@"2015-03-27 06:45:20 +4444"];
+//    [tmp2 addObject:@"2015-03-27 06:45:20 +5555"];
+//    [tmp2 addObject:@"2015-03-27 06:45:20 +6666"];
+    tmp[@"26-03-2015"] = tmp2;
+    
+    // Save your (updated) bookmarks
+    [userDefaults setObject:tmp forKey:@"eventsByDate"];
+    [userDefaults synchronize];
+    
+}
+
 /*
 #pragma mark - Navigation
 
