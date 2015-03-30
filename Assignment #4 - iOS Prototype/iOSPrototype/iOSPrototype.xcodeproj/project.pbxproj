@@ -28,6 +28,9 @@
 		4CEF3F341ABF5769000052D2 /* JTCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEF3F291ABF5769000052D2 /* JTCircleView.m */; };
 		4CEF3F391ABF8B89000052D2 /* ExpandingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CEF3F381ABF8B89000052D2 /* ExpandingCell.xib */; };
 		4CEF3F3C1ABF8D3C000052D2 /* ExpandingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEF3F3B1ABF8D3C000052D2 /* ExpandingCell.m */; };
+		4CEF3F3F1ABFC229000052D2 /* ThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEF3F3E1ABFC229000052D2 /* ThirdViewController.m */; };
+		4CEF3F421ABFC2A6000052D2 /* FourthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEF3F411ABFC2A6000052D2 /* FourthViewController.m */; };
+		4CEF3F451ABFC2B5000052D2 /* FifthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEF3F441ABFC2B5000052D2 /* FifthViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +85,12 @@
 		4CEF3F381ABF8B89000052D2 /* ExpandingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExpandingCell.xib; sourceTree = "<group>"; };
 		4CEF3F3A1ABF8D3C000052D2 /* ExpandingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpandingCell.h; sourceTree = "<group>"; };
 		4CEF3F3B1ABF8D3C000052D2 /* ExpandingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpandingCell.m; sourceTree = "<group>"; };
+		4CEF3F3D1ABFC229000052D2 /* ThirdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdViewController.h; sourceTree = "<group>"; };
+		4CEF3F3E1ABFC229000052D2 /* ThirdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdViewController.m; sourceTree = "<group>"; };
+		4CEF3F401ABFC2A6000052D2 /* FourthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FourthViewController.h; sourceTree = "<group>"; };
+		4CEF3F411ABFC2A6000052D2 /* FourthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FourthViewController.m; sourceTree = "<group>"; };
+		4CEF3F431ABFC2B5000052D2 /* FifthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FifthViewController.h; sourceTree = "<group>"; };
+		4CEF3F441ABFC2B5000052D2 /* FifthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FifthViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +140,12 @@
 				4CEF3EF11ABF53F7000052D2 /* FirstViewController.m */,
 				4CEF3EF31ABF53F7000052D2 /* SecondViewController.h */,
 				4CEF3EF41ABF53F7000052D2 /* SecondViewController.m */,
+				4CEF3F3D1ABFC229000052D2 /* ThirdViewController.h */,
+				4CEF3F3E1ABFC229000052D2 /* ThirdViewController.m */,
+				4CEF3F401ABFC2A6000052D2 /* FourthViewController.h */,
+				4CEF3F411ABFC2A6000052D2 /* FourthViewController.m */,
+				4CEF3F431ABFC2B5000052D2 /* FifthViewController.h */,
+				4CEF3F441ABFC2B5000052D2 /* FifthViewController.m */,
 				4CEF3EF61ABF53F7000052D2 /* Main.storyboard */,
 				4CEF3EF91ABF53F7000052D2 /* Images.xcassets */,
 				4CEF3EFB1ABF53F7000052D2 /* LaunchScreen.xib */,
@@ -310,9 +325,12 @@
 				4CEF3F311ABF5769000052D2 /* JTCalendarMonthView.m in Sources */,
 				4CEF3F321ABF5769000052D2 /* JTCalendarMonthWeekDaysView.m in Sources */,
 				4CEF3EF51ABF53F7000052D2 /* SecondViewController.m in Sources */,
+				4CEF3F451ABFC2B5000052D2 /* FifthViewController.m in Sources */,
 				4CEF3F341ABF5769000052D2 /* JTCircleView.m in Sources */,
 				4CEF3EEF1ABF53F7000052D2 /* AppDelegate.m in Sources */,
+				4CEF3F421ABFC2A6000052D2 /* FourthViewController.m in Sources */,
 				4CEF3F2E1ABF5769000052D2 /* JTCalendarDayView.m in Sources */,
+				4CEF3F3F1ABFC229000052D2 /* ThirdViewController.m in Sources */,
 				4CEF3F331ABF5769000052D2 /* JTCalendarWeekView.m in Sources */,
 				4CEF3F2F1ABF5769000052D2 /* JTCalendarMenuMonthView.m in Sources */,
 				4CEF3EF21ABF53F7000052D2 /* FirstViewController.m in Sources */,
@@ -514,6 +532,7 @@
 				4CEF3F0E1ABF53F7000052D2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4CEF3F0F1ABF53F7000052D2 /* Build configuration list for PBXNativeTarget "iOSPrototypeTests" */ = {
 			isa = XCConfigurationList;
@@ -522,6 +541,7 @@
 				4CEF3F111ABF53F7000052D2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

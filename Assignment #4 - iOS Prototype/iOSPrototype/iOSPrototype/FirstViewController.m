@@ -197,6 +197,35 @@
         
         [eventsByDate[key] addObject:randomDate];
     }
+    
+    
+    if(!eventsByDate[@"26-03-2015"]){
+        eventsByDate[@"26-03-2015"] = [NSMutableArray new];
+    }
+    [eventsByDate[@"26-03-2015"] addObject:@"2015-03-27 06:45:20 +1111"];
+//    [eventsByDate[@"26-03-2015"] addObject:@"2015-03-27 06:45:20 +2222"];
+//    [eventsByDate[@"26-03-2015"] addObject:@"2015-03-27 06:45:20 +3333"];
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    
+    // Save your (updated) bookmarks
+    [userDefaults setObject:eventsByDate forKey:@"eventsByDate"];
+    [userDefaults synchronize];
+    
+    [[NSUserDefaults standardUserDefaults] addObserver:self
+                                            forKeyPath:@"eventsByDate" options:NSKeyValueObservingOptionNew
+                                               context:NULL];
+    
+}
+
+
+// KVO handler
+-(void)observeValueForKeyPath:(NSString *)aKeyPath ofObject:(id)anObject
+                       change:(NSDictionary *)aChange context:(void *)aContext
+{
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    eventsByDate=[userDefaults objectForKey:@"eventsByDate"];
+    
+    [_tableFields reloadData];
 }
 
 #pragma mark UITableViewDataSource methods
