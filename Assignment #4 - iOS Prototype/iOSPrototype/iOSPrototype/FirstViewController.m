@@ -38,7 +38,7 @@
     // All modifications on calendarAppearance have to be done before setMenuMonthsView and setContentView
     // Or you will have to call reloadAppearance
     {
-        self.calendar.calendarAppearance.calendar.firstWeekday = 2; // Sunday == 1, Saturday == 7
+        self.calendar.calendarAppearance.calendar.firstWeekday = 1; // Sunday == 1, Saturday == 7 //-- ZSH Switching to standard US default of sunday first.
         self.calendar.calendarAppearance.dayCircleRatio = 9. / 10.;
         self.calendar.calendarAppearance.ratioContentMenu = 2.;
         self.calendar.calendarAppearance.focusSelectedDayChangeMode = YES;
