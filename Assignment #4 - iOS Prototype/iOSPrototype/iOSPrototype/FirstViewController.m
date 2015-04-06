@@ -33,8 +33,8 @@
     
     _tableFields.dataSource=self;
     _tableFields.delegate=self;
-    _tableFields.layer.borderWidth=2.0;
-    _tableFields.layer.borderColor=[UIColor blackColor].CGColor;
+    _tableFields.layer.borderWidth=1;
+    _tableFields.layer.borderColor=[UIColor grayColor].CGColor;
     
     selectedKey = [[self dateFormatter] stringFromDate:[NSDate date]];
     
