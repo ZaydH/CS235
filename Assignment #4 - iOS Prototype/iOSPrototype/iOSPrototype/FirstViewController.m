@@ -11,6 +11,9 @@
 @interface FirstViewController (){
     NSMutableDictionary *eventsByDate;
 }
+@property (weak, nonatomic) IBOutlet UIButton *todayButton;
+
+@property (weak, nonatomic) IBOutlet UIButton *switchViewButton;
 
 @end
 
@@ -30,19 +33,48 @@
     
     _tableFields.dataSource=self;
     _tableFields.delegate=self;
-    _tableFields.layer.borderWidth=2.0;
-    _tableFields.layer.borderColor=[UIColor blackColor].CGColor;
+    _tableFields.layer.borderWidth=1;
+    _tableFields.layer.borderColor=[UIColor grayColor].CGColor;
     
     selectedKey = [[self dateFormatter] stringFromDate:[NSDate date]];
     
     // All modifications on calendarAppearance have to be done before setMenuMonthsView and setContentView
     // Or you will have to call reloadAppearance
     {
-        self.calendar.calendarAppearance.calendar.firstWeekday = 2; // Sunday == 1, Saturday == 7
+        self.calendar.calendarAppearance.calendar.firstWeekday = 1; // Sunday == 1, Saturday == 7 //-- ZSH Switching to standard US default of sunday first.
         self.calendar.calendarAppearance.dayCircleRatio = 9. / 10.;
         self.calendar.calendarAppearance.ratioContentMenu = 2.;
         self.calendar.calendarAppearance.focusSelectedDayChangeMode = YES;
         self.calendar.calendarAppearance.ratioContentMenu = 1;
+        
+        
+        
+        self.todayButton.backgroundColor = [UIColor colorWithRed: 0.0f/255.0f
+                                                           green: 122.0f/255.0f
+                                                            blue: 204.0f/255.0f
+                                                           alpha: 1.0f];
+        self.todayButton.layer.cornerRadius = 4;
+        self.todayButton.titleLabel.textColor = [UIColor whiteColor];
+        self.todayButton.layer.borderWidth = 2;
+        self.todayButton.layer.borderColor = [[UIColor colorWithRed: 200.0f/255.0f
+                                                              green: 200.0f/255.0f
+                                                               blue: 200.0f/255.0f
+                                                              alpha: 1.0f] CGColor];
+        
+        
+        self.switchViewButton.backgroundColor = [UIColor colorWithRed: 0.0f/255.0f
+                                                                green: 122.0f/255.0f
+                                                                 blue: 204.0f/255.0f
+                                                                alpha: 1.0f];
+        self.switchViewButton.layer.cornerRadius = 4;
+        self.switchViewButton.titleLabel.textColor = [UIColor whiteColor];
+        self.switchViewButton.layer.borderWidth = 2;
+        self.switchViewButton.layer.borderColor = [[UIColor colorWithRed: 200.0f/255.0f
+                                                                   green: 200.0f/255.0f
+                                                                    blue: 200.0f/255.0f
+                                                                   alpha: 1.0f] CGColor];
+        
+        
         
         // Customize the text for each month
         self.calendar.calendarAppearance.monthBlock = ^NSString *(NSDate *date, JTCalendar *jt_calendar){
@@ -62,7 +94,8 @@
             
             NSString *monthText = [[dateFormatter standaloneMonthSymbols][currentMonthIndex - 1] capitalizedString];
             
-            return [NSString stringWithFormat:@"%ld\n%@", comps.year, monthText];
+            //return [NSString stringWithFormat:@"%ld\n%@", comps.year, monthText]; /// Removed year by Zayd
+            return [NSString stringWithFormat:@"%@", monthText];
         };
     }
     
@@ -183,6 +216,10 @@
 - (void)createRandomEvents
 {
     eventsByDate = [NSMutableDictionary new];
+    // The array having appointments that will get selected and assigned at random
+    NSArray *appointments = [NSArray arrayWithObjects:@"Happy Hour",@"Homework #3 due",@"Special Class",
+                             @"Meet the accountant",@"Meeting with Team",@"Repeating Event",
+                             @"Dentist appointment",@"CS235 Assignment due",@"Lunch meeting",nil];
     
     for(int i = 0; i < 30; ++i){
         // Generate 30 random dates between now and 60 days later
@@ -191,18 +228,30 @@
         // Use the date as key for eventsByDate
         NSString *key = [[self dateFormatter] stringFromDate:randomDate];
         
+        // Generate a random number to randomly select an appointment
+        NSInteger randomNumber = arc4random() % 6;
+        
         if(!eventsByDate[key]){
             eventsByDate[key] = [NSMutableArray new];
         }
         
-        [eventsByDate[key] addObject:randomDate];
+        
+        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+        [formatter setDateFormat:@"   K:mm a"];
+        
+        //Optionally for time zone conversions
+        [formatter setTimeZone:[NSTimeZone timeZoneWithName:@"PST"]];
+        
+        NSString *stringFromDate = [formatter stringFromDate:randomDate];
+        
+        [eventsByDate[key] addObject:[stringFromDate stringByAppendingString:[@" - " stringByAppendingString:[appointments objectAtIndex:randomNumber]]]];
     }
     
     
-    if(!eventsByDate[@"26-03-2015"]){
-        eventsByDate[@"26-03-2015"] = [NSMutableArray new];
-    }
-    [eventsByDate[@"26-03-2015"] addObject:@"2015-03-27 06:45:20 +1111"];
+    //if(!eventsByDate[@"26-03-2015"]){
+      //  eventsByDate[@"26-03-2015"] = [NSMutableArray new];
+    //}
+    // [eventsByDate[@"26-03-2015"] addObject:@"2015-03-27 06:45:20 +1111"];
 //    [eventsByDate[@"26-03-2015"] addObject:@"2015-03-27 06:45:20 +2222"];
 //    [eventsByDate[@"26-03-2015"] addObject:@"2015-03-27 06:45:20 +3333"];
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
@@ -253,6 +302,7 @@
         cell = [[UITableViewCell alloc]
                 initWithStyle:UITableViewCellStyleDefault reuseIdentifier:AutoCompleteRowIdentifier];
     }
+    
 //    ResturantInfo *tmpInfo=clusterdMarkersInfo[currentNumberOfItemsForTable][indexPath.row];
     UIView *aView = [[UIView alloc] initWithFrame:CGRectMake(0, 0,600,50)];
     UILabel *nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0,aView.frame.size.width-50,aView.frame.size.height/2 )];
