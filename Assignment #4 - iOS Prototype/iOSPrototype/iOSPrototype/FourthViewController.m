@@ -11,6 +11,7 @@
 @interface FourthViewController ()
 
 @property (weak, nonatomic) IBOutlet UIButton *createToDoTaskButton;
+@property (weak, nonatomic) IBOutlet UIView *topRectangeBar;
 
 @end
 

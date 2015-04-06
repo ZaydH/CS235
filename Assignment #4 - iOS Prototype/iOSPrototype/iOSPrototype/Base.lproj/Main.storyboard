@@ -51,7 +51,7 @@
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Quq-Uz-kT0" customClass="JTCalendarMenuView">
                                 <rect key="frame" x="0.0" y="20" width="600" height="50"/>
-                                <color key="backgroundColor" red="0.40000000000000002" green="0.59999999999999998" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.19215686274509802" green="0.57647058823529407" blue="0.75294117647058822" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="3T3-zD-PPR"/>
                                 </constraints>
@@ -161,6 +161,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mrG-9M-DGc">
+                                <rect key="frame" x="0.0" y="20" width="600" height="38"/>
+                                <color key="backgroundColor" red="0.1215686275" green="0.57647058819999997" blue="0.75294117650000003" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Create New Calendar Appointment" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fCA-W3-1mb">
                                 <rect key="frame" x="138" y="28" width="324" height="24"/>
                                 <constraints>
@@ -168,7 +172,7 @@
                                     <constraint firstAttribute="width" constant="324" id="ph0-7P-Guq"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Calendar Color:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DG8-8P-4gJ">
@@ -389,6 +393,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yvm-Mm-TyO">
+                                <rect key="frame" x="0.0" y="20" width="600" height="38"/>
+                                <color key="backgroundColor" red="0.12156862745098039" green="0.57647058823529407" blue="0.75294117647058822" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Create New To-Do Task" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZAz-b3-ksq">
                                 <rect key="frame" x="134" y="28" width="333" height="24"/>
                                 <constraints>
@@ -396,7 +404,7 @@
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="333" id="sY8-XY-2ce"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Due Date:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kwy-eJ-Z3h">
@@ -532,6 +540,7 @@
                         <outlet property="descriptionTextView" destination="S3U-vp-2ni" id="FLy-hk-FlT"/>
                         <outlet property="priorityTextField" destination="9bG-bN-ORb" id="Wg9-D9-gLZ"/>
                         <outlet property="taskNameTextField" destination="vxM-sD-iHW" id="Ed7-oQ-Kj6"/>
+                        <outlet property="topRectangeBar" destination="yvm-Mm-TyO" id="RHU-ac-Gbd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UY3-dn-uDT" userLabel="First Responder" sceneMemberID="firstResponder"/>
