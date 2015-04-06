@@ -183,6 +183,10 @@
 - (void)createRandomEvents
 {
     eventsByDate = [NSMutableDictionary new];
+    // The array having appointments that will get selected and assigned at random
+    NSArray *appointments = [NSArray arrayWithObjects:@"Happy Hour",@"Homework #3 due",@"Special Class",
+                             @"Meet the accountant",@"Meeting with Team",@"Repeating Event",
+                             @"Dentist appointment",@"CS235 Assignment due",@"Lunch meeting",nil];
     
     for(int i = 0; i < 30; ++i){
         // Generate 30 random dates between now and 60 days later
@@ -191,18 +195,30 @@
         // Use the date as key for eventsByDate
         NSString *key = [[self dateFormatter] stringFromDate:randomDate];
         
+        // Generate a random number to randomly select an appointment
+        NSInteger randomNumber = arc4random() % 6;
+        
         if(!eventsByDate[key]){
             eventsByDate[key] = [NSMutableArray new];
         }
         
-        [eventsByDate[key] addObject:randomDate];
+        
+        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+        [formatter setDateFormat:@"kk:mm:ss"];
+        
+        //Optionally for time zone conversions
+        [formatter setTimeZone:[NSTimeZone timeZoneWithName:@"PST"]];
+        
+        NSString *stringFromDate = [formatter stringFromDate:randomDate];
+        
+        [eventsByDate[key] addObject:[stringFromDate stringByAppendingString:[@" - " stringByAppendingString:[appointments objectAtIndex:randomNumber]]]];
     }
     
     
-    if(!eventsByDate[@"26-03-2015"]){
-        eventsByDate[@"26-03-2015"] = [NSMutableArray new];
-    }
-    [eventsByDate[@"26-03-2015"] addObject:@"2015-03-27 06:45:20 +1111"];
+    //if(!eventsByDate[@"26-03-2015"]){
+      //  eventsByDate[@"26-03-2015"] = [NSMutableArray new];
+    //}
+    // [eventsByDate[@"26-03-2015"] addObject:@"2015-03-27 06:45:20 +1111"];
 //    [eventsByDate[@"26-03-2015"] addObject:@"2015-03-27 06:45:20 +2222"];
 //    [eventsByDate[@"26-03-2015"] addObject:@"2015-03-27 06:45:20 +3333"];
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
