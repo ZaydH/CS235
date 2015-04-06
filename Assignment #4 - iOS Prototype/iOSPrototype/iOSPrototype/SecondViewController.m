@@ -105,18 +105,22 @@
 
     if (selectedIndex == indexPath.row)
     {
-        cell.contentView.backgroundColor = [UIColor whiteColor];
+        cell.contentView.backgroundColor = [UIColor colorWithRed: 199.0f/255.0f
+                                                           green: 221.0f/255.0f
+                                                            blue: 238.0f/255.0f
+                                                           alpha: 1.0f];
         cell.taskLabel.textColor = [UIColor blackColor];
+        //cell.taskLabel.backgroundColor = [UIColor whiteColor];
         cell.taskLabel.font = [UIFont fontWithName:@"HelvelticaNeue-Bold" size:16.0];
         cell.taskDetails.textColor = [UIColor blackColor];
         cell.taskDetails.backgroundColor = [UIColor colorWithRed: 199.0f/255.0f
                                                            green: 221.0f/255.0f
                                                             blue: 238.0f/255.0f
                                                            alpha: 1.0f];
-        cell.rating.textColor = [UIColor whiteColor];
-        cell.dueDate.textColor = [UIColor whiteColor];
-        cell.dueDateTitle.textColor = [UIColor whiteColor];
-        cell.ratingTitle.textColor = [UIColor whiteColor];
+        cell.rating.textColor = [UIColor blackColor];
+        cell.dueDate.textColor = [UIColor blackColor];
+        cell.dueDateTitle.textColor = [UIColor blackColor];
+        cell.ratingTitle.textColor = [UIColor blackColor];
         
     }
     else
