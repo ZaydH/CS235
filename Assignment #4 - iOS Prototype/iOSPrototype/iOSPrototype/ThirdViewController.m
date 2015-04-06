@@ -19,6 +19,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    
+    // Set border format for the text view.
     self.descriptionTextView.layer.borderWidth = 0.5f;
     self.descriptionTextView.layer.cornerRadius = 4;
     self.descriptionTextView.layer.borderColor = [[UIColor colorWithRed: 200.0f/255.0f

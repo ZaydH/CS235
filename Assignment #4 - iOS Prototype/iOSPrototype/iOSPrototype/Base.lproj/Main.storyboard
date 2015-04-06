@@ -5,7 +5,7 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--First-->
+        <!--Calendar-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
                 <viewController id="9pv-A4-QxB" customClass="FirstViewController" sceneMemberID="viewController">
@@ -101,7 +101,7 @@
                             <constraint firstItem="Quq-Uz-kT0" firstAttribute="top" secondItem="O9V-iA-3cb" secondAttribute="top" id="zNb-BE-wIP"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="First" image="first" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="Calendar" image="first" id="acW-dT-cKf"/>
                     <connections>
                         <outlet property="calendarContentView" destination="45g-Na-Wnj" id="wQ5-Vm-MLh"/>
                         <outlet property="calendarMenuView" destination="Quq-Uz-kT0" id="ffh-kQ-YXb"/>
@@ -112,7 +112,7 @@
             </objects>
             <point key="canvasLocation" x="710" y="-1576"/>
         </scene>
-        <!--Second-->
+        <!--To-Do List-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
                 <viewController id="8rJ-Kc-sve" customClass="SecondViewController" sceneMemberID="viewController">
@@ -138,7 +138,7 @@
                             <constraint firstItem="883-n3-F4e" firstAttribute="bottom" secondItem="Djb-ko-YwX" secondAttribute="top" id="bsI-KM-fwA"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Second" image="second" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="To-Do List" image="second" id="cPa-gy-q4n"/>
                     <connections>
                         <outlet property="tableFields" destination="883-n3-F4e" id="VCE-BP-CLK"/>
                     </connections>
@@ -147,7 +147,7 @@
             </objects>
             <point key="canvasLocation" x="718" y="-888"/>
         </scene>
-        <!--Third-->
+        <!--Appointment-->
         <scene sceneID="3a2-qt-Rim">
             <objects>
                 <viewController id="nbZ-18-brw" customClass="ThirdViewController" sceneMemberID="viewController">
@@ -358,7 +358,7 @@
                             <constraint firstItem="fCA-W3-1mb" firstAttribute="leading" secondItem="GWD-wO-Wpq" secondAttribute="leading" id="yRH-ND-dIu"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Third" image="second" id="9qv-HT-h71"/>
+                    <tabBarItem key="tabBarItem" title="Appointment" image="second" id="9qv-HT-h71"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="addInviteesTextField" destination="jFP-3c-hJ7" id="oVk-d6-dZM"/>
