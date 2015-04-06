@@ -204,7 +204,7 @@
         
         
         NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-        [formatter setDateFormat:@"K:mm a"];
+        [formatter setDateFormat:@"   K:mm a"];
         
         //Optionally for time zone conversions
         [formatter setTimeZone:[NSTimeZone timeZoneWithName:@"PST"]];
