@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -383,6 +383,7 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="addInviteesTextField" destination="jFP-3c-hJ7" id="oVk-d6-dZM"/>
+                        <outlet property="createAppointmentButton" destination="y6L-1h-lEL" id="My8-Da-oWy"/>
                         <outlet property="dateTextField" destination="3x2-sY-M02" id="i3m-R7-ITf"/>
                         <outlet property="descriptionTextView" destination="cBO-qF-2K9" id="tca-yG-ibZ"/>
                         <outlet property="hourTextField" destination="hNb-qj-Bre" id="0At-Hx-2Vq"/>

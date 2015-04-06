@@ -10,6 +10,8 @@
 
 @interface ThirdViewController ()
 
+@property (weak, nonatomic) IBOutlet UIButton *createAppointmentButton;
+
 @end
 
 @implementation ThirdViewController
@@ -27,6 +29,19 @@
                                                                   green: 200.0f/255.0f
                                                                    blue: 200.0f/255.0f
                                                                   alpha: 1.0f] CGColor];
+    
+    
+    self.createAppointmentButton.backgroundColor = [UIColor colorWithRed: 199.0f/255.0f
+                                                                   green: 221.0f/255.0f
+                                                                    blue: 238.0f/255.0f
+                                                                   alpha: 1.0f];
+    self.createAppointmentButton.layer.cornerRadius = 4;
+    self.createAppointmentButton.titleLabel.textColor = [UIColor blackColor];
+    self.createAppointmentButton.layer.borderWidth = 2;
+    self.createAppointmentButton.layer.borderColor = [[UIColor colorWithRed: 200.0f/255.0f
+                                                                      green: 200.0f/255.0f
+                                                                       blue: 200.0f/255.0f
+                                                                      alpha: 1.0f] CGColor];
     
     
     UIDatePicker *datePicker = [[UIDatePicker alloc] init];
