@@ -309,7 +309,7 @@
     
 //    ResturantInfo *tmpInfo=clusterdMarkersInfo[currentNumberOfItemsForTable][indexPath.row];
     UIView *aView = [[UIView alloc] initWithFrame:CGRectMake(0, 0,600,50)];
-    UILabel *nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0,aView.frame.size.width-50,aView.frame.size.height/2 )];
+    UILabel *nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(60, 15,aView.frame.size.width-60,aView.frame.size.height/2 )];
 //    UILabel *addressLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, aView.frame.size.height/2 ,aView.frame.size.width-50,aView.frame.size.height/2 )];
     nameLabel.text=[NSString stringWithFormat:@"%@",eventsByDate[selectedKey][indexPath.row]];
 //    addressLabel.text=[NSString stringWithFormat:@"%@",tmpInfo.address];
