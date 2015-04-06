@@ -52,6 +52,7 @@
 
 - (void)setCurrentDate:(NSDate *)currentDate
 {
+    // ZSH - DCode responsible for calendar date.
     textLabel.text = self.calendarManager.calendarAppearance.monthBlock(currentDate, self.calendarManager);
 }
 

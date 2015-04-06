@@ -94,7 +94,8 @@
             
             NSString *monthText = [[dateFormatter standaloneMonthSymbols][currentMonthIndex - 1] capitalizedString];
             
-            return [NSString stringWithFormat:@"%ld\n%@", comps.year, monthText];
+            //return [NSString stringWithFormat:@"%ld\n%@", comps.year, monthText]; /// Removed year by Zayd
+            return [NSString stringWithFormat:@"%@", monthText];
         };
     }
     
