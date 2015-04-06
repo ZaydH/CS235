@@ -46,12 +46,28 @@
     
     UIDatePicker *datePicker = [[UIDatePicker alloc] init];
     datePicker.datePickerMode = UIDatePickerModeDate;
+    // Improve the display of the day selection datepicker.
+    datePicker.layer.borderColor = [[UIColor colorWithRed: 200.0f/255.0f
+                                                    green: 200.0f/255.0f
+                                                     blue: 200.0f/255.0f
+                                                    alpha: 1.0f] CGColor];
+    
+    datePicker.layer.borderWidth = 2;
+    datePicker.backgroundColor = [UIColor whiteColor];
     [datePicker addTarget:self action:@selector(updateTextField:)
          forControlEvents:UIControlEventValueChanged];
     [self.dateTextField setInputView:datePicker];
     
     UIDatePicker *datePicker2 = [[UIDatePicker alloc] init];
     datePicker2.datePickerMode = UIDatePickerModeTime;
+    // Improve the display of the time selection datepicker.
+    datePicker2.layer.borderColor = [[UIColor colorWithRed: 200.0f/255.0f
+                                                     green: 200.0f/255.0f
+                                                      blue: 200.0f/255.0f
+                                                     alpha: 1.0f] CGColor];
+    
+    datePicker2.layer.borderWidth = 2;
+    datePicker2.backgroundColor = [UIColor whiteColor];
     [datePicker2 addTarget:self action:@selector(updateTextField2:)
          forControlEvents:UIControlEventValueChanged];
     [self.hourTextField setInputView:datePicker2];

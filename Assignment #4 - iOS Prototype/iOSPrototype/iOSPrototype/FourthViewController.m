@@ -48,6 +48,13 @@
     [datePicker addTarget:self action:@selector(updateTextField:)
          forControlEvents:UIControlEventValueChanged];
     [self.dateTextField setInputView:datePicker];
+    datePicker.layer.borderColor = [[UIColor colorWithRed: 200.0f/255.0f
+                                                    green: 200.0f/255.0f
+                                                     blue: 200.0f/255.0f
+                                                    alpha: 1.0f] CGColor];
+    
+    datePicker.layer.borderWidth = 2;
+    datePicker.backgroundColor = [UIColor whiteColor];
 
 }
 
