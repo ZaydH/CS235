@@ -107,7 +107,9 @@
                     <connections>
                         <outlet property="calendarContentView" destination="45g-Na-Wnj" id="wQ5-Vm-MLh"/>
                         <outlet property="calendarMenuView" destination="Quq-Uz-kT0" id="ffh-kQ-YXb"/>
+                        <outlet property="switchViewButton" destination="Eri-II-deo" id="KYM-MV-7SF"/>
                         <outlet property="tableFields" destination="bGD-QK-sQo" id="IAE-xT-XQj"/>
+                        <outlet property="todayButton" destination="O9V-iA-3cb" id="YkG-de-6Mh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>

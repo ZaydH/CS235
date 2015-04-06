@@ -11,6 +11,9 @@
 @interface FirstViewController (){
     NSMutableDictionary *eventsByDate;
 }
+@property (weak, nonatomic) IBOutlet UIButton *todayButton;
+
+@property (weak, nonatomic) IBOutlet UIButton *switchViewButton;
 
 @end
 
@@ -43,6 +46,35 @@
         self.calendar.calendarAppearance.ratioContentMenu = 2.;
         self.calendar.calendarAppearance.focusSelectedDayChangeMode = YES;
         self.calendar.calendarAppearance.ratioContentMenu = 1;
+        
+        
+        
+        self.todayButton.backgroundColor = [UIColor colorWithRed: 0.0f/255.0f
+                                                           green: 122.0f/255.0f
+                                                            blue: 204.0f/255.0f
+                                                           alpha: 1.0f];
+        self.todayButton.layer.cornerRadius = 4;
+        self.todayButton.titleLabel.textColor = [UIColor whiteColor];
+        self.todayButton.layer.borderWidth = 2;
+        self.todayButton.layer.borderColor = [[UIColor colorWithRed: 200.0f/255.0f
+                                                              green: 200.0f/255.0f
+                                                               blue: 200.0f/255.0f
+                                                              alpha: 1.0f] CGColor];
+        
+        
+        self.switchViewButton.backgroundColor = [UIColor colorWithRed: 0.0f/255.0f
+                                                                green: 122.0f/255.0f
+                                                                 blue: 204.0f/255.0f
+                                                                alpha: 1.0f];
+        self.switchViewButton.layer.cornerRadius = 4;
+        self.switchViewButton.titleLabel.textColor = [UIColor whiteColor];
+        self.switchViewButton.layer.borderWidth = 2;
+        self.switchViewButton.layer.borderColor = [[UIColor colorWithRed: 200.0f/255.0f
+                                                                   green: 200.0f/255.0f
+                                                                    blue: 200.0f/255.0f
+                                                                   alpha: 1.0f] CGColor];
+        
+        
         
         // Customize the text for each month
         self.calendar.calendarAppearance.monthBlock = ^NSString *(NSDate *date, JTCalendar *jt_calendar){
