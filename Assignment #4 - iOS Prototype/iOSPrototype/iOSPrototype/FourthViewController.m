@@ -20,6 +20,13 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    self.descriptionTextView.layer.borderWidth = 0.5f;
+    self.descriptionTextView.layer.cornerRadius = 7;
+    self.descriptionTextView.layer.borderColor = [[UIColor colorWithRed: 200.0f/255.0f
+                                                                  green: 200.0f/255.0f
+                                                                   blue: 200.0f/255.0f
+                                                                  alpha: 1.0f] CGColor];
+    
     UIDatePicker *datePicker = [[UIDatePicker alloc] init];
     datePicker.datePickerMode = UIDatePickerModeDate;
     [datePicker addTarget:self action:@selector(updateTextField:)
