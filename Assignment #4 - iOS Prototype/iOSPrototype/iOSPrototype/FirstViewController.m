@@ -204,7 +204,7 @@
         
         
         NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-        [formatter setDateFormat:@"KK:mm a"];
+        [formatter setDateFormat:@"K:mm a"];
         
         //Optionally for time zone conversions
         [formatter setTimeZone:[NSTimeZone timeZoneWithName:@"PST"]];
@@ -269,6 +269,7 @@
         cell = [[UITableViewCell alloc]
                 initWithStyle:UITableViewCellStyleDefault reuseIdentifier:AutoCompleteRowIdentifier];
     }
+    
 //    ResturantInfo *tmpInfo=clusterdMarkersInfo[currentNumberOfItemsForTable][indexPath.row];
     UIView *aView = [[UIView alloc] initWithFrame:CGRectMake(0, 0,600,50)];
     UILabel *nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0,aView.frame.size.width-50,aView.frame.size.height/2 )];
