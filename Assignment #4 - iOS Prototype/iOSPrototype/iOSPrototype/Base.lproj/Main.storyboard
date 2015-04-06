@@ -478,7 +478,7 @@
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7s1-fh-s8B">
                                 <rect key="frame" x="237" y="365" width="127" height="30"/>
-                                <state key="normal" title="Create Do-To Task">
+                                <state key="normal" title="Create To-Do Task">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -545,8 +545,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This feature will be added in future vesrions" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="vhM-q0-Thh">
-                                <rect key="frame" x="171" y="232" width="258" height="135"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="This feature will be supported in a future version" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="vhM-q0-Thh">
+                                <rect key="frame" x="35" y="232" width="530" height="135"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="135" id="GlW-pL-czP"/>
                                     <constraint firstAttribute="width" constant="258" id="djq-GB-CAS"/>
