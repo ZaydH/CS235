@@ -10,6 +10,8 @@
 
 @interface FourthViewController ()
 
+@property (weak, nonatomic) IBOutlet UIButton *createToDoTaskButton;
+
 @end
 
 @implementation FourthViewController
@@ -26,6 +28,19 @@
                                                                   green: 200.0f/255.0f
                                                                    blue: 200.0f/255.0f
                                                                   alpha: 1.0f] CGColor];
+    
+    self.createToDoTaskButton.backgroundColor = [UIColor colorWithRed: 199.0f/255.0f
+                                                                green: 221.0f/255.0f
+                                                                 blue: 238.0f/255.0f
+                                                                alpha: 1.0f];
+    self.createToDoTaskButton.layer.cornerRadius = 4;
+    self.createToDoTaskButton.titleLabel.textColor = [UIColor blackColor];
+    self.createToDoTaskButton.layer.borderWidth = 2;
+    self.createToDoTaskButton.layer.borderColor = [[UIColor colorWithRed: 200.0f/255.0f
+                                                                   green: 200.0f/255.0f
+                                                                    blue: 200.0f/255.0f
+                                                                   alpha: 1.0f] CGColor];
+    
     
     UIDatePicker *datePicker = [[UIDatePicker alloc] init];
     datePicker.datePickerMode = UIDatePickerModeDate;
