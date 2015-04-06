@@ -25,9 +25,9 @@
     
     selectedIndex=-1;
     
-    taskArray = [NSMutableArray arrayWithObjects:[NSMutableArray arrayWithObjects: @"Take out the trash",@"Take the trash out before the trash collector comes on Monday", @"03/22/2015", @"", @"4", nil],
+    taskArray = [NSMutableArray arrayWithObjects:[NSMutableArray arrayWithObjects: @"Take out the Trash",@"Take the trash out before the trash collector comes on Monday", @"03/22/2015", @"", @"4", nil],
                  [NSMutableArray arrayWithObjects: @"Mow the Lawn",@"Need to get the lawnmower and mow both the front and back yard. Steve will mow the side yard", @"04/01/2015", @"", @"3", nil],
-                 [NSMutableArray arrayWithObjects: @"Go to the store to get cat food",@"Running out of cat food at home so go to Petco to get some wet (Fancy Feast) and dry (Purina One) cat food", @"03/22/2015", @"", @"2", nil],
+                 [NSMutableArray arrayWithObjects: @"Go to the Store to get Cat Food",@"Running out of cat food at home so go to Petco to get some wet (Fancy Feast) and dry (Purina One) cat food", @"03/22/2015", @"", @"2", nil],
                  [NSMutableArray arrayWithObjects: @"Call Comcast",@"Cancel cable TB but make sure they do not cancel the internet too.", @"", @"", @"", nil],[NSMutableArray arrayWithObjects: @"",@"", @"", @"", @"", nil],nil];
     
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
@@ -111,7 +111,7 @@
                                                            alpha: 1.0f];
         cell.taskLabel.textColor = [UIColor blackColor];
         //cell.taskLabel.backgroundColor = [UIColor whiteColor];
-        cell.taskLabel.font = [UIFont fontWithName:@"HelvelticaNeue-Bold" size:16.0];
+        cell.taskLabel.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:16.0];
         cell.taskDetails.textColor = [UIColor blackColor];
         cell.taskDetails.backgroundColor = [UIColor colorWithRed: 199.0f/255.0f
                                                            green: 221.0f/255.0f
