@@ -35,6 +35,7 @@
     _tableFields.delegate=self;
     _tableFields.layer.borderWidth=1;
     _tableFields.layer.borderColor=[UIColor grayColor].CGColor;
+
     
     selectedKey = [[self dateFormatter] stringFromDate:[NSDate date]];
     
@@ -166,9 +167,11 @@
 {
     CGFloat newHeight = 300;
     CGFloat tableNewY = 370;
+    CGFloat tableNewH = 181;
     if(self.calendar.calendarAppearance.isWeekMode){
         newHeight = 75;
         tableNewY=170;
+        tableNewH = 447;
     }
     
     [UIView animateWithDuration:.5
@@ -181,8 +184,9 @@
     
     [UIView animateWithDuration:.5
                      animations:^{
+                         self.tableViewHeight.constant=tableNewH;
                          [_tableFields beginUpdates];
-                         _tableFields.frame=CGRectMake(_tableFields.frame.origin.x, tableNewY, _tableFields.frame.size.width, _tableFields.frame.size.height);
+                         _tableFields.frame=CGRectMake(_tableFields.frame.origin.x, tableNewY, _tableFields.frame.size.width, tableNewH);
                          [_tableFields endUpdates];
                      }];
     
