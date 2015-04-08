@@ -60,7 +60,7 @@
     
     //---- Preload the text field with the date.
     NSDateFormatter *DateFormatter=[[NSDateFormatter alloc] init];
-    [DateFormatter setDateFormat:@"MM/dd/yyyy"];
+    [DateFormatter setDateFormat:@"MMMM d, yyyy"];
     dateTextField.text = [DateFormatter stringFromDate:[NSDate date]];
     
     
@@ -79,7 +79,7 @@
     [self.hourTextField setInputView:datePicker2];
     
     //---- Preload the text field with the time.
-    [DateFormatter setDateFormat:@"HH:mm a"];
+    [DateFormatter setDateFormat:@"H:mm a"];
     hourTextField.text = [DateFormatter stringFromDate:[NSDate date]];
     
     // Do any additional setup after loading the view.
@@ -94,7 +94,7 @@
 {
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateStyle:NSDateFormatterShortStyle];
-    [dateFormatter setDateFormat:@"MM'/'dd'/'yyyy"];
+    [dateFormatter setDateFormat:@"MMMM d, yyyy"];
     NSString *formattedDate = [dateFormatter stringFromDate:sender.date];
     
     self.dateTextField.text = formattedDate;
@@ -104,7 +104,7 @@
 {
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateStyle:NSDateFormatterShortStyle];
-    [dateFormatter setDateFormat:@"hh':'mm a"];
+    [dateFormatter setDateFormat:@"h':'mm a"];
     NSString *formattedDate = [dateFormatter stringFromDate:sender.date];
     
     self.hourTextField.text = formattedDate;
