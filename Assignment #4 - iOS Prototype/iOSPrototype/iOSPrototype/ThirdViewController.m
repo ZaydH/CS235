@@ -58,6 +58,12 @@
          forControlEvents:UIControlEventValueChanged];
     [self.dateTextField setInputView:datePicker];
     
+    //---- Preload the text field with the date.
+    NSDateFormatter *DateFormatter=[[NSDateFormatter alloc] init];
+    [DateFormatter setDateFormat:@"MM/dd/yyyy"];
+    dateTextField.text = [DateFormatter stringFromDate:[NSDate date]];
+    
+    
     UIDatePicker *datePicker2 = [[UIDatePicker alloc] init];
     datePicker2.datePickerMode = UIDatePickerModeTime;
     // Improve the display of the time selection datepicker.
@@ -71,6 +77,10 @@
     [datePicker2 addTarget:self action:@selector(updateTextField2:)
          forControlEvents:UIControlEventValueChanged];
     [self.hourTextField setInputView:datePicker2];
+    
+    //---- Preload the text field with the time.
+    [DateFormatter setDateFormat:@"HH:mm a"];
+    hourTextField.text = [DateFormatter stringFromDate:[NSDate date]];
     
     // Do any additional setup after loading the view.
 }
