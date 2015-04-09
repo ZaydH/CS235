@@ -55,6 +55,26 @@
     
     datePicker.layer.borderWidth = 2;
     datePicker.backgroundColor = [UIColor whiteColor];
+    
+    
+    RateView* rv = [RateView rateViewWithRating:1.0f];
+    [self.view addSubview:rv];
+    // Extra frames width, height ignored
+    rv.frame = CGRectMake(120, 299, 200, 240);    // Customizable star normal color
+    rv.starNormalColor = [UIColor grayColor];
+    // Customizable star fill color
+    rv.starFillColor = [UIColor redColor];
+    // Customizable star fill mode
+    rv.starFillMode = StarFillModeHorizontal;
+    // Change rating whenever needed
+    rv.rating = 1.0f;
+    // Set star granularity
+    rv.step = 1.0f;
+    rv.starSize = 19.5;
+    // Can Rate (User Interaction, as needed)
+    rv.canRate = YES;
+    priorityTextField.hidden = YES;
+    
 
 }
 
@@ -71,6 +91,7 @@
     NSString *formattedDate = [dateFormatter stringFromDate:sender.date];
     
     self.dateTextField.text = formattedDate;
+    
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
@@ -87,7 +108,14 @@
     NSMutableArray *tmp=[NSMutableArray arrayWithArray:[userDefaults objectForKey:@"taskArray"]];
     
     NSMutableArray *tmp2=tmp[tmp.count-1];
-    tmp[tmp.count-1]=[NSMutableArray arrayWithObjects: @"Test 1",@"", @"", @"", @"", nil];
+    
+    NSString *dueDateInfo = @"None";
+    if(dateTextField.text.length > 0)
+        dueDateInfo = dateTextField.text;
+    
+    tmp[tmp.count-1]=[NSMutableArray arrayWithObjects: taskNameTextField.text,
+                                                       descriptionTextView.text,
+                                                       dueDateInfo, @"", @"", nil];
     [tmp addObject:tmp2];
     
     // Save your (updated) bookmarks
