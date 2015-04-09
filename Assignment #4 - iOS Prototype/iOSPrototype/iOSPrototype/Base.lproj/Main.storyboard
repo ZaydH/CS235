@@ -583,15 +583,18 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fue-Gi-bAE">
+                            <searchBar contentMode="redraw" placeholder="Search Calendar and To-Do List" translatesAutoresizingMaskIntoConstraints="NO" id="Fue-Gi-bAE">
                                 <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Fue-Gi-bAE" firstAttribute="centerX" secondItem="vhM-q0-Thh" secondAttribute="centerX" id="ADq-hP-L3R"/>
                             <constraint firstItem="vhM-q0-Thh" firstAttribute="centerX" secondItem="9y8-P7-Eli" secondAttribute="centerX" id="aiy-Tm-vMf"/>
                             <constraint firstItem="Yth-Sl-krU" firstAttribute="top" secondItem="vhM-q0-Thh" secondAttribute="bottom" constant="184" id="c0d-CY-Sgb"/>
+                            <constraint firstItem="Fue-Gi-bAE" firstAttribute="top" secondItem="Hhg-Aw-skf" secondAttribute="bottom" constant="8" id="k1c-QF-yfe"/>
+                            <constraint firstItem="Fue-Gi-bAE" firstAttribute="leading" secondItem="9y8-P7-Eli" secondAttribute="leading" id="qOj-xg-jZc"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="More" image="dot-more-7" id="Ng1-jt-UJZ"/>
