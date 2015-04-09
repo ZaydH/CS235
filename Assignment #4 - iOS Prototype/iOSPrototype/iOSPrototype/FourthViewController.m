@@ -115,6 +115,7 @@ RateView* rv;
         taskNameTextField.layer.borderColor = UIColor.redColor.CGColor;
         taskNameTextField.layer.borderWidth = 1.2f;
         taskNameTextField.layer.cornerRadius = 4;
+        taskNameTextField.placeholder = @"Task Name is Required";
         [self showErrorAlert];
         return;
     }
@@ -143,6 +144,7 @@ RateView* rv;
     
     // Reset the text fields.
     taskNameTextField.text = @"";
+    taskNameTextField.placeholder = @"Enter a Task Name";
     dateTextField.text = @"";
     descriptionTextView.text = @"";
     rv.rating = 1.0f;
