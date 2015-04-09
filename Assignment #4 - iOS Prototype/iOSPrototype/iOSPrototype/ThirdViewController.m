@@ -16,6 +16,8 @@
 
 @implementation ThirdViewController
 
+RateView* rv;
+
 @synthesize dateTextField,hourTextField,taskColorTextField,taskNameTextField,priorityTextField,addInviteesTextField,descriptionTextView;
 
 - (void)viewDidLoad {
@@ -83,7 +85,7 @@
     hourTextField.text = [DateFormatter stringFromDate:[NSDate date]];
     
     // Do any additional setup after loading the view.
-    RateView* rv = [RateView rateViewWithRating:1.0f];
+    rv = [RateView rateViewWithRating:1.0f];
     [self.view addSubview:rv];
     // Extra frames width, height ignored
     rv.frame = CGRectMake(155, 340, 200, 240);    // Customizable star normal color
@@ -152,6 +154,14 @@
     // Save your (updated) bookmarks
     [userDefaults setObject:tmp forKey:@"eventsByDate"];
     [userDefaults synchronize];
+    
+    
+    // Reset the text fields.
+    taskNameTextField.text = @"";
+    dateTextField.text = @"";
+    hourTextField.text = @"";
+    descriptionTextView.text = @"";
+    rv.rating = 1.0f;
     
 }
 

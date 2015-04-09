@@ -17,6 +17,8 @@
 
 @implementation FourthViewController
 
+RateView* rv;
+
 @synthesize dateTextField,taskNameTextField,priorityTextField,descriptionTextView;
 
 - (void)viewDidLoad {
@@ -57,7 +59,7 @@
     datePicker.backgroundColor = [UIColor whiteColor];
     
     
-    RateView* rv = [RateView rateViewWithRating:1.0f];
+    rv = [RateView rateViewWithRating:1.0f];
     [self.view addSubview:rv];
     // Extra frames width, height ignored
     rv.frame = CGRectMake(120, 299, 200, 240);    // Customizable star normal color
@@ -143,6 +145,7 @@
     taskNameTextField.text = @"";
     dateTextField.text = @"";
     descriptionTextView.text = @"";
+    rv.rating = 1.0f;
     
     
 }

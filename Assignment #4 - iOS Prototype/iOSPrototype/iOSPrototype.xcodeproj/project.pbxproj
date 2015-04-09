@@ -31,6 +31,7 @@
 		4CEF3F3F1ABFC229000052D2 /* ThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEF3F3E1ABFC229000052D2 /* ThirdViewController.m */; };
 		4CEF3F421ABFC2A6000052D2 /* FourthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEF3F411ABFC2A6000052D2 /* FourthViewController.m */; };
 		4CEF3F451ABFC2B5000052D2 /* FifthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEF3F441ABFC2B5000052D2 /* FifthViewController.m */; };
+		F8A654C21AD69BA3003EF87F /* RateView.m in Sources */ = {isa = PBXBuildFile; fileRef = F8A654C11AD69BA3003EF87F /* RateView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +92,8 @@
 		4CEF3F411ABFC2A6000052D2 /* FourthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FourthViewController.m; sourceTree = "<group>"; };
 		4CEF3F431ABFC2B5000052D2 /* FifthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FifthViewController.h; sourceTree = "<group>"; };
 		4CEF3F441ABFC2B5000052D2 /* FifthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FifthViewController.m; sourceTree = "<group>"; };
+		F8A654C01AD69BA3003EF87F /* RateView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RateView.h; sourceTree = "<group>"; };
+		F8A654C11AD69BA3003EF87F /* RateView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RateView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +135,7 @@
 		4CEF3EE81ABF53F7000052D2 /* iOSPrototype */ = {
 			isa = PBXGroup;
 			children = (
+				F8A654BF1AD69BA3003EF87F /* RateView */,
 				4CEF3F371ABF8B72000052D2 /* ExapandingCell */,
 				4CEF3F121ABF5769000052D2 /* JTCalendar */,
 				4CEF3EED1ABF53F7000052D2 /* AppDelegate.h */,
@@ -218,6 +222,15 @@
 				4CEF3F3B1ABF8D3C000052D2 /* ExpandingCell.m */,
 			);
 			name = ExapandingCell;
+			sourceTree = "<group>";
+		};
+		F8A654BF1AD69BA3003EF87F /* RateView */ = {
+			isa = PBXGroup;
+			children = (
+				F8A654C01AD69BA3003EF87F /* RateView.h */,
+				F8A654C11AD69BA3003EF87F /* RateView.m */,
+			);
+			path = RateView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -329,6 +342,7 @@
 				4CEF3F341ABF5769000052D2 /* JTCircleView.m in Sources */,
 				4CEF3EEF1ABF53F7000052D2 /* AppDelegate.m in Sources */,
 				4CEF3F421ABFC2A6000052D2 /* FourthViewController.m in Sources */,
+				F8A654C21AD69BA3003EF87F /* RateView.m in Sources */,
 				4CEF3F2E1ABF5769000052D2 /* JTCalendarDayView.m in Sources */,
 				4CEF3F3F1ABFC229000052D2 /* ThirdViewController.m in Sources */,
 				4CEF3F331ABF5769000052D2 /* JTCalendarWeekView.m in Sources */,
