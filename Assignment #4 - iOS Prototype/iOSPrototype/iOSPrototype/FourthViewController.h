@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 #import "RateView.h"
+#import "UITextField+Shake.h"
 
 
 @interface FourthViewController : UIViewController

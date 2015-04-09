@@ -7,6 +7,7 @@
 //
 
 #import "FourthViewController.h"
+#import "UITextField+Shake.h"
 
 @interface FourthViewController ()
 
@@ -116,7 +117,8 @@ RateView* rv;
         taskNameTextField.layer.borderWidth = 1.2f;
         taskNameTextField.layer.cornerRadius = 4;
         taskNameTextField.placeholder = @"Task Name is Required";
-        [self showErrorAlert];
+        [self shake];
+        //[self showErrorAlert];
         return;
     }
     else{
@@ -133,9 +135,19 @@ RateView* rv;
     if(dateTextField.text.length > 0)
         dueDateInfo = dateTextField.text;
     
+    
+    NSString *starText = @"";
+    int i;
+    for(i = 0; i<round(rv.rating); i++)
+        starText = [NSString stringWithFormat:@"%@%@", starText, @"✭"];
+    for(;i<5;i++)
+        starText = [NSString stringWithFormat:@"%@%@", starText, @"✩"];
+    
+    
     tmp[tmp.count-1]=[NSMutableArray arrayWithObjects: taskNameTextField.text,
                                                        descriptionInfo,
-                                                       dueDateInfo, @"", @"", nil];
+                                                       dueDateInfo,
+                                                       starText, @"", nil];
     [tmp addObject:tmp2];
     
     // Save your (updated) bookmarks
@@ -151,6 +163,16 @@ RateView* rv;
     
     
 }
+
+
+- (void)shake
+{
+    [self.taskNameTextField shake: 12
+                        withDelta: 5
+                         andSpeed: 0.03
+                   shakeDirection: ShakeDirectionHorizontal];
+}
+
 
 -(void) showErrorAlert
 {
