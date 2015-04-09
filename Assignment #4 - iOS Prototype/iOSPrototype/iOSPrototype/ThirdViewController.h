@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+#import "RateView.h"
+
 @interface ThirdViewController : UIViewController
 
 @property (strong, nonatomic) IBOutlet UITextField *taskNameTextField;

@@ -83,6 +83,24 @@
     hourTextField.text = [DateFormatter stringFromDate:[NSDate date]];
     
     // Do any additional setup after loading the view.
+    RateView* rv = [RateView rateViewWithRating:1.0f];
+    [self.view addSubview:rv];
+    // Extra frames width, height ignored
+    rv.frame = CGRectMake(155, 340, 200, 240);    // Customizable star normal color
+    rv.starNormalColor = [UIColor grayColor];
+    // Customizable star fill color
+    rv.starFillColor = [UIColor redColor];
+    // Customizable star fill mode
+    rv.starFillMode = StarFillModeHorizontal;
+    // Change rating whenever needed
+    rv.rating = 1.0f;
+    // Set star granularity
+    rv.step = 1.0f;
+    rv.starSize = 19.5;
+    // Can Rate (User Interaction, as needed)
+    rv.canRate = YES;
+    priorityTextField.hidden = YES;
+
 }
 
 - (void)didReceiveMemoryWarning {
