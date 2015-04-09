@@ -109,6 +109,12 @@
     
     NSMutableArray *tmp2=tmp[tmp.count-1];
     
+    if(taskNameTextField.text.length == 0){
+        taskNameTextField.layer.borderColor = [[UIColor redColor] CGColor];
+        [self showErrorAlert];
+        return;
+    }
+    
     // Extract the due date and if none is specified, fill it with none.
     NSString *descriptionInfo = @"None";
     if(descriptionTextView.text.length > 0)
@@ -128,6 +134,14 @@
     [userDefaults setObject:tmp forKey:@"taskArray"];
     [userDefaults synchronize];
     
+}
+
+-(void) showErrorAlert
+{
+    UIAlertView *errorAlert = [[UIAlertView alloc] initWithTitle:@"" message:@"A task name is required." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+    [errorAlert show];
+    [errorAlert show];
+
 }
 
 /*
