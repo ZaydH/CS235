@@ -87,7 +87,7 @@
 {
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateStyle:NSDateFormatterShortStyle];
-    [dateFormatter setDateFormat:@"MM'/'dd'/'yyyy"];
+    [dateFormatter setDateFormat:@"MMMM d, yyyy"];
     NSString *formattedDate = [dateFormatter stringFromDate:sender.date];
     
     self.dateTextField.text = formattedDate;
@@ -109,12 +109,18 @@
     
     NSMutableArray *tmp2=tmp[tmp.count-1];
     
+    // Extract the due date and if none is specified, fill it with none.
+    NSString *descriptionInfo = @"None";
+    if(descriptionTextView.text.length > 0)
+        descriptionInfo = descriptionTextView.text;
+    
+    // Extract the due date and if none is specified, fill it with none.
     NSString *dueDateInfo = @"None";
     if(dateTextField.text.length > 0)
         dueDateInfo = dateTextField.text;
     
     tmp[tmp.count-1]=[NSMutableArray arrayWithObjects: taskNameTextField.text,
-                                                       descriptionTextView.text,
+                                                       descriptionInfo,
                                                        dueDateInfo, @"", @"", nil];
     [tmp addObject:tmp2];
     
