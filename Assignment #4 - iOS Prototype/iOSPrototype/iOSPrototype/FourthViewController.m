@@ -110,12 +110,17 @@
     NSMutableArray *tmp2=tmp[tmp.count-1];
     
     if(taskNameTextField.text.length == 0){
-        taskNameTextField.layer.borderColor = [[UIColor redColor] CGColor];
+        taskNameTextField.layer.borderColor = UIColor.redColor.CGColor;
+        taskNameTextField.layer.borderWidth = 1.2f;
+        taskNameTextField.layer.cornerRadius = 4;
         [self showErrorAlert];
         return;
     }
+    else{
+        taskNameTextField.layer.borderWidth = 0.0f;
+    }
     
-    // Extract the due date and if none is specified, fill it with none.
+    // Extract the due date and if none is specified, fill it with ßnone.
     NSString *descriptionInfo = @"None";
     if(descriptionTextView.text.length > 0)
         descriptionInfo = descriptionTextView.text;
@@ -133,6 +138,12 @@
     // Save your (updated) bookmarks
     [userDefaults setObject:tmp forKey:@"taskArray"];
     [userDefaults synchronize];
+    
+    // Reset the text fields.
+    taskNameTextField.text = @"";
+    dateTextField.text = @"";
+    descriptionTextView.text = @"";
+    
     
 }
 
