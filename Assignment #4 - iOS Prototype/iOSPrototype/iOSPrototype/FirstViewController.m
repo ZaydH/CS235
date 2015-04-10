@@ -48,12 +48,12 @@
         self.calendar.calendarAppearance.focusSelectedDayChangeMode = YES;
         self.calendar.calendarAppearance.ratioContentMenu = 1;
         
+        UIColor *buttonColor = [UIColor colorWithRed: 51.0f/255.0f
+                                               green: 92.0f/255.0f
+                                                blue: 214.0f/255.0f
+                                               alpha: 1.0f];
         
-        
-        self.todayButton.backgroundColor = [UIColor colorWithRed: 0.0f/255.0f
-                                                           green: 122.0f/255.0f
-                                                            blue: 204.0f/255.0f
-                                                           alpha: 1.0f];
+        self.todayButton.backgroundColor = buttonColor;
         self.todayButton.layer.cornerRadius = 4;
         self.todayButton.titleLabel.textColor = [UIColor whiteColor];
         self.todayButton.layer.borderWidth = 2;
@@ -63,10 +63,7 @@
                                                               alpha: 1.0f] CGColor];
         
         
-        self.switchViewButton.backgroundColor = [UIColor colorWithRed: 0.0f/255.0f
-                                                                green: 122.0f/255.0f
-                                                                 blue: 204.0f/255.0f
-                                                                alpha: 1.0f];
+        self.switchViewButton.backgroundColor = buttonColor;
         self.switchViewButton.layer.cornerRadius = 4;
         self.switchViewButton.titleLabel.textColor = [UIColor whiteColor];
         self.switchViewButton.layer.borderWidth = 2;
