@@ -27,8 +27,8 @@
     
     taskArray = [NSMutableArray arrayWithObjects:[NSMutableArray arrayWithObjects: @"Take out the Trash",@"Take the trash out before the trash collector comes on Monday", @"May 4, 2015", @"✭✭✭✩✩", @"4", nil],
                  [NSMutableArray arrayWithObjects: @"Mow the Lawn",@"Need to get the lawnmower and mow both the front and back yard. Steve will mow the side yard", @"April 30, 2015", @"✭✩✩✩✩", @"3", nil],
-                 [NSMutableArray arrayWithObjects: @"Go to the Store to get Cat Food",@"Running out of cat food at home so go to Petco to get some wet (Fancy Feast) and dry (Purina One) cat food", @"June 22, 2015", @"✭✭✩✩✩", @"2", nil],
-                 [NSMutableArray arrayWithObjects: @"Call Comcast",@"Cancel cable TB but make sure they do not cancel the internet too.", @"None", @"✭✭✭✭✭", @"", nil],[NSMutableArray arrayWithObjects: @"",@"", @"", @"", @"", nil],nil];
+                 [NSMutableArray arrayWithObjects: @"Go to the Store to Get Cat Food",@"Running out of cat food at home so go to Petco to get some wet (Fancy Feast) and dry (Purina One) cat food", @"June 22, 2015", @"✭✭✩✩✩", @"2", nil],
+                 [NSMutableArray arrayWithObjects: @"Call Comcast",@"Cancel cable but make sure they do not cancel the internet too.", @"None", @"✭✭✭✭✭", @"", nil],[NSMutableArray arrayWithObjects: @"",@"", @"", @"", @"", nil],nil];
     
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     
