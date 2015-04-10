@@ -119,12 +119,15 @@
 - (IBAction)didGoTodayTouch
 {
     [self.calendar setCurrentDate:[NSDate date]];
+    [self.calendar setSelectedDate:[NSDate date]];
 
     NSString *key = [[self dateFormatter] stringFromDate:[NSDate date]];
     selectedKey = [[self dateFormatter] stringFromDate:[NSDate date]];
     NSArray *events = eventsByDate[key];
     [_tableFields reloadData];
     [self.calendar reloadData];
+    
+    //[[NSNotificationCenter defaultCenter] postNotificationName:@"kJTCalendarDaySelected" object:[NSDate date]];
     
     NSLog(@"Date: %@ - %ld events", [NSDate date], [events count]);
 

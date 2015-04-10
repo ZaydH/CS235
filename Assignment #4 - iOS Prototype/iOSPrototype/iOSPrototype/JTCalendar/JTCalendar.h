@@ -28,6 +28,8 @@
 @property (strong, nonatomic, readonly) JTCalendarDataCache *dataCache;
 @property (strong, nonatomic, readonly) JTCalendarAppearance *calendarAppearance;
 
+- (void)setSelectedDate:(NSDate *)newDate;
+
 - (void)reloadData;
 - (void)reloadAppearance;
 

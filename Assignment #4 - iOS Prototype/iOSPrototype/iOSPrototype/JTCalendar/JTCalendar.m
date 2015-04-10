@@ -109,6 +109,20 @@
     [self.contentView reloadData];
 }
 
+
+- (void)setSelectedDate:(NSDate *)newDate
+{
+    NSAssert(newDate, @"JTCalendar newDate cannot be null");
+    
+    self->_currentDateSelected = newDate;
+    
+    [self.menuMonthsView setCurrentDate:newDate];
+    [self.contentView setCurrentDate:newDate];
+    
+    [self repositionViews];
+    [self.contentView reloadData];
+}
+
 #pragma mark - UIScrollView delegate
 
 - (void)scrollViewDidScroll:(UIScrollView *)sender
