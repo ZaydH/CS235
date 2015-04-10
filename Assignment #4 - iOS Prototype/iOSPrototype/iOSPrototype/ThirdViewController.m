@@ -165,6 +165,14 @@ RateView* rv;
     
 }
 
+- (void)shake
+{
+    [self.taskNameTextField shake: 12
+                        withDelta: 5
+                         andSpeed: 0.03
+                   shakeDirection: ShakeDirectionHorizontal];
+}
+
 /*
 #pragma mark - Navigation
 
