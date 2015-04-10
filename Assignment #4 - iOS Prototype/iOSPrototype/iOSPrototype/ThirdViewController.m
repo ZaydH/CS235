@@ -142,6 +142,70 @@ RateView* rv;
     
     NSMutableDictionary *tmp=[NSMutableDictionary dictionaryWithDictionary:[userDefaults objectForKey:@"eventsByDate"]];
     
+    BOOL valid_inputs = YES;
+    
+    
+    if(taskNameTextField.text.length == 0){
+        //taskNameTextField.layer.borderColor  = [[UIColor colorWithRed:151.0f/255.0f green:23/255.0f blue:43/255.0f alpha:1.0f] CGColor];
+        taskNameTextField.layer.borderColor  = UIColor.redColor.CGColor;
+        taskNameTextField.layer.borderWidth = 1.2f;
+        taskNameTextField.layer.cornerRadius = 4;
+        NSAttributedString *str = [[NSAttributedString alloc] initWithString:@"Required: Name" attributes:@{ NSForegroundColorAttributeName : [UIColor colorWithRed:151.0f/255.0f green:23/255.0f blue:43/255.0f alpha:1.0f] }];
+        self.taskNameTextField.attributedPlaceholder = str;
+        [self shakeName];
+        //[self showErrorAlert];
+        valid_inputs = NO;
+    }
+    else{
+        taskNameTextField.layer.borderWidth = 0.0f;
+        taskNameTextField.placeholder = @"Enter Name";
+    }
+    
+    if(dateTextField.text.length == 0){
+        //taskNameTextField.layer.borderColor  = [[UIColor colorWithRed:151.0f/255.0f green:23/255.0f blue:43/255.0f alpha:1.0f] CGColor];
+        dateTextField.layer.borderColor  = UIColor.redColor.CGColor;
+        dateTextField.layer.borderWidth = 1.2f;
+        dateTextField.layer.cornerRadius = 4;
+        NSAttributedString *str = [[NSAttributedString alloc] initWithString:@"Required: Date" attributes:@{ NSForegroundColorAttributeName : [UIColor colorWithRed:151.0f/255.0f green:23/255.0f blue:43/255.0f alpha:1.0f] }];
+        self.dateTextField.attributedPlaceholder = str;
+        [self shakeDate];
+        //[self showErrorAlert];
+        valid_inputs = NO;
+    }
+    else{
+        dateTextField.layer.borderWidth = 0.0f;
+        dateTextField.placeholder = @"Enter Date";
+    }
+    
+    if(hourTextField.text.length == 0){
+        //taskNameTextField.layer.borderColor  = [[UIColor colorWithRed:151.0f/255.0f green:23/255.0f blue:43/255.0f alpha:1.0f] CGColor];
+        hourTextField.layer.borderColor  = UIColor.redColor.CGColor;
+        hourTextField.layer.borderWidth = 1.2f;
+        hourTextField.layer.cornerRadius = 4;
+        NSAttributedString *str = [[NSAttributedString alloc] initWithString:@"Required: Time" attributes:@{ NSForegroundColorAttributeName : [UIColor colorWithRed:151.0f/255.0f green:23/255.0f blue:43/255.0f alpha:1.0f] }];
+        self.hourTextField.attributedPlaceholder = str;
+        [self shakeHour];
+        //[self showErrorAlert];
+        valid_inputs = NO;
+    }
+    else{
+        hourTextField.layer.borderWidth = 0.0f;
+        hourTextField.placeholder = @"Enter Time";
+    }
+    
+    if(valid_inputs == NO) return;
+    
+    // Extract the due date and if none is specified, fill it with ßnone.
+    NSString *descriptionInfo = @"None";
+    if(descriptionTextView.text.length > 0)
+        descriptionInfo = descriptionTextView.text;
+    
+    // Extract the due date and if none is specified, fill it with none.
+    NSString *dueDateInfo = @"None";
+    if(dateTextField.text.length > 0)
+        dueDateInfo = dateTextField.text;
+    
+    
     if(!tmp[@"26-03-2015"]){
         tmp[@"26-03-2015"] = [NSMutableArray new];
     }
@@ -165,9 +229,25 @@ RateView* rv;
     
 }
 
-- (void)shake
+- (void)shakeName
 {
     [self.taskNameTextField shake: 12
+                        withDelta: 5
+                         andSpeed: 0.03
+                   shakeDirection: ShakeDirectionHorizontal];
+}
+
+- (void)shakeDate
+{
+    [self.dateTextField     shake: 12
+                        withDelta: 5
+                         andSpeed: 0.03
+                   shakeDirection: ShakeDirectionHorizontal];
+}
+
+- (void)shakeHour
+{
+    [self.hourTextField     shake: 12
                         withDelta: 5
                          andSpeed: 0.03
                    shakeDirection: ShakeDirectionHorizontal];
