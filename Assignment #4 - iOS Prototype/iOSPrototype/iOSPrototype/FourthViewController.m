@@ -113,10 +113,13 @@ RateView* rv;
     NSMutableArray *tmp2=tmp[tmp.count-1];
     
     if(taskNameTextField.text.length == 0){
-        taskNameTextField.layer.borderColor = UIColor.redColor.CGColor;
+        //taskNameTextField.layer.borderColor  = [[UIColor colorWithRed:151.0f/255.0f green:23/255.0f blue:43/255.0f alpha:1.0f] CGColor];
+        taskNameTextField.layer.borderColor  = UIColor.redColor.CGColor;
         taskNameTextField.layer.borderWidth = 1.2f;
         taskNameTextField.layer.cornerRadius = 4;
         taskNameTextField.placeholder = @"Task Name is Required";
+        NSAttributedString *str = [[NSAttributedString alloc] initWithString:@"Required: Task Name" attributes:@{ NSForegroundColorAttributeName : [UIColor colorWithRed:151.0f/255.0f green:23/255.0f blue:43/255.0f alpha:1.0f] }];
+        self.taskNameTextField.attributedPlaceholder = str;
         [self shake];
         //[self showErrorAlert];
         return;
