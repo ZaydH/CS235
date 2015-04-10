@@ -65,6 +65,7 @@
                                     <constraint firstAttribute="height" constant="30" id="5n7-pQ-rcc"/>
                                     <constraint firstAttribute="width" constant="108" id="p5w-Sp-OqX"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="15"/>
                                 <state key="normal" title="Today">
                                     <color key="titleColor" red="0.98947368420000004" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" red="0.98947368420000004" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -79,6 +80,7 @@
                                     <constraint firstAttribute="height" constant="30" id="PgK-XM-tMy"/>
                                     <constraint firstAttribute="width" constant="108" id="fbL-3x-9XO"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="15"/>
                                 <state key="normal" title="Switch View">
                                     <color key="titleColor" red="0.98947368420000004" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" red="0.98947368420000004" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>

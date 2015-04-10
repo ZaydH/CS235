@@ -119,6 +119,16 @@
 - (IBAction)didGoTodayTouch
 {
     [self.calendar setCurrentDate:[NSDate date]];
+
+    NSString *key = [[self dateFormatter] stringFromDate:[NSDate date]];
+    selectedKey = [[self dateFormatter] stringFromDate:[NSDate date]];
+    NSArray *events = eventsByDate[key];
+    [_tableFields reloadData];
+    [self.calendar reloadData];
+    
+    NSLog(@"Date: %@ - %ld events", [NSDate date], [events count]);
+
+
 }
 
 - (IBAction)didChangeModeTouch

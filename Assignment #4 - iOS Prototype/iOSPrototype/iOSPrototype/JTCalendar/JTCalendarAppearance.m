@@ -37,7 +37,7 @@
     self.dayCircleRatio = 1.;
     self.dayDotRatio = 1. / 9.;
     
-    self.menuMonthTextFont = [UIFont fontWithName:@"HelveticaNeue-Bold" size:16.0];
+    self.menuMonthTextFont = [UIFont fontWithName:@"HelveticaNeue-Bold" size:19.0];
     self.weekDayTextFont = [UIFont systemFontOfSize:11];
     self.dayTextFont = [UIFont systemFontOfSize:[UIFont systemFontSize]];
 
