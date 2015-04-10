@@ -117,11 +117,9 @@ RateView* rv;
         taskNameTextField.layer.borderColor  = UIColor.redColor.CGColor;
         taskNameTextField.layer.borderWidth = 1.2f;
         taskNameTextField.layer.cornerRadius = 4;
-        taskNameTextField.placeholder = @"Task Name is Required";
         NSAttributedString *str = [[NSAttributedString alloc] initWithString:@"Required: Task Name" attributes:@{ NSForegroundColorAttributeName : [UIColor colorWithRed:151.0f/255.0f green:23/255.0f blue:43/255.0f alpha:1.0f] }];
         self.taskNameTextField.attributedPlaceholder = str;
         [self shake];
-        //[self showErrorAlert];
         return;
     }
     else{
@@ -176,14 +174,6 @@ RateView* rv;
                    shakeDirection: ShakeDirectionHorizontal];
 }
 
-
--(void) showErrorAlert
-{
-    UIAlertView *errorAlert = [[UIAlertView alloc] initWithTitle:@"" message:@"A task name is required." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
-    [errorAlert show];
-    [errorAlert show];
-
-}
 
 /*
 #pragma mark - Navigation

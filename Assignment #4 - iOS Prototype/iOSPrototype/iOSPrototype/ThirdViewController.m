@@ -225,6 +225,7 @@ RateView* rv;
     dateTextField.text = @"";
     hourTextField.text = @"";
     descriptionTextView.text = @"";
+    addInviteesTextField.text = @"";
     rv.rating = 1.0f;
     
 }
