@@ -56,17 +56,17 @@
     
     self.dayTextColorOtherMonth = [UIColor colorWithRed:152./256. green:147./256. blue:157./256. alpha:1.];
 
-    self.dayCircleColorSelected = [UIColor redColor];
-    self.dayTextColorSelected = [UIColor whiteColor];
-    self.dayDotColorSelected = [UIColor whiteColor];
+    self.dayCircleColorSelected = [UIColor colorWithRed:255.0f/255.0f green:128/255.0f blue:128/255.0f alpha:1.0f];
+    self.dayTextColorSelected = [UIColor blackColor];
+    self.dayDotColorSelected = [UIColor blackColor];
     
     self.dayCircleColorSelectedOtherMonth = self.dayCircleColorSelected;
     self.dayTextColorSelectedOtherMonth = self.dayTextColorSelected;
     self.dayDotColorSelectedOtherMonth = self.dayDotColorSelected;
     
     self.dayCircleColorToday = [UIColor colorWithRed:0x33/256. green:0xB3/256. blue:0xEC/256. alpha:.5];
-    self.dayTextColorToday = [UIColor whiteColor];
-    self.dayDotColorToday = [UIColor whiteColor];
+    self.dayTextColorToday = [UIColor blackColor];
+    self.dayDotColorToday = [UIColor blackColor];
     
     self.dayCircleColorTodayOtherMonth = self.dayCircleColorToday;
     self.dayTextColorTodayOtherMonth = self.dayTextColorToday;
