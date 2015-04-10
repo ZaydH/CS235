@@ -18,7 +18,7 @@
 
 @implementation FourthViewController
 
-RateView* rv;
+RateView* rvTask;
 
 @synthesize dateTextField,taskNameTextField,priorityTextField,descriptionTextView;
 
@@ -60,22 +60,22 @@ RateView* rv;
     datePicker.backgroundColor = [UIColor whiteColor];
     
     
-    rv = [RateView rateViewWithRating:1.0f];
-    [self.view addSubview:rv];
+    rvTask = [RateView rateViewWithRating:1.0f];
+    [self.view addSubview:rvTask];
     // Extra frames width, height ignored
-    rv.frame = CGRectMake(120, 299, 200, 240);    // Customizable star normal color
-    rv.starNormalColor = [UIColor grayColor];
+    rvTask.frame = CGRectMake(120, 299, 200, 240);    // Customizable star normal color
+    rvTask.starNormalColor = [UIColor grayColor];
     // Customizable star fill color
-    rv.starFillColor = [UIColor redColor];
+    rvTask.starFillColor = [UIColor redColor];
     // Customizable star fill mode
-    rv.starFillMode = StarFillModeHorizontal;
+    rvTask.starFillMode = StarFillModeHorizontal;
     // Change rating whenever needed
-    rv.rating = 1.0f;
+    rvTask.rating = 1.0f;
     // Set star granularity
-    rv.step = 1.0f;
-    rv.starSize = 19.5;
+    rvTask.step = 1.0f;
+    rvTask.starSize = 19.5;
     // Can Rate (User Interaction, as needed)
-    rv.canRate = YES;
+    rvTask.canRate = YES;
     priorityTextField.hidden = YES;
     
 
@@ -139,7 +139,7 @@ RateView* rv;
     
     NSString *starText = @"";
     int i;
-    for(i = 0; i<round(rv.rating); i++)
+    for(i = 0; i<round(rvTask.rating); i++)
         starText = [NSString stringWithFormat:@"%@%@", starText, @"✭"];
     for(;i<5;i++)
         starText = [NSString stringWithFormat:@"%@%@", starText, @"✩"];
@@ -160,7 +160,7 @@ RateView* rv;
     taskNameTextField.placeholder = @"Enter a Task Name";
     dateTextField.text = @"";
     descriptionTextView.text = @"";
-    rv.rating = 1.0f;
+    rvTask.rating = 1.0f;
     
     
 }
