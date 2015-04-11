@@ -88,7 +88,8 @@ RateView* rv;
     rv = [RateView rateViewWithRating:1.0f];
     [self.view addSubview:rv];
     // Extra frames width, height ignored
-    rv.frame = CGRectMake(155, 340, 200, 240);    // Customizable star normal color
+//    CGRect tmp=self.priorityTextField.frame;
+//    [rv setFrame:CGRectMake(self.priorityTextField.frame.origin.x, self.priorityTextField.frame.origin.y, 200, 240)];    // Customizable star normal color
     rv.starNormalColor = [UIColor grayColor];
     // Customizable star fill color
     rv.starFillColor = [UIColor redColor];
@@ -103,6 +104,21 @@ RateView* rv;
     rv.canRate = YES;
     priorityTextField.hidden = YES;
 
+}
+
+//-(void)viewWillAppear:(BOOL)animated
+//{
+//    [super viewWillAppear:animated];
+//    CGRect tmp=self.priorityTextField.frame;
+//    [rv setFrame:CGRectMake(self.priorityTextField.frame.origin.x, self.priorityTextField.frame.origin.y, 200, 240)];
+//    
+//}
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+//    CGRect tmp=self.priorityTextField.frame;
+    [rv setFrame:CGRectMake(self.priorityTextField.frame.origin.x+5, self.priorityTextField.frame.origin.y+5, 200, 240)];
 }
 
 - (void)didReceiveMemoryWarning {
