@@ -195,7 +195,7 @@ RateView* rv;
     
     if(valid_inputs == NO) return;
     
-    // Extract the due date and if none is specified, fill it with ßnone.
+    // Extract the description and if none is specified, fill it with none.
     NSString *descriptionInfo = @"None";
     if(descriptionTextView.text.length > 0)
         descriptionInfo = descriptionTextView.text;
@@ -205,15 +205,26 @@ RateView* rv;
     if(dateTextField.text.length > 0)
         dueDateInfo = dateTextField.text;
     
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setDateFormat: @"MMMM d, yyyy"];
+    NSDate *eventDate = [dateFormatter dateFromString: dateTextField.text];
+    NSLog(@" event date %@",eventDate);
+    [dateFormatter setDateFormat: @"dd-MM-YYYY"];
+    NSString *stringEventDate = [dateFormatter stringFromDate:eventDate];
+    NSLog(@" date format %@",[dateFormatter stringFromDate:eventDate]);
+    NSLog(@" event date %@", stringEventDate);
     
-    if(!tmp[@"26-03-2015"]){
-        tmp[@"26-03-2015"] = [NSMutableArray new];
+    if(!tmp[stringEventDate]){
+        tmp[stringEventDate] = [NSMutableArray new];
     }
-    NSMutableArray *tmp2=[NSMutableArray arrayWithArray:tmp[@"26-03-2015"]];
-    [tmp2 addObject:@"2015-03-27 06:45:20 +4444"];
+    NSMutableArray *tmp2=[NSMutableArray arrayWithArray:tmp[stringEventDate]];
+    [tmp2 addObject:[hourTextField.text stringByAppendingString:[NSString stringWithFormat: @" - %@", taskNameTextField.text]]];
 //    [tmp2 addObject:@"2015-03-27 06:45:20 +5555"];
 //    [tmp2 addObject:@"2015-03-27 06:45:20 +6666"];
-    tmp[@"26-03-2015"] = tmp2;
+    tmp[stringEventDate] = tmp2;
+    
+    // add this new appointment in eventsByDate dictionary of FirstViewController
+    
     
     // Save your (updated) bookmarks
     [userDefaults setObject:tmp forKey:@"eventsByDate"];
@@ -227,6 +238,9 @@ RateView* rv;
     descriptionTextView.text = @"";
     addInviteesTextField.text = @"";
     rv.rating = 1.0f;
+    
+    // Change view controller to FirstViewController
+    //[self.navigationController pushViewController:FirstViewController animated:YES];
     
 }
 
