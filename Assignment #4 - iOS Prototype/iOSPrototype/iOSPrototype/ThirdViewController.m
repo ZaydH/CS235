@@ -240,7 +240,7 @@ RateView* rv;
     rv.rating = 1.0f;
     
     // Change view controller to FirstViewController
-    //[self.navigationController pushViewController:FirstViewController animated:YES];
+    self.tabBarController.selectedViewController = [self.tabBarController.viewControllers objectAtIndex:0];
     
 }
 
