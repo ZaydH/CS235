@@ -242,9 +242,9 @@
 {
     eventsByDate = [NSMutableDictionary new];
     // The array having appointments that will get selected and assigned at random
-    NSArray *appointments = [NSArray arrayWithObjects:@"Happy Hour",@"Homework #3 due",@"Special Class",
-                             @"Meet the accountant",@"Meeting with Team",@"Repeating Event",
-                             @"Dentist appointment",@"CS235 Assignment due",@"Lunch meeting",nil];
+    NSArray *appointments = [NSArray arrayWithObjects:@"Happy Hour",@"Homework #3 Due",@"Special Class",
+                             @"Meet the Accountant",@"Meeting with Team",@"Repeating Event",
+                             @"Dentist Appointment",@"CS235 Assignment Due",@"Lunch Meeting",nil];
     
     for(int i = 0; i < 30; ++i){
         // Generate 30 random dates between now and 60 days later
@@ -262,7 +262,7 @@
         
         
         NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-        [formatter setDateFormat:@"K:mm a"];
+        [formatter setDateFormat:@"h:mm a"];
         
         //Optionally for time zone conversions
         [formatter setTimeZone:[NSTimeZone timeZoneWithName:@"PST"]];
