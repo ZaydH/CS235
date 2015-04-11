@@ -162,6 +162,9 @@ RateView* rvTask;
     descriptionTextView.text = @"";
     rvTask.rating = 1.0f;
     
+    // Change view controller to FirstViewController
+    self.tabBarController.selectedViewController = [self.tabBarController.viewControllers objectAtIndex:1];
+    
     
 }
 
