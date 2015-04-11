@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 #import "RateView.h"
+#import "SecondViewController.h"
 #import "UITextField+Shake.h"
 
 

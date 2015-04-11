@@ -78,7 +78,11 @@ RateView* rvTask;
     rvTask.canRate = YES;
     priorityTextField.hidden = YES;
     
-
+    // Change view controller to FirstViewController
+    self.tabBarController.selectedViewController = [self.tabBarController.viewControllers objectAtIndex:1];
+    self.tabBarController.selectedViewController = [self.tabBarController.viewControllers objectAtIndex:3];
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
