@@ -340,6 +340,20 @@
     [aView addSubview:nameLabel];
 //    [aView addSubview:addressLabel];
     [cell addSubview:aView];
+    
+    if(indexPath.row % 2 == 1){
+        UIColor *rowGrayColor = [UIColor colorWithRed: 233.0f/255.0f
+                                                green: 244.0f/255.0f
+                                                 blue: 249.0f/255.0f
+                                                alpha: 1.0f];
+        cell.backgroundColor = rowGrayColor;
+        aView.backgroundColor = rowGrayColor;
+    }
+    else{
+        cell.backgroundColor = [UIColor whiteColor];
+        aView.backgroundColor = [UIColor whiteColor];
+    }
+    
     return cell;
 }
 
@@ -359,6 +373,7 @@
     if ([cell respondsToSelector:@selector(setLayoutMargins:)]) {
         [cell setLayoutMargins:UIEdgeInsetsZero];
     }
+    
 }
 
 #pragma mark UITableViewDelegate methods
