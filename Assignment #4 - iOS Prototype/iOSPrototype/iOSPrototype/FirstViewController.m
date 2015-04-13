@@ -111,12 +111,6 @@
     [self.calendar reloadData];
     
     
-    // toast with duration, title, and position
-    [self.view makeToast:@"Appointment Created"
-                duration:2.0
-                position:CSToastPositionCenter];
-    
-    
 }
 
 - (void)viewDidLayoutSubviews
