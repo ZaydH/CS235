@@ -21,9 +21,13 @@
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *calendarContentViewHeight;
 
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *tableViewHeight;
+
 @property (strong, nonatomic) JTCalendar *calendar;
 
 @property (strong, nonatomic) IBOutlet UITableView *tableFields;
+
+@property (strong, nonatomic) NSDate *selectedDateInCalendar;
 
 
 

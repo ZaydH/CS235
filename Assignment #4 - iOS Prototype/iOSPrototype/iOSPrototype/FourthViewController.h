@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+#import "RateView.h"
+#import "SecondViewController.h"
+#import "UITextField+Shake.h"
+
+
 @interface FourthViewController : UIViewController
 
 @property (strong, nonatomic) IBOutlet UITextField *taskNameTextField;

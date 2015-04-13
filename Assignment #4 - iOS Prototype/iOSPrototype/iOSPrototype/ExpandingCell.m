@@ -7,10 +7,11 @@
 //
 
 #import "ExpandingCell.h"
+#import "SecondViewController.h"
 
 @implementation ExpandingCell
 
-@synthesize taskDetails,taskLabel,dueDate,rating,plusMinusButton,ratingTitle,dueDateTitle;
+@synthesize taskDetails,taskLabel,dueDate,rating,plusMinusButton,ratingTitle,dueDateTitle,containingViewController,myIndexPath;
 
 - (void)awakeFromNib {
     // Initialization code
@@ -30,6 +31,12 @@
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
+}
+
+- (IBAction)clickPlusMinusButton
+{
+    SecondViewController *tmp=(SecondViewController*)self.containingViewController;
+    [tmp tableView:tmp.tableFields didSelectRowAtIndexPath:self.myIndexPath];
 }
 
 @end

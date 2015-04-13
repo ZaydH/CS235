@@ -31,6 +31,9 @@
 		4CEF3F3F1ABFC229000052D2 /* ThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEF3F3E1ABFC229000052D2 /* ThirdViewController.m */; };
 		4CEF3F421ABFC2A6000052D2 /* FourthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEF3F411ABFC2A6000052D2 /* FourthViewController.m */; };
 		4CEF3F451ABFC2B5000052D2 /* FifthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEF3F441ABFC2B5000052D2 /* FifthViewController.m */; };
+		F80FC7C91AD962F90005E5AD /* UIView+Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = F80FC7C81AD962F90005E5AD /* UIView+Toast.m */; };
+		F8398D1D1AD7EB8900FC349A /* UITextField+Shake.m in Sources */ = {isa = PBXBuildFile; fileRef = F8398D1C1AD7EB8900FC349A /* UITextField+Shake.m */; };
+		F8A654C21AD69BA3003EF87F /* RateView.m in Sources */ = {isa = PBXBuildFile; fileRef = F8A654C11AD69BA3003EF87F /* RateView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +94,12 @@
 		4CEF3F411ABFC2A6000052D2 /* FourthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FourthViewController.m; sourceTree = "<group>"; };
 		4CEF3F431ABFC2B5000052D2 /* FifthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FifthViewController.h; sourceTree = "<group>"; };
 		4CEF3F441ABFC2B5000052D2 /* FifthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FifthViewController.m; sourceTree = "<group>"; };
+		F80FC7C71AD962F00005E5AD /* UIView+Toast.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "UIView+Toast.h"; path = "Toast/UIView+Toast.h"; sourceTree = "<group>"; };
+		F80FC7C81AD962F90005E5AD /* UIView+Toast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+Toast.m"; path = "Toast/UIView+Toast.m"; sourceTree = "<group>"; };
+		F8398D1B1AD7EB8900FC349A /* UITextField+Shake.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+Shake.h"; sourceTree = "<group>"; };
+		F8398D1C1AD7EB8900FC349A /* UITextField+Shake.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+Shake.m"; sourceTree = "<group>"; };
+		F8A654C01AD69BA3003EF87F /* RateView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RateView.h; sourceTree = "<group>"; };
+		F8A654C11AD69BA3003EF87F /* RateView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RateView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,14 +141,18 @@
 		4CEF3EE81ABF53F7000052D2 /* iOSPrototype */ = {
 			isa = PBXGroup;
 			children = (
+				F8A654BF1AD69BA3003EF87F /* RateView */,
 				4CEF3F371ABF8B72000052D2 /* ExapandingCell */,
 				4CEF3F121ABF5769000052D2 /* JTCalendar */,
 				4CEF3EED1ABF53F7000052D2 /* AppDelegate.h */,
 				4CEF3EEE1ABF53F7000052D2 /* AppDelegate.m */,
 				4CEF3EF01ABF53F7000052D2 /* FirstViewController.h */,
+				F80FC7C71AD962F00005E5AD /* UIView+Toast.h */,
+				F80FC7C81AD962F90005E5AD /* UIView+Toast.m */,
 				4CEF3EF11ABF53F7000052D2 /* FirstViewController.m */,
 				4CEF3EF31ABF53F7000052D2 /* SecondViewController.h */,
 				4CEF3EF41ABF53F7000052D2 /* SecondViewController.m */,
+				F8398D1A1AD7EB8900FC349A /* UITextField-Shake */,
 				4CEF3F3D1ABFC229000052D2 /* ThirdViewController.h */,
 				4CEF3F3E1ABFC229000052D2 /* ThirdViewController.m */,
 				4CEF3F401ABFC2A6000052D2 /* FourthViewController.h */,
@@ -218,6 +231,24 @@
 				4CEF3F3B1ABF8D3C000052D2 /* ExpandingCell.m */,
 			);
 			name = ExapandingCell;
+			sourceTree = "<group>";
+		};
+		F8398D1A1AD7EB8900FC349A /* UITextField-Shake */ = {
+			isa = PBXGroup;
+			children = (
+				F8398D1B1AD7EB8900FC349A /* UITextField+Shake.h */,
+				F8398D1C1AD7EB8900FC349A /* UITextField+Shake.m */,
+			);
+			path = "UITextField-Shake";
+			sourceTree = "<group>";
+		};
+		F8A654BF1AD69BA3003EF87F /* RateView */ = {
+			isa = PBXGroup;
+			children = (
+				F8A654C01AD69BA3003EF87F /* RateView.h */,
+				F8A654C11AD69BA3003EF87F /* RateView.m */,
+			);
+			path = RateView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -329,12 +360,15 @@
 				4CEF3F341ABF5769000052D2 /* JTCircleView.m in Sources */,
 				4CEF3EEF1ABF53F7000052D2 /* AppDelegate.m in Sources */,
 				4CEF3F421ABFC2A6000052D2 /* FourthViewController.m in Sources */,
+				F8A654C21AD69BA3003EF87F /* RateView.m in Sources */,
 				4CEF3F2E1ABF5769000052D2 /* JTCalendarDayView.m in Sources */,
 				4CEF3F3F1ABFC229000052D2 /* ThirdViewController.m in Sources */,
+				F8398D1D1AD7EB8900FC349A /* UITextField+Shake.m in Sources */,
 				4CEF3F331ABF5769000052D2 /* JTCalendarWeekView.m in Sources */,
 				4CEF3F2F1ABF5769000052D2 /* JTCalendarMenuMonthView.m in Sources */,
 				4CEF3EF21ABF53F7000052D2 /* FirstViewController.m in Sources */,
 				4CEF3F3C1ABF8D3C000052D2 /* ExpandingCell.m in Sources */,
+				F80FC7C91AD962F90005E5AD /* UIView+Toast.m in Sources */,
 				4CEF3EEC1ABF53F7000052D2 /* main.m in Sources */,
 				4CEF3F2B1ABF5769000052D2 /* JTCalendarAppearance.m in Sources */,
 				4CEF3F2D1ABF5769000052D2 /* JTCalendarDataCache.m in Sources */,

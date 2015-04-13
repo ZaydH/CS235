@@ -7,14 +7,22 @@
 //
 
 #import "FirstViewController.h"
+#import "UIView+Toast.h"
+
+
 
 @interface FirstViewController (){
     NSMutableDictionary *eventsByDate;
 }
+@property (weak, nonatomic) IBOutlet UIButton *todayButton;
+
+@property (weak, nonatomic) IBOutlet UIButton *switchViewButton;
 
 @end
 
 @implementation FirstViewController
+
+@synthesize selectedDateInCalendar;
 
 //- (void)viewDidLoad {
 //    [super viewDidLoad];
@@ -30,19 +38,46 @@
     
     _tableFields.dataSource=self;
     _tableFields.delegate=self;
-    _tableFields.layer.borderWidth=2.0;
-    _tableFields.layer.borderColor=[UIColor blackColor].CGColor;
+    _tableFields.layer.borderWidth=1;
+    _tableFields.layer.borderColor=[UIColor grayColor].CGColor;
+
     
     selectedKey = [[self dateFormatter] stringFromDate:[NSDate date]];
     
     // All modifications on calendarAppearance have to be done before setMenuMonthsView and setContentView
     // Or you will have to call reloadAppearance
     {
-        self.calendar.calendarAppearance.calendar.firstWeekday = 2; // Sunday == 1, Saturday == 7
+        self.calendar.calendarAppearance.calendar.firstWeekday = 1; // Sunday == 1, Saturday == 7 //-- ZSH Switching to standard US default of sunday first.
         self.calendar.calendarAppearance.dayCircleRatio = 9. / 10.;
         self.calendar.calendarAppearance.ratioContentMenu = 2.;
         self.calendar.calendarAppearance.focusSelectedDayChangeMode = YES;
         self.calendar.calendarAppearance.ratioContentMenu = 1;
+        
+        UIColor *buttonColor = [UIColor colorWithRed: 51.0f/255.0f
+                                               green: 92.0f/255.0f
+                                                blue: 214.0f/255.0f
+                                               alpha: 1.0f];
+        
+        self.todayButton.backgroundColor = buttonColor;
+        self.todayButton.layer.cornerRadius = 4;
+        self.todayButton.titleLabel.textColor = [UIColor whiteColor];
+        self.todayButton.layer.borderWidth = 2;
+        self.todayButton.layer.borderColor = [[UIColor colorWithRed: 200.0f/255.0f
+                                                              green: 200.0f/255.0f
+                                                               blue: 200.0f/255.0f
+                                                              alpha: 1.0f] CGColor];
+        
+        
+        self.switchViewButton.backgroundColor = buttonColor;
+        self.switchViewButton.layer.cornerRadius = 4;
+        self.switchViewButton.titleLabel.textColor = [UIColor whiteColor];
+        self.switchViewButton.layer.borderWidth = 2;
+        self.switchViewButton.layer.borderColor = [[UIColor colorWithRed: 200.0f/255.0f
+                                                                   green: 200.0f/255.0f
+                                                                    blue: 200.0f/255.0f
+                                                                   alpha: 1.0f] CGColor];
+        
+        
         
         // Customize the text for each month
         self.calendar.calendarAppearance.monthBlock = ^NSString *(NSDate *date, JTCalendar *jt_calendar){
@@ -62,7 +97,8 @@
             
             NSString *monthText = [[dateFormatter standaloneMonthSymbols][currentMonthIndex - 1] capitalizedString];
             
-            return [NSString stringWithFormat:@"%ld\n%@", comps.year, monthText];
+            //return [NSString stringWithFormat:@"%ld\n%@", comps.year, monthText]; /// Removed year by Zayd
+            return [NSString stringWithFormat:@"%@", monthText];
         };
     }
     
@@ -73,6 +109,8 @@
     [self createRandomEvents];
     
     [self.calendar reloadData];
+    
+    
 }
 
 - (void)viewDidLayoutSubviews
@@ -85,6 +123,19 @@
 - (IBAction)didGoTodayTouch
 {
     [self.calendar setCurrentDate:[NSDate date]];
+    [self.calendar setSelectedDate:[NSDate date]];
+
+    NSString *key = [[self dateFormatter] stringFromDate:[NSDate date]];
+    selectedKey = [[self dateFormatter] stringFromDate:[NSDate date]];
+    NSArray *events = eventsByDate[key];
+    [_tableFields reloadData];
+    [self.calendar reloadData];
+    
+    //[[NSNotificationCenter defaultCenter] postNotificationName:@"kJTCalendarDaySelected" object:[NSDate date]];
+    
+    NSLog(@"Date: %@ - %ld events", [NSDate date], [events count]);
+
+
 }
 
 - (IBAction)didChangeModeTouch
@@ -109,6 +160,7 @@
 
 - (void)calendarDidDateSelected:(JTCalendar *)calendar date:(NSDate *)date
 {
+    self.selectedDateInCalendar=[NSDate dateWithTimeInterval:0 sinceDate:date];
     NSString *key = [[self dateFormatter] stringFromDate:date];
     selectedKey = [[self dateFormatter] stringFromDate:date];
     NSArray *events = eventsByDate[key];
@@ -133,9 +185,11 @@
 {
     CGFloat newHeight = 300;
     CGFloat tableNewY = 370;
+    CGFloat tableNewH = 181;
     if(self.calendar.calendarAppearance.isWeekMode){
         newHeight = 75;
         tableNewY=170;
+        tableNewH = 447;
     }
     
     [UIView animateWithDuration:.5
@@ -148,8 +202,9 @@
     
     [UIView animateWithDuration:.5
                      animations:^{
+                         self.tableViewHeight.constant=tableNewH;
                          [_tableFields beginUpdates];
-                         _tableFields.frame=CGRectMake(_tableFields.frame.origin.x, tableNewY, _tableFields.frame.size.width, _tableFields.frame.size.height);
+                         _tableFields.frame=CGRectMake(_tableFields.frame.origin.x, tableNewY, _tableFields.frame.size.width, tableNewH);
                          [_tableFields endUpdates];
                      }];
     
@@ -183,6 +238,10 @@
 - (void)createRandomEvents
 {
     eventsByDate = [NSMutableDictionary new];
+    // The array having appointments that will get selected and assigned at random
+    NSArray *appointments = [NSArray arrayWithObjects:@"Happy Hour",@"Homework #3 Due",@"Special Class",
+                             @"Meet the Accountant",@"Meeting with Team",@"Repeating Event",
+                             @"Dentist Appointment",@"CS235 Assignment Due",@"Lunch Meeting",nil];
     
     for(int i = 0; i < 30; ++i){
         // Generate 30 random dates between now and 60 days later
@@ -191,18 +250,30 @@
         // Use the date as key for eventsByDate
         NSString *key = [[self dateFormatter] stringFromDate:randomDate];
         
+        // Generate a random number to randomly select an appointment
+        NSInteger randomNumber = arc4random() % 6;
+        
         if(!eventsByDate[key]){
             eventsByDate[key] = [NSMutableArray new];
         }
         
-        [eventsByDate[key] addObject:randomDate];
+        
+        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+        [formatter setDateFormat:@"h:mm a"];
+        
+        //Optionally for time zone conversions
+        [formatter setTimeZone:[NSTimeZone timeZoneWithName:@"PST"]];
+        
+        NSString *stringFromDate = [formatter stringFromDate:randomDate];
+        
+        [eventsByDate[key] addObject:[stringFromDate stringByAppendingString:[@" - " stringByAppendingString:[appointments objectAtIndex:randomNumber]]]];
     }
     
     
-    if(!eventsByDate[@"26-03-2015"]){
-        eventsByDate[@"26-03-2015"] = [NSMutableArray new];
-    }
-    [eventsByDate[@"26-03-2015"] addObject:@"2015-03-27 06:45:20 +1111"];
+    //if(!eventsByDate[@"26-03-2015"]){
+      //  eventsByDate[@"26-03-2015"] = [NSMutableArray new];
+    //}
+    // [eventsByDate[@"26-03-2015"] addObject:@"2015-03-27 06:45:20 +1111"];
 //    [eventsByDate[@"26-03-2015"] addObject:@"2015-03-27 06:45:20 +2222"];
 //    [eventsByDate[@"26-03-2015"] addObject:@"2015-03-27 06:45:20 +3333"];
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
@@ -253,9 +324,10 @@
         cell = [[UITableViewCell alloc]
                 initWithStyle:UITableViewCellStyleDefault reuseIdentifier:AutoCompleteRowIdentifier];
     }
+    
 //    ResturantInfo *tmpInfo=clusterdMarkersInfo[currentNumberOfItemsForTable][indexPath.row];
     UIView *aView = [[UIView alloc] initWithFrame:CGRectMake(0, 0,600,50)];
-    UILabel *nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0,aView.frame.size.width-50,aView.frame.size.height/2 )];
+    UILabel *nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(60, 15,aView.frame.size.width-60,aView.frame.size.height/2 )];
 //    UILabel *addressLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, aView.frame.size.height/2 ,aView.frame.size.width-50,aView.frame.size.height/2 )];
     nameLabel.text=[NSString stringWithFormat:@"%@",eventsByDate[selectedKey][indexPath.row]];
 //    addressLabel.text=[NSString stringWithFormat:@"%@",tmpInfo.address];
@@ -265,6 +337,20 @@
     [aView addSubview:nameLabel];
 //    [aView addSubview:addressLabel];
     [cell addSubview:aView];
+    
+    if(indexPath.row % 2 == 1){
+        UIColor *rowGrayColor = [UIColor colorWithRed: 233.0f/255.0f
+                                                green: 244.0f/255.0f
+                                                 blue: 249.0f/255.0f
+                                                alpha: 1.0f];
+        cell.backgroundColor = rowGrayColor;
+        aView.backgroundColor = rowGrayColor;
+    }
+    else{
+        cell.backgroundColor = [UIColor whiteColor];
+        aView.backgroundColor = [UIColor whiteColor];
+    }
+    
     return cell;
 }
 
@@ -284,6 +370,7 @@
     if ([cell respondsToSelector:@selector(setLayoutMargins:)]) {
         [cell setLayoutMargins:UIEdgeInsetsZero];
     }
+    
 }
 
 #pragma mark UITableViewDelegate methods

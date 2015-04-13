@@ -25,10 +25,10 @@
     
     selectedIndex=-1;
     
-    taskArray = [NSMutableArray arrayWithObjects:[NSMutableArray arrayWithObjects: @"Take out the trash",@"Take the trash out before the trash collector comes on Monday", @"03/22/2015", @"", @"4", nil],
-                 [NSMutableArray arrayWithObjects: @"Mow the Lawn",@"Need to get the lawnmower and mow both the front and back yard. Steve will mow the side yard", @"04/01/2015", @"", @"3", nil],
-                 [NSMutableArray arrayWithObjects: @" Go to the store to get cat food",@"Running out of cat food at home so go to Petco to get some wet (Fancy Feast) and dry (Purina One) cat food", @"03/22/2015", @"", @"2", nil],
-                 [NSMutableArray arrayWithObjects: @"Call Comcast",@"", @"", @"", @"", nil],[NSMutableArray arrayWithObjects: @"",@"", @"", @"", @"", nil],nil];
+    taskArray = [NSMutableArray arrayWithObjects:[NSMutableArray arrayWithObjects: @"Take out the Trash",@"Take the trash out before the trash collector comes on Monday", @"May 4, 2015", @"✭✭✭✩✩", @"4", nil],
+                 [NSMutableArray arrayWithObjects: @"Mow the Lawn",@"Need to get the lawnmower and mow both the front and back yard. Steve will mow the side yard", @"April 30, 2015", @"✭✩✩✩✩", @"3", nil],
+                 [NSMutableArray arrayWithObjects: @"Go to the Store to Get Cat Food",@"Running out of cat food at home so go to Petco to get some wet (Fancy Feast) and dry (Purina One) cat food", @"June 22, 2015", @"✭✭✩✩✩", @"2", nil],
+                 [NSMutableArray arrayWithObjects: @"Call Comcast",@"Cancel cable but make sure they do not cancel the internet too.", @"None", @"✭✭✭✭✭", @"", nil],[NSMutableArray arrayWithObjects: @"",@"", @"", @"", @"", nil],nil];
     
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     
@@ -90,6 +90,9 @@
         cell = [nib objectAtIndex:0];
     }
     
+    cell.containingViewController=self;
+    cell.myIndexPath=indexPath;
+    
     if ([taskArray count]-1 == indexPath.row)
     {
         cell.selectionStyle=UITableViewCellSelectionStyleNone;
@@ -105,15 +108,22 @@
 
     if (selectedIndex == indexPath.row)
     {
-        cell.contentView.backgroundColor = [UIColor lightGrayColor];
-        cell.taskLabel.textColor = [UIColor whiteColor];
-        cell.taskLabel.font = [UIFont fontWithName:@"HelvelticaNeue-Bold" size:16.0];
-        cell.taskDetails.textColor = [UIColor whiteColor];
-        cell.taskDetails.backgroundColor = [UIColor lightGrayColor];
-        cell.rating.textColor = [UIColor whiteColor];
-        cell.dueDate.textColor = [UIColor whiteColor];
-        cell.dueDateTitle.textColor = [UIColor whiteColor];
-        cell.ratingTitle.textColor = [UIColor whiteColor];
+        cell.contentView.backgroundColor = [UIColor colorWithRed: 199.0f/255.0f
+                                                           green: 221.0f/255.0f
+                                                            blue: 238.0f/255.0f
+                                                           alpha: 1.0f];
+        cell.taskLabel.textColor = [UIColor blackColor];
+        //cell.taskLabel.backgroundColor = [UIColor whiteColor];
+        cell.taskLabel.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:16.0];
+        cell.taskDetails.textColor = [UIColor blackColor];
+        cell.taskDetails.backgroundColor = [UIColor colorWithRed: 199.0f/255.0f
+                                                           green: 221.0f/255.0f
+                                                            blue: 238.0f/255.0f
+                                                           alpha: 1.0f];
+        cell.rating.textColor = [UIColor blackColor];
+        cell.dueDate.textColor = [UIColor blackColor];
+        cell.dueDateTitle.textColor = [UIColor blackColor];
+        cell.ratingTitle.textColor = [UIColor blackColor];
         
     }
     else
@@ -212,7 +222,7 @@
 }
 
 -(NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return @"Completed";
+    return @"Completed?";
 }
 
 
