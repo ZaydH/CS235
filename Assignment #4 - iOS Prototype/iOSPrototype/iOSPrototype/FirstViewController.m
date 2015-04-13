@@ -22,6 +22,8 @@
 
 @implementation FirstViewController
 
+@synthesize selectedDateInCalendar;
+
 //- (void)viewDidLoad {
 //    [super viewDidLoad];
 //    // Do any additional setup after loading the view, typically from a nib.
@@ -164,6 +166,7 @@
 
 - (void)calendarDidDateSelected:(JTCalendar *)calendar date:(NSDate *)date
 {
+    self.selectedDateInCalendar=[NSDate dateWithTimeInterval:0 sinceDate:date];
     NSString *key = [[self dateFormatter] stringFromDate:date];
     selectedKey = [[self dateFormatter] stringFromDate:date];
     NSArray *events = eventsByDate[key];
