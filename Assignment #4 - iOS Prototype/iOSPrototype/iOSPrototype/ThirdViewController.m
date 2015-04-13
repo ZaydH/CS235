@@ -8,6 +8,8 @@
 
 #import "ThirdViewController.h"
 #import "FirstViewController.h"
+#import "UIView+Toast.h"
+
 
 @interface ThirdViewController ()
 
@@ -273,8 +275,14 @@ RateView* rv;
     addInviteesTextField.text = @"";
     rv.rating = 1.0f;
     
+    
     // Change view controller to FirstViewController
     self.tabBarController.selectedViewController = [self.tabBarController.viewControllers objectAtIndex:0];
+    
+    // toast with duration, title, and position
+    [self.tabBarController.selectedViewController.view makeToast:@"Appointment Created"
+                duration:3.0
+                position:CSToastPositionCenter];
     
 }
 
