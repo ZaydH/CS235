@@ -90,6 +90,9 @@
         cell = [nib objectAtIndex:0];
     }
     
+    cell.containingViewController=self;
+    cell.myIndexPath=indexPath;
+    
     if ([taskArray count]-1 == indexPath.row)
     {
         cell.selectionStyle=UITableViewCellSelectionStyleNone;
