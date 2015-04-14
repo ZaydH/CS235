@@ -66,8 +66,8 @@ RateView* rv;
     //---- Preload the text field with the date.
     NSDateFormatter *DateFormatter=[[NSDateFormatter alloc] init];
     
-    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    FirstViewController *subField = [sb instantiateViewControllerWithIdentifier:@"FirstViewController"];
+    //UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    //FirstViewController *subField = [sb instantiateViewControllerWithIdentifier:@"FirstViewController"];
 
     
     [DateFormatter setDateFormat:@"MMMM d, yyyy"];
