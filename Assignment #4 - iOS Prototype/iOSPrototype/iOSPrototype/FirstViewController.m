@@ -279,17 +279,21 @@
     // The array having appointments that will get selected and assigned at random
     NSArray *appointments = [NSArray arrayWithObjects:@"Happy Hour",@"Homework #3 Due",@"Special Class",
                              @"Meet the Accountant",@"Meeting with Team",@"Repeating Event",
-                             @"Dentist Appointment",@"CS235 Assignment Due",@"Lunch Meeting",nil];
+                             @"Dentist Appointment",@"CS235 Assignment Due",@"Lunch Meeting",
+                             @"Go to the Movies", @"Dinner with Buddy the Cat",
+                             @"Visit the Tech Museum", @"Take a Nap",
+                             @"Call Bank Regarding Loan", @"Take my Medicine",
+                             @"Sami Khuri Meeting", @"Grade Student Exams",nil];
     
     for(int i = 0; i < 30; ++i){
         // Generate 30 random dates between now and 60 days later
-        NSDate *randomDate = [NSDate dateWithTimeInterval:(rand() % (3600 * 24 * 60)) sinceDate:[NSDate date]];
+        NSDate *randomDate = [NSDate dateWithTimeInterval:(rand() % (3600 * 24 * 60)+3600*24) sinceDate:[NSDate date]];
         
         // Use the date as key for eventsByDate
         NSString *key = [[self dateFormatter] stringFromDate:randomDate];
         
         // Generate a random number to randomly select an appointment
-        NSInteger randomNumber = arc4random() % 6;
+        NSInteger randomNumber = arc4random() % 17;
         
         if(!eventsByDate[key]){
             eventsByDate[key] = [NSMutableArray new];
@@ -308,6 +312,29 @@
     }
     
     
+    for(int i = 0; i < 14; ++i){
+        // Generate 30 random dates between now and 60 days later
+        NSDate *randomDate = [NSDate dateWithTimeInterval:(i *4500 +1800) sinceDate:[NSDate date]];
+        
+        // Use the date as key for eventsByDate
+        NSString *key = [[self dateFormatter] stringFromDate:randomDate];
+        
+        if(!eventsByDate[key]){
+            eventsByDate[key] = [NSMutableArray new];
+        }
+        
+        
+        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+        [formatter setDateFormat:@"h:mm a"];
+        
+        //Optionally for time zone conversions
+        [formatter setTimeZone:[NSTimeZone timeZoneWithName:@"PST"]];
+        
+        NSString *stringFromDate = [formatter stringFromDate:randomDate];
+        
+        [eventsByDate[key] addObject:[stringFromDate stringByAppendingString:[@" - " stringByAppendingString:[appointments objectAtIndex:i]]]];
+    }
+
     //if(!eventsByDate[@"26-03-2015"]){
       //  eventsByDate[@"26-03-2015"] = [NSMutableArray new];
     //}
