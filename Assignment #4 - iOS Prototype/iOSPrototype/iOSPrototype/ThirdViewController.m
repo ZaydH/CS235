@@ -66,9 +66,8 @@ RateView* rv;
     //---- Preload the text field with the date.
     NSDateFormatter *DateFormatter=[[NSDateFormatter alloc] init];
     
-    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    FirstViewController *subField = [sb instantiateViewControllerWithIdentifier:@"FirstViewController"];
-    NSDate *dateToSet=subField.selectedDateInCalendar;
+    //UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    //FirstViewController *subField = [sb instantiateViewControllerWithIdentifier:@"FirstViewController"];
 
     
     [DateFormatter setDateFormat:@"MMMM d, yyyy"];
@@ -135,9 +134,14 @@ RateView* rv;
     
     if (dateToSet)
     {
-    NSDateFormatter *DateFormatter=[[NSDateFormatter alloc] init];
-    [DateFormatter setDateFormat:@"MMMM d, yyyy"];
-    dateTextField.text = [DateFormatter stringFromDate:dateToSet];
+        NSDateFormatter *DateFormatter=[[NSDateFormatter alloc] init];
+        [DateFormatter setDateFormat:@"MMMM d, yyyy"];
+        dateTextField.text = [DateFormatter stringFromDate:dateToSet];
+    }
+    if(hourTextField.text.length == 0){
+        NSDateFormatter *DateFormatter=[[NSDateFormatter alloc] init];
+        [DateFormatter setDateFormat:@"H:mm a"];
+        hourTextField.text = [DateFormatter stringFromDate:[NSDate date]];
     }
 }
 
