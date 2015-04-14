@@ -63,7 +63,7 @@ RateView* rvTask;
     rvTask = [RateView rateViewWithRating:1.0f];
     [self.view addSubview:rvTask];
     // Extra frames width, height ignored
-    rvTask.frame = CGRectMake(175, 305, 200, 240);    // Customizable star normal color
+    rvTask.frame = CGRectMake(120, 299, 200, 240);    // Customizable star normal color
     rvTask.starNormalColor = [UIColor grayColor];
     // Customizable star fill color
     rvTask.starFillColor = [UIColor redColor];
@@ -78,7 +78,7 @@ RateView* rvTask;
     rvTask.canRate = YES;
     priorityTextField.hidden = YES;
     
-    // Change view controller to SecondViewController
+    // Change view controller to FirstViewController
     self.tabBarController.selectedViewController = [self.tabBarController.viewControllers objectAtIndex:1];
     self.tabBarController.selectedViewController = [self.tabBarController.viewControllers objectAtIndex:3];
     

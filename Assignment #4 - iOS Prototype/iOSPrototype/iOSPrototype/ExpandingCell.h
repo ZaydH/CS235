@@ -19,10 +19,4 @@
 @property (strong, nonatomic) IBOutlet UILabel *dueDateTitle;
 @property (strong, nonatomic) IBOutlet UILabel *ratingTitle;
 
-@property (strong, nonatomic) UIViewController *containingViewController;
-
-@property (strong, nonatomic) NSIndexPath *myIndexPath;
-
-- (IBAction)clickPlusMinusButton;
-
 @end

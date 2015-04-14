@@ -7,7 +7,6 @@
 //
 
 #import "ThirdViewController.h"
-#import "FirstViewController.h"
 
 @interface ThirdViewController ()
 
@@ -63,11 +62,6 @@ RateView* rv;
     
     //---- Preload the text field with the date.
     NSDateFormatter *DateFormatter=[[NSDateFormatter alloc] init];
-    
-    //UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    //FirstViewController *subField = [sb instantiateViewControllerWithIdentifier:@"FirstViewController"];
-
-    
     [DateFormatter setDateFormat:@"MMMM d, yyyy"];
     dateTextField.text = [DateFormatter stringFromDate:[NSDate date]];
     
@@ -125,22 +119,6 @@ RateView* rv;
     [super viewDidAppear:animated];
 //    CGRect tmp=self.priorityTextField.frame;
     [rv setFrame:CGRectMake(self.priorityTextField.frame.origin.x+5, self.priorityTextField.frame.origin.y+5, 200, 240)];
-    
-    NSArray *tmp=[self.tabBarController viewControllers];
-    FirstViewController *subField = (FirstViewController *)[tmp objectAtIndex:0];
-    NSDate *dateToSet=subField.selectedDateInCalendar;
-    
-    if (dateToSet)
-    {
-        NSDateFormatter *DateFormatter=[[NSDateFormatter alloc] init];
-        [DateFormatter setDateFormat:@"MMMM d, yyyy"];
-        dateTextField.text = [DateFormatter stringFromDate:dateToSet];
-    }
-    if(hourTextField.text.length == 0){
-        NSDateFormatter *DateFormatter=[[NSDateFormatter alloc] init];
-        [DateFormatter setDateFormat:@"H:mm a"];
-        hourTextField.text = [DateFormatter stringFromDate:[NSDate date]];
-    }
 }
 
 - (void)didReceiveMemoryWarning {

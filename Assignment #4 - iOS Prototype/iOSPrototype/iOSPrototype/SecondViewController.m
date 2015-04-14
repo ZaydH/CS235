@@ -47,7 +47,7 @@
                        change:(NSDictionary *)aChange context:(void *)aContext
 {
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    taskArray=[NSMutableArray arrayWithArray:[userDefaults objectForKey:@"taskArray"]];
+    taskArray=[userDefaults objectForKey:@"taskArray"];
     [_tableFields reloadData];
 }
 
@@ -89,9 +89,6 @@
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"ExpandingCell" owner:self.parentViewController options:nil];
         cell = [nib objectAtIndex:0];
     }
-    
-    cell.containingViewController=self;
-    cell.myIndexPath=indexPath;
     
     if ([taskArray count]-1 == indexPath.row)
     {

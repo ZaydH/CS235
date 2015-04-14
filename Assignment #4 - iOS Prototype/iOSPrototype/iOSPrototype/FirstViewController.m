@@ -8,8 +8,6 @@
 
 #import "FirstViewController.h"
 #import "UIView+Toast.h"
-//#import "QBPopupMenu/QBPopupMenu.h"
-#import "QBPopupMenu.h"
 
 
 
@@ -20,13 +18,9 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *switchViewButton;
 
-@property (nonatomic, strong) QBPopupMenu *popupMenu;
-
 @end
 
 @implementation FirstViewController
-
-@synthesize selectedDateInCalendar;
 
 //- (void)viewDidLoad {
 //    [super viewDidLoad];
@@ -114,47 +108,19 @@
     
     [self.calendar reloadData];
     
-//    UILongPressGestureRecognizer *recognizer = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPress:)];
-//    [self.calendarContentView addGestureRecognizer:recognizer];
-//    
-//    QBPopupMenuItem *item = [QBPopupMenuItem itemWithTitle:@"Edit" target:self action:nil];
-//    QBPopupMenuItem *item2 = [QBPopupMenuItem itemWithTitle:@"Delete" target:self action:nil];
-//    NSArray *items = @[item, item2];
-//    
-//    QBPopupMenu *popupMenu = [[QBPopupMenu alloc] initWithItems:items];
-//    popupMenu.highlightedColor = [[UIColor colorWithRed:0 green:0.478 blue:1.0 alpha:1.0] colorWithAlphaComponent:0.8];
-//    self.popupMenu = popupMenu;
     
-}
-
-//- (void)longPress:(UILongPressGestureRecognizer *)recognizer {
-//    NSLog(@"long press");
-//    if (recognizer.state == UIGestureRecognizerStateBegan) {
-//        NSLog(@"%@",NSStringFromCGPoint([[recognizer valueForKey:@"_startPointScreen"] CGPointValue]));
-//        CGPoint point=[[recognizer valueForKey:@"_startPointScreen"] CGPointValue];
-//        CGRect targetRectangle = CGRectMake(point.x-50, point.y, 100, 100);
-//        [self.popupMenu showInView:self.view targetRect:targetRectangle animated:YES];
-//    }
-//}
-
-- (void)flag:(id)sender {
-    NSLog(@"Cell was flagged");
-}
-
-- (void)approve:(id)sender {
-    NSLog(@"Cell was approved");
-}
-
-- (void)deny:(id)sender {
-    NSLog(@"Cell was denied");
+    // toast with duration, title, and position
+    [self.view makeToast:@"Appointment Created"
+                duration:2.0
+                position:CSToastPositionCenter];
+    
+    
 }
 
 - (void)viewDidLayoutSubviews
 {
     [self.calendar repositionViews];
 }
-
-
 
 #pragma mark - Buttons callback
 
@@ -198,7 +164,6 @@
 
 - (void)calendarDidDateSelected:(JTCalendar *)calendar date:(NSDate *)date
 {
-    self.selectedDateInCalendar=[NSDate dateWithTimeInterval:0 sinceDate:date];
     NSString *key = [[self dateFormatter] stringFromDate:date];
     selectedKey = [[self dateFormatter] stringFromDate:date];
     NSArray *events = eventsByDate[key];
@@ -279,21 +244,17 @@
     // The array having appointments that will get selected and assigned at random
     NSArray *appointments = [NSArray arrayWithObjects:@"Happy Hour",@"Homework #3 Due",@"Special Class",
                              @"Meet the Accountant",@"Meeting with Team",@"Repeating Event",
-                             @"Dentist Appointment",@"CS235 Assignment Due",@"Lunch Meeting",
-                             @"Go to the Movies", @"Dinner with Buddy the Cat",
-                             @"Visit the Tech Museum", @"Take a Nap",
-                             @"Call Bank Regarding Loan", @"Take my Medicine",
-                             @"Sami Khuri Meeting", @"Grade Student Exams",nil];
+                             @"Dentist Appointment",@"CS235 Assignment Due",@"Lunch Meeting",nil];
     
     for(int i = 0; i < 30; ++i){
         // Generate 30 random dates between now and 60 days later
-        NSDate *randomDate = [NSDate dateWithTimeInterval:(rand() % (3600 * 24 * 60)+3600*24) sinceDate:[NSDate date]];
+        NSDate *randomDate = [NSDate dateWithTimeInterval:(rand() % (3600 * 24 * 60)) sinceDate:[NSDate date]];
         
         // Use the date as key for eventsByDate
         NSString *key = [[self dateFormatter] stringFromDate:randomDate];
         
         // Generate a random number to randomly select an appointment
-        NSInteger randomNumber = arc4random() % 17;
+        NSInteger randomNumber = arc4random() % 6;
         
         if(!eventsByDate[key]){
             eventsByDate[key] = [NSMutableArray new];
@@ -312,29 +273,6 @@
     }
     
     
-    for(int i = 0; i < 14; ++i){
-        // Generate 30 random dates between now and 60 days later
-        NSDate *randomDate = [NSDate dateWithTimeInterval:(i *4500 +1800) sinceDate:[NSDate date]];
-        
-        // Use the date as key for eventsByDate
-        NSString *key = [[self dateFormatter] stringFromDate:randomDate];
-        
-        if(!eventsByDate[key]){
-            eventsByDate[key] = [NSMutableArray new];
-        }
-        
-        
-        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-        [formatter setDateFormat:@"h:mm a"];
-        
-        //Optionally for time zone conversions
-        [formatter setTimeZone:[NSTimeZone timeZoneWithName:@"PST"]];
-        
-        NSString *stringFromDate = [formatter stringFromDate:randomDate];
-        
-        [eventsByDate[key] addObject:[stringFromDate stringByAppendingString:[@" - " stringByAppendingString:[appointments objectAtIndex:i]]]];
-    }
-
     //if(!eventsByDate[@"26-03-2015"]){
       //  eventsByDate[@"26-03-2015"] = [NSMutableArray new];
     //}
