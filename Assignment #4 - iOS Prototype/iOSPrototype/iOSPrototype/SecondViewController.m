@@ -47,7 +47,7 @@
                        change:(NSDictionary *)aChange context:(void *)aContext
 {
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    taskArray=[userDefaults objectForKey:@"taskArray"];
+    taskArray=[NSMutableArray arrayWithArray:[userDefaults objectForKey:@"taskArray"]];
     [_tableFields reloadData];
 }
 

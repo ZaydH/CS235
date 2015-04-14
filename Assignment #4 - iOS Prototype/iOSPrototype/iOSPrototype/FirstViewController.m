@@ -8,6 +8,8 @@
 
 #import "FirstViewController.h"
 #import "UIView+Toast.h"
+//#import "QBPopupMenu/QBPopupMenu.h"
+#import "QBPopupMenu.h"
 
 
 
@@ -17,6 +19,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *todayButton;
 
 @property (weak, nonatomic) IBOutlet UIButton *switchViewButton;
+
+@property (nonatomic, strong) QBPopupMenu *popupMenu;
 
 @end
 
@@ -110,13 +114,47 @@
     
     [self.calendar reloadData];
     
+//    UILongPressGestureRecognizer *recognizer = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPress:)];
+//    [self.calendarContentView addGestureRecognizer:recognizer];
+//    
+//    QBPopupMenuItem *item = [QBPopupMenuItem itemWithTitle:@"Edit" target:self action:nil];
+//    QBPopupMenuItem *item2 = [QBPopupMenuItem itemWithTitle:@"Delete" target:self action:nil];
+//    NSArray *items = @[item, item2];
+//    
+//    QBPopupMenu *popupMenu = [[QBPopupMenu alloc] initWithItems:items];
+//    popupMenu.highlightedColor = [[UIColor colorWithRed:0 green:0.478 blue:1.0 alpha:1.0] colorWithAlphaComponent:0.8];
+//    self.popupMenu = popupMenu;
     
+}
+
+//- (void)longPress:(UILongPressGestureRecognizer *)recognizer {
+//    NSLog(@"long press");
+//    if (recognizer.state == UIGestureRecognizerStateBegan) {
+//        NSLog(@"%@",NSStringFromCGPoint([[recognizer valueForKey:@"_startPointScreen"] CGPointValue]));
+//        CGPoint point=[[recognizer valueForKey:@"_startPointScreen"] CGPointValue];
+//        CGRect targetRectangle = CGRectMake(point.x-50, point.y, 100, 100);
+//        [self.popupMenu showInView:self.view targetRect:targetRectangle animated:YES];
+//    }
+//}
+
+- (void)flag:(id)sender {
+    NSLog(@"Cell was flagged");
+}
+
+- (void)approve:(id)sender {
+    NSLog(@"Cell was approved");
+}
+
+- (void)deny:(id)sender {
+    NSLog(@"Cell was denied");
 }
 
 - (void)viewDidLayoutSubviews
 {
     [self.calendar repositionViews];
 }
+
+
 
 #pragma mark - Buttons callback
 
