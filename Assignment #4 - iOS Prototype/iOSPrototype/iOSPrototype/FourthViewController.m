@@ -8,7 +8,6 @@
 
 #import "FourthViewController.h"
 #import "UITextField+Shake.h"
-#import "UIView+Toast.h"
 
 @interface FourthViewController ()
 
@@ -169,11 +168,6 @@ RateView* rvTask;
     
     // Change view controller to FirstViewController
     self.tabBarController.selectedViewController = [self.tabBarController.viewControllers objectAtIndex:1];
-    
-    // toast with duration, title, and position
-    [self.tabBarController.selectedViewController.view makeToast:@"Task Created"
-                                                        duration:3.0
-                                                        position:CSToastPositionCenter];
     
     
 }
