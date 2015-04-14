@@ -7,6 +7,9 @@
 //
 
 #import "ThirdViewController.h"
+#import "FirstViewController.h"
+#import "UIView+Toast.h"
+
 
 @interface ThirdViewController ()
 
@@ -62,6 +65,12 @@ RateView* rv;
     
     //---- Preload the text field with the date.
     NSDateFormatter *DateFormatter=[[NSDateFormatter alloc] init];
+    
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    FirstViewController *subField = [sb instantiateViewControllerWithIdentifier:@"FirstViewController"];
+    NSDate *dateToSet=subField.selectedDateInCalendar;
+
+    
     [DateFormatter setDateFormat:@"MMMM d, yyyy"];
     dateTextField.text = [DateFormatter stringFromDate:[NSDate date]];
     
@@ -119,6 +128,17 @@ RateView* rv;
     [super viewDidAppear:animated];
 //    CGRect tmp=self.priorityTextField.frame;
     [rv setFrame:CGRectMake(self.priorityTextField.frame.origin.x+5, self.priorityTextField.frame.origin.y+5, 200, 240)];
+    
+    NSArray *tmp=[self.tabBarController viewControllers];
+    FirstViewController *subField = (FirstViewController *)[tmp objectAtIndex:0];
+    NSDate *dateToSet=subField.selectedDateInCalendar;
+    
+    if (dateToSet)
+    {
+    NSDateFormatter *DateFormatter=[[NSDateFormatter alloc] init];
+    [DateFormatter setDateFormat:@"MMMM d, yyyy"];
+    dateTextField.text = [DateFormatter stringFromDate:dateToSet];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -255,8 +275,14 @@ RateView* rv;
     addInviteesTextField.text = @"";
     rv.rating = 1.0f;
     
+    
     // Change view controller to FirstViewController
     self.tabBarController.selectedViewController = [self.tabBarController.viewControllers objectAtIndex:0];
+    
+    // toast with duration, title, and position
+    [self.tabBarController.selectedViewController.view makeToast:@"Appointment Created"
+                duration:3.0
+                position:CSToastPositionCenter];
     
 }
 

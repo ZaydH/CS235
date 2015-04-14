@@ -27,6 +27,8 @@
 
 @property (strong, nonatomic) IBOutlet UITableView *tableFields;
 
+@property (strong, nonatomic) NSDate *selectedDateInCalendar;
+
 
 
 @end
