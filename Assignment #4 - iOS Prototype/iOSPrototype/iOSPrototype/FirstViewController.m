@@ -235,6 +235,11 @@
     return dateFormatter;
 }
 
+- (void)viewDidAppear:(BOOL)animated{
+    [self.calendar reloadData];
+}
+
+
 - (void)createRandomEvents
 {
     eventsByDate = [NSMutableDictionary new];
