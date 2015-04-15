@@ -301,6 +301,17 @@
         
         [eventsByDate[key] addObject:[stringFromDate stringByAppendingString:[@" - " stringByAppendingString:[appointments objectAtIndex:i]]]];
     }
+    
+    for (id key in eventsByDate)
+    {
+        if ([eventsByDate[key] count]<3)
+        {
+            for(int i = 0; i < (4-[eventsByDate[key] count]); ++i)
+            {
+                [eventsByDate[key] addObject:@"NODATA"];
+            }
+        }
+    }
 
     //if(!eventsByDate[@"26-03-2015"]){
       //  eventsByDate[@"26-03-2015"] = [NSMutableArray new];
@@ -356,8 +367,18 @@
         cell = [[UITableViewCell alloc]
                 initWithStyle:UITableViewCellStyleDefault reuseIdentifier:AutoCompleteRowIdentifier];
     }
-     cell.textLabel.text=[NSString stringWithFormat:@"%@",eventsByDate[selectedKey][indexPath.row]];
-    cell.textLabel.textAlignment=NSTextAlignmentCenter;
+    NSString *nextText=[NSString stringWithFormat:@"%@",eventsByDate[selectedKey][indexPath.row]];
+    if (!([nextText isEqual:@"NODATA"]))
+    {
+        cell.textLabel.text=[NSString stringWithFormat:@"%@",eventsByDate[selectedKey][indexPath.row]];
+        cell.textLabel.textAlignment=NSTextAlignmentCenter;
+    }
+    else
+    {
+        cell.textLabel.text=[NSString stringWithFormat:@"%@",eventsByDate[selectedKey][indexPath.row]];
+        cell.textLabel.textColor=[UIColor clearColor];
+        cell.userInteractionEnabled=NO;
+    }
     
 ////    ResturantInfo *tmpInfo=clusterdMarkersInfo[currentNumberOfItemsForTable][indexPath.row];
 //    UIView *aView = [[UIView alloc] initWithFrame:CGRectMake(0, 0,600,50)];
