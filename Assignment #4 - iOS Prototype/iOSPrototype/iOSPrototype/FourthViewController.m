@@ -64,7 +64,7 @@ RateView* rvTask;
     rvTask = [RateView rateViewWithRating:1.0f];
     [self.view addSubview:rvTask];
     // Extra frames width, height ignored
-    rvTask.frame = CGRectMake(120, 299, 200, 240);    // Customizable star normal color
+    rvTask.frame = CGRectMake(162, 302, 200, 240);    // Customizable star normal color
     rvTask.starNormalColor = [UIColor grayColor];
     // Customizable star fill color
     rvTask.starFillColor = [UIColor redColor];
