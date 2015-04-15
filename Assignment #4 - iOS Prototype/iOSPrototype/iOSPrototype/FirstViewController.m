@@ -356,19 +356,21 @@
         cell = [[UITableViewCell alloc]
                 initWithStyle:UITableViewCellStyleDefault reuseIdentifier:AutoCompleteRowIdentifier];
     }
+     cell.textLabel.text=[NSString stringWithFormat:@"%@",eventsByDate[selectedKey][indexPath.row]];
+    cell.textLabel.textAlignment=NSTextAlignmentCenter;
     
-//    ResturantInfo *tmpInfo=clusterdMarkersInfo[currentNumberOfItemsForTable][indexPath.row];
-    UIView *aView = [[UIView alloc] initWithFrame:CGRectMake(0, 0,600,50)];
-    UILabel *nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(60, 15,aView.frame.size.width-60,aView.frame.size.height/2 )];
-//    UILabel *addressLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, aView.frame.size.height/2 ,aView.frame.size.width-50,aView.frame.size.height/2 )];
-    nameLabel.text=[NSString stringWithFormat:@"%@",eventsByDate[selectedKey][indexPath.row]];
-//    addressLabel.text=[NSString stringWithFormat:@"%@",tmpInfo.address];
-//    nameLabel.adjustsFontSizeToFitWidth = YES;
-//    addressLabel.adjustsFontSizeToFitWidth = YES;
-    [aView setBackgroundColor:[UIColor whiteColor]];
-    [aView addSubview:nameLabel];
-//    [aView addSubview:addressLabel];
-    [cell addSubview:aView];
+////    ResturantInfo *tmpInfo=clusterdMarkersInfo[currentNumberOfItemsForTable][indexPath.row];
+//    UIView *aView = [[UIView alloc] initWithFrame:CGRectMake(0, 0,600,50)];
+//    UILabel *nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(60, 15,aView.frame.size.width-60,aView.frame.size.height/2 )];
+////    UILabel *addressLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, aView.frame.size.height/2 ,aView.frame.size.width-50,aView.frame.size.height/2 )];
+//    nameLabel.text=[NSString stringWithFormat:@"%@",eventsByDate[selectedKey][indexPath.row]];
+////    addressLabel.text=[NSString stringWithFormat:@"%@",tmpInfo.address];
+////    nameLabel.adjustsFontSizeToFitWidth = YES;
+////    addressLabel.adjustsFontSizeToFitWidth = YES;
+//    [aView setBackgroundColor:[UIColor whiteColor]];
+//    [aView addSubview:nameLabel];
+////    [aView addSubview:addressLabel];
+//    [cell addSubview:aView];
     
     if(indexPath.row % 2 == 1){
         UIColor *rowGrayColor = [UIColor colorWithRed: 233.0f/255.0f
@@ -376,11 +378,11 @@
                                                  blue: 249.0f/255.0f
                                                 alpha: 1.0f];
         cell.backgroundColor = rowGrayColor;
-        aView.backgroundColor = rowGrayColor;
+//        aView.backgroundColor = rowGrayColor;
     }
     else{
         cell.backgroundColor = [UIColor whiteColor];
-        aView.backgroundColor = [UIColor whiteColor];
+//        aView.backgroundColor = [UIColor whiteColor];
     }
     
     return cell;
