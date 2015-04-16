@@ -177,6 +177,7 @@
 - (void)calendarDidLoadNextPage
 {
     NSLog(@"Next page loaded");
+    
 }
 
 #pragma mark - Transition examples
@@ -350,7 +351,10 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger) section {
-    return [eventsByDate[selectedKey] count];
+    if ([eventsByDate[selectedKey] count]>0)
+        return [eventsByDate[selectedKey] count];
+    else
+        return 3;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -367,15 +371,25 @@
         cell = [[UITableViewCell alloc]
                 initWithStyle:UITableViewCellStyleDefault reuseIdentifier:AutoCompleteRowIdentifier];
     }
-    NSString *nextText=[NSString stringWithFormat:@"%@",eventsByDate[selectedKey][indexPath.row]];
-    if (!([nextText isEqual:@"NODATA"]))
+    if ([eventsByDate[selectedKey] count]>0)
     {
-        cell.textLabel.text=[NSString stringWithFormat:@"%@",eventsByDate[selectedKey][indexPath.row]];
-        cell.textLabel.textAlignment=NSTextAlignmentCenter;
+        NSString *nextText=[NSString stringWithFormat:@"%@",eventsByDate[selectedKey][indexPath.row]];
+        if (!([nextText isEqual:@"NODATA"]))
+        {
+            cell.textLabel.text=[NSString stringWithFormat:@"%@",eventsByDate[selectedKey][indexPath.row]];
+            cell.textLabel.textAlignment=NSTextAlignmentCenter;
+            cell.textLabel.textColor=[UIColor blackColor];
+        }
+        else
+        {
+            cell.textLabel.text=[NSString stringWithFormat:@"%@",eventsByDate[selectedKey][indexPath.row]];
+            cell.textLabel.textColor=[UIColor clearColor];
+            cell.userInteractionEnabled=NO;
+        }
     }
     else
     {
-        cell.textLabel.text=[NSString stringWithFormat:@"%@",eventsByDate[selectedKey][indexPath.row]];
+        cell.textLabel.text=@"";
         cell.textLabel.textColor=[UIColor clearColor];
         cell.userInteractionEnabled=NO;
     }
