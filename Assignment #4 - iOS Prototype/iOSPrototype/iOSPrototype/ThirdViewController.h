@@ -17,6 +17,8 @@
 
 @property (strong, nonatomic) IBOutlet UITextField *taskNameTextField;
 
+@property (strong, nonatomic) IBOutlet UIView *taskNameView;
+
 @property (strong, nonatomic) IBOutlet UITextField *taskColorTextField;
 
 @property (strong, nonatomic) IBOutlet UITextField *dateTextField;

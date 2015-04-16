@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -313,6 +313,10 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bem-D5-iaX">
+                                <rect key="frame" x="267" y="84" width="195" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -320,6 +324,7 @@
                             <constraint firstItem="GWD-wO-Wpq" firstAttribute="leading" secondItem="YBW-yF-b1g" secondAttribute="leading" id="0Kl-hV-T30"/>
                             <constraint firstItem="dfX-Nw-vvJ" firstAttribute="bottom" secondItem="wBY-Lo-PKa" secondAttribute="bottom" id="2rz-h1-TM3"/>
                             <constraint firstItem="jMa-se-iW9" firstAttribute="leading" secondItem="GWD-wO-Wpq" secondAttribute="leading" id="3Bb-Du-LJZ"/>
+                            <constraint firstItem="bem-D5-iaX" firstAttribute="leading" secondItem="wBY-Lo-PKa" secondAttribute="trailing" constant="22" id="4oz-L2-wY9"/>
                             <constraint firstItem="wBY-Lo-PKa" firstAttribute="top" secondItem="mrG-9M-DGc" secondAttribute="bottom" constant="26" id="5t7-98-izr"/>
                             <constraint firstItem="wBY-Lo-PKa" firstAttribute="leading" secondItem="YBW-yF-b1g" secondAttribute="leading" id="7xg-qd-kcV"/>
                             <constraint firstItem="hNb-qj-Bre" firstAttribute="top" secondItem="gqO-tr-CX3" secondAttribute="top" id="9e3-vG-dPq"/>
@@ -329,6 +334,7 @@
                             <constraint firstItem="mrG-9M-DGc" firstAttribute="leading" secondItem="rIl-89-Px0" secondAttribute="leadingMargin" constant="-16" id="F7p-Fe-TFV"/>
                             <constraint firstItem="oZb-8m-S4u" firstAttribute="leading" secondItem="jFP-3c-hJ7" secondAttribute="leading" id="Fzd-2Y-GRZ"/>
                             <constraint firstItem="cBO-qF-2K9" firstAttribute="top" secondItem="hNb-qj-Bre" secondAttribute="bottom" constant="11" id="Gqp-Ke-gsk"/>
+                            <constraint firstItem="3x2-sY-M02" firstAttribute="top" secondItem="bem-D5-iaX" secondAttribute="bottom" constant="10" id="Iu5-Go-lKz"/>
                             <constraint firstItem="cBO-qF-2K9" firstAttribute="leading" secondItem="jFP-3c-hJ7" secondAttribute="leading" id="KsV-tb-NKh"/>
                             <constraint firstItem="hNb-qj-Bre" firstAttribute="top" secondItem="3x2-sY-M02" secondAttribute="bottom" constant="6" id="L3a-YZ-J7d"/>
                             <constraint firstAttribute="centerX" secondItem="3x2-sY-M02" secondAttribute="centerX" constant="-65" id="LH3-jS-c5u"/>
@@ -356,9 +362,11 @@
                             <constraint firstAttribute="centerX" secondItem="XwV-xe-2aF" secondAttribute="centerX" constant="116" id="k50-qu-mde"/>
                             <constraint firstAttribute="centerX" secondItem="jFP-3c-hJ7" secondAttribute="centerX" constant="-65" id="nhI-qq-dAK"/>
                             <constraint firstItem="dfX-Nw-vvJ" firstAttribute="leading" secondItem="wBY-Lo-PKa" secondAttribute="trailing" constant="22" id="q38-tW-aqb"/>
+                            <constraint firstItem="bem-D5-iaX" firstAttribute="trailing" secondItem="dfX-Nw-vvJ" secondAttribute="trailing" id="qPS-fG-dNP"/>
                             <constraint firstAttribute="centerX" secondItem="dfX-Nw-vvJ" secondAttribute="centerX" constant="-65" id="sFA-9V-70l"/>
                             <constraint firstItem="y6L-1h-lEL" firstAttribute="centerX" secondItem="mrG-9M-DGc" secondAttribute="centerX" id="tkV-BQ-11g"/>
                             <constraint firstItem="dfX-Nw-vvJ" firstAttribute="top" secondItem="wBY-Lo-PKa" secondAttribute="top" id="tlu-RB-qk8"/>
+                            <constraint firstItem="bem-D5-iaX" firstAttribute="top" secondItem="dfX-Nw-vvJ" secondAttribute="top" id="vIU-Ud-FfI"/>
                             <constraint firstItem="3x2-sY-M02" firstAttribute="top" secondItem="dfX-Nw-vvJ" secondAttribute="bottom" constant="10" id="wDH-lJ-V5a"/>
                             <constraint firstAttribute="centerX" secondItem="gqO-tr-CX3" secondAttribute="centerX" constant="116" id="xzD-jS-ghP"/>
                             <constraint firstAttribute="centerX" secondItem="GWD-wO-Wpq" secondAttribute="centerX" constant="116" id="yiy-tG-7Eg"/>
@@ -374,6 +382,7 @@
                         <outlet property="hourTextField" destination="hNb-qj-Bre" id="0At-Hx-2Vq"/>
                         <outlet property="priorityTextField" destination="oZb-8m-S4u" id="6OQ-Kt-fEk"/>
                         <outlet property="taskNameTextField" destination="dfX-Nw-vvJ" id="6wb-4X-A2I"/>
+                        <outlet property="taskNameView" destination="bem-D5-iaX" id="Jcr-fq-mFa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hEJ-ZE-aVL" userLabel="First Responder" sceneMemberID="firstResponder"/>

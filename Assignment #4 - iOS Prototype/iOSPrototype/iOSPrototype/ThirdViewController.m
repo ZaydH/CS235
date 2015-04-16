@@ -10,6 +10,8 @@
 #import "FirstViewController.h"
 #import "UIView+Toast.h"
 
+#import "UIFloatLabelTextField.h"
+
 
 @interface ThirdViewController ()
 
@@ -21,7 +23,7 @@
 
 RateView* rv;
 
-@synthesize dateTextField,hourTextField,taskColorTextField,taskNameTextField,priorityTextField,addInviteesTextField,descriptionTextView;
+@synthesize dateTextField,hourTextField,taskColorTextField,taskNameTextField,priorityTextField,addInviteesTextField,descriptionTextView,taskNameView;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -111,6 +113,19 @@ RateView* rv;
     // Can Rate (User Interaction, as needed)
     rv.canRate = YES;
     priorityTextField.hidden = YES;
+    
+//    [[UIFloatLabelTextField appearance] setBackgroundColor:[UIColor whiteColor]];
+//    
+//    UIFloatLabelTextField *firstNameTextField = [UIFloatLabelTextField new];
+////    [firstNameTextField setTranslatesAutoresizingMaskIntoConstraints:NO];
+//    [firstNameTextField setFrame:CGRectMake(0, 0, self.taskNameView.frame.size.width, self.taskNameView.frame.size.height)];
+//    firstNameTextField.floatLabelActiveColor = [UIColor orangeColor];
+//    firstNameTextField.placeholder = @"First Name";
+//    firstNameTextField.text = @"Arthur";
+////    firstNameTextField.delegate = self;
+//    [self.taskNameView addSubview:firstNameTextField];
+    
+    self.taskNameView.hidden=YES;
 
 }
 
@@ -258,7 +273,32 @@ RateView* rv;
         tmp[stringEventDate] = [NSMutableArray new];
     }
     NSMutableArray *tmp2=[NSMutableArray arrayWithArray:tmp[stringEventDate]];
-    [tmp2 addObject:[hourTextField.text stringByAppendingString:[NSString stringWithFormat: @" - %@", taskNameTextField.text]]];
+//    [eventsByDate[key] addObject:@"NODATA"]
+    if ([tmp2 count]<3)
+    {
+        [tmp2 addObject:[hourTextField.text stringByAppendingString:[NSString stringWithFormat: @" - %@", taskNameTextField.text]]];
+        [tmp2 addObject:@"NODATA"];
+        [tmp2 addObject:@"NODATA"];
+    }
+    else if ([tmp2 count]==3)
+    {
+        if ([tmp2[0] isEqual:@"NODATA"])
+        {
+            tmp2[0]=[hourTextField.text stringByAppendingString:[NSString stringWithFormat: @" - %@", taskNameTextField.text]];
+        }
+        else if ([tmp2[1] isEqual:@"NODATA"])
+        {
+            tmp2[1]=[hourTextField.text stringByAppendingString:[NSString stringWithFormat: @" - %@", taskNameTextField.text]];
+        }
+        else if ([tmp2[2] isEqual:@"NODATA"])
+        {
+            tmp2[2]=[hourTextField.text stringByAppendingString:[NSString stringWithFormat: @" - %@", taskNameTextField.text]];
+        }
+    }
+    else
+    {
+        [tmp2 addObject:[hourTextField.text stringByAppendingString:[NSString stringWithFormat: @" - %@", taskNameTextField.text]]];
+    }
 //    [tmp2 addObject:@"2015-03-27 06:45:20 +5555"];
 //    [tmp2 addObject:@"2015-03-27 06:45:20 +6666"];
     tmp[stringEventDate] = tmp2;

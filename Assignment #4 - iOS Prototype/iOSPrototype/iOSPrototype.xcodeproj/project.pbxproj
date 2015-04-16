@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C2115831AE05DDA00758F23 /* UIFloatLabelTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C2115821AE05DDA00758F23 /* UIFloatLabelTextField.m */; };
 		4CEF3EEC1ABF53F7000052D2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEF3EEB1ABF53F7000052D2 /* main.m */; };
 		4CEF3EEF1ABF53F7000052D2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEF3EEE1ABF53F7000052D2 /* AppDelegate.m */; };
 		4CEF3EF21ABF53F7000052D2 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEF3EF11ABF53F7000052D2 /* FirstViewController.m */; };
@@ -47,6 +48,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4C2115811AE05DDA00758F23 /* UIFloatLabelTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIFloatLabelTextField.h; sourceTree = "<group>"; };
+		4C2115821AE05DDA00758F23 /* UIFloatLabelTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIFloatLabelTextField.m; sourceTree = "<group>"; };
 		4CEF3EE61ABF53F7000052D2 /* iOSPrototype.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSPrototype.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CEF3EEA1ABF53F7000052D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4CEF3EEB1ABF53F7000052D2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -120,6 +123,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4C2115701AE03CAE00758F23 /* UIFloatLabelTextField */ = {
+			isa = PBXGroup;
+			children = (
+				4C2115811AE05DDA00758F23 /* UIFloatLabelTextField.h */,
+				4C2115821AE05DDA00758F23 /* UIFloatLabelTextField.m */,
+			);
+			name = UIFloatLabelTextField;
+			sourceTree = "<group>";
+		};
 		4CEF3EDD1ABF53F6000052D2 = {
 			isa = PBXGroup;
 			children = (
@@ -141,6 +153,7 @@
 		4CEF3EE81ABF53F7000052D2 /* iOSPrototype */ = {
 			isa = PBXGroup;
 			children = (
+				4C2115701AE03CAE00758F23 /* UIFloatLabelTextField */,
 				F8A654BF1AD69BA3003EF87F /* RateView */,
 				4CEF3F371ABF8B72000052D2 /* ExapandingCell */,
 				4CEF3F121ABF5769000052D2 /* JTCalendar */,
@@ -363,6 +376,7 @@
 				F8A654C21AD69BA3003EF87F /* RateView.m in Sources */,
 				4CEF3F2E1ABF5769000052D2 /* JTCalendarDayView.m in Sources */,
 				4CEF3F3F1ABFC229000052D2 /* ThirdViewController.m in Sources */,
+				4C2115831AE05DDA00758F23 /* UIFloatLabelTextField.m in Sources */,
 				F8398D1D1AD7EB8900FC349A /* UITextField+Shake.m in Sources */,
 				4CEF3F331ABF5769000052D2 /* JTCalendarWeekView.m in Sources */,
 				4CEF3F2F1ABF5769000052D2 /* JTCalendarMenuMonthView.m in Sources */,
