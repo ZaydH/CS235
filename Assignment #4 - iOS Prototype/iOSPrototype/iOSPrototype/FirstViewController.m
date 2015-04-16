@@ -377,9 +377,8 @@
         if (!([nextText isEqual:@"NODATA"]))
         {
             cell.textLabel.text=[NSString stringWithFormat:@"%@",eventsByDate[selectedKey][indexPath.row]];
-//            cell.textLabel.textAlignment=NSTextAlignmentCenter;
+            cell.textLabel.textAlignment=NSTextAlignmentCenter;
             cell.textLabel.textColor=[UIColor blackColor];
-            cell.userInteractionEnabled=YES;
         }
         else
         {
