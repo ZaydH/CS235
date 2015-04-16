@@ -10,8 +10,6 @@
 #import "FirstViewController.h"
 #import "UIView+Toast.h"
 
-#import "UIFloatLabelTextField.h"
-
 
 @interface ThirdViewController ()
 
@@ -23,7 +21,7 @@
 
 RateView* rv;
 
-@synthesize dateTextField,hourTextField,taskColorTextField,taskNameTextField,priorityTextField,addInviteesTextField,descriptionTextView,taskNameView;
+@synthesize dateTextField,hourTextField,taskColorTextField,taskNameTextField,priorityTextField,addInviteesTextField,descriptionTextView;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -114,18 +112,6 @@ RateView* rv;
     rv.canRate = YES;
     priorityTextField.hidden = YES;
     
-//    [[UIFloatLabelTextField appearance] setBackgroundColor:[UIColor whiteColor]];
-//    
-//    UIFloatLabelTextField *firstNameTextField = [UIFloatLabelTextField new];
-////    [firstNameTextField setTranslatesAutoresizingMaskIntoConstraints:NO];
-//    [firstNameTextField setFrame:CGRectMake(0, 0, self.taskNameView.frame.size.width, self.taskNameView.frame.size.height)];
-//    firstNameTextField.floatLabelActiveColor = [UIColor orangeColor];
-//    firstNameTextField.placeholder = @"First Name";
-//    firstNameTextField.text = @"Arthur";
-////    firstNameTextField.delegate = self;
-//    [self.taskNameView addSubview:firstNameTextField];
-    
-    self.taskNameView.hidden=YES;
 
 }
 
