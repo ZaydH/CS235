@@ -311,6 +311,7 @@ UIDatePicker *datePicker;
     NSArray *tabBar=[self.tabBarController viewControllers];
     FirstViewController *subField = (FirstViewController *)[tabBar objectAtIndex:0];
     //subField.calendar.setSelectedDate(datePicker.date);
+    subField.selectedDateInCalendar = datePicker.date;
     [subField.calendar setSelectedDate:datePicker.date];
     
     

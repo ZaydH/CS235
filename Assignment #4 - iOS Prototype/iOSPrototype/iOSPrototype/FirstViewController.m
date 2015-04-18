@@ -237,6 +237,26 @@
 }
 
 - (void)viewDidAppear:(BOOL)animated{
+    
+    /*NSString *key = [[self dateFormatter] stringFromDate:date];
+    NSArray *events = eventsByDate[key];
+    [_tableFields reloadData];
+    [self.calendar reloadData];*/
+    
+    /*NSString *key = [[self dateFormatter] stringFromDate:self.selectedDateInCalendar];
+    selectedKey = [[self dateFormatter] stringFromDate:self.selectedDateInCalendar];
+    NSArray *events = eventsByDate[key];
+    [_tableFields reloadData];*/
+
+    
+    //self.selectedDateInCalendar=[NSDate dateWithTimeInterval:0 sinceDate:date];
+    NSString *key = [[self dateFormatter] stringFromDate:self.selectedDateInCalendar];
+    selectedKey = [[self dateFormatter] stringFromDate:self.selectedDateInCalendar];
+    NSArray *events = eventsByDate[key];
+    [_tableFields reloadData];
+    
+    NSLog(@"Date: %@ - %ld events", self.selectedDateInCalendar, [events count]);
+    
     [self.calendar reloadData];
 }
 
