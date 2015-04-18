@@ -108,8 +108,19 @@
     
     [self createRandomEvents];
     
+    [self.calendar setCurrentDate:[NSDate date]];
+    [self.calendar setSelectedDate:[NSDate date]];
+    self.selectedDateInCalendar = [NSDate date];
+    
+    NSString *key = [[self dateFormatter] stringFromDate:[NSDate date]];
+    selectedKey = [[self dateFormatter] stringFromDate:[NSDate date]];
+    NSArray *events = eventsByDate[key];
+    [_tableFields reloadData];
     [self.calendar reloadData];
     
+    //[[NSNotificationCenter defaultCenter] postNotificationName:@"kJTCalendarDaySelected" object:[NSDate date]];
+    
+    NSLog(@"Date: %@ - %ld events", [NSDate date], [events count]);
     
 }
 
@@ -238,16 +249,6 @@
 
 - (void)viewDidAppear:(BOOL)animated{
     
-    /*NSString *key = [[self dateFormatter] stringFromDate:date];
-    NSArray *events = eventsByDate[key];
-    [_tableFields reloadData];
-    [self.calendar reloadData];*/
-    
-    /*NSString *key = [[self dateFormatter] stringFromDate:self.selectedDateInCalendar];
-    selectedKey = [[self dateFormatter] stringFromDate:self.selectedDateInCalendar];
-    NSArray *events = eventsByDate[key];
-    [_tableFields reloadData];*/
-
     
     //self.selectedDateInCalendar=[NSDate dateWithTimeInterval:0 sinceDate:date];
     NSString *key = [[self dateFormatter] stringFromDate:self.selectedDateInCalendar];
