@@ -20,6 +20,7 @@
 @implementation ThirdViewController
 
 RateView* rv;
+UIDatePicker *datePicker;
 
 @synthesize dateTextField,hourTextField,taskColorTextField,taskNameTextField,priorityTextField,addInviteesTextField,descriptionTextView;
 
@@ -49,7 +50,7 @@ RateView* rv;
                                                                       alpha: 1.0f] CGColor];
     
     
-    UIDatePicker *datePicker = [[UIDatePicker alloc] init];
+    datePicker = [[UIDatePicker alloc] init];
     datePicker.datePickerMode = UIDatePickerModeDate;
     // Improve the display of the day selection datepicker.
     datePicker.layer.borderColor = [[UIColor colorWithRed: 200.0f/255.0f
@@ -138,6 +139,7 @@ RateView* rv;
         NSDateFormatter *DateFormatter=[[NSDateFormatter alloc] init];
         [DateFormatter setDateFormat:@"MMMM d, yyyy"];
         dateTextField.text = [DateFormatter stringFromDate:dateToSet];
+        datePicker.date = dateToSet;
     }
     if(hourTextField.text.length == 0){
         NSDateFormatter *DateFormatter=[[NSDateFormatter alloc] init];
