@@ -307,6 +307,12 @@ UIDatePicker *datePicker;
     addInviteesTextField.text = @"";
     rv.rating = 1.0f;
     
+    // Updating calendar date.
+    NSArray *tabBar=[self.tabBarController viewControllers];
+    FirstViewController *subField = (FirstViewController *)[tabBar objectAtIndex:0];
+    //subField.calendar.setSelectedDate(datePicker.date);
+    [subField.calendar setSelectedDate:datePicker.date];
+    
     
     // Change view controller to FirstViewController
     self.tabBarController.selectedViewController = [self.tabBarController.viewControllers objectAtIndex:0];
