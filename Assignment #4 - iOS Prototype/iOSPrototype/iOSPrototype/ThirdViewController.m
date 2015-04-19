@@ -22,6 +22,7 @@
 RateView* rv;
 UIDatePicker *datePicker;
 UIDatePicker *datePicker2;
+NSDate * previousDate;
 
 @synthesize dateTextField,hourTextField,taskColorTextField,taskNameTextField,priorityTextField,addInviteesTextField,descriptionTextView;
 
@@ -135,12 +136,14 @@ UIDatePicker *datePicker2;
     FirstViewController *subField = (FirstViewController *)[tmp objectAtIndex:0];
     NSDate *dateToSet=subField.selectedDateInCalendar;
     
-    if (dateToSet)
+    if (dateToSet && previousDate != dateToSet)
     {
         NSDateFormatter *DateFormatter=[[NSDateFormatter alloc] init];
         [DateFormatter setDateFormat:@"MMMM d, yyyy"];
         dateTextField.text = [DateFormatter stringFromDate:dateToSet];
         datePicker.date = dateToSet;
+        
+        previousDate = dateToSet;
     }
     if(hourTextField.text.length == 0){
         NSDateFormatter *DateFormatter=[[NSDateFormatter alloc] init];
