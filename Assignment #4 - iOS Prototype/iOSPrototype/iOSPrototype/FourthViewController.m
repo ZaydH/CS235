@@ -33,6 +33,11 @@ RateView* rvTask;
                                                                   green: 200.0f/255.0f
                                                                    blue: 200.0f/255.0f
                                                                   alpha: 1.0f] CGColor];
+    self.descriptionTextView.delegate = self;
+    self.descriptionTextView.text = @"Optional";
+    self.descriptionTextView.textColor = [UIColor lightGrayColor];
+    self.descriptionTextView.tag = 0;
+    
     
     self.createToDoTaskButton.backgroundColor = [UIColor colorWithRed: 199.0f/255.0f
                                                                 green: 221.0f/255.0f
@@ -177,6 +182,27 @@ RateView* rvTask;
     
     
 }
+
+- (BOOL) textViewShouldBeginEditing:(UITextView *)textView
+{
+    if(textView.tag == 0) {
+        textView.text = @"";
+        textView.textColor = [UIColor blackColor];
+        textView.tag = 1;
+    }
+    return YES;
+}
+
+- (void)textViewDidEndEditing:(UITextView *)textView
+{
+    if([textView.text length] == 0)
+    {
+        textView.text = @"Optional";
+        textView.textColor = [UIColor lightGrayColor];
+        textView.tag = 0;
+    }
+}
+
 
 
 - (void)shake
