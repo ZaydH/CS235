@@ -13,7 +13,7 @@
 #import "UITextField+Shake.h"
 
 
-@interface ThirdViewController : UIViewController
+@interface ThirdViewController : UIViewController <UITextViewDelegate>
 
 @property (strong, nonatomic) IBOutlet UITextField *taskNameTextField;
 
