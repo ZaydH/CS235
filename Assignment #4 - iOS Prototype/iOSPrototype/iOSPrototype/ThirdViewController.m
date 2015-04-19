@@ -21,6 +21,7 @@
 
 RateView* rv;
 UIDatePicker *datePicker;
+UIDatePicker *datePicker2;
 
 @synthesize dateTextField,hourTextField,taskColorTextField,taskNameTextField,priorityTextField,addInviteesTextField,descriptionTextView;
 
@@ -69,13 +70,13 @@ UIDatePicker *datePicker;
     
     //UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     //FirstViewController *subField = [sb instantiateViewControllerWithIdentifier:@"FirstViewController"];
-
+    
     
     [DateFormatter setDateFormat:@"MMMM d, yyyy"];
     dateTextField.text = [DateFormatter stringFromDate:[NSDate date]];
     
     
-    UIDatePicker *datePicker2 = [[UIDatePicker alloc] init];
+    datePicker2 = [[UIDatePicker alloc] init];
     datePicker2.datePickerMode = UIDatePickerModeTime;
     // Improve the display of the time selection datepicker.
     datePicker2.layer.borderColor = [[UIColor colorWithRed: 200.0f/255.0f
@@ -86,7 +87,7 @@ UIDatePicker *datePicker;
     datePicker2.layer.borderWidth = 2;
     datePicker2.backgroundColor = [UIColor whiteColor];
     [datePicker2 addTarget:self action:@selector(updateTextField2:)
-         forControlEvents:UIControlEventValueChanged];
+          forControlEvents:UIControlEventValueChanged];
     [self.hourTextField setInputView:datePicker2];
     
     //---- Preload the text field with the time.
@@ -97,8 +98,8 @@ UIDatePicker *datePicker;
     rv = [RateView rateViewWithRating:1.0f];
     [self.view addSubview:rv];
     // Extra frames width, height ignored
-//    CGRect tmp=self.priorityTextField.frame;
-//    [rv setFrame:CGRectMake(self.priorityTextField.frame.origin.x, self.priorityTextField.frame.origin.y, 200, 240)];    // Customizable star normal color
+    //    CGRect tmp=self.priorityTextField.frame;
+    //    [rv setFrame:CGRectMake(self.priorityTextField.frame.origin.x, self.priorityTextField.frame.origin.y, 200, 240)];    // Customizable star normal color
     rv.starNormalColor = [UIColor grayColor];
     // Customizable star fill color
     rv.starFillColor = [UIColor redColor];
@@ -113,7 +114,7 @@ UIDatePicker *datePicker;
     rv.canRate = YES;
     priorityTextField.hidden = YES;
     
-
+    
 }
 
 //-(void)viewWillAppear:(BOOL)animated
@@ -121,13 +122,13 @@ UIDatePicker *datePicker;
 //    [super viewWillAppear:animated];
 //    CGRect tmp=self.priorityTextField.frame;
 //    [rv setFrame:CGRectMake(self.priorityTextField.frame.origin.x, self.priorityTextField.frame.origin.y, 200, 240)];
-//    
+//
 //}
 
 -(void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-//    CGRect tmp=self.priorityTextField.frame;
+    //    CGRect tmp=self.priorityTextField.frame;
     [rv setFrame:CGRectMake(self.priorityTextField.frame.origin.x+5, self.priorityTextField.frame.origin.y+5, 200, 240)];
     
     NSArray *tmp=[self.tabBarController viewControllers];
@@ -145,6 +146,7 @@ UIDatePicker *datePicker;
         NSDateFormatter *DateFormatter=[[NSDateFormatter alloc] init];
         [DateFormatter setDateFormat:@"H:mm a"];
         hourTextField.text = [DateFormatter stringFromDate:[NSDate date]];
+        datePicker2.date = [NSDate date];
     }
 }
 
@@ -249,7 +251,7 @@ UIDatePicker *datePicker;
         dueDateInfo = dateTextField.text;
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-        [dateFormatter setDateFormat: @"MMMM d, yyyy"];
+    [dateFormatter setDateFormat: @"MMMM d, yyyy"];
     NSDate *eventDate = [dateFormatter dateFromString: dateTextField.text];
     NSLog(@" event date %@",eventDate);
     [dateFormatter setDateFormat: @"dd-MM-YYYY"];
@@ -261,7 +263,7 @@ UIDatePicker *datePicker;
         tmp[stringEventDate] = [NSMutableArray new];
     }
     NSMutableArray *tmp2=[NSMutableArray arrayWithArray:tmp[stringEventDate]];
-//    [eventsByDate[key] addObject:@"NODATA"]
+    //    [eventsByDate[key] addObject:@"NODATA"]
     if ([tmp2 count]<3)
     {
         [tmp2 addObject:[hourTextField.text stringByAppendingString:[NSString stringWithFormat: @" - %@", taskNameTextField.text]]];
@@ -287,8 +289,8 @@ UIDatePicker *datePicker;
     {
         [tmp2 addObject:[hourTextField.text stringByAppendingString:[NSString stringWithFormat: @" - %@", taskNameTextField.text]]];
     }
-//    [tmp2 addObject:@"2015-03-27 06:45:20 +5555"];
-//    [tmp2 addObject:@"2015-03-27 06:45:20 +6666"];
+    //    [tmp2 addObject:@"2015-03-27 06:45:20 +5555"];
+    //    [tmp2 addObject:@"2015-03-27 06:45:20 +6666"];
     tmp[stringEventDate] = tmp2;
     
     // add this new appointment in eventsByDate dictionary of FirstViewController
@@ -320,8 +322,8 @@ UIDatePicker *datePicker;
     
     // toast with duration, title, and position
     [self.tabBarController.selectedViewController.view makeToast:@"Appointment Created"
-                duration:3.0
-                position:CSToastPositionCenter];
+                                                        duration:3.0
+                                                        position:CSToastPositionCenter];
     
 }
 
@@ -350,13 +352,13 @@ UIDatePicker *datePicker;
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end
