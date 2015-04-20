@@ -221,9 +221,20 @@
         selectedIndex=-1;
         
         [taskArray removeObjectAtIndex:indexPath.row];
+        
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
         
+        [self performSelector:@selector(updateUserDefults) withObject:nil afterDelay:0.3];
+        
     }
+}
+
+-(void)updateUserDefults
+{
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    // Save your (updated) bookmarks
+    [userDefaults setObject:taskArray forKey:@"taskArray"];
+    [userDefaults synchronize];
 }
 
 -(NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath {
