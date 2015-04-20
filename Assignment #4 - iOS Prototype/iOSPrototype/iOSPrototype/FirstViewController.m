@@ -120,9 +120,62 @@
     
     //[[NSNotificationCenter defaultCenter] postNotificationName:@"kJTCalendarDaySelected" object:[NSDate date]];
     
+    UILongPressGestureRecognizer *longpress =
+    [[UILongPressGestureRecognizer alloc] initWithTarget:self
+                                            action:@selector(doLongPress:)];
+    [self.view addGestureRecognizer:longpress];
+
+    
     NSLog(@"Date: %@ - %ld events", [NSDate date], [events count]);
     
 }
+
+- (void) doLongPress:(UILongPressGestureRecognizer *)recognizer {
+    CGPoint location = [recognizer locationInView:[recognizer.view superview]];
+    NSLog(@"%f %f",location.x, location.y);
+    
+    if(location.y < 400)
+        return;
+    //Do stuff here...
+    
+    [self becomeFirstResponder];
+    
+    UIMenuController *menu = [UIMenuController sharedMenuController];
+    
+    NSMutableArray *options = [NSMutableArray array];
+    
+    UIMenuItem *item = [[UIMenuItem alloc] initWithTitle:@"Edit"
+                                                  action:@selector(doActionEditDelete)];
+    [options addObject:item];
+    
+    UIMenuItem *item2 = [[UIMenuItem alloc] initWithTitle:@"Delete"
+                                                  action:@selector(doActionEditDelete)];
+    [options addObject:item2];
+
+    
+    CGRect rect1 = CGRectMake(location.x,location.y,10,10);
+    
+    [menu setMenuItems:options];
+    [menu setTargetRect:rect1
+                 inView:self.view];
+    [menu setMenuVisible:YES animated:YES];
+}
+
+- (void) doActionEditDelete {
+    NSLog(@"do action edit/delete");
+}
+
+- (BOOL)canBecomeFirstResponder {
+    return YES;
+}
+
+- (BOOL)canPerformAction:(SEL)action withSender:(id)sender {
+    if(@selector(doActionEditDelete) == action) {
+        return YES;
+    }
+    return NO;
+}
+
 
 - (void)viewDidLayoutSubviews
 {
@@ -145,8 +198,6 @@
     //[[NSNotificationCenter defaultCenter] postNotificationName:@"kJTCalendarDaySelected" object:[NSDate date]];
     
     NSLog(@"Date: %@ - %ld events", [NSDate date], [events count]);
-
-
 }
 
 - (IBAction)didChangeModeTouch
@@ -463,6 +514,7 @@
     }
     
 }
+
 
 #pragma mark UITableViewDelegate methods
 
