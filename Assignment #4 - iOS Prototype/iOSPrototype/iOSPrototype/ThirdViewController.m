@@ -149,6 +149,15 @@ NSDate * previousDate;
         
         previousDate = dateToSet;
     }
+    if(dateTextField.text.length == 0){
+        dateToSet = [NSDate date];
+        NSDateFormatter *DateFormatter=[[NSDateFormatter alloc] init];
+        [DateFormatter setDateFormat:@"MMMM d, yyyy"];
+        dateTextField.text = [DateFormatter stringFromDate:dateToSet];
+        datePicker.date = dateToSet;
+        
+        previousDate = dateToSet;
+    }
     if(hourTextField.text.length == 0){
         NSDateFormatter *DateFormatter=[[NSDateFormatter alloc] init];
         [DateFormatter setDateFormat:@"H:mm a"];
@@ -333,7 +342,8 @@ NSDate * previousDate;
     taskNameTextField.text = @"";
     dateTextField.text = @"";
     hourTextField.text = @"";
-    descriptionTextView.text = @"";
+    descriptionTextView.text = @"Optional";
+    descriptionTextView.textColor = [UIColor lightGrayColor];
     addInviteesTextField.text = @"";
     rv.rating = 1.0f;
     

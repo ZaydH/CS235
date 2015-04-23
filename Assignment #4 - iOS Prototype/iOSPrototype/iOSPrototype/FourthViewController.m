@@ -138,7 +138,7 @@ RateView* rvTask;
     
     // Extract the due date and if none is specified, fill it with ßnone.
     NSString *descriptionInfo = @"None";
-    if(descriptionTextView.text.length > 0)
+    if(descriptionTextView.text.length > 0 && ![descriptionTextView.text isEqualToString:@"Optional"])
         descriptionInfo = descriptionTextView.text;
     
     // Extract the due date and if none is specified, fill it with none.
@@ -169,7 +169,8 @@ RateView* rvTask;
     taskNameTextField.text = @"";
     taskNameTextField.placeholder = @"Enter a Task Name";
     dateTextField.text = @"";
-    descriptionTextView.text = @"";
+    descriptionTextView.text = @"Optional";
+    descriptionTextView.textColor = [UIColor lightGrayColor];
     rvTask.rating = 1.0f;
     
     // Change view controller to FirstViewController
