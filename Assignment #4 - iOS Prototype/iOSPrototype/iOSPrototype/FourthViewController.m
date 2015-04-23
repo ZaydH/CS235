@@ -186,7 +186,7 @@ RateView* rvTask;
 
 - (BOOL) textViewShouldBeginEditing:(UITextView *)textView
 {
-    if(textView.tag == 0) {
+    if([textView.text isEqualToString:@"Optional"]) {
         textView.text = @"";
         textView.textColor = [UIColor blackColor];
         textView.tag = 1;
