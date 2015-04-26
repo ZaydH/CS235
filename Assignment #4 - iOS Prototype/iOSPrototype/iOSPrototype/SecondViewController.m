@@ -39,6 +39,11 @@
     [[NSUserDefaults standardUserDefaults] addObserver:self
                                             forKeyPath:@"taskArray" options:NSKeyValueObservingOptionNew
                                                context:NULL];
+    
+    UILongPressGestureRecognizer *longpress =
+    [[UILongPressGestureRecognizer alloc] initWithTarget:self
+                                                  action:@selector(doLongPress:)];
+    [self.view addGestureRecognizer:longpress];
 
 }
 
@@ -47,7 +52,7 @@
                        change:(NSDictionary *)aChange context:(void *)aContext
 {
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    taskArray=[userDefaults objectForKey:@"taskArray"];
+    taskArray=[NSMutableArray arrayWithArray:[userDefaults objectForKey:@"taskArray"]];
     [_tableFields reloadData];
 }
 
@@ -216,14 +221,70 @@
         selectedIndex=-1;
         
         [taskArray removeObjectAtIndex:indexPath.row];
+        
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
         
+        [self performSelector:@selector(updateUserDefults) withObject:nil afterDelay:0.3];
+        
     }
+}
+
+-(void)updateUserDefults
+{
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    // Save your (updated) bookmarks
+    [userDefaults setObject:taskArray forKey:@"taskArray"];
+    [userDefaults synchronize];
 }
 
 -(NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath {
     return @"Completed?";
 }
 
+- (void) doLongPress:(UILongPressGestureRecognizer *)recognizer {
+    CGPoint location = [recognizer locationInView:[recognizer.view superview]];
+    NSLog(@"%f %f",location.x, location.y);
+    
+    if(location.y < 60)
+        return;
+    //Do stuff here...
+    
+    [self becomeFirstResponder];
+    
+    UIMenuController *menu = [UIMenuController sharedMenuController];
+    
+    NSMutableArray *options = [NSMutableArray array];
+    
+    UIMenuItem *item = [[UIMenuItem alloc] initWithTitle:@"Edit"
+                                                  action:@selector(doActionEditDelete)];
+    [options addObject:item];
+    
+    UIMenuItem *item2 = [[UIMenuItem alloc] initWithTitle:@"Delete"
+                                                   action:@selector(doActionEditDelete)];
+    [options addObject:item2];
+    
+    
+    CGRect rect1 = CGRectMake(location.x,location.y,10,10);
+    
+    [menu setMenuItems:options];
+    [menu setTargetRect:rect1
+                 inView:self.view];
+    [menu setMenuVisible:YES animated:YES];
+}
+
+- (void) doActionEditDelete {
+    NSLog(@"do action edit/delete");
+}
+
+- (BOOL)canBecomeFirstResponder {
+    return YES;
+}
+
+- (BOOL)canPerformAction:(SEL)action withSender:(id)sender {
+    if(@selector(doActionEditDelete) == action) {
+        return YES;
+    }
+    return NO;
+}
 
 @end

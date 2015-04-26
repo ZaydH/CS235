@@ -33,6 +33,11 @@ RateView* rvTask;
                                                                   green: 200.0f/255.0f
                                                                    blue: 200.0f/255.0f
                                                                   alpha: 1.0f] CGColor];
+    self.descriptionTextView.delegate = self;
+    self.descriptionTextView.text = @"Optional";
+    self.descriptionTextView.textColor = [UIColor lightGrayColor];
+    self.descriptionTextView.tag = 0;
+    
     
     self.createToDoTaskButton.backgroundColor = [UIColor colorWithRed: 199.0f/255.0f
                                                                 green: 221.0f/255.0f
@@ -64,7 +69,7 @@ RateView* rvTask;
     rvTask = [RateView rateViewWithRating:1.0f];
     [self.view addSubview:rvTask];
     // Extra frames width, height ignored
-    rvTask.frame = CGRectMake(120, 299, 200, 240);    // Customizable star normal color
+    rvTask.frame = CGRectMake(162, 302, 200, 240);    // Customizable star normal color
     rvTask.starNormalColor = [UIColor grayColor];
     // Customizable star fill color
     rvTask.starFillColor = [UIColor redColor];
@@ -79,7 +84,7 @@ RateView* rvTask;
     rvTask.canRate = YES;
     priorityTextField.hidden = YES;
     
-    // Change view controller to FirstViewController
+    // Change view controller to SecondViewController
     self.tabBarController.selectedViewController = [self.tabBarController.viewControllers objectAtIndex:1];
     self.tabBarController.selectedViewController = [self.tabBarController.viewControllers objectAtIndex:3];
     
@@ -133,7 +138,7 @@ RateView* rvTask;
     
     // Extract the due date and if none is specified, fill it with ßnone.
     NSString *descriptionInfo = @"None";
-    if(descriptionTextView.text.length > 0)
+    if(descriptionTextView.text.length > 0 && ![descriptionTextView.text isEqualToString:@"Optional"])
         descriptionInfo = descriptionTextView.text;
     
     // Extract the due date and if none is specified, fill it with none.
@@ -164,7 +169,8 @@ RateView* rvTask;
     taskNameTextField.text = @"";
     taskNameTextField.placeholder = @"Enter a Task Name";
     dateTextField.text = @"";
-    descriptionTextView.text = @"";
+    descriptionTextView.text = @"Optional";
+    descriptionTextView.textColor = [UIColor lightGrayColor];
     rvTask.rating = 1.0f;
     
     // Change view controller to FirstViewController
@@ -177,6 +183,27 @@ RateView* rvTask;
     
     
 }
+
+- (BOOL) textViewShouldBeginEditing:(UITextView *)textView
+{
+    if([textView.text isEqualToString:@"Optional"]) {
+        textView.text = @"";
+        textView.textColor = [UIColor blackColor];
+        textView.tag = 1;
+    }
+    return YES;
+}
+
+- (void)textViewDidEndEditing:(UITextView *)textView
+{
+    if([textView.text length] == 0)
+    {
+        textView.text = @"Optional";
+        textView.textColor = [UIColor lightGrayColor];
+        textView.tag = 0;
+    }
+}
+
 
 
 - (void)shake

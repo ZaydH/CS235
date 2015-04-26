@@ -108,10 +108,74 @@
     
     [self createRandomEvents];
     
+    [self.calendar setCurrentDate:[NSDate date]];
+    [self.calendar setSelectedDate:[NSDate date]];
+    self.selectedDateInCalendar = [NSDate date];
+    
+    NSString *key = [[self dateFormatter] stringFromDate:[NSDate date]];
+    selectedKey = [[self dateFormatter] stringFromDate:[NSDate date]];
+    NSArray *events = eventsByDate[key];
+    [_tableFields reloadData];
     [self.calendar reloadData];
     
+    //[[NSNotificationCenter defaultCenter] postNotificationName:@"kJTCalendarDaySelected" object:[NSDate date]];
+    
+    UILongPressGestureRecognizer *longpress =
+    [[UILongPressGestureRecognizer alloc] initWithTarget:self
+                                            action:@selector(doLongPress:)];
+    [self.view addGestureRecognizer:longpress];
+
+    
+    NSLog(@"Date: %@ - %ld events", [NSDate date], [events count]);
     
 }
+
+- (void) doLongPress:(UILongPressGestureRecognizer *)recognizer {
+    CGPoint location = [recognizer locationInView:[recognizer.view superview]];
+    NSLog(@"%f %f",location.x, location.y);
+    
+    if(location.y < 400)
+        return;
+    //Do stuff here...
+    
+    [self becomeFirstResponder];
+    
+    UIMenuController *menu = [UIMenuController sharedMenuController];
+    
+    NSMutableArray *options = [NSMutableArray array];
+    
+    UIMenuItem *item = [[UIMenuItem alloc] initWithTitle:@"Edit"
+                                                  action:@selector(doActionEditDelete)];
+    [options addObject:item];
+    
+    UIMenuItem *item2 = [[UIMenuItem alloc] initWithTitle:@"Delete"
+                                                  action:@selector(doActionEditDelete)];
+    [options addObject:item2];
+
+    
+    CGRect rect1 = CGRectMake(location.x,location.y,10,10);
+    
+    [menu setMenuItems:options];
+    [menu setTargetRect:rect1
+                 inView:self.view];
+    [menu setMenuVisible:YES animated:YES];
+}
+
+- (void) doActionEditDelete {
+    NSLog(@"do action edit/delete");
+}
+
+- (BOOL)canBecomeFirstResponder {
+    return YES;
+}
+
+- (BOOL)canPerformAction:(SEL)action withSender:(id)sender {
+    if(@selector(doActionEditDelete) == action) {
+        return YES;
+    }
+    return NO;
+}
+
 
 - (void)viewDidLayoutSubviews
 {
@@ -134,8 +198,6 @@
     //[[NSNotificationCenter defaultCenter] postNotificationName:@"kJTCalendarDaySelected" object:[NSDate date]];
     
     NSLog(@"Date: %@ - %ld events", [NSDate date], [events count]);
-
-
 }
 
 - (IBAction)didChangeModeTouch
@@ -177,6 +239,7 @@
 - (void)calendarDidLoadNextPage
 {
     NSLog(@"Next page loaded");
+    
 }
 
 #pragma mark - Transition examples
@@ -235,23 +298,42 @@
     return dateFormatter;
 }
 
+- (void)viewDidAppear:(BOOL)animated{
+    
+    
+    //self.selectedDateInCalendar=[NSDate dateWithTimeInterval:0 sinceDate:date];
+    NSString *key = [[self dateFormatter] stringFromDate:self.selectedDateInCalendar];
+    selectedKey = [[self dateFormatter] stringFromDate:self.selectedDateInCalendar];
+    NSArray *events = eventsByDate[key];
+    [_tableFields reloadData];
+    
+    NSLog(@"Date: %@ - %ld events", self.selectedDateInCalendar, [events count]);
+    
+    [self.calendar reloadData];
+}
+
+
 - (void)createRandomEvents
 {
     eventsByDate = [NSMutableDictionary new];
     // The array having appointments that will get selected and assigned at random
     NSArray *appointments = [NSArray arrayWithObjects:@"Happy Hour",@"Homework #3 Due",@"Special Class",
                              @"Meet the Accountant",@"Meeting with Team",@"Repeating Event",
-                             @"Dentist Appointment",@"CS235 Assignment Due",@"Lunch Meeting",nil];
+                             @"Dentist Appointment",@"CS235 Assignment Due",@"Lunch Meeting",
+                             @"Go to the Movies", @"Dinner with Buddy the Cat",
+                             @"Visit the Tech Museum", @"Take a Nap",
+                             @"Call Bank Regarding Loan", @"Take my Medicine",
+                             @"Sami Khuri Meeting", @"Grade Student Exams",nil];
     
     for(int i = 0; i < 30; ++i){
         // Generate 30 random dates between now and 60 days later
-        NSDate *randomDate = [NSDate dateWithTimeInterval:(rand() % (3600 * 24 * 60)) sinceDate:[NSDate date]];
+        NSDate *randomDate = [NSDate dateWithTimeInterval:(rand() % (3600 * 24 * 60)+3600*24) sinceDate:[NSDate date]];
         
         // Use the date as key for eventsByDate
         NSString *key = [[self dateFormatter] stringFromDate:randomDate];
         
         // Generate a random number to randomly select an appointment
-        NSInteger randomNumber = arc4random() % 6;
+        NSInteger randomNumber = arc4random() % 17;
         
         if(!eventsByDate[key]){
             eventsByDate[key] = [NSMutableArray new];
@@ -270,6 +352,40 @@
     }
     
     
+    for(int i = 0; i < 17; ++i){
+        // Generate 30 random dates between now and 60 days later
+        NSDate *randomDate = [NSDate dateWithTimeInterval:(i *4500 +1800) sinceDate:[NSDate date]];
+        
+        // Use the date as key for eventsByDate
+        NSString *key = [[self dateFormatter] stringFromDate:randomDate];
+        
+        if(!eventsByDate[key]){
+            eventsByDate[key] = [NSMutableArray new];
+        }
+        
+        
+        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+        [formatter setDateFormat:@"h:mm a"];
+        
+        //Optionally for time zone conversions
+        [formatter setTimeZone:[NSTimeZone timeZoneWithName:@"PST"]];
+        
+        NSString *stringFromDate = [formatter stringFromDate:randomDate];
+        
+        [eventsByDate[key] addObject:[stringFromDate stringByAppendingString:[@" - " stringByAppendingString:[appointments objectAtIndex:i]]]];
+    }
+    
+    for (id key in eventsByDate)
+    {
+        if ([eventsByDate[key] count]<3)
+        {
+            for(int i = 0; i < (4-[eventsByDate[key] count]); ++i)
+            {
+                [eventsByDate[key] addObject:@"NODATA"];
+            }
+        }
+    }
+
     //if(!eventsByDate[@"26-03-2015"]){
       //  eventsByDate[@"26-03-2015"] = [NSMutableArray new];
     //}
@@ -307,7 +423,10 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger) section {
-    return [eventsByDate[selectedKey] count];
+    if ([eventsByDate[selectedKey] count]>0)
+        return [eventsByDate[selectedKey] count];
+    else
+        return 3;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -324,19 +443,42 @@
         cell = [[UITableViewCell alloc]
                 initWithStyle:UITableViewCellStyleDefault reuseIdentifier:AutoCompleteRowIdentifier];
     }
+    if ([eventsByDate[selectedKey] count]>0)
+    {
+        NSString *nextText=[NSString stringWithFormat:@"%@",eventsByDate[selectedKey][indexPath.row]];
+        if (!([nextText isEqual:@"NODATA"]))
+        {
+            cell.textLabel.text=[NSString stringWithFormat:@"%@",eventsByDate[selectedKey][indexPath.row]];
+//            cell.textLabel.textAlignment=NSTextAlignmentCenter;
+            cell.textLabel.textColor=[UIColor blackColor];
+            cell.userInteractionEnabled=YES;
+        }
+        else
+        {
+            cell.textLabel.text=[NSString stringWithFormat:@"%@",eventsByDate[selectedKey][indexPath.row]];
+            cell.textLabel.textColor=[UIColor clearColor];
+            cell.userInteractionEnabled=NO;
+        }
+    }
+    else
+    {
+        cell.textLabel.text=@"";
+        cell.textLabel.textColor=[UIColor clearColor];
+        cell.userInteractionEnabled=NO;
+    }
     
-//    ResturantInfo *tmpInfo=clusterdMarkersInfo[currentNumberOfItemsForTable][indexPath.row];
-    UIView *aView = [[UIView alloc] initWithFrame:CGRectMake(0, 0,600,50)];
-    UILabel *nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(60, 15,aView.frame.size.width-60,aView.frame.size.height/2 )];
-//    UILabel *addressLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, aView.frame.size.height/2 ,aView.frame.size.width-50,aView.frame.size.height/2 )];
-    nameLabel.text=[NSString stringWithFormat:@"%@",eventsByDate[selectedKey][indexPath.row]];
-//    addressLabel.text=[NSString stringWithFormat:@"%@",tmpInfo.address];
-//    nameLabel.adjustsFontSizeToFitWidth = YES;
-//    addressLabel.adjustsFontSizeToFitWidth = YES;
-    [aView setBackgroundColor:[UIColor whiteColor]];
-    [aView addSubview:nameLabel];
-//    [aView addSubview:addressLabel];
-    [cell addSubview:aView];
+////    ResturantInfo *tmpInfo=clusterdMarkersInfo[currentNumberOfItemsForTable][indexPath.row];
+//    UIView *aView = [[UIView alloc] initWithFrame:CGRectMake(0, 0,600,50)];
+//    UILabel *nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(60, 15,aView.frame.size.width-60,aView.frame.size.height/2 )];
+////    UILabel *addressLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, aView.frame.size.height/2 ,aView.frame.size.width-50,aView.frame.size.height/2 )];
+//    nameLabel.text=[NSString stringWithFormat:@"%@",eventsByDate[selectedKey][indexPath.row]];
+////    addressLabel.text=[NSString stringWithFormat:@"%@",tmpInfo.address];
+////    nameLabel.adjustsFontSizeToFitWidth = YES;
+////    addressLabel.adjustsFontSizeToFitWidth = YES;
+//    [aView setBackgroundColor:[UIColor whiteColor]];
+//    [aView addSubview:nameLabel];
+////    [aView addSubview:addressLabel];
+//    [cell addSubview:aView];
     
     if(indexPath.row % 2 == 1){
         UIColor *rowGrayColor = [UIColor colorWithRed: 233.0f/255.0f
@@ -344,11 +486,11 @@
                                                  blue: 249.0f/255.0f
                                                 alpha: 1.0f];
         cell.backgroundColor = rowGrayColor;
-        aView.backgroundColor = rowGrayColor;
+//        aView.backgroundColor = rowGrayColor;
     }
     else{
         cell.backgroundColor = [UIColor whiteColor];
-        aView.backgroundColor = [UIColor whiteColor];
+//        aView.backgroundColor = [UIColor whiteColor];
     }
     
     return cell;
@@ -372,6 +514,7 @@
     }
     
 }
+
 
 #pragma mark UITableViewDelegate methods
 
