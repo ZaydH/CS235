@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Alexx - Portfolio 3 columns</title>
+        <meta name="description" content="Multipurpose Responsive Site Theme">
+        <meta name="author" content="pixel-industry">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+        <meta name="viewport" content="width=device-width">
+        
+        <!-- favicon -->
+        <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+        <link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+        <!-- stylesheets -->
+        <link rel="stylesheet" href="css/basic.css" />
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="css/prettyPhoto.css" media="screen" />
+
+        <!--[if IE 8]>
+            <link rel="stylesheet" href="css/ie8.css" media="screen" />
+        <![endif]-->
+
+        <!-- navigation icons using "font awesome" -->
+        <link rel="stylesheet" href="Font-Awesome/css/font-awesome.css" />
+
+        <!-- google web fonts -->
+        <link href='http://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'>
+
+        <!-- js files -->
+        <script  src="js/jquery-1.7.2.js"></script> <!-- jQuery 1.8.1 -->
+        <script  src="js/portfolio.js"></script> <!-- portfolio custom options -->
+        <script  src="js/quicksand.js"></script> <!-- quicksand filter -->
+        <script  src="js/jquery.prettyPhoto.js"></script> <!-- prettyPhoto lightbox -->
+        <script  src="js/jquery.placeholder.min.js"></script><!-- jQuery placeholder fix for old browsers -->
+        <script  src="js/socialstream.jquery.js"></script> <!-- Social Networks Feeds -->
+        <script  src="js/jquery.tweetscroll.js"></script> <!-- jQuery tweetscroll plugin -->
+        <script  src="js/jquery.carouFredSel-6.0.0-packed.js"></script><!-- CarouFredSel carousel plugin -->
+        <script  src="js/include.js"></script> <!-- jQuery custom options -->
+
+        <!--[if (gte IE 6)&(lte IE 8)]>
+            <script type="text/javascript" src="js/selectivizr.js"></script>
+        <![endif]-->
+        <!--[if lt IE 9]>
+            <script src="js/html5shiv.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+        <!-- header start -->
+        <header id="header" class="clearfix">
+
+            <!-- logo start -->
+            <section id="logo">
+                <a href="index-2.html">
+                    <img src="img/logo.png" alt="logo"/>
+                </a>
+            </section><!-- #logo end -->
+
+            <!-- nav container start -->
+            <section id="nav-container">
+
+                <!-- main navigation start  -->
+                <nav id="nav">
+                    <ul class="nav nav-list">
+                        <li>
+                            <a href="index-2.html">
+                                <i class="icon-nav icon-home"></i>
+                                Home
+                            </a>
+
+                            <ul>
+                                <li><a href="index-2.html">Home default</a></li>
+                                <li><a href="home-alt.html">Home Alternative</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="icon-nav icon-star"></i>
+                                Pages +</a>
+                            <ul>
+                                <li><a href="about.html">About us</a></li>
+                                <li><a href="services.html">Our services</a></li>
+                                <li><a href="page-sidebar-left.html">Page with sidebar left</a></li>
+                                <li><a href="page-sidebar-right.html">Page with sidebar right</a></li>
+                                <li><a href="404.html">404 page</a></li>
+                                <li><a href="products.html">Products page</a></li>
+                                <li><a href="product-details.html">Product details</a></li>
+                            </ul>
+                        </li>
+                        <li  class="active">
+                            <a href="#" class="active">
+                                <i class="icon-nav icon-th-large"></i>
+                                Portfolio +</a>
+                            <ul>
+                                <li><a href="portfolio3.html">Portfolio 3 col</a></li>
+                                <li><a href="portfolio4.html">Portfolio 4 col</a></li>
+                                <li><a href="portfolio-single.html">Portfolio single</a></li>
+                                <li><a href="portfolio-multiple-filters.html">Portfolio multiple filters</a></li>
+                                <li><a href="gallery.html">Gallery</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="icon-nav icon-comments"></i>
+                                Blog +</a>
+                            <ul>
+                                <li><a href="blog.html">Blog</a></li>
+                                <li><a href="blog2.html">Blog 2</a></li>
+                                <li><a href="blog3.html">Blog 3</a></li>
+                                <li><a href="blog-single.html">Blog single</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="icon-nav icon-plus-sign"></i>
+                                Features +</a>
+                            <ul>
+                                <li><a href="columns.html">Columns</a></li>
+                                <li><a href="elements.html">Elements</a></li>
+                                <li><a href="#">Third level +</a>
+                                    <ul>
+                                        <li><a href="#">Menu item</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="icon-nav icon-map-marker"></i>
+                                Contact +</a>
+                            <ul>
+                                <li><a href="contact.html">Contact default</a></li>
+                                <li><a href="contact-simple.html">Contact simple</a></li>
+                            </ul>
+                        </li>
+                    </ul> 
+                </nav><!-- main navigation end -->
+
+                <!-- responsive navigation start -->
+                <select id="nav-responsive">
+                    <option selected="" value="">Site Navigation...</option>
+
+                    <option value="">Home</option>
+                    <option value="index.html">- Home default</option>
+                    <option value="home-alt.html">- Home alternative</option>
+
+                    <option value="">Pages</option>
+                    <option value="about.html">- About us</option>
+                    <option value="services.html">- Services</option>
+                    <option value="page-sidebar-left.html">- Page with sidebar left</option>
+                    <option value="page-sidebar-right.html">- Page with sidebar right</option>
+                    <option value="404.html">- 404 page</option>
+                    <option value="products.html">- Products page</option>
+                    <option value="product-details.html">- Product details</option>
+
+
+                    <option value="">Portfolio</option>
+                    <option value="portfolio3.html">- Portfolio 3 col</option>
+                    <option value="portfolio4.html">- Portfolio 4 col</option>
+                    <option value="portfolio-single.html">- Portfolio single</option>
+                    <option value="portfolio-multiple-filters.html">- Portfolio multiple filters</option>
+                    <option value="gallery.html">- Gallery</option>
+
+                    <option value="">Blog</option>
+                    <option value="blog.html">- Blog</option>
+                    <option value="blog2.html">- Blog 2</option>
+                    <option value="blog3.html">- Blog 3</option>
+                    <option value="blog-single.html">- Blog single</option>
+
+                    <option value="">Features</option>
+                    <option value="columns.html">- Columns</option>
+                    <option value="elements.html">- Elements</option>
+
+                    <option value="">Contact</option>
+                    <option value="contact.html">- Contact default</option>
+                    <option value="contact-simple.html">- Contact simple</option>
+                </select> <!-- responsive navigation end -->
+
+            </section><!-- nav container end -->
+
+            <!-- search start -->
+            <section id="search">
+                <form action="#" method="get">
+                    <input id="search-submit" type="submit" />
+                    <input id="search-bkg" type="text" placeholder="Type and press enter.." />                   
+                </form>
+            </section><!-- search end -->
+
+        </header><!-- header end -->
+
+        <!-- page-title start-->
+        <section class="page-title-container">
+
+            <!-- top shadow on container -->
+            <div class="shadow-top"></div>
+
+            <section class="page-title">
+                <div class="title">
+                    <h1>Portfolio</h1>
+                    <p>Latest projects from our workshop</p>
+                </div>
+
+                <ul class="breadcrumbs">
+                    <li>
+                        You are here:
+                    </li>
+                    <li>
+                        <a href="#">Portfolio  / </a>
+                    </li>
+                    <li class="active">
+                        <a href="portfolio3.html">Portfolio 3 columns</a>
+                    </li>
+                </ul>                        
+            </section>
+
+            <div class="shadow-bottom"></div>
+        </section>
+
+        <!-- content start -->
+        <div id="content-wrapper">
+
+            <section class="grid_12 portfolio-filter-container">
+                <p id="filter-label"><span class="text-red">Filter by:</span></p>
+                <!-- portfolio quicksand filter start -->
+                <ul class="portfolio-filters">
+                    <li>
+                        <a href="#">Category</a> 
+                        <ul id="category-filter">
+                            <li class="active"><a class="all" href="#">All</a></li>
+                            <li><a class="photography" href="#">Photography</a></li>
+                            <li><a class="webdesign" href="#">Web Design</a></li>
+                            <li><a class="graphicdesign" href="#">Graphic design</a></li>
+                            <li><a class="motiongraphics" href="#">Motion Graphics</a></li>
+                        </ul>
+                    </li>
+                </ul><!-- portfolio quicksand filter end -->
+            
+                <!-- portfolio quicksand filter start -->
+                <ul class="portfolio-filters">
+                    <li>
+                        <a href="#">Clients</a>
+                        <ul id="client-filter">
+                            <li class="active"><a class="all" href="#">All</a></li>
+                            <li><a class="1" href="#">Web magazine</a></li>
+                            <li><a class="2" href="#">Smashing pumpkin</a></li>
+                            <li><a class="3" href="#">Codroz</a></li>
+                            <li><a class="4" href="#">Adoreweb</a></li>
+                        </ul>
+                    </li>
+                </ul><!-- portfolio quicksand filter end -->
+            </section>
+
+            <div class="container_12">
+
+                <ul id="filter-item">
+                    <li data-id="id-1" class="grid_4"  data-alpha="photography" data-beta="1">
+
+                        <figure class="portfolio">
+                            <a class="portfolio-image" href="portfolio3.html">
+                                <img src="img/portfolio/thumb/portfolio1.jpg" alt="portfolio" width="294"/>
+                            </a>
+
+                            <figcaption>
+                                <div class="caption-title">
+                                    <p class="title">
+                                        Manhattan
+                                    </p>
+                                    <p class="subtitle">
+                                        Photography
+                                    </p>
+                                </div>
+
+
+                                <ul class="caption-hover">
+                                    <li class="portfolio-zoom">
+                                        <a class="thumb" href="img/portfolio/large/portfolio1.jpg" 
+                                           data-gal="prettyPhoto[pp_gallery]">zoom
+                                        </a>
+                                    </li>
+
+                                    <li class="portfolio-single">
+                                        <a href="portfolio-single.html">single</a>
+                                    </li>
+                                </ul>
+                            </figcaption>
+                        </figure>
+                    </li>
+
+                    <li data-id="id-2" class="grid_4" data-alpha="graphicdesign" data-beta="2">
+                        <figure class="portfolio">
+                            <a class="portfolio-image" href="portfolio3.html">
+                                <img src="img/portfolio/thumb/portfolio2.jpg" alt="portfolio" width="294"/>
+                            </a>
+
+                            <figcaption>
+                                <div class="caption-title">
+                                    <p class="title">
+                                        Sofa in the sky
+                                    </p>
+                                    <p class="subtitle">
+                                        Graphic design
+                                    </p>
+                                </div>
+
+
+                                <ul class="caption-hover">
+                                    <li class="portfolio-zoom">
+                                        <a class="thumb" href="img/portfolio/large/portfolio2.jpg" 
+                                           data-gal="prettyPhoto[pp_gallery]">zoom
+                                        </a>
+                                    </li>
+
+                                    <li class="portfolio-single">
+                                        <a href="portfolio-single.html">single</a>
+                                    </li>
+                                </ul>
+                            </figcaption>
+                        </figure>
+                    </li>
+
+                    <li data-id="id-3" class="grid_4" data-alpha="motiongraphics" data-beta="3">
+                        <figure class="portfolio">
+                            <img class="ribbon" src="img/portfolio/ribbon.png" alt="ribbon"/>
+
+                            <a class="portfolio-image" href="portfolio3.html">
+                                <img src="img/portfolio/thumb/portfolio3.jpg" alt="portfolio" width="294"/>
+                            </a>
+
+                            <figcaption>
+                                <div class="caption-title">
+                                    <p class="title">
+                                        Time to relax
+                                    </p>
+                                    <p class="subtitle">
+                                        Motion Graphics
+                                    </p>
+                                </div>
+
+
+                                <ul class="caption-hover">
+                                    <li class="portfolio-zoom">
+                                        <a class="thumb" href="img/portfolio/large/portfolio3.jpg" 
+                                           data-gal="prettyPhoto[pp_gallery]">zoom
+                                        </a>
+                                    </li>
+
+                                    <li class="portfolio-single">
+                                        <a href="portfolio-single.html">single</a>
+                                    </li>
+                                </ul>
+                            </figcaption>
+                        </figure>
+                    </li>
+
+                    <li data-id="id-4" class="grid_4" data-alpha="photography" data-beta="1">
+                        <figure class="portfolio">
+                            <a class="portfolio-image" href="portfolio3.html">
+                                <img src="img/portfolio/thumb/portfolio4.jpg" alt="portfolio" width="294"/>
+                            </a>
+
+                            <figcaption>
+                                <div class="caption-title">
+                                    <p class="title">
+                                        Going up
+                                    </p>
+                                    <p class="subtitle">
+                                        Photography
+                                    </p>
+                                </div>
+
+
+                                <ul class="caption-hover">
+                                    <li class="portfolio-zoom">
+                                        <a class="thumb" href="img/portfolio/large/portfolio4.jpg" 
+                                           data-gal="prettyPhoto[pp_gallery]">zoom
+                                        </a>
+                                    </li>
+
+                                    <li class="portfolio-single">
+                                        <a href="portfolio-single.html">single</a>
+                                    </li>
+                                </ul>
+                            </figcaption>
+                        </figure>
+                    </li>
+
+                    <li data-id="id-5" class="grid_4" data-alpha="webdesign" data-beta="2">
+                        <figure class="portfolio">
+                            <a class="portfolio-image" href="portfolio3.html">
+                                <img src="img/portfolio/thumb/portfolio5.jpg" alt="portfolio" width="294"/>
+                            </a>
+
+                            <figcaption>
+                                <div class="caption-title">
+                                    <p class="title">
+                                        Vintage car
+                                    </p>
+                                    <p class="subtitle">
+                                        Web design
+                                    </p>
+                                </div>
+
+
+                                <ul class="caption-hover">
+                                    <li class="portfolio-zoom">
+                                        <a class="thumb" href="img/portfolio/large/portfolio5.jpg" 
+                                           data-gal="prettyPhoto[pp_gallery]">zoom
+                                        </a>
+                                    </li>
+
+                                    <li class="portfolio-single">
+                                        <a href="portfolio-single.html">single</a>
+                                    </li>
+                                </ul>
+                            </figcaption>
+                        </figure>
+                    </li>
+
+                    <li data-id="id-6" class="grid_4" data-alpha="graphicmotion" data-beta="1">
+                        <figure class="portfolio">
+                            <a class="portfolio-image" href="portfolio3.html">
+                                <img src="img/portfolio/thumb/portfolio6.jpg" alt="portfolio" width="294"/>
+                            </a>
+
+                            <figcaption>
+                                <div class="caption-title">
+                                    <p class="title">
+                                        Runing with Nike
+                                    </p>
+                                    <p class="subtitle">
+                                        Graphic motion
+                                    </p>
+                                </div>
+
+
+                                <ul class="caption-hover">
+                                    <li class="portfolio-zoom">
+                                        <a class="thumb" href="img/portfolio/large/portfolio6.jpg" 
+                                           data-gal="prettyPhoto[pp_gallery]">zoom
+                                        </a>
+                                    </li>
+
+                                    <li class="portfolio-single">
+                                        <a href="portfolio-single.html">single</a>
+                                    </li>
+                                </ul>
+                            </figcaption>
+                        </figure>
+                    </li>
+
+                    <li data-id="id-7" class="grid_4" data-alpha="webdesign" data-beta="3">
+                        <figure class="portfolio">
+                            <img class="ribbon" src="img/portfolio/ribbon.png" alt="ribbon"/>
+
+                            <a class="portfolio-image" href="portfolio3.html">
+                                <img src="img/portfolio/thumb/portfolio7.jpg" alt="portfolio" width="294"/>
+                            </a>
+
+                            <figcaption>
+                                <div class="caption-title">
+                                    <p class="title">
+                                        Air baloon
+                                    </p>
+                                    <p class="subtitle">
+                                        Web design
+                                    </p>
+                                </div>
+
+
+                                <ul class="caption-hover">
+                                    <li class="portfolio-zoom">
+                                        <a class="thumb" href="img/portfolio/large/portfolio7.jpg" 
+                                           data-gal="prettyPhoto[pp_gallery]">zoom
+                                        </a>
+                                    </li>
+
+                                    <li class="portfolio-single">
+                                        <a href="portfolio-single.html">single</a>
+                                    </li>
+                                </ul>
+                            </figcaption>
+                        </figure>
+                    </li>
+
+                    <li data-id="id-8" class="grid_4" data-alpha="photography" data-beta="4">
+                        <figure class="portfolio">
+                            <a class="portfolio-image" href="portfolio3.html">
+                                <img src="img/portfolio/thumb/portfolio8.jpg" alt="portfolio" width="294"/>
+                            </a>
+
+                            <figcaption>
+                                <div class="caption-title">
+                                    <p class="title">
+                                        Munich
+                                    </p>
+                                    <p class="subtitle">
+                                        Photography
+                                    </p>
+                                </div>
+
+
+                                <ul class="caption-hover">
+                                    <li class="portfolio-zoom">
+                                        <a class="thumb" href="img/portfolio/large/portfolio8.jpg" 
+                                           data-gal="prettyPhoto[pp_gallery]">zoom
+                                        </a>
+                                    </li>
+
+                                    <li class="portfolio-single">
+                                        <a href="portfolio-single.html">single</a>
+                                    </li>
+                                </ul>
+                            </figcaption>
+                        </figure>
+                    </li>
+
+                    <li data-id="id-9" class="grid_4" data-alpha="graphicdesign" data-beta="4">
+                        <figure class="portfolio">
+                            <a class="portfolio-image" href="portfolio3.html">
+                                <img src="img/portfolio/thumb/portfolio9.jpg" alt="portfolio" width="294"/>
+                            </a>
+
+                            <figcaption>
+                                <div class="caption-title">
+                                    <p class="title">
+                                        Skater girl
+                                    </p>
+                                    <p class="subtitle">
+                                        Graphic design
+                                    </p>
+                                </div>
+
+
+                                <ul class="caption-hover">
+                                    <li class="portfolio-zoom">
+                                        <a class="thumb" href="img/portfolio/large/portfolio9.jpg" 
+                                           data-gal="prettyPhoto[pp_gallery]">zoom
+                                        </a>
+                                    </li>
+
+                                    <li class="portfolio-single">
+                                        <a href="portfolio-single.html">single</a>
+                                    </li>
+                                </ul>
+                            </figcaption>
+                        </figure>
+                    </li>
+
+                    <li data-id="id-10" class="grid_4" data-alpha="motiongraphics" data-beta="2">
+                        <figure class="portfolio">
+                            <a class="portfolio-image" href="portfolio3.html">
+                                <img src="img/portfolio/thumb/portfolio10.jpg" alt="portfolio" width="294"/>
+                            </a>
+
+                            <figcaption>
+                                <div class="caption-title">
+                                    <p class="title">
+                                        Old furniture
+                                    </p>
+                                    <p class="subtitle">
+                                        Motion graphics
+                                    </p>
+                                </div>
+
+
+                                <ul class="caption-hover">
+                                    <li class="portfolio-zoom">
+                                        <a class="thumb" href="img/portfolio/large/portfolio10.jpg" 
+                                           data-gal="prettyPhoto[pp_gallery]">zoom
+                                        </a>
+                                    </li>
+
+                                    <li class="portfolio-single">
+                                        <a href="portfolio-single.html">single</a>
+                                    </li>
+                                </ul>
+                            </figcaption>
+                        </figure>
+                    </li>
+
+                    <li data-id="id-11" class="grid_4" data-alpha="photography" data-beta="1">
+                        <figure class="portfolio">
+                            <a class="portfolio-image" href="portfolio3.html">
+                                <img src="img/portfolio/thumb/portfolio11.jpg" alt="portfolio" width="294"/>
+                            </a>
+
+                            <figcaption>
+                                <div class="caption-title">
+                                    <p class="title">
+                                        Sailing in Hong Kong
+                                    </p>
+                                    <p class="subtitle">
+                                        Photography
+                                    </p>
+                                </div>
+
+
+                                <ul class="caption-hover">
+                                    <li class="portfolio-zoom">
+                                        <a class="thumb" href="img/portfolio/large/portfolio11.jpg" 
+                                           data-gal="prettyPhoto[pp_gallery]">zoom
+                                        </a>
+                                    </li>
+
+                                    <li class="portfolio-single">
+                                        <a href="portfolio-single.html">single</a>
+                                    </li>
+                                </ul>
+                            </figcaption>
+                        </figure>
+                    </li>
+
+                    <li data-id="id-12" class="grid_4" data-alpha="webdesign" data-beta="3">
+                        <figure class="portfolio">
+                            <a class="portfolio-image" href="portfolio3.html">
+                                <img src="img/portfolio/thumb/portfolio12.jpg" alt="portfolio" width="294"/>
+                            </a>
+
+                            <figcaption>
+                                <div class="caption-title">
+                                    <p class="title">
+                                        Balerina style
+                                    </p>
+                                    <p class="subtitle">
+                                        Web design
+                                    </p>
+                                </div>
+
+
+                                <ul class="caption-hover">
+                                    <li class="portfolio-zoom">
+                                        <a class="thumb" href="img/portfolio/large/portfolio12.jpg" 
+                                           data-gal="prettyPhoto[pp_gallery]">zoom
+                                        </a>
+                                    </li>
+
+                                    <li class="portfolio-single">
+                                        <a href="portfolio-single.html">single</a>
+                                    </li>
+                                </ul>
+                            </figcaption>
+                        </figure>
+                    </li>
+                </ul><!-- portfolio items end -->
+
+
+                <ul class="pagination portfolio">
+
+                    <li class="active">
+                        <a href="#">1</a>
+                    </li>
+
+                    <li>
+                        <a href="#">2</a>
+                    </li>
+
+                    <li>
+                        <a href="#">3</a>
+                    </li>
+
+                    <li>
+                        <a href="#">4</a>
+                    </li>
+
+                    <li>
+                        <a href="#">5</a>
+                    </li>
+
+                    <!-- arrow left start -->
+                    <li class="arrow">
+                        <a href="#">&#187;</a>
+                    </li><!-- arrow left end -->
+
+                </ul><!-- pagination for portfolio page end -->
+            </div><!-- container_12 end -->
+        </div><!-- content wrapper end -->
+
+
+        <!-- footer wrapper start -->
+        <div id="footer-wrapper">
+
+            <div class="shadow-top"></div>
+
+            <footer id="footer" class="container_12">
+
+                <!-- sliding text article start -->
+                <article class="grid_3 jcarousellite carousel-article">
+                    <h4>Sliding text article</h4>
+
+                    <ul id="foo3" class="carousel-li">
+                        <li>
+                            <p>
+                                Sed ut perspiciatis unde omnis iste natus error 
+                                sit voluptatem accusantium doloremque laudantium, 
+                                totam rem aperiam, eaque ipsa quae ab illo 
+                                inventore veritatis et quasi.  
+                            </p>
+                        </li>
+
+                        <li>
+                            <p>
+                                Sed ut perspiciatis unde omnis iste natus error 
+                                sit voluptatem accusantium doloremque laudantium, 
+                                totam rem aperiam, eaque ipsa quae ab illo 
+                                inventore veritatis et quasi. 
+                            </p>
+                        </li>
+
+                        <li>
+                            <p>
+                                Sed ut perspiciatis unde omnis iste natus error 
+                                sit voluptatem accusantium doloremque laudantium, 
+                                totam rem aperiam, eaque ipsa quae ab illo 
+                                inventore veritatis et quasi. 
+                            </p>
+                        </li>
+                    </ul>
+
+                    <div class="clearfix"></div>
+
+                    <div class="carousel-pagination" id="foo3_pag"></div>
+
+                </article><!-- sliding text article end -->
+
+                <!-- latest blog entries start -->
+                <article class="grid_3">
+                    <h4>Latest blog entries</h4>
+
+                    <ul class="footer-blog">
+                        <li>
+                            <div class="meta">
+                                <p>
+                                    21 <br />
+                                    <span class="date">JAN</span>
+                                </p>
+                            </div>
+                            <div class="post">
+                                <a href="blog.html">
+                                    Sed ut perspiciatis unde omnis iste  |  
+                                    <span class="light">Web design</span>
+                                </a>
+                            </div> 
+                        </li> 
+
+                        <li>
+                            <div class="meta">
+                                <p>
+                                    22 <br />
+                                    <span class="date">SEP</span>
+                                </p>
+                            </div>
+                            <div class="post">
+                                <a href="blog.html">
+                                    Sed ut perspiciatis unde omnis iste  |  
+                                    <span class="light">Photography</span>
+                                </a>
+                            </div> 
+                        </li> 
+                    </ul>
+                </article><!-- latest blog entries end -->
+
+                <!-- instagram feed start -->
+                <article class="grid_3 social-feed instagram-feed">
+                    <h4>Instagram photo stream</h4>
+                </article><!-- instagram feed end -->
+
+
+                <!-- contact start -->
+                <article class="grid_3">
+                    <h4>Contact us</h4>
+                    <p>
+                        You can reach us on social networks, or send us a message 
+                        through our contact form <a href="contact.html" class="text-red">here.</a>
+                    </p>
+
+                    <ul class="social">
+                        <li class="dribbble">
+                            <a href="#">dribbble</a>
+                        </li>
+
+                        <li class="facebook">
+                            <a href="#">facebook</a>
+                        </li>
+
+                        <li class="pinterest">
+                            <a href="#">pinterest</a>
+                        </li>
+
+                        <li class="twitter">
+                            <a href="#">twitter</a>
+                        </li>
+                    </ul>
+                </article><!-- contact end -->
+            </footer><!-- footer end -->
+
+            <!-- copyright container start -->
+            <section class="copyright-container">
+
+                <div class="copyright container_12">
+                    <p>
+                        Copyright Alexx 2012. All rights reserved. Theme by 
+                        <span class="text-red">Pixel-industry.</span>
+                    </p>
+
+                    <ul class="breadcrumbs">
+                        <li>
+                            <a href="index-2.html">Home</a>
+                        </li>
+                        <li>
+                            <a href="about.html">Pages</a>
+                        <li class="active">
+                            <a href="portfolio3.html">Portfolio</a>
+                        </li>
+                        <li>
+                            <a href="blog.html">Blog</a>
+                        </li>
+                        <li>
+                            <a href="elements.html">Features</a>
+                        </li>
+                        <li>
+                            <a href="contact.html">Contact</a>
+                        </li>
+                    </ul> 
+                </div>
+            </section><!-- copyright container end -->
+        </div><!-- footer wrapper end -->
+
+        <script>
+            $('.tweets-list-container').tweetscroll({
+                username: 'pixel_industry', 
+                time: true, 
+                limit: 11, 
+                replies: true, 
+                position: 'append',
+                date_format: 'style2',
+                animation: 'slide_up',
+                visible_tweets: 2
+            });
+            
+            $("#foo3").carouFredSel({
+                items: 1,
+                auto: true,
+                scroll: 1,
+                pagination  : "#foo3_pag"
+            });
+            
+            //placeholder fix
+            $('input[placeholder], textarea[placeholder]').placeholder();
+        </script>
+    </body>
+</html>
+
