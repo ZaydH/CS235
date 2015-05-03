@@ -1,0 +1,1332 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Alexx - Elements</title>
+        <meta name="description" content="Multipurpose Responsive Site Theme">
+        <meta name="author" content="pixel-industry">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+        <meta name="viewport" content="width=device-width">
+        
+        <!-- favicon -->
+        <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+        <link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+        <!-- stylesheets -->
+        <link rel="stylesheet" href="css/basic.css" />
+        <link rel="stylesheet" href="css/style.css" />
+
+        <!-- navigation icons using "font awesome" -->
+        <link rel="stylesheet" href="Font-Awesome/css/font-awesome.css" />
+
+        <!-- google web fonts -->
+        <link href='http://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'>
+
+        <!-- js files -->
+        <script  src="js/jquery-1.7.2.js"></script> <!-- jQuery 1.7.2 -->
+        <script  src="js/jquery.placeholder.min.js"></script><!-- jQuery placeholder fix for old browsers -->
+        <script  src="js/socialstream.jquery.js"></script> <!-- Social Networks Feeds -->
+        <script  src="js/jquery.carouFredSel-6.0.0-packed.js"></script><!-- CarouFredSel carousel plugin -->
+        <script  src="js/include.js"></script> <!-- jQuery custom options -->
+        
+        <!--[if (gte IE 6)&(lte IE 8)]>
+            <script type="text/javascript" src="js/selectivizr.js"></script>
+        <![endif]-->
+        <!--[if lt IE 9]>
+            <script src="js/html5shiv.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+        <!-- header start -->
+        <header id="header" class="clearfix">
+
+            <!-- logo start -->
+            <section id="logo">
+                <a href="index-2.html">
+                    <img src="img/logo.png" alt="logo"/>
+                </a>
+            </section><!-- #logo end -->
+
+            <!-- nav container start -->
+            <section id="nav-container">
+
+                <!-- main navigation start  -->
+                <nav id="nav">
+                    <ul class="nav nav-list">
+                        <li>
+                            <a href="index-2.html">
+                                <i class="icon-nav icon-home"></i>
+                                Home
+                            </a>
+
+                            <ul>
+                                <li><a href="index-2.html">Home default</a></li>
+                                <li><a href="home-alt.html">Home Alternative</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="icon-nav icon-star"></i>
+                                Pages +</a>
+                            <ul>
+                                <li><a href="about.html">About us</a></li>
+                                <li><a href="services.html">Our services</a></li>
+                                <li><a href="page-sidebar-left.html">Page with sidebar left</a></li>
+                                <li><a href="page-sidebar-right.html">Page with sidebar right</a></li>
+                                <li><a href="404.html">404 page</a></li>
+                                <li><a href="products.html">Products page</a></li>
+                                <li><a href="product-details.html">Product details</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="icon-nav icon-th-large"></i>
+                                Portfolio +</a>
+                            <ul>
+                                <li>
+                                    <a href="portfolio3.html">Portfolio 3 col</a>
+                                </li>
+                                <li><a href="portfolio4.html">Portfolio 4 col</a></li>
+                                <li><a href="portfolio-single.html">Portfolio single</a></li>
+                                <li><a href="portfolio-multiple-filters.html">Portfolio multiple filters</a></li>
+                                <li><a href="gallery.html">Gallery</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="icon-nav icon-comments"></i>
+                                Blog +</a>
+                            <ul>
+                                <li><a href="blog.html">Blog</a></li>
+                                <li><a href="blog2.html">Blog 2</a></li>
+                                <li><a href="blog3.html">Blog 3</a></li>
+                                <li><a href="blog-single.html">Blog single</a></li>
+                            </ul>
+                        </li>
+                        <li  class="active">
+                            <a href="#"  class="active">
+                                <i class="icon-nav icon-plus-sign"></i>
+                                Features +</a>
+                            <ul>
+                                <li><a href="columns.html">Columns</a></li>
+                                <li><a href="elements.html">Elements</a></li>
+                                <li><a href="#">Third level +</a>
+                                    <ul>
+                                        <li><a href="#">Menu item</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="icon-nav icon-map-marker"></i>
+                                Contact +</a>
+                            <ul>
+                                <li><a href="contact.html">Contact default</a></li>
+                                <li><a href="contact-simple.html">Contact simple</a></li>
+                            </ul>
+                        </li>
+                    </ul> 
+                </nav><!-- main navigation end -->
+
+                <!-- responsive navigation start -->
+                <select id="nav-responsive">
+                    <option selected="" value="">Site Navigation...</option>
+
+                    <option value="">Home</option>
+                    <option value="index.html">- Home default</option>
+                    <option value="home-alt.html">- Home alternative</option>
+
+                    <option value="">Pages</option>
+                    <option value="about.html">- About us</option>
+                    <option value="services.html">- Services</option>
+                    <option value="page-sidebar-left.html">- Page with sidebar left</option>
+                    <option value="page-sidebar-right.html">- Page with sidebar right</option>
+                    <option value="404.html">- 404 page</option>
+                    <option value="products.html">- Products page</option>
+                    <option value="product-details.html">- Product details</option>
+
+
+                    <option value="">Portfolio</option>
+                    <option value="portfolio3.html">- Portfolio 3 col</option>
+                    <option value="portfolio4.html">- Portfolio 4 col</option>
+                    <option value="portfolio-single.html">- Portfolio single</option>
+                    <option value="portfolio-multiple-filters.html">- Portfolio multiple filters</option>
+                    <option value="gallery.html">- Gallery</option>
+
+                    <option value="">Blog</option>
+                    <option value="blog.html">- Blog</option>
+                    <option value="blog2.html">- Blog 2</option>
+                    <option value="blog3.html">- Blog 3</option>
+                    <option value="blog-single.html">- Blog single</option>
+
+                    <option value="">Features</option>
+                    <option value="columns.html">- Columns</option>
+                    <option value="elements.html">- Elements</option>
+
+                    <option value="">Contact</option>
+                    <option value="contact.html">- Contact default</option>
+                    <option value="contact-simple.html">- Contact simple</option>
+                </select> <!-- responsive navigation end -->
+
+            </section><!-- nav container end -->
+
+            <!-- search start -->
+            <section id="search">
+                <form action="#" method="get">
+                    <input id="search-submit" type="submit" />
+                    <input id="search-bkg" type="text" placeholder="Type and press enter.." />                   
+                </form>
+            </section><!-- search end -->
+
+        </header><!-- header end -->
+
+        <!-- page-title start-->
+        <section class="page-title-container">
+
+            <!-- top shadow on container -->
+            <div class="shadow-top"></div>
+
+            <section class="page-title">
+                <div class="title">
+                    <h1>Elements</h1>
+                    <p>Elements you can use on your pages</p>
+                </div>
+
+                <ul class="breadcrumbs">
+                    <li>
+                        You are here:
+                    </li>
+                    <li>
+                        <a href="#">Features  / </a>
+                    </li>
+                    <li class="active">
+                        <a href="elements.html">Elements</a>
+                    </li>
+                </ul>                        
+            </section>
+
+            <div class="shadow-bottom"></div>
+        </section>
+
+        <!-- content start -->
+        <div id="content-wrapper">
+
+            <div class="container_12">
+
+                <article class="grid_12">
+                    <h3>dropcaps</h3>
+
+                    <!-- dropcap style1 start -->
+                    <section class="grid_4 alpha">
+                        <p>
+                            <span class="dropcap1">A</span>el ipsum dolor sit 
+                            amet, consectetuer adipiscing elit, sed diam nonummy 
+                            nibh euismod tincidunt ut laoreet dolore magna 
+                            aliquam erat volutpat. Ut wisi enim ad minim veniam, 
+                            quis nostrud exerci tation ullamcorper suscipit 
+                            lobortis nisl ut aliquip ex ea commodo consequat. 
+                            Duis autem vel eum iriure dolor in hendrerit in 
+                            vulputate velit esse molestie consequat.
+                        </p>
+                    </section><!-- dropcap style1 end -->
+
+                    <!-- dropcap style2 start -->
+                    <section class="grid_4">
+                        <p>
+                            <span class="dropcap2">Q</span>el ipsum dolor sit 
+                            amet, consectetuer adipiscing elit, sed diam nonummy 
+                            nibh euismod tincidunt ut laoreet dolore magna 
+                            aliquam erat volutpat. Ut wisi enim ad minim veniam, 
+                            quis nostrud exerci tation ullamcorper suscipit 
+                            lobortis nisl ut aliquip ex ea commodo consequat. 
+                            Duis autem vel eum iriure dolor in hendrerit in 
+                            vulputate velit esse molestie consequat.
+                        </p>
+                    </section><!-- dropcap style2 end -->
+
+                    <!-- dropcap style3 start -->
+                    <section class="grid_4 omega">
+                        <p>
+                            <span class="dropcap3">W</span> el ipsum dolor sit 
+                            amet, consectetuer adipiscing elit, sed diam nonummy 
+                            nibh euismod tincidunt ut laoreet dolore magna 
+                            aliquam erat volutpat. Ut wisi enim ad minim veniam, 
+                            quis nostrud exerci tation ullamcorper suscipit 
+                            lobortis nisl ut aliquip ex ea commodo consequat. 
+                            Duis autem vel eum iriure dolor in hendrerit in 
+                            vulputate velit esse molestie consequat.
+                        </p>
+                    </section><!-- dropcap style3 end -->
+                </article>
+
+
+                <article class="grid_12">
+                    <h3>Social bookmarks icons</h3>
+                    <ul class="social presentation">
+                        <li class="dribbble">
+                            <a href="#">dribble</a>
+                        </li>
+
+                        <li class="facebook">
+                            <a href="#">facebook</a>
+                        </li>
+
+                        <li class="pinterest">
+                            <a href="#">pinterest</a>
+                        </li>
+
+                        <li class="twitter">
+                            <a href="#">twitter</a>
+                        </li>
+
+                        <li class="aim">
+                            <a href="#">aim</a>
+                        </li>
+
+                        <li class="behance">
+                            <a href="#">behance</a>
+                        </li>
+
+                        <li class="blogger">
+                            <a href="#">blogger</a>
+                        </li>
+
+                        <li class="cargo">
+                            <a href="#">cargo</a>
+                        </li>
+
+                        <li class="delicious">
+                            <a href="#">delicious</a>
+                        </li>
+
+                        <li class="deviantart">
+                            <a href="#">deviantart</a>
+                        </li>
+
+                        <li class="digg">
+                            <a href="#">digg</a>
+                        </li>
+
+                        <li class="evernote">
+                            <a href="#">evernote</a>
+                        </li>
+
+                        <li class="flickr">
+                            <a href="#">flickr</a>
+                        </li>
+
+                        <li class="forrst">
+                            <a href="#">forrst</a>
+                        </li>
+
+                        <li class="github">
+                            <a href="#">github</a>
+                        </li>
+
+                        <li class="googleplus">
+                            <a href="#">googleplus</a>
+                        </li>
+
+                        <li class="google">
+                            <a href="#">google</a>
+                        </li>
+
+                        <li class="gowalla">
+                            <a href="#">gowalla</a>
+                        </li>
+
+                        <li class="grooveshark">
+                            <a href="#">grooveshark</a>
+                        </li>
+
+                        <li class="html5">
+                            <a href="#">html5</a>
+                        </li>
+
+                        <li class="icloud">
+                            <a href="#">icloud</a>
+                        </li>
+
+                        <li class="lastfm">
+                            <a href="#">lastfm</a>
+                        </li>
+
+                        <li class="linkedin">
+                            <a href="#">linkedin</a>
+                        </li>
+
+                        <li class="mixx">
+                            <a href="#">mixx</a>
+                        </li>
+
+                        <li class="myspace">
+                            <a href="#">myspace</a>
+                        </li>
+
+                        <li class="netvibes">
+                            <a href="#">netvibes</a>
+                        </li>
+
+                        <li class="newsvine">
+                            <a href="#">newsvine</a>
+                        </li>
+
+                        <li class="orkut">
+                            <a href="#">orkut</a>
+                        </li>
+
+                        <li class="paypal">
+                            <a href="#">paypal</a>
+                        </li>
+
+                        <li class="plurk">
+                            <a href="#">plurk</a>
+                        </li>
+
+                        <li class="posterous">
+                            <a href="#">posterous</a>
+                        </li>
+
+                        <li class="reddit">
+                            <a href="#">reddit</a>
+                        </li>
+
+                        <li class="rss">
+                            <a href="#">rss</a>
+                        </li>
+
+                        <li class="skype">
+                            <a href="#">skype</a>
+                        </li>
+
+                        <li class="stumbleupon">
+                            <a href="#">stumbleupon</a>
+                        </li>
+
+                        <li class="technorati">
+                            <a href="#">technorati</a>
+                        </li>
+
+                        <li class="tumblr">
+                            <a href="#">tumblr</a>
+                        </li>
+
+                        <li class="vimeo">
+                            <a href="#">wimeo</a>
+                        </li>
+
+                        <li class="wordpress">
+                            <a href="#">wordpress</a>
+                        </li>
+
+                        <li class="yahoo">
+                            <a href="#">yahoo</a>
+                        </li>
+
+                        <li class="yelp">
+                            <a href="#">yelp</a>
+                        </li>
+
+                        <li class="youtube">
+                            <a href="#">youtube</a>
+                        </li>
+
+                        <li class="zerply">
+                            <a href="#">zerply</a>
+                        </li>
+
+                        <li class="zootool">
+                            <a href="#">zootool</a>
+                        </li> 
+
+                    </ul><!-- social icons end -->
+                </article>
+
+
+                <article class="grid_3 social-feed deviant-feed">
+                    <h3>deviant art</h3>
+                </article>
+
+                <article class="grid_3 social-feed instagram-feed">
+                    <h3>instagram</h3>
+                </article>
+
+                <article class="grid_3 social-feed picasa-feed">
+                    <h3>picasa</h3>
+                </article>
+
+                <article class="grid_3 social-feed pinterest-feed">
+                    <h3>pinterest</h3>
+                </article>
+
+                <article class="grid_3 social-feed flickr-feed">
+                    <h3>flickr</h3>
+                </article>
+
+                <article class="grid_3 social-feed dribbble-feed">
+                    <h3>dribbble</h3>
+                </article>
+
+                <article class="grid_3 social-feed youtube-feed">
+                    <h3>youtube</h3>
+                </article>
+
+                <article class="grid_3 social-feed newsfeed">
+                    <h3>newsfeed</h3>
+                </article>
+
+                <!-- unordered list start -->
+                <section class="grid_4">
+                    <h3>Colored lists</h3>
+
+                    <!-- colored list start -->
+                    <ul class="colored-list">
+
+                        <!-- check list item start -->
+                        <li class="list-check">
+                            <span>Checklist class="list-check"</span>
+                        </li><!-- check list item end -->
+
+                        <!-- arrow list item start-->
+                        <li class="list-arrow">
+                            <span>Arrow list class="list-arrow"</span>
+                        </li><!-- arrow list item end -->
+
+                        <!-- error list item start -->
+                        <li class="list-error">
+                            <span>List class="list-error"</span>
+                        </li><!-- error list item end -->
+
+                        <!-- square list item start -->
+                        <li class="list-square">
+                            <span>List class="list-square"</span>
+                        </li><!-- square list item end -->
+
+                        <!-- start list item start -->
+                        <li class="list-star">
+                            <span>List class="list-star"</span>
+                        </li><!-- star list sitem end -->
+
+                        <!-- thumb down list item start -->
+                        <li class="list-thumbdown">
+                            <span>List class="list-thumbdown"</span>
+                        </li><!-- thumb down list item end -->
+
+                        <!-- thumb up list item start -->
+                        <li class="list-thumbup">
+                            <span>List class="list-thumbup"</span>
+                        </li><!-- thumb up list item end -->
+                    </ul><!-- colored list end -->
+                </section><!-- unordered list end -->
+
+                <!-- grey list start -->
+                <section class="grid_4">
+
+                    <h3>List with grey icons</h3>
+
+                    <ul class="grey-list">
+                        <!-- check list item start -->
+                        <li class="list-check grey">
+                            <span>Checklist class="list-check grey"</span>
+                        </li><!-- check list item end -->
+
+                        <!-- arrow list item start-->
+                        <li class="list-arrow grey">
+                            <span>Arrow list class="list-arrow grey"</span>
+                        </li><!-- arrow list item end -->
+
+                        <!-- error list item start -->
+                        <li class="list-error grey">
+                            <span>List class="list-error grey"</span>
+                        </li><!-- error list item end -->
+
+                        <!-- square list item start -->
+                        <li class="list-square grey">
+                            <span>List class="list-square grey"</span>
+                        </li><!-- square list item end -->
+
+                        <!-- start list item start -->
+                        <li class="list-star grey">
+                            <span>List class="list-star grey"</span>
+                        </li><!-- star list sitem end -->
+
+                        <!-- thumb down list item start -->
+                        <li class="list-thumbdown grey">
+                            <span>List class="list-thumbdown grey"</span>
+                        </li><!-- thumb down list item end -->
+
+                        <!-- thumb up list item start -->
+                        <li class="list-thumbup grey grey">
+                            <span>List class="list-thumbup"</span>
+                        </li><!-- thumb up list item end -->
+                    </ul>
+                </section><!-- grey list end -->
+
+                <!-- buttons start -->
+                <section class="grid_4">
+                    <h3>Buttons</h3>
+
+                    <!-- small button preview start -->
+                    <a href="#" class="btn-small style-color preview">
+                        <span>Small</span>
+                    </a>
+                    <code>class="btn-small"</code><!-- small button preview end -->
+
+                    <!-- medium button preview -->
+                    <a href="#" class="btn-medium style-color preview">
+                        <span>Medium</span>
+                    </a>
+                    <code>class="btn-medium"</code><!-- medium button preview end -->
+
+                    <!-- big button preview -->
+                    <a href="#" class="btn-big style-color preview">
+                        <span>Large button</span>
+                    </a>
+                    <code>class="btn-big"</code><!-- big button preview end -->
+
+                </section><!-- buttons end -->
+
+                <article class="grid_12">
+                    <h3>services icons</h3>
+
+                    <p>
+                        Allex comes with 56 different service ions you can choose 
+                        from and use it to present your services.Every icon is 
+                        allready styled in main CSS file "style.css". You can see
+                        the list of all icons available bellow. You can also edit
+                        rotate animation to degree you want, it's so simple.
+                    </p>
+                    <br />
+
+                    <ul class="services-wrap services-presentation">
+                        <li>
+                            <div class="icon">
+                                <a href="services.html" class="icon-android">service</a>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="icon">
+                                <a href="services.html" class="icon-arrow-down">service</a>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="icon">
+                                <a href="services.html" class="icon-arrow-left">service</a>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="icon">
+                                <a href="services.html" class="icon-arrow-right">service</a>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="icon">
+                                <a href="services.html" class="icon-arrow-up">service</a>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="icon">
+                                <a href="services.html" class="icon-book">service</a>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="icon">
+                                <a href="services.html" class="icon-building">service</a>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="icon">
+                                <a href="services.html" class="icon-calendar">service</a>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="icon">
+                                <a href="services.html" class="icon-camera">service</a>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="icon">
+                                <a href="services.html" class="icon-chain1">service</a>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="icon">
+                                <a href="services.html" class="icon-chain2">service</a>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="icon">
+                                <a href="services.html" class="icon-chrome">service</a>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="icon">
+                                <a href="services.html" class="icon-clapboard">service</a>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="icon">
+                                <a href="services.html" class="icon-cog">service</a>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="icon">
+                                <a href="services.html" class="icon-construction">service</a>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="icon">
+                                <a href="services.html" class="icon-cup">service</a>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="icon">
+                                <a href="services.html" class="icon-cut">service</a>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="icon">
+                                <a href="services.html" class="icon-download">service</a>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="icon">
+                                <a href="services.html" class="icon-firefox">service</a>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="icon">
+                                <a href="services.html" class="icon-flag">service</a>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="icon">
+                                <a href="services.html" class="icon-folder">service</a>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="icon">
+                                <a href="services.html" class="icon-globe">service</a>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="icon">
+                                <a href="services.html" class="icon-graph">service</a>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="icon">
+                                <a href="services.html" class="icon-grid">service</a>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="icon">
+                                <a href="services.html" class="icon-hd">service</a>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="icon">
+                                <a href="services.html" class="icon-help">service</a>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="icon">
+                                <a href="services.html" class="icon-home">service</a>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="icon">
+                                <a href="services.html" class="icon-html5">service</a>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="icon">
+                                <a href="services.html" class="icon-ice-cream">service</a>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="icon">
+                                <a href="services.html" class="icon-idea">service</a>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="icon">
+                                <a href="services.html" class="icon-image">service</a>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="icon">
+                                <a href="services.html" class="icon-lab">service</a>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="icon">
+                                <a href="services.html" class="icon-label">service</a>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="icon">
+                                <a href="services.html" class="icon-list">service</a>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="icon">
+                                <a href="services.html" class="icon-mac">service</a>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="icon">
+                                <a href="services.html" class="icon-mail">service</a>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="icon">
+                                <a href="services.html" class="icon-marker">service</a>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="icon">
+                                <a href="services.html" class="icon-pacman">service</a>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="icon">
+                                <a href="services.html" class="icon-padlock">service</a>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="icon">
+                                <a href="services.html" class="icon-paperclip">service</a>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="icon">
+                                <a href="services.html" class="icon-paypal">service</a>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="icon">
+                                <a href="services.html" class="icon-pdf">service</a>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="icon">
+                                <a href="services.html" class="icon-pencil">service</a>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="icon">
+                                <a href="services.html" class="icon-phone">service</a>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="icon">
+                                <a href="services.html" class="icon-preview">service</a>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="icon">
+                                <a href="services.html" class="icon-rss">service</a>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="icon">
+                                <a href="services.html" class="icon-safari">service</a>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="icon">
+                                <a href="services.html" class="icon-sd">service</a>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="icon">
+                                <a href="services.html" class="icon-shop">service</a>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="icon">
+                                <a href="services.html" class="icon-speach-bubble">service</a>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="icon">
+                                <a href="services.html" class="icon-speaker">service</a>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="icon">
+                                <a href="services.html" class="icon-strategy">service</a>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="icon">
+                                <a href="services.html" class="icon-tool">service</a>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="icon">
+                                <a href="services.html" class="icon-umbrella">service</a>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="icon">
+                                <a href="services.html" class="icon-visa">service</a>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="icon">
+                                <a href="services.html" class="icon-warning">service</a>
+                            </div>
+                        </li>
+                    </ul>
+                </article>
+                
+                <!-- accordion start -->
+                <article class="grid_3">
+                    <section class="section-title">
+                        <h5>accordion</h5>
+                    </section>  
+
+                    <section class="accordion">
+                        <div class="title"><a href="#">Section 1</a></div>
+                        <div class="content">
+                            <p>
+                                Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer
+                                ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit
+                                amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. 
+                            </p>
+                        </div>
+                        <div class="title active"><a href="#">Section 2</a></div>
+                        <div class="content">
+                            <p>
+                                Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet
+                                purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor
+                                velit, faucibus interdum tellus libero ac justo.
+                            </p>
+                        </div>
+                        <div class="title"><a href="#">Section 3</a></div>
+                        <div class="content">
+                            <p>
+                                Nam enim risus, molestie et, porta ac, aliquam ac, risus. Quisque lobortis.
+                                Phasellus pellentesque purus in massa. Aenean in pede. Phasellus ac libero
+                                ac tellus pellentesque semper.
+                            </p>
+
+                        </div>
+                        <div class="title"><a href="#">Section 4</a></div>
+                        <div class="content">
+                            <p>
+                                Cras dictum. Pellentesque habitant morbi tristique senectus et netus
+                                et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in
+                                faucibus orci luctus et ultrices posuere cubilia Curae; 
+                            </p>
+                        </div>
+                    </section>
+                </article><!-- accordion end -->    
+                
+                <!-- content tabs start -->
+                <article class="grid_3">
+
+                    <h3>tabs</h3>
+
+                    <!-- tabs start -->
+                    <ul class="tabs">
+                        <li class="active">
+                            <a href="#tab2">First</a>
+                        </li>
+                        <li class="">
+                            <a href="#tab2">Second</a>
+                        </li>
+                        <li class="">
+                            <a href="#tab3">Third</a>
+                        </li>
+                    </ul><!-- tabs end -->
+
+                    <!-- tabs content -->
+                    <section class="tab-content-wrap">
+
+                        <!-- tab1 content start -->
+                        <div id="tab1" class="tab-content">
+                            <p>Integer mollis elementum odio, eget consectetur arcu condi acm ent um sit amet.
+                                <br />Donec eui smod, justo quis vulputate varius, leo turpis pretium risus, et molestie mauris juo sit amet.</p>
+
+                        </div><!-- tab1 content end -->
+
+                        <!-- tab2 content start -->
+                        <div id="tab2" class="tab-content">
+                            <p>Integer mollis elementum odio, eget consectetur arcu condi acm ent um sit amet. Donec eui smod, justo quis vulputate varius, leo turpis pretium risus, et molestie mauris jto sit amet.</p> 
+                        </div><!-- tab2 content end -->
+
+                        <!-- tab3 content start -->
+                        <div id="tab3" class="tab-content">
+                            <p>Integer mollis elementum odio, eget consectetur arcu condi acm ent um sit amet. Donec eui smod, justo quis vulputate varius, leo turpis pretium risus, et molestie mauris juo sit amet.</p>
+
+                        </div><!-- tab3 content end -->
+                    </section><!-- tabs content end -->
+                </article><!-- tabs end -->
+
+                <!-- toggle start -->
+                <article class="grid_3">
+
+                    <h3>toggle</h3>
+
+                    <section class="vertical-toggle">
+                        <div class="set">
+                            <div class="title">
+                                <a class="text">Toggle 1</a>
+
+                            </div>
+                            <div class="content">
+                                <p class="vertical-content"> Cras dictum. Pellentesque habitant morbi tristique senectus et netus
+                                    et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in
+                                    faucibus orci luctus et ultrices posuere cubilia Curae; </p>
+                            </div>
+                        </div>
+                        <div class="set">
+                            <div class="title">
+                                <a class="text">Toggle 2</a>
+
+                            </div>
+                            <div class="content">
+                                <p class="vertical-content">Cras dictum. Pellentesque habitant morbi tristique senectus et netus
+                                    et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in
+                                    faucibus orci luctus et ultrices posuere cubilia Curae; </p>
+                            </div>
+                        </div>
+                        <div class="set">
+                            <div class="title">
+                                <a class="text">Toggle 3</a>
+
+                            </div>
+                            <div class="content">
+                                <p class="vertical-content">Cras dictum. Pellentesque habitant morbi tristique senectus et netus
+                                    et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in
+                                    faucibus orci luctus et ultrices posuere cubilia Curae; </p>
+                            </div>
+                        </div>
+                        <div class="set">
+                            <div class="title">
+                                <a class="text">Toggle 4</a>
+
+                            </div>
+                            <div class="content">
+                                <p class="vertical-content">Cras dictum. Pellentesque habitant morbi tristique senectus et netus
+                                    et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in
+                                    faucibus orci luctus et ultrices posuere cubilia Curae; </p> 
+                            </div>
+                        </div>
+                    </section>
+                </article><!-- toggle end -->
+
+                <!-- info box start -->
+                <article class="grid_3">
+
+                    <h3>info boxes</h3>
+
+                    <!-- infobox start -->
+                    <section class="infobox">
+                        <p>Info messages...</p>
+                    </section><!-- infobox end -->
+
+                    <!-- error box start -->
+                    <section class="error-box">
+                        <p>Error messages...</p>
+                    </section><!-- error box end -->
+
+                    <!-- success box start -->
+                    <section class="success-box">
+                        <p>Success messages...</p>
+                    </section><!-- success box end -->
+
+                    <!-- note box start -->
+                    <section class="note-box">
+                        <p>Note messages...</p>
+                    </section><!-- note box end -->
+
+                    <!-- warning box start -->
+                    <section class="warning-box">
+                        <p>Warning messages...</p>
+                    </section><!-- warning box end -->
+
+                    <!-- shopbox start -->
+                    <section class="shop-box">
+                        <p>Shop messages...</p>
+                    </section><!-- shop box end -->
+
+                </article><!-- info box end -->
+            </div><!-- container_12 end -->
+        </div><!-- content wrapper end -->
+
+
+        <!-- footer wrapper start -->
+        <div id="footer-wrapper">
+
+            <div class="shadow-top"></div>
+
+            <footer id="footer" class="container_12">
+
+                <!-- sliding text article start -->
+                <article class="grid_3 jcarousellite carousel-article">
+                    <h4>Sliding text article</h4>
+
+                    <ul id="foo3" class="carousel-li">
+                        <li>
+                            <p>
+                                Sed ut perspiciatis unde omnis iste natus error 
+                                sit voluptatem accusantium doloremque laudantium, 
+                                totam rem aperiam, eaque ipsa quae ab illo 
+                                inventore veritatis et quasi.  
+                            </p>
+                        </li>
+
+                        <li>
+                            <p>
+                                Sed ut perspiciatis unde omnis iste natus error 
+                                sit voluptatem accusantium doloremque laudantium, 
+                                totam rem aperiam, eaque ipsa quae ab illo 
+                                inventore veritatis et quasi. 
+                            </p>
+                        </li>
+
+                        <li>
+                            <p>
+                                Sed ut perspiciatis unde omnis iste natus error 
+                                sit voluptatem accusantium doloremque laudantium, 
+                                totam rem aperiam, eaque ipsa quae ab illo 
+                                inventore veritatis et quasi. 
+                            </p>
+                        </li>
+                    </ul>
+
+                    <div class="clearfix"></div>
+
+                    <div class="carousel-pagination" id="foo3_pag"></div>
+
+                </article><!-- sliding text article end -->
+
+                <!-- latest blog entries start -->
+                <article class="grid_3">
+                    <h4>Latest blog entries</h4>
+
+                    <ul class="footer-blog">
+                        <li>
+                            <div class="meta">
+                                <p>
+                                    21 <br />
+                                    <span class="date">JAN</span>
+                                </p>
+                            </div>
+                            <div class="post">
+                                <a href="blog.html">
+                                    Sed ut perspiciatis unde omnis iste  |  
+                                    <span class="light">Web design</span>
+                                </a>
+                            </div> 
+                        </li> 
+
+                        <li>
+                            <div class="meta">
+                                <p>
+                                    22 <br />
+                                    <span class="date">SEP</span>
+                                </p>
+                            </div>
+                            <div class="post">
+                                <a href="blog.html">
+                                    Sed ut perspiciatis unde omnis iste  |  
+                                    <span class="light">Photography</span>
+                                </a>
+                            </div> 
+                        </li> 
+                    </ul>
+                </article><!-- latest blog entries end -->
+
+                <!-- instagram feed start -->
+                <article class="grid_3 social-feed instagram-feed">
+                    <h4>Instagram photo stream</h4>
+                </article><!-- instagram feed end -->
+
+
+                <!-- contact start -->
+                <article class="grid_3">
+                    <h4>Contact us</h4>
+                    <p>
+                        You can reach us on social networks, or send us a message 
+                        through our contact form <a href="contact.html" class="text-red">here.</a>
+                    </p>
+
+                    <ul class="social">
+                        <li class="dribbble">
+                            <a href="#">dribbble</a>
+                        </li>
+
+                        <li class="facebook">
+                            <a href="#">facebook</a>
+                        </li>
+
+                        <li class="pinterest">
+                            <a href="#">pinterest</a>
+                        </li>
+
+                        <li class="twitter">
+                            <a href="#">twitter</a>
+                        </li>
+                    </ul>
+                </article><!-- contact end -->
+            </footer><!-- footer end -->
+
+            <!-- copyright container start -->
+            <section class="copyright-container">
+
+                <div class="copyright container_12">
+                    <p>
+                        Copyright Alexx 2012. All rights reserved. Theme by 
+                        <span class="text-red">Pixel-industry.</span>
+                    </p>
+
+                    <ul class="breadcrumbs">
+                        <li>
+                            <a href="index-2.html">Home</a>
+                        </li>
+                        <li>
+                            <a href="404.html">Pages</a>
+                        <li>
+                            <a href="portfolio3.html">Portfolio</a>
+                        </li>
+                        <li>
+                            <a href="blog.html">Blog</a>
+                        </li>
+                        <li class="active">
+                            <a href="elements.html">Features</a>
+                        </li>
+                        <li>
+                            <a href="contact.html">Contact</a>
+                        </li>
+                    </ul> 
+                </div>
+            </section><!-- copyright container end -->
+        </div><!-- footer wrapper end -->
+
+        <script>
+            
+            /* ================ PINTEREST FEED ================ */
+            $('.pinterest-feed').socialstream({
+                socialnetwork: 'pinterest',
+                limit: 15,
+                username: 'vmrkela'
+            })
+        
+            /* ================ DEVIANT ART FEED ================ */
+            $('.deviant-feed').socialstream({
+                socialnetwork: 'deviantart',
+                limit: 15,
+                username: 'mrky-cro'
+            })
+        
+            /* ================ PICASA FEED ================ */
+            $('.picasa-feed').socialstream({
+                socialnetwork: 'picasa',
+                limit: 15,
+                username: 'vmrkela1@gmail.com'
+            })
+        
+            /* ================ FLICKR FEED ================ */
+            $('.flickr-feed').socialstream({
+                socialnetwork: 'flickr',
+                limit: 15,
+                username: 'Mrky1'
+            })
+        
+            /* ================ DRIBBBLE FEED ================ */
+            $('.dribbble-feed').socialstream({
+                socialnetwork: 'dribbble',
+                limit: 15,
+                username: 'envato'
+            })
+        
+            /* ================ YOUTUBE FEED ================ */
+            $('.youtube-feed').socialstream({
+                socialnetwork: 'youtube',
+                limit: 15,
+                username: 'MBreferrall'
+            })
+        
+            /* ================ NEWSFEED ================ */
+            $('.newsfeed').socialstream({
+                socialnetwork: 'newsfeed',
+                limit: 15,
+                username: ' http://feeds.feedburner.com/webdesignerdepot?format=xml'
+            })
+            
+            $("#foo3").carouFredSel({
+                items: 1,
+                auto: true,
+                scroll: 1,
+                pagination  : "#foo3_pag"
+            });
+            
+            //placeholder fix
+            $('input[placeholder], textarea[placeholder]').placeholder();
+        </script>
+    </body>
+</html>
+
