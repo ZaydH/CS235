@@ -1,0 +1,539 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<workbook source-platform='win' version='9.0' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <!-- build 9000.15.0318.1720                                -->
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='Total Medals Filtered (2) (Olympic Medal Count 2004 to 2012)' inline='true' name='excel-direct.42126.822110578702' version='9.0'>
+      <connection class='excel-direct' cleaning='no' compat='no' dataRefreshTime='' filename='C:\Users\Zayd\Desktop\Courses\CS235 - User Interface Design\Final_Project\Source Data\Olympic Medal Count 2004 to 2012.xlsx' password='' server='' validate='no'>
+        <relation name='&apos;Total Medals Transposed$&apos;' table='[&apos;Total Medals Transposed$&apos;]' type='table'>
+          <columns header='yes' outcome='6'>
+            <column datatype='string' name='Abbreviation' ordinal='0' />
+            <column datatype='string' name='Country' ordinal='1' />
+            <column datatype='integer' name='Gold' ordinal='2' />
+            <column datatype='integer' name='Silver' ordinal='3' />
+            <column datatype='integer' name='Bronze' ordinal='4' />
+            <column datatype='integer' name='Combined' ordinal='5' />
+            <column datatype='integer' name='Population' ordinal='6' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>Abbreviation</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Abbreviation]</local-name>
+            <parent-name>[&apos;Total Medals Transposed$&apos;]</parent-name>
+            <remote-alias>Abbreviation</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Country</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Country]</local-name>
+            <parent-name>[&apos;Total Medals Transposed$&apos;]</parent-name>
+            <remote-alias>Country</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Gold</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Gold]</local-name>
+            <parent-name>[&apos;Total Medals Transposed$&apos;]</parent-name>
+            <remote-alias>Gold</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Silver</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Silver]</local-name>
+            <parent-name>[&apos;Total Medals Transposed$&apos;]</parent-name>
+            <remote-alias>Silver</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Bronze</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Bronze]</local-name>
+            <parent-name>[&apos;Total Medals Transposed$&apos;]</parent-name>
+            <remote-alias>Bronze</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Combined</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Combined]</local-name>
+            <parent-name>[&apos;Total Medals Transposed$&apos;]</parent-name>
+            <remote-alias>Combined</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Population</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Population]</local-name>
+            <parent-name>[&apos;Total Medals Transposed$&apos;]</parent-name>
+            <remote-alias>Population</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name></remote-name>
+            <remote-type>0</remote-type>
+            <parent-name>[&apos;Total Medals Transposed$&apos;]</parent-name>
+            <remote-alias></remote-alias>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='context'>0</attribute>
+              <attribute datatype='boolean' name='header'>true</attribute>
+              <attribute datatype='integer' name='outcome'>6</attribute>
+            </attributes>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column datatype='integer' name='[Bronze]' role='measure' type='quantitative'>
+      </column>
+      <column caption='Total Medals' datatype='integer' name='[Calculation_9580502204237589]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='[Gold]+[Silver]+[Bronze]' />
+      </column>
+      <column datatype='integer' name='[Combined]' role='measure' type='quantitative'>
+      </column>
+      <column datatype='string' name='[Country]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal'>
+        <aliases>
+          <alias key='&quot;HUN&quot;' value='Hungary' />
+        </aliases>
+      </column>
+      <column datatype='integer' name='[Gold]' role='measure' type='quantitative'>
+      </column>
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <column datatype='integer' name='[Silver]' role='measure' type='quantitative'>
+      </column>
+      <column-instance column='[Gold]' derivation='None' name='[none:Gold:ok]' pivot='key' type='ordinal' />
+      <column-instance column='[Bronze]' derivation='Sum' name='[sum:Bronze:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Calculation_9580502204237589]' derivation='Sum' name='[sum:Calculation_9580502204237589:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Combined]' derivation='Sum' name='[sum:Combined:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Gold]' derivation='Sum' name='[sum:Gold:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Number of Records]' derivation='Sum' name='[sum:Number of Records:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Silver]' derivation='Sum' name='[sum:Silver:qk]' pivot='key' type='quantitative' />
+      <layout dim-ordering='alphabetic' dim-percentage='0.5' measure-ordering='alphabetic' measure-percentage='0.4' rowDisplayCount='25' show-structure='false' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[:Measure Names]' type='palette'>
+            <map to='#1f77b4'>
+              <bucket>&quot;[excel-direct.42126.822110578702]&quot;</bucket>
+            </map>
+            <map to='#2ca02c'>
+              <bucket>&quot;[excel-direct.42126.822110578702].[:Measure Names]&quot;</bucket>
+            </map>
+            <map to='#8c564b'>
+              <bucket>&quot;[excel-direct.42126.822110578702].[sum:Number of Records:qk]&quot;</bucket>
+            </map>
+            <map to='#9467bd'>
+              <bucket>&quot;[excel-direct.42126.822110578702].[sum:Combined:qk]&quot;</bucket>
+            </map>
+            <map to='#a8786e'>
+              <bucket>&quot;[excel-direct.42126.822110578702].[sum:Bronze:qk]&quot;</bucket>
+            </map>
+            <map to='#cfcfcf'>
+              <bucket>&quot;[excel-direct.42126.822110578702].[sum:Silver:qk]&quot;</bucket>
+            </map>
+            <map to='#e377c2'>
+              <bucket>&quot;[excel-direct.42126.822110578702].[sum:Calculation_9580502204237589:qk]&quot;</bucket>
+            </map>
+            <map to='#ff7f0e'>
+              <bucket>&quot;[excel-direct.42126.822110578702].[none:Gold:ok]&quot;</bucket>
+            </map>
+            <map to='#ffc156'>
+              <bucket>&quot;[excel-direct.42126.822110578702].[sum:Gold:qk]&quot;</bucket>
+            </map>
+            <map to='#ffd94a'>
+              <bucket>&quot;[excel-direct.42126.822110578702].[none:Calculation_2240502204742905:qk]&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+    </datasource>
+  </datasources>
+  <mapsources>
+    <mapsource name='Tableau' />
+  </mapsources>
+  <worksheets>
+    <worksheet name='Sheet 1'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>Total Summer Olympic Medals Won - 2004 to 2012</run>
+          </formatted-text>
+        </title>
+        <caption>
+          <formatted-text>
+            <run fontalignment='1' fontsize='10'>Cummulative bronze, silver, and gold medals won in the 2004 to 2012 Summer Olympics.  &#10;Top 15 medal winning countries excluded.&#10;</run>
+          </formatted-text>
+        </caption>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Total Medals Filtered (2) (Olympic Medal Count 2004 to 2012)' name='excel-direct.42126.822110578702' />
+          </datasources>
+          <mapsources>
+            <mapsource name='Tableau' />
+          </mapsources>
+          <datasource-dependencies datasource='excel-direct.42126.822110578702'>
+            <column datatype='integer' name='[Bronze]' role='measure' type='quantitative'>
+            </column>
+            <column caption='Total Medals' datatype='integer' name='[Calculation_9580502204237589]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='[Gold]+[Silver]+[Bronze]' />
+            </column>
+            <column datatype='string' name='[Country]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal'>
+              <aliases>
+                <alias key='&quot;HUN&quot;' value='Hungary' />
+              </aliases>
+            </column>
+            <column datatype='integer' name='[Gold]' role='measure' type='quantitative'>
+            </column>
+            <column datatype='integer' name='[Silver]' role='measure' type='quantitative'>
+            </column>
+            <column-instance column='[Country]' derivation='None' name='[none:Country:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Bronze]' derivation='Sum' name='[sum:Bronze:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_9580502204237589]' derivation='Sum' name='[sum:Calculation_9580502204237589:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Gold]' derivation='Sum' name='[sum:Gold:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Silver]' derivation='Sum' name='[sum:Silver:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[excel-direct.42126.822110578702].[:Measure Names]'>
+            <groupfilter function='union' user:op='manual'>
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[excel-direct.42126.822110578702].[sum:Bronze:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[excel-direct.42126.822110578702].[sum:Silver:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[excel-direct.42126.822110578702].[sum:Gold:qk]&quot;' />
+            </groupfilter>
+          </filter>
+          <sort class='manual' column='[excel-direct.42126.822110578702].[:Measure Names]' direction='ASC'>
+            <dictionary>
+              <bucket>&quot;[excel-direct.42126.822110578702].[sum:Bronze:qk]&quot;</bucket>
+              <bucket>&quot;[excel-direct.42126.822110578702].[sum:Silver:qk]&quot;</bucket>
+              <bucket>&quot;[excel-direct.42126.822110578702].[sum:Gold:qk]&quot;</bucket>
+            </dictionary>
+          </sort>
+          <sort class='computed' column='[excel-direct.42126.822110578702].[none:Country:nk]' direction='DESC' using='[excel-direct.42126.822110578702].[sum:Calculation_9580502204237589:qk]'>
+          </sort>
+          <slices>
+            <column>[excel-direct.42126.822110578702].[:Measure Names]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='title' class='0' field='[excel-direct.42126.822110578702].[Multiple Values]' scope='rows' value='Medals Won' />
+            <format attr='subtitle' class='0' field='[excel-direct.42126.822110578702].[Multiple Values]' scope='rows' value='' />
+            <format attr='auto-subtitle' class='0' field='[excel-direct.42126.822110578702].[Multiple Values]' scope='rows' value='true' />
+          </style-rule>
+          <style-rule element='cell'>
+            <format attr='width' field='[excel-direct.42126.822110578702].[none:Country:nk]' value='59' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='font-size' field='[excel-direct.42126.822110578702].[none:Country:nk]' value='12' />
+            <format attr='color' field='[excel-direct.42126.822110578702].[none:Country:nk]' value='#000000' />
+            <format attr='font-weight' field='[excel-direct.42126.822110578702].[none:Country:nk]' value='normal' />
+            <format attr='text-orientation' field='[excel-direct.42126.822110578702].[none:Country:nk]' value='-90' />
+            <format attr='font-size' field='[excel-direct.42126.822110578702].[Multiple Values]' value='12' />
+          </style-rule>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[excel-direct.42126.822110578702].[sum:Silver:qk]' max='1' min='1' palette='tableau-gray' type='interpolated' />
+          </style-rule>
+          <style-rule element='map-layer'>
+            <format attr='enabled' id='tab_base' value='true' />
+            <format attr='enabled' id='um_lcover' value='true' />
+            <format attr='enabled' id='tab_coastline' value='false' />
+            <format attr='enabled' id='pp2_line' value='false' />
+            <format attr='enabled' id='light_adm0_bnd' value='false' />
+            <format attr='enabled' id='light_adm0_lbl' value='false' />
+            <format attr='enabled' id='um_adm0_bnd' value='true' />
+            <format attr='enabled' id='um_adm0_lbl' value='true' />
+            <format attr='enabled' id='light_pp2_statebounds' value='false' />
+            <format attr='enabled' id='light_pp2_statelabels' value='false' />
+            <format attr='enabled' id='pp2_adminlabels' value='false' />
+            <format attr='enabled' id='pp2_statebounds' value='true' />
+            <format attr='enabled' id='pp2_statelabels' value='true' />
+            <format attr='enabled' id='countybounds' value='false' />
+            <format attr='enabled' id='countylabels' value='false' />
+            <format attr='enabled' id='zipbounds' value='false' />
+            <format attr='enabled' id='ziplabels' value='false' />
+            <format attr='enabled' id='tab_areabounds' value='false' />
+            <format attr='enabled' id='tab_arealabels' value='false' />
+            <format attr='enabled' id='tab_msabounds' value='false' />
+            <format attr='enabled' id='tab_msalabels' value='false' />
+          </style-rule>
+          <style-rule element='map'>
+            <format attr='washout' value='0.0' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane id='9'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[excel-direct.42126.822110578702].[:Measure Names]' />
+            </encodings>
+            <style>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[excel-direct.42126.822110578702].[Multiple Values]</rows>
+        <cols>[excel-direct.42126.822110578702].[none:Country:nk]</cols>
+        <annotations>
+          <annotation class='point' id='0' mark-position='1' pullback='0' text-width='160'>
+            <formatted-text>
+              <run bold='true' fontcolor='#b40f1e' fontsize='14'>Michael Phelps</run>
+            </formatted-text>
+            <point>
+              <visual-coordinate class='mark'>
+                <tuple-reference>
+                  <tuple-descriptor>
+                    <pane-descriptor>
+                      <x-fields>
+                        <field>[excel-direct.42126.822110578702].[none:Country:nk]</field>
+                      </x-fields>
+                      <y-fields>
+                        <field>[excel-direct.42126.822110578702].[Multiple Values]</field>
+                      </y-fields>
+                    </pane-descriptor>
+                    <columns>
+                      <field>[excel-direct.42126.822110578702].[none:Country:nk]</field>
+                      <field>[excel-direct.42126.822110578702].[:Measure Names]</field>
+                      <field>[excel-direct.42126.822110578702].[Multiple Values]</field>
+                    </columns>
+                  </tuple-descriptor>
+                  <tuple>
+                    <value>&quot;Michael Phelps&quot;</value>
+                    <value>&quot;[excel-direct.42126.822110578702].[sum:Bronze:qk]&quot;</value>
+                    <value>2.0</value>
+                  </tuple>
+                </tuple-reference>
+              </visual-coordinate>
+            </point>
+            <body x='1' y='-97' />
+          </annotation>
+        </annotations>
+      </table>
+    </worksheet>
+  </worksheets>
+  <windows>
+    <window class='schema' source-height='-1' />
+    <window auto-hidden='0' class='worksheet' maximized='1' name='Sheet 1'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+            <card pane-specification-id='9' param='[excel-direct.42126.822110578702].[:Measure Names]' type='color' />
+            <card type='measures' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='bottom'>
+          <strip size='56'>
+            <card type='caption' />
+          </strip>
+        </edge>
+      </cards>
+      <highlight>
+        <color-one-way>
+          <field>[excel-direct.42126.822110578702].[:Measure Names]</field>
+          <field>[excel-direct.42126.822110578702].[none:Calculation_2240502204742905:qk]</field>
+          <field>[excel-direct.42126.822110578702].[none:Calculation_2560502204802759:qk]</field>
+          <field>[excel-direct.42126.822110578702].[none:Calculation_3620502204716015:qk]</field>
+          <field>[excel-direct.42126.822110578702].[none:Calculation_9580502204237589:ok]</field>
+          <field>[excel-direct.42126.822110578702].[none:Country:nk]</field>
+          <field>[excel-direct.42126.822110578702].[none:Gold:ok]</field>
+          <field>[excel-direct.42126.822110578702].[sum:Bronze:qk]</field>
+        </color-one-way>
+      </highlight>
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='Sheet 1' width='192'>
+      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
+      Ycs8NIJkyf8DAPO0dNI4rTsAAAAASUVORK5CYII=
+    </thumbnail>
+  </thumbnails>
+</workbook>
