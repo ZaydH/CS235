@@ -345,7 +345,7 @@ a.active .icon-nav{
 
 #nav li ul li a{
     text-transform: none !important;
-    font: 12px 'Droid Sans', sans-serif;
+    font: 12px 'Droid Serif', sans-serif;
     line-height: 15px;
     color: #8f8f8f !important;
 
@@ -500,7 +500,8 @@ a.active .icon-nav{
 
 .page-title h1{
     padding-right: 15px;
-    font: 24px 'Lobster', cursive;
+    /*font: 24px 'Lobster', cursive;*/
+   	font: 24px 'Droid Sans', cursive;*/
     text-transform: none;
     margin-bottom: 0;
     border-right:  1px solid #ddd;
@@ -512,7 +513,7 @@ a.active .icon-nav{
     font: 12px 'Arimo', sans-serif;
     position: relative;
     top: 9px;
-    color: #aaa;
+    color: #707070;
 }
 
 /* PAGE TITLE BREADCRUMBS
@@ -639,7 +640,7 @@ a.active .icon-nav{
 .carousel-testimonial span.blockquote-author{
     float: left;
     width: 100%;
-    font: italic 12px 'Droid Sans', serif;
+    font: italic 12px 'Droid Serif', serif;
     color: #aaa;
     margin-top: 7px;
 }
@@ -728,7 +729,7 @@ a.active .icon-nav{
 }
 
 .divider-with-title .title h1{
-    font: 22px 'Lobster', cursive;
+    font: 18px 'Droid Serif', cursive;
     text-transform: none;
     text-align: center;
     margin-bottom: -3px;
