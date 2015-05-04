@@ -75,16 +75,12 @@
                         </li>
                         <li>
                             <a href="#">
-                                <i class="icon-nav icon-star"></i>
-                                Pages +</a>
+                                <i class="icon-nav icon-bar-chart"></i>
+                                Demographics +</a>
                             <ul>
-                                <li><a href="about.html">About us</a></li>
-                                <li><a href="services.html">Our services</a></li>
-                                <li><a href="page-sidebar-left.html">Page with sidebar left</a></li>
-                                <li><a href="page-sidebar-right.html">Page with sidebar right</a></li>
-                                <li><a href="404.html">404 page</a></li>
-                                <li><a href="products.html">Products page</a></li>
-                                <li><a href="product-details.html">Product details</a></li>
+                                <li><a href="geopolitics.html">Geopolitics</a></li>
+                                <li><a href="economics.html">Economics</a></li>
+                                <li><a href="population.html">Population</a></li>
                             </ul>
                         </li>
                         <li>
@@ -100,6 +96,33 @@
                             </ul>
                         </li>
                         <li>
+                        <li>
+                            <a href="#">
+                                <i class="icon-nav icon-plus-sign"></i>
+                                Previous Games +</a>
+                            <ul>
+                                <li><a href="london2012.html">2012 - London</a></li>
+                                <li><a href="#">2008 - Beijing</a></li>
+                                <li><a href="#">2004 - Athens</a></li>
+                                <li><a href="#">2000 - Sydney</a></li>
+                                <li><a href="#">1996 - Atlanta</a></li>
+                                <li><a href="#">More...</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="country_profiles.html">
+                                <i class="icon-nav icon-map-marker"></i>
+                                Country Profiles +</a>
+                            <ul>
+                                <li><a href="united_states.html">United States</a></li>
+                                <li><a href="#">Russia/USSR</a></li>
+                                <li><a href="#">China</a></li>
+                                <li><a href="#">Germany</a></li>
+                                <li><a href="#">United Kingdom</a></li>
+                                <li><a href="#">More...</a></li>
+                            </ul>
+                        </li>
+                        <li>
                             <a href="#">
                                 <i class="icon-nav icon-user-md"></i>
                                 Top Olympians +</a>
@@ -112,29 +135,6 @@
                                 <li><a href="#">More...</a></li>
                             </ul>
                         </li>
-                        <li>
-                            <a href="#">
-                                <i class="icon-nav icon-plus-sign"></i>
-                                Features +</a>
-                            <ul>
-                                <li><a href="columns.html">Columns</a></li>
-                                <li><a href="elements.html">Elements</a></li>
-                                <li><a href="#">Third level +</a>
-                                    <ul>
-                                        <li><a href="#">Menu item</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="icon-nav icon-map-marker"></i>
-                                Contact +</a>
-                            <ul>
-                                <li><a href="contact.html">Contact default</a></li>
-                                <li><a href="contact-simple.html">Contact simple</a></li>
-                            </ul>
-                        </li>
                     </ul> 
                 </nav><!-- main navigation end -->
 
@@ -143,7 +143,12 @@
                     <option selected="" value="">Site Navigation...</option>
 
                     <option value="index.html">Home</option>
-                    
+
+                    <option value="">Portfolio</option>
+                    <option value="geopolitics.html">- Geopolitics</option>
+                    <option value="economics.html">- Economics</option>
+                    <option value="population.html">- Population</option>
+
                     <option value="">Pages</option>
                     <option value="about.html">- About us</option>
                     <option value="services.html">- Services</option>
@@ -153,29 +158,30 @@
                     <option value="products.html">- Products page</option>
                     <option value="product-details.html">- Product details</option>
 
+                    <option value="">Previous Games</option>
+                    <option value="london2012.html">- 2012 - London</option>
+                    <option value="#">- 2008 - Beijing</option>
+                    <option value="#">- 2004 - Athens</option>
+                    <option value="#">- 2000 - Sydney</option>
+                    <option value="#">- 1996 - Atlanta</option>
+                    <option value="#">- More...</option>
 
-                    <option value="">Portfolio</option>
-                    <option value="portfolio3.html">- Portfolio 3 col</option>
-                    <option value="portfolio4.html">- Portfolio 4 col</option>
-                    <option value="portfolio-single.html">- Portfolio single</option>
-                    <option value="portfolio-multiple-filters.html">- Portfolio multiple filters</option>
-                    <option value="gallery.html">- Gallery</option>
+                    <option value="country_profiles.html">Country Profiles</option>
+                    <option value="united_states.html">- Uunited States</option>
+                    <option value="#">- Russia/USSR</option>
+                    <option value="#">- China</option>
+                    <option value="#">- Germany</option>
+                    <option value="#">- United Kingdom</option>
+                    <option value="#">- More...</option>
 
                     <option value="">Top Olympians</option>
-                    <option value="blog.html">- Michael Phelps</option>
+                    <option value="michaelphelps.html">- Michael Phelps</option>
                     <option value="">- Larisa Latynina</option>
                     <option value="">- Paavo Nurmi</option>
                     <option value="">- Mark Spitz</option>
                     <option value="">- Carl Lewis</option>
                     <option value="">- More</option>
 
-                    <option value="">Features</option>
-                    <option value="columns.html">- Columns</option>
-                    <option value="elements.html">- Elements</option>
-
-                    <option value="">Contact</option>
-                    <option value="contact.html">- Contact default</option>
-                    <option value="contact-simple.html">- Contact simple</option>
                 </select> <!-- responsive navigation end -->
 
             </section><!-- nav container end -->
@@ -618,27 +624,26 @@
 
                 <div class="copyright container_12">
                     <p>
-                        Copyright Alexx 2012. All rights reserved. Theme by 
-                        <span class="text-red">Pixel-industry.</span>
+                        Copyright Olympic History. All rights reserved.
                     </p>
 
                     <ul class="breadcrumbs">
                         <li class="active">
-                            <a href="index-2.html">Home</a>
+                            <a href="index.html">Home</a>
                         </li>
                         <li>
-                            <a href="about.html">Pages</a>
+                            <a href="geopolitics.html">Demographics</a>
                         <li>
                             <a href="portfolio3.html">Portfolio</a>
                         </li>
                         <li>
-                            <a href="blog.html">Blog</a>
+                            <a href="london2012.html">Previous Games</a>
                         </li>
                         <li>
-                            <a href="elements.html">Features</a>
+                            <a href="country_profiles.html">Country Profiles</a>
                         </li>
                         <li>
-                            <a href="contact.html">Contact</a>
+                            <a href="michaelphelps.html">Top Olympians</a>
                         </li>
                     </ul> 
                 </div>
