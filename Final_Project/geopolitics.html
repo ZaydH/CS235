@@ -50,38 +50,49 @@
         <![endif]-->
         
         <script>
-        function hideToolbar() {
-            document.getElementsByClassName('tableauViz')[0].contentDocument.getElementsByClassName('bottom_toolbar')[0].style.visibility='hidden';
-        }
-        function hideToolbarLoop(){
-            var t=document.getElementsByClassName('tableauViz');
-          if (t[0]!=null){
-            if (t[0].contentDocument!=undefined)
-            {
-                var g=t[0].contentDocument.getElementsByClassName('bottom_toolbar');
-                if (g[0]!=null)
-                {
-                    setTimeout(hideToolbar,1);
-                }
-              else
-              {
-                  setTimeout(hideToolbarLoop,100);
-              }
-            }
-          else
-          {
-              setTimeout(hideToolbarLoop,100);
-          }
-            
-          } else {
-              setTimeout(hideToolbarLoop,100);
-            //... CODE GOES IN HERE ...
-          }
-        }
+//        function hideToolbar() {
+//            document.getElementsByClassName('tableauViz')[0].contentDocument.getElementsByClassName('bottom_toolbar')[0].style.visibility='hidden';
+//        }
+//        function hideToolbarLoop(){
+//            var t=document.getElementsByClassName('tableauViz');
+//          if (t[0]!=null){
+//               console.log(t[0]);
+//              document.domain="https://public.tableau.com";
+//                document.getElementsByClassName('tableauViz')[0].onload = function() {
+//                  frames[0].location = 'http://wikipedia.org'
+//                  alert('Changed to wikipedia')
+//                };
+//              }
+//          }
+
+//            if (t[0].contentDocument!=undefined)
+//            {
+//                console.log(t[0].contentDocument);
+//                var g=t[0].contentDocument.getElementsByClassName('bottom_toolbar');
+//                if (g[0]!=null)
+//                {
+//                    console.log(g[0]);
+////                    setTimeout(hideToolbar,1);
+//                }
+//              else
+//              {
+//                  setTimeout(hideToolbarLoop,100);
+//              }
+//            }
+//          else
+//          {
+//              setTimeout(hideToolbarLoop,100);
+//          }
+//            
+//          } else {
+//              setTimeout(hideToolbarLoop,100);
+//            //... CODE GOES IN HERE ...
+//          }
+//        }
         </script>
     </head>
 
-    <body onload="hideToolbarLoop()">
+    <body onload="">
         <!-- header start -->
         <header id="header" class="clearfix">
 
@@ -261,7 +272,6 @@
 
             <div class="container_12">
 
-<!--
                     <h3>Medal Prestige</h3>
 
 					<img src="img/1936-Olympics.jpg" align="right" style="width:160px;height:250px" style="margin:50px 0px">
@@ -329,7 +339,6 @@
 					</p>
 					<br>
 					<br>
--->
                 <article class="grid_12">
                     <!-- team title -->
                     <div class="divider-with-title">                    
