@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Olympics History - Country Profiles</title>
+        <meta name="description" content="Multipurpose Responsive Site Theme">
+        <meta name="author" content="pixel-industry">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+        <meta name="viewport" content="width=device-width">
+        
+        <!-- favicon -->
+        <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+        <link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+        <!-- stylesheets -->
+
+        <link rel="stylesheet" href="css/basic.css" />
+        <link rel="stylesheet" href="css/style.css" />
+
+        <!-- navigation icons using "font awesome" -->
+        <link rel="stylesheet" href="Font-Awesome/css/font-awesome.css" />
+
+        <!-- google web fonts -->
+        <link href='http://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+
+        <!-- js files -->
+        <script  src="js/jquery-1.7.2.js"></script> <!-- jQuery 1.7.2 -->
+        <script  src="js/jquery.placeholder.min.js"></script><!-- jQuery placeholder fix for old browsers -->
+        <script  src="js/socialstream.jquery.js"></script> <!-- Social Networks Feeds -->
+        <script  src="js/jquery.tweetscroll.js"></script> <!-- jQuery tweetscroll plugin -->
+        <script  src="js/jquery.carouFredSel-6.0.0-packed.js"></script><!-- CarouFredSel carousel plugin -->
+        <script  src="js/include.js"></script> <!-- jQuery custom options -->
+        
+        <!--[if (gte IE 6)&(lte IE 8)]>
+            <script type="text/javascript" src="js/selectivizr.js"></script>
+        <![endif]-->
+        <!--[if lt IE 9]>
+            <script src="js/html5shiv.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+        <!-- header start -->
+        <header id="header" class="clearfix">
+
+            <!-- logo start -->
+            <section id="logo">
+                <a href="index.html">
+                    <img src="img/logo2.png" alt="logo"/>
+                </a>
+            </section><!-- #logo end -->
+
+            <!-- nav container start -->
+            <section id="nav-container">
+
+                 <!-- main navigation start  -->
+                <nav id="nav">
+                    <ul class="nav nav-list">
+                        <li>
+                            <a href="index.html">
+                                <i class="icon-nav icon-home"></i>
+                                Home
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="icon-nav icon-bar-chart"></i>
+                                Demographics +</a>
+                            <ul>
+                                <li><a href="geopolitics.html">Geopolitics</a></li>
+                                <li><a href="economics.html">Economics</a></li>
+                                <li><a href="population.html">Population</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="events.html">
+                                <i class="icon-nav icon-trophy"></i>
+                                Events +</a>
+                            <ul>
+                                <li><a href="#">Track &amp; Field / Running</a></li>
+                                <li><a href="#">Aquatics</a></li>
+                                <li><a href="#">Boating/Rowing</a></li>
+                                <li><a href="#">Martial Arts</a></li>
+                                <li><a href="#">Gymnastics</a></li>
+                                <li><a href="#">Tug of War</a></li>
+                                <li><a href="#">More...</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="previous_games.html">
+                                <i class="icon-nav icon-plus-sign"></i>
+                                Previous Games +</a>
+                            <ul>
+                                <li><a href="london2012.html">2012 - London</a></li>
+                                <li><a href="#">2008 - Beijing</a></li>
+                                <li><a href="#">2004 - Athens</a></li>
+                                <li><a href="#">2000 - Sydney</a></li>
+                                <li><a href="#">1996 - Atlanta</a></li>
+                                <li><a href="#">More...</a></li>
+                            </ul>
+                        </li>
+                        <li class="active">
+                            <a href="country_profiles.html" class="active">
+                                <i class="icon-nav icon-map-marker"></i>
+                                Country Profiles +</a>
+                            <ul>
+                                <li><a href="united_states.html">United States</a></li>
+                                <li><a href="#">Russia/USSR</a></li>
+                                <li><a href="#">China</a></li>
+                                <li><a href="#">Germany</a></li>
+                                <li><a href="#">United Kingdom</a></li>
+                                <li><a href="#">More...</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="icon-nav icon-user-md"></i>
+                                Top Olympians +</a>
+                            <ul>
+                                <li><a href="michaelphelps.html">Michael Phelps</a></li>
+                                <li><a href="#">Larisa Latynina</a></li>
+                                <li><a href="#">Paavo Nurmi</a></li>
+                                <li><a href="#">Mark Spitz</a></li>
+                                <li><a href="#">Carl Lewis</a></li>
+                                <li><a href="#">More...</a></li>
+                            </ul>
+                        </li>
+                    </ul> 
+                </nav><!-- main navigation end -->
+               <!-- responsive navigation start -->
+                <select id="nav-responsive">
+                    <option selected="" value="">Site Navigation...</option>
+
+                    <option value="index.html">Home</option>
+
+                    <option value="">Portfolio</option>
+                    <option value="geopolitics.html">- Geopolitics</option>
+                    <option value="economics.html">- Economics</option>
+                    <option value="population.html">- Population</option>
+
+                    <option value="events.html">Events</option>
+                    <option value="#">- Track and Field/Running</option>
+                    <option value="#">- Aquatics</option>
+                    <option value="#">- Boating/Rowing</option>
+                    <option value="#">- Martial Arts</option>
+                    <option value="#">- Gymnastics</option>
+                    <option value="#">- Tug of War</option>
+                    <option value="#">- More...</option>
+
+                    <option value="previous_games.html">Previous Games</option>
+                    <option value="london2012.html">- 2012 - London</option>
+                    <option value="#">- 2008 - Beijing</option>
+                    <option value="#">- 2004 - Athens</option>
+                    <option value="#">- 2000 - Sydney</option>
+                    <option value="#">- 1996 - Atlanta</option>
+                    <option value="#">- More...</option>
+
+                    <option value="country_profiles.html">Country Profiles</option>
+                    <option value="united_states.html">- Uunited States</option>
+                    <option value="#">- Russia/USSR</option>
+                    <option value="#">- China</option>
+                    <option value="#">- Germany</option>
+                    <option value="#">- United Kingdom</option>
+                    <option value="#">- More...</option>
+
+                    <option value="">Top Olympians</option>
+                    <option value="michaelphelps.html">- Michael Phelps</option>
+                    <option value="">- Larisa Latynina</option>
+                    <option value="">- Paavo Nurmi</option>
+                    <option value="">- Mark Spitz</option>
+                    <option value="">- Carl Lewis</option>
+                    <option value="">- More</option>
+
+                </select> <!-- responsive navigation end -->
+
+            </section><!-- nav container end -->
+
+            <!-- search start -->
+            <section id="search">
+                <form action="#" method="get">
+                    <input id="search-submit" type="submit" />
+                    <input id="search-bkg" type="text" placeholder="Type and press enter.." />                   
+                </form>
+            </section><!-- search end -->
+
+        </header><!-- header end -->
+
+        <!-- page-title start-->
+        <section class="page-title-container">
+
+            <!-- top shadow on container -->
+            <div class="shadow-top"></div>
+
+            <section class="page-title">
+                <div class="title">
+                    <h1>Country Profiles</h1>
+                    <p>Olympic History by Country</p>
+                </div>
+
+                <ul class="breadcrumbs">
+                    <li>
+                        You are here:
+                    </li>
+                    <li class="active">
+                        <a href="country_profiles.html">Country Profiles</a>
+                    </li>
+                </ul>                        
+            </section>
+
+            <div class="shadow-bottom"></div>
+        </section>
+
+        <!-- content start -->
+        <div id="content-wrapper">
+
+            <div class="container_12">
+
+                <aside class="grid_3 aside left">
+
+                    <ul class="aside-widgets">
+
+                        <li class="categories">
+                            <h5>Most Commonly<br>Searched Countries</h5>
+                            <ul class="arrow-list">
+                                <li><a href="united_states.html">United States</a></li>
+                                <li><a href="#">Russia/USSR</a></li>
+                                <li><a href="#">China</a></li>
+                                <li><a href="#">Germany</a></li>
+                                <li><a href="#">United Kingdom</a></li>
+                                <li><a href="#">Search</a></li>
+                            </ul>
+                        </li><!-- categories widget end -->
+                    </ul><!-- sidebar widgets end -->
+                </aside><!-- sidebar end -->
+
+                <article class="grid_9 content-sidebar-left">
+                    <script type='text/javascript' src='https://public.tableau.com/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 750px; height: 580px;'><noscript><a href='#'><img alt='Total Summer Olympic Medals Won ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;CS&#47;CS235FinalProject-ZaydTableauWorkbook&#47;MedalsByCountry&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz' width='734' height='569' style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='site_root' value='' /><param name='name' value='CS235FinalProject-ZaydTableauWorkbook&#47;MedalsByCountry' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;CS&#47;CS235FinalProject-ZaydTableauWorkbook&#47;MedalsByCountry&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='showVizHome' value='no' /><param name='showTabs' value='y' /><param name='bootstrapWhenNotified' value='true' /></object></div>
+
+					<p>
+						The above graphic shows the all-time medal table for the 
+						summer Olympic Games from 1896 to 2012. These Olympic medal 
+						counts do not include the 1906 Intercalated Games which are 
+						no longer recognized by the International Olympic Committee 
+						(IOC) as official Games. The IOC itself does not publish 
+						all-time tables, and publishes unofficial tables only 
+						per single Games. This table was thus compiled by adding up 
+						single entries from the IOC database.
+					</p>
+					<br>
+					<p>
+						The results are attributed to the IOC country code as currently 
+						displayed by the IOC database. For countries that underwent
+						extensive political turmoil including Germany (e.g. West Germany,
+						East Germany, Unified German Team) and Russia (e.g. USSR), the medal
+						totals were combined.  Similarly, When different codes are displayed 
+						for different years, medal counts are combined in the case of a simple 
+						change of IOC code (such as from HOL to NED for the Netherlands) or 
+						simple change of country name (such as from Ceylon to Sri Lanka).
+					</p>
+					<br>
+					<p>
+						To find more information on the Olympic history of a particular country,
+						select from the list on the left panel or perform a search.
+					</p>
+                </article><!-- .content-sidebar-left end -->
+            </div><!-- container_12 end -->
+        </div><!-- content wrapper end -->
+
+
+        <!-- footer wrapper start -->
+        <div id="footer-wrapper">
+
+            <div class="shadow-top"></div>
+
+            <footer id="footer" class="container_12">
+
+            </footer><!-- footer end -->
+
+            <!-- copyright container start -->
+            <section class="copyright-container">
+
+                <div class="copyright container_12">
+                    <p>
+                        Copyright Olympic History. All rights reserved.
+                    </p>
+
+                    <ul class="breadcrumbs">
+                        <li>
+                            <a href="index.html">Home</a>
+                        </li>
+                        <li>
+                            <a href="geopolitics.html">Demographics</a>
+                        <li>
+                            <a href="events.html">Events</a>
+                        </li>
+                        <li>
+                            <a href="previous_games.html">Previous Games</a>
+                        </li>
+                        <li class="active">
+                            <a href="country_profiles.html">Country Profiles</a>
+                        </li>
+                        <li>
+                            <a href="michaelphelps.html">Top Olympians</a>
+                        </li>
+                    </ul> 
+                </div>
+            </section><!-- copyright container end -->
+        </div><!-- footer wrapper end -->
+
+        <script>
+            $('.tweets-list-container').tweetscroll({
+                username: 'pixel_industry', 
+                time: true, 
+                limit: 11, 
+                replies: true, 
+                position: 'append',
+                date_format: 'style2',
+                animation: 'slide_up',
+                visible_tweets: 2
+            });
+            
+            $("#foo3").carouFredSel({
+                items: 1,
+                auto: true,
+                scroll: 1,
+                pagination  : "#foo3_pag"
+            });
+            
+            //placeholder fix
+            $('input[placeholder], textarea[placeholder]').placeholder();
+        </script>
+    </body>
+</html>
+

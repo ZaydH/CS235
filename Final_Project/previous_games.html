@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Olympics History - Previous Games</title>
+        <meta name="description" content="Multipurpose Responsive Site Theme">
+        <meta name="author" content="pixel-industry">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+        <meta name="viewport" content="width=device-width">
+        
+        <!-- favicon -->
+        <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+        <link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+        <!-- stylesheets -->
+
+        <link rel="stylesheet" href="css/basic.css" />
+        <link rel="stylesheet" href="css/style.css" />
+
+        <!-- navigation icons using "font awesome" -->
+        <link rel="stylesheet" href="Font-Awesome/css/font-awesome.css" />
+
+        <!-- google web fonts -->
+        <link href='http://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+
+        <!-- js files -->
+        <script  src="js/jquery-1.7.2.js"></script> <!-- jQuery 1.7.2 -->
+        <script  src="js/jquery.placeholder.min.js"></script><!-- jQuery placeholder fix for old browsers -->
+        <script  src="js/socialstream.jquery.js"></script> <!-- Social Networks Feeds -->
+        <script  src="js/jquery.tweetscroll.js"></script> <!-- jQuery tweetscroll plugin -->
+        <script  src="js/jquery.carouFredSel-6.0.0-packed.js"></script><!-- CarouFredSel carousel plugin -->
+        <script  src="js/include.js"></script> <!-- jQuery custom options -->
+        
+        <!--[if (gte IE 6)&(lte IE 8)]>
+            <script type="text/javascript" src="js/selectivizr.js"></script>
+        <![endif]-->
+        <!--[if lt IE 9]>
+            <script src="js/html5shiv.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+        <!-- header start -->
+        <header id="header" class="clearfix">
+
+            <!-- logo start -->
+            <section id="logo">
+                <a href="index.html">
+                    <img src="img/logo2.png" alt="logo"/>
+                </a>
+            </section><!-- #logo end -->
+
+            <!-- nav container start -->
+            <section id="nav-container">
+
+                 <!-- main navigation start  -->
+                <nav id="nav">
+                    <ul class="nav nav-list">
+                        <li>
+                            <a href="index.html">
+                                <i class="icon-nav icon-home"></i>
+                                Home
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="icon-nav icon-bar-chart"></i>
+                                Demographics +</a>
+                            <ul>
+                                <li><a href="geopolitics.html">Geopolitics</a></li>
+                                <li><a href="economics.html">Economics</a></li>
+                                <li><a href="population.html">Population</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="events.html">
+                                <i class="icon-nav icon-trophy"></i>
+                                Events +</a>
+                            <ul>
+                                <li><a href="#">Track &amp; Field / Running</a></li>
+                                <li><a href="#">Aquatics</a></li>
+                                <li><a href="#">Boating / Rowing</a></li>
+                                <li><a href="#">Martial Arts</a></li>
+                                <li><a href="#">Gymnastics</a></li>
+                                <li><a href="#">Tug of War</a></li>
+                                <li><a href="#">More...</a></li>
+                            </ul>
+                        </li>
+                        <li class="active">
+                            <a href="previous_games.html" class="active">
+                                <i class="icon-nav icon-plus-sign"></i>
+                                Previous Games +</a>
+                            <ul>
+                                <li><a href="london2012.html">2012 - London</a></li>
+                                <li><a href="#">2008 - Beijing</a></li>
+                                <li><a href="#">2004 - Athens</a></li>
+                                <li><a href="#">2000 - Sydney</a></li>
+                                <li><a href="#">1996 - Atlanta</a></li>
+                                <li><a href="#">More...</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="country_profiles.html">
+                                <i class="icon-nav icon-map-marker"></i>
+                                Country Profiles +</a>
+                            <ul>
+                                <li><a href="united_states.html">United States</a></li>
+                                <li><a href="#">Russia/USSR</a></li>
+                                <li><a href="#">China</a></li>
+                                <li><a href="#">Germany</a></li>
+                                <li><a href="#">United Kingdom</a></li>
+                                <li><a href="#">More...</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="icon-nav icon-user-md"></i>
+                                Top Olympians +</a>
+                            <ul>
+                                <li><a href="michaelphelps.html">Michael Phelps</a></li>
+                                <li><a href="#">Larisa Latynina</a></li>
+                                <li><a href="#">Paavo Nurmi</a></li>
+                                <li><a href="#">Mark Spitz</a></li>
+                                <li><a href="#">Carl Lewis</a></li>
+                                <li><a href="#">More...</a></li>
+                            </ul>
+                        </li>
+                    </ul> 
+                </nav><!-- main navigation end -->
+               <!-- responsive navigation start -->
+                <select id="nav-responsive">
+                    <option selected="" value="">Site Navigation...</option>
+
+                    <option value="index.html">Home</option>
+
+                    <option value="">Portfolio</option>
+                    <option value="geopolitics.html">- Geopolitics</option>
+                    <option value="economics.html">- Economics</option>
+                    <option value="population.html">- Population</option>
+
+                    <option value="events.html">Events</option>
+                    <option value="#">- Track and Field/Running</option>
+                    <option value="#">- Aquatics</option>
+                    <option value="#">- Boating / Rowing</option>
+                    <option value="#">- Martial Arts</option>
+                    <option value="#">- Gymnastics</option>
+                    <option value="#">- Tug of War</option>
+                    <option value="#">- More...</option>
+
+                    <option value="previous_games.html">Previous Games</option>
+                    <option value="london2012.html">- 2012 - London</option>
+                    <option value="#">- 2008 - Beijing</option>
+                    <option value="#">- 2004 - Athens</option>
+                    <option value="#">- 2000 - Sydney</option>
+                    <option value="#">- 1996 - Atlanta</option>
+                    <option value="#">- More...</option>
+
+                    <option value="country_profiles.html">Country Profiles</option>
+                    <option value="united_states.html">- Uunited States</option>
+                    <option value="#">- Russia/USSR</option>
+                    <option value="#">- China</option>
+                    <option value="#">- Germany</option>
+                    <option value="#">- United Kingdom</option>
+                    <option value="#">- More...</option>
+
+                    <option value="">Top Olympians</option>
+                    <option value="michaelphelps.html">- Michael Phelps</option>
+                    <option value="">- Larisa Latynina</option>
+                    <option value="">- Paavo Nurmi</option>
+                    <option value="">- Mark Spitz</option>
+                    <option value="">- Carl Lewis</option>
+                    <option value="">- More</option>
+
+                </select> <!-- responsive navigation end -->
+
+            </section><!-- nav container end -->
+
+            <!-- search start -->
+            <section id="search">
+                <form action="#" method="get">
+                    <input id="search-submit" type="submit" />
+                    <input id="search-bkg" type="text" placeholder="Type and press enter.." />                   
+                </form>
+            </section><!-- search end -->
+
+        </header><!-- header end -->
+
+        <!-- page-title start-->
+        <section class="page-title-container">
+
+            <!-- top shadow on container -->
+            <div class="shadow-top"></div>
+
+            <section class="page-title">
+                <div class="title">
+                    <h1>Previous Games</h1>
+                    <p>Citius - Altius - Fortius</p>
+                </div>
+
+                <ul class="breadcrumbs">
+                    <li>
+                        You are here:
+                    </li>
+                    <li class="active">
+                        <a href="previous_games.html">Previous Games</a>
+                    </li>
+                </ul>                        
+            </section>
+
+            <div class="shadow-bottom"></div>
+        </section>
+
+        <!-- content start -->
+        <div id="content-wrapper">
+
+            <div class="container_12">
+
+                <aside class="grid_3 aside left">
+
+                    <ul class="aside-widgets">
+
+                        <li class="categories">
+                            <h5>Most Recent Games</h5>
+                            <ul class="arrow-list">
+                                <li><a href="london2012.html">2012 - London</a></li>
+                                <li><a href="#">2008 - Beijing</a></li>
+                                <li><a href="#">2004 - Athens</a></li>
+                                <li><a href="#">2000 - Sydney</a></li>
+                                <li><a href="#">1996 - Atlanta</a></li>
+                                <li><a href="#">Search</a></li>
+                            </ul>
+                        </li><!-- categories widget end -->
+                    </ul><!-- sidebar widgets end -->
+                </aside><!-- sidebar end -->
+
+                <article class="grid_9 content-sidebar-left">
+
+					<p>
+						
+						The modern Olympic Games are the leading international 
+						sporting event featuring summer and winter sports competitions in which thousands of 
+						athletes from around the world participate in a variety of competitions. The Olympic 
+						Games are considered to be the world's foremost sports competition with more than 
+						200 nations participating. The Olympic Games are held every four years, with the 
+						Summer and Winter Games alternating by occurring every four years but two years apart. 
+						Their creation was inspired by the ancient Olympic Games, which were held in Olympia, 
+						Greece, from the 8th century BC to the 4th century AD. Baron Pierre de Coubertin founded 
+						the International Olympic Committee (IOC) in 1894. The IOC is the governing body of 
+						the Olympic Movement, with the Olympic Charter defining its structure and authority.
+					</p>
+					<br>
+					<p>
+						<img src="img/olympic_motto.png" align="right" style="margin:3px 5px">
+						The evolution of the Olympic Movement during the 20th and 21st centuries has resulted 
+						in several changes to the Olympic Games. Some of these adjustments include the creation 
+						of the Winter Olympic Games for ice and winter sports, the Paralympic Games for athletes 
+						with a disability, and the Youth Olympic Games for teenage athletes. The IOC has had to 
+						adapt to a variety of economic, political, and technological advancements. As a result, 
+						the Olympics has shifted away from pure amateurism, as envisioned by Coubertin, to 
+						allowing participation of professional athletes. The growing importance of mass media 
+						created the issue of corporate sponsorship and commercialization of the Games. World wars 
+						led to the cancellation of the 1916, 1940, and 1944 Games. Large boycotts during the Cold 
+						War limited participation in the 1980 and 1984 Games.
+					</p>
+					<br>
+					<p>	
+						The Olympic Movement consists of international sports federations (IFs), National Olympic 
+						Committees (NOCs), and organizing committees for each specific Olympic Games. As the 
+						decision-making body, the IOC is responsible for choosing the host city for each Games, 
+						and organizes and funds the Games according to the Olympic Charter. The IOC also determines 
+						the Olympic program, consisting of the sports to be contested at the Games. There are 
+						several Olympic rituals and symbols, such as the Olympic flag and torch, as well as the 
+						opening and closing ceremonies. Over 13,000 athletes compete at the Summer and Winter Olympic 
+						Games in 33 different sports and nearly 400 events. The first, second, and third-place 
+						finishers in each event receive Olympic medals: gold, silver, and bronze, respectively.
+					</p>
+					<br>
+					<p>	
+						The Games have grown so much that nearly every nation is now represented. This growth has 
+						created numerous challenges and controversies, including boycotts, doping, bribery, and a 
+						terrorist attack in 1972. Every two years the Olympics and its media exposure provide unknown 
+						athletes with the chance to attain national and sometimes international fame. The Games 
+						also constitute an opportunity for the host city and country to showcase themselves to 
+						the world.
+					</p>
+                </article><!-- .content-sidebar-left end -->
+            </div><!-- container_12 end -->
+        </div><!-- content wrapper end -->
+
+
+        <!-- footer wrapper start -->
+        <div id="footer-wrapper">
+
+            <div class="shadow-top"></div>
+
+            <footer id="footer" class="container_12">
+
+            </footer><!-- footer end -->
+
+            <!-- copyright container start -->
+            <section class="copyright-container">
+
+                <div class="copyright container_12">
+                    <p>
+                        Copyright Olympic History. All rights reserved.
+                    </p>
+
+                    <ul class="breadcrumbs">
+                        <li>
+                            <a href="index.html">Home</a>
+                        </li>
+                        <li>
+                            <a href="geopolitics.html">Demographics</a>
+                        <li>
+                            <a href="events.html">Events</a>
+                        </li>
+                        <li class="active">
+                            <a href="previous_games.html">Previous Games</a>
+                        </li>
+                        <li>
+                            <a href="country_profiles.html">Country Profiles</a>
+                        </li>
+                        <li>
+                            <a href="michaelphelps.html">Top Olympians</a>
+                        </li>
+                    </ul> 
+                </div>
+            </section><!-- copyright container end -->
+        </div><!-- footer wrapper end -->
+
+        <script>
+            $('.tweets-list-container').tweetscroll({
+                username: 'pixel_industry', 
+                time: true, 
+                limit: 11, 
+                replies: true, 
+                position: 'append',
+                date_format: 'style2',
+                animation: 'slide_up',
+                visible_tweets: 2
+            });
+            
+            $("#foo3").carouFredSel({
+                items: 1,
+                auto: true,
+                scroll: 1,
+                pagination  : "#foo3_pag"
+            });
+            
+            //placeholder fix
+            $('input[placeholder], textarea[placeholder]').placeholder();
+        </script>
+    </body>
+</html>
+
