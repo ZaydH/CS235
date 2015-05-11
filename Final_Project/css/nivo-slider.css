@@ -113,7 +113,7 @@
         margin-left: 7px;
 	z-index:8;
 	padding: 10px 20px 15px;
-	opacity: 0.8;
+	opacity: 0.925;
 	overflow: hidden;
 	display: none;
         text-align: center;
@@ -134,13 +134,15 @@
 }
 
 .nivo-caption-title{
-    font: 16px 'lobster', cursive;
-    color: #666;
+    /*font: 16px 'lobster', cursive;*/
+   font: 16px 'Droid Sans', san-serif;
+    color: #000000;
 }
 
 .nivo-caption-subtitle{
-    font: italic 12px 'Arimo', sans-serif;
-    color: #8f8f8f;
+    /*font: italic 12px 'Arimo', sans-serif;*/
+	font: 12px 'Droid Sans', san-serif;
+    color: #000000;
 }
 
 .nivo-caption p {

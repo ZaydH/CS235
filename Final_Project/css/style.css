@@ -558,7 +558,8 @@ a.active .icon-nav{
     margin-bottom: 0px;
     line-height: 22px;
     font-weight: 700;
-    font: 26px 'lobster', cursive;
+    /*font: 26px 'lobster', cursive;*/
+    font: 26px 'Droid Sans', cursive;
     text-transform: none;
     color: #707070;
 }
@@ -1818,7 +1819,8 @@ a.active .icon-nav{
 
 .price-tag p{
     padding: 18px 18px;
-    font: 24px 'Lobster', cursive;
+    /*font: 24px 'Lobster', cursive;*/
+    font: 24px 'Droid Sans', cursive;
     color: #fff;
 }
 
@@ -3496,7 +3498,8 @@ input[type="checkbox"]:checked + label span{
 #footer h4{
     margin-bottom: 20px;
     color: #808080;
-    font: 16px 'Lobster', cursive;
+    /*font: 16px 'Lobster', cursive;*/
+   font: 16px 'Droid Sans', cursive;
     text-transform: none;
 }
 
